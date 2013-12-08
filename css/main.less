@@ -1,0 +1,186 @@
+@import "_main-header";
+
+// ------------ Mixins
+
+.tech-icon (@tech) {
+  background-image: url("../img/icons/techs/@{tech}.png");
+}
+
+// ------------ Go!
+
+html, body {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /*background: url(../img/page-bg.png) repeat-y top center;*/
+  font-family: 'Marcellus', serif;
+}
+
+body, p, a {
+  color: #505050;
+}
+
+#main {
+  width: 950px;
+  margin: 0 auto;
+  /*border: solid lime 1px;*/
+  min-height: 200px;
+  display: table;
+  min-height: 100%;
+
+  #misc-info {
+    width: 240px;
+    /*float: left;*/
+    /*border: solid blue 1px;*/
+    padding-top: 3em;
+    display: table-cell;
+    vertical-align: top;
+    background-color: #800000;
+
+    .logo-container {
+      text-align: center;
+      margin: 1em 0;
+      .rougemine-logo {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+        background: url(../img/icons/rougemine.png) 0 0 no-repeat;
+        border: 3px solid #FFFFFF;
+        border-radius: 5px;
+      }
+      a {
+        color: white;
+      }
+    }
+
+    section {
+      margin: 0 0 2em 1em;
+    }
+    .header-icon {
+      display: block;
+    }
+
+    section h3 {
+      margin: 0 0 0.25em 0;
+    }
+    section, section a {
+      color: white;
+    }
+
+  }
+
+  #main-panel {
+    width: 710px;
+    /*float: right;*/
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 25px;
+    padding-top: 2em;
+    padding-bottom: 3em;
+    /*border: solid black 1px;*/
+
+    h1 {
+      color: black;
+      font-size: 3em;
+      margin: 0;
+    }
+
+    h2 {
+      color: #800000;
+      font-family: 'Lobster Two', cursive;
+      font-size: 2.2em;
+      font-style: italic;
+      margin: 0;
+    }
+
+    h3 {
+      margin: 1em 0 0.5em 0;
+      font-size: 1.75em;
+      color: #800000;
+      img {
+        margin-top: -4px;
+      }
+    }
+
+    h4 {
+      margin: 1em 0 0.25em 0;
+    }
+
+    section ul li {
+      margin: 0 0 0.5em 0;
+      .period {
+        color: black;
+      }
+    }
+
+    .technologies-container {
+      margin-left: 1em;
+      .tech {
+        width: 33%;
+        float: left;
+        margin-bottom: 0.5em;
+        min-height: 35px;
+        /*border: solid red 1px;*/
+      }
+      .icon {
+        display: inline-block;
+        width: 35px;
+        text-align: center;
+      }
+      .contributor {
+        float: none;
+        margin-left: 35px;
+        a {
+          font-style: italic;
+        }
+      }
+    }
+
+    .my-favorite-tech {
+      margin: 1.5em 0;
+      background: url(../img/icons/laurel.png) 0 0 no-repeat;
+      padding-left: 25px;
+    }
+
+    .tools {
+//      margin: 2em 0 1em 0;
+    }
+
+    .works {
+      .tech {
+        font-weight: bold;
+        &.icon {
+          padding-left: 28px;
+          background-repeat: no-repeat;
+          background-position: 2px center;
+        }
+        &.rails {
+          .tech-icon(rails);
+        }
+        &.backbone {
+          .tech-icon(backbone);
+          background-position: 6px center;
+        }
+        &.zend-framework {
+          .tech-icon(zend-framework);
+        }
+        &.symfony2 {
+          .tech-icon(symfony2);
+        }
+        &.drupal {
+          .tech-icon(drupal);
+          background-position: 6px center;
+        }
+      }
+    }
+
+  }
+}
+
+
+
+@import "_main-footer";

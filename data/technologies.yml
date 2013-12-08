@@ -1,0 +1,87 @@
+-
+      title: JavaScript
+      icon: javascript
+-
+      title: PHP
+      icon: php
+-
+      title: HTML / CSS
+      icon: html5
+-
+      title: CoffeeScript
+      icon: coffeescript
+      url: http://coffeescript.org
+-
+      title: Ruby
+      icon: ruby
+-
+      title: Flash
+      icon: flash
+-
+      title: Ruby on Rails
+      icon: rails
+      url: http://rubyonrails.org
+-
+      title: Symfony 2
+      icon: symfony2
+      url: http://symfony.com
+-
+      title: Zend Framework
+      icon: zend-framework
+      url: http://www.zendframework.com/
+#-
+#      title: Python
+#      icon: python
+#-
+#      title: Django
+#      icon: django
+#      url: http://djangoproject.com
+-
+      title: jQuery
+      icon: jquery
+      url: http://jquery.com/
+-
+      title: Grunt
+      icon: grunt
+      url: http://gruntjs.com
+-
+      title: Node.js
+      icon: nodejs
+      url: http://nodejs.org
+-
+      title: MySQL
+      icon: mysql
+      url: http://www.mysql.com/
+-
+      title: mongoDB
+      icon: mongodb
+      url: http://www.mongodb.org/
+-
+      title: Drupal
+      icon: drupal
+      url: http://drupal.org/
+-
+      title: Backbone.js
+      icon: backbone
+      url: http://backbonejs.org/
+-
+      title: Require.js
+      icon: requirejs
+      url: http://requirejs.org/
+-
+      title: Robotlegs
+      icon: robotlegs
+      url: http://www.robotlegs.org/
+-
+      title: Silex
+      icon: silex
+      url: http://silex.sensiolabs.org/
+      contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
+-
+      title: SASS
+      icon: sass
+      url: http://sass-lang.com/
+-
+      title: LESS
+      icon: less
+      url: http://lesscss.org/

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Olivier Philippon - Web Developer since 1999</title>
+        <meta name="description" content="Olivier Philippon - Web Developer since 1999 - Ruby, Ruby on Rails, CoffeeScript, JavaScript, PHP, Flash freelance developer">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        {% if env == 'development' %}
+            <link rel="stylesheet" href="css/main.css">
+        {% else %}
+            <link rel="stylesheet" href="css/main.min.css">
+        {% endif %}
+        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="main" class="clearfix">
+
+            <section id="misc-info">
+                <div class="logo-container">
+                    <span class="rougemine-logo"></span>
+                    <a href="http://rougemine.com" target="_blank">rougemine.com</a><br>
+                </div>
+                <section>
+                    <span class="header-icon"><img src="img/icons/headers/user.png" alt="me"></span>
+                    Olivier Philippon<br>
+                    Né le 11/07/1980<br>
+                    68 blvd St-Marcel<br>
+                    75005 Paris<br>
+                    <a href="mailto:olivier@rougemine.com">olivier@rougemine.com</a><br>
+                    Tel : +33 6 61 78 99 25
+                </section>
+                <section>
+                    <span class="header-icon"><img src="img/icons/headers/github.png" alt="GitHub"></span>
+                    <h3>Projets <i>Open Source</i></h3>
+                    <a href="https://github.com/DrBenton" target="_blank">github.com/DrBenton</a>
+                </section>
+                <section>
+                    <span class="header-icon"><img src="img/icons/headers/ruler.png" alt="school"></span>
+                    <h3>Formation</h3>
+                    1998-2000 : DUT S.R.C<br>
+                    <i>(Services et Réseaux de Communication)</i><br>
+                    1998: Bac série S
+                </section>
+                <section>
+                    <span class="header-icon"><img src="img/icons/headers/chat.png" alt="languages"></span>
+                    <h3>Langues</h3>
+                    Anglais technique,<br>
+                    espagnol scolaire
+                </section>
+                <section>
+                    <span class="header-icon"><img src="img/icons/headers/fave.png" alt="hobbies"></span>
+                    <h3>Centres d'intérêts</h3>
+                    Dessin, astronomie,
+                    aïkijutsu
+                </section>
+            </section><!-- end #misc-info -->
+
+            <section id="main-panel">
+                <h1>Olivier Philippon</h1>
+                <h2>Digging into Web technologies since 1999</h2>
+
+                <section class="skills">
+                    <h3><img src="img/icons/headers/tool-red.png" alt="" > Compétences principales</h3>
+                    <div class="technologies-container clearfix">
+                        {% for tech in technologies %}
+                            <div class="tech clearfix">
+                                <span class="icon">
+                                    <img src="img/icons/techs/{{ tech.icon }}.png" alt="{{ tech.title }}">
+                                </span>
+                                <span class="title">
+                                    {% if 'url' in tech %}
+                                        <a href="{{ tech.url }}" target="_blank">{{ tech.title }}</a>
+                                    {% else %}
+                                      {{ tech.title }}
+                                    {% endif %}
+                                </span>
+                                {% if 'contributor-url' in tech %}
+                                <div class="contributor">
+                                    <a href="{{ tech['contributor-url' ] }}" target="_blank">(contributeur)</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div><!-- end .technologies-container -->
+
+                    <div class="my-favorite-tech">
+                        Langage de programmation favori : <a href="http://coffeescript.org" target="_blank">CoffeeScript</a>
+                    </div>
+
+                    <div class="tools">
+                        <h4>Logiciels et environnements</h4>
+                        {% for tool in tools %}
+                            {% set separator = '...' if loop.last else ',' %}
+                            {% if 'url' in tool %}
+                                <a href="{{ tool.url }}" target="_blank">{{ tool.title }}</a>{{separator}}
+                            {% else %}
+                                {{ tool.title }}{{separator}}
+                            {% endif %}
+                        {% endfor %}
+                    </div><!-- end .tools -->
+
+                </section><!-- end .skills -->
+
+                <section class="experience">
+                    <h3><img src="img/icons/headers/video-red.png" alt="" > Parcours professionnel</h3>
+                    <ul>
+                        {% for xp in experiences %}
+                            <li>
+                                <span class="period">{{ xp.period }} :</span>
+                                {{ xp.content }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section><!-- end .experience -->
+
+                <section class="works">
+                    <h3><img src="img/icons/headers/lab-red.png" alt="" > Quelques réalisations</h3>
+                    <ul>
+                        {% for work in works %}
+                            <li>
+                                {{ work.content }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section><!-- end .works -->
+
+            </section><!-- end #main-panel -->
+
+        </div><!-- end #main -->
+    <!-- generated by Python on {{ generation_date.strftime('%Y-%m-%d %H:%I:%S') }} -->
+    {% if env == 'development' %}
+        <script src="http://localhost:35729/livereload.js"></script>
+    {% endif %}
+    </body>
+</html>
