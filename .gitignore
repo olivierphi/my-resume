@@ -5,3 +5,6 @@ img/icons/raw
 img/icons/headers/*.svg
 
 css/*.css
+
+node_modules/
+
