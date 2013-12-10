@@ -1,0 +1,7 @@
+{
+    "host": "rougemine.com",
+    "port": 123,
+    "username": "root",
+    "password": "test",
+    "path": "/var/www/"
+}

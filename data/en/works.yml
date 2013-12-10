@@ -1,0 +1,30 @@
+-
+        title: Ruby on Rails Mail App
+        content: >
+            Development of a mass mailing Web application for TV France International,
+            based on <span class="tech icon rails">Ruby on Rails</span>
+-
+        title: Mappy Mobile website
+        content: >
+            Technical lead of the JavaScript development of the
+            <a href="http://iphone.mappy.com/" target="_blank">mobile site</a> of <a href="http://www.mappy.com/" target="_blank">Mappy</a>,
+            based on <span class="tech icon backbone">Backbone</span>.
+            Member of the back-end <span class="tech icon symfony2">Symfony2</span> team
+-
+        title: Bopler Games, Facebook application
+        content: >
+            Technical lead of the PHP development of the Facebook app
+            <a href="https://www.facebook.com/BoplerGames" target="_blank">Bopler Games</a>,
+            based on <span class="tech icon zend-framework">Zend Framework</span>
+-
+        title: Rodin Museum
+        content: >
+            Technical lead on the
+            <a href="http://www.musee-rodin.fr/en" target="_blank">Rodin Museum</a> development,
+            based on <span class="tech icon drupal">Drupal</span> and <span class="tech icon zend-framework">Zend Framework</span>
+-
+        title: VisitProvence.com
+        content: >
+            Development of the
+            « <a href="http://www.visitprovence.com/en/travel-guide" target="_blank">Travel Guide</a> »
+            of VisitProvence.com, based on <span class="tech icon zend-framework">Zend Framework</span> and a lot of <span class="tech icon jquery">jQuery</span>

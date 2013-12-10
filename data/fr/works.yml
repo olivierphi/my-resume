@@ -1,25 +1,31 @@
 -
+        title: Ruby on Rails Mail App
         content: >
             Développement d'une application Web de <i>mass mailing</i> pour TV France International,
             basée sur <span class="tech icon rails">Ruby on Rails</span>
 -
+        title: Site mobile de Mappy
         content: >
-            Direction   technique   du   développement   Javascript   du
-            nouveau   site   mobile   de  <a href="http://www.mappy.com/" target="_blank">Mappy</a>,
+            Lead Developer JavaScript pour le
+            <a href="http://iphone.mappy.com/" target="_blank">site mobile</a> de <a href="http://www.mappy.com/" target="_blank">Mappy</a>,
             basé sur <span class="tech icon backbone">Backbone</span>.
-            Participation   au développement <span class="tech icon symfony2">Symfony2</span> du back-end
+            Membre de l'équipe back-end <span class="tech icon symfony2">Symfony2</span>
 -
+        title: Bopler Games, application Facebook
         content: >
-            Direction technique du développement PHP de l'application
+            Direction technique du développement PHP de l'app
             Facebook <a href="https://www.facebook.com/BoplerGames" target="_blank">Bopler Games</a>,
             basée sur <span class="tech icon zend-framework">Zend Framework</span>
 -
+        title: Musée Rodin
         content: >
-            Direction technique du développement du site du
+            Direction technique sur le site du
             <a href="http://www.musee-rodin.fr/" target="_blank">Musée Rodin</a>,
             basé sur <span class="tech icon drupal">Drupal</span> et <span class="tech icon zend-framework">Zend Framework</span>
 -
+        title: VisitProvence.com
         content: >
             Développement de la partie
             « <a href="http://www.visitprovence.com/guide-de-voyage" target="_blank">Guide de Voyage</a> »
-            du site VisitProvence.com, basée sur <span class="tech icon zend-framework">Zend Framework</span>
+            du site,
+            basée sur <span class="tech icon zend-framework">Zend Framework</span> et beaucoup de <span class="tech icon jquery">jQuery</span>

@@ -6,7 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Olivier Philippon - Web Developer since 1999</title>
+        <meta name="language" content="{{ lang }}">
+        <title>Olivier Philippon - {{ 'title' | translate }}</title>
         <meta name="description" content="Olivier Philippon - Web Developer since 1999 - Ruby, Ruby on Rails, CoffeeScript, JavaScript, PHP, Flash freelance developer">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,7 +27,23 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+
         <div id="main" class="clearfix">
+
+            <div id="pdf-download">
+                <a href="cv-olivier-philippon.{{ lang }}.pdf">{{ 'download' | translate }}</a>
+            </div><!-- end #pdf-download -->
+
+            <div id="language-selector">
+                <span>language :</span>
+                {% if lang == 'fr' %}
+                    <a href="?lang=en">EN</a>
+                    <span>FR</span>
+                {% else %}
+                    <span>EN</span>
+                    <a href="?lang=fr">FR</a>
+                {% endif %}
+            </div><!-- end #language-selector -->
 
             <section id="misc-info">
                 <div class="logo-container">
@@ -36,44 +53,44 @@
                 <section>
                     <span class="header-icon"><img src="img/icons/headers/user.png" alt="me"></span>
                     Olivier Philippon<br>
-                    Né le 11/07/1980<br>
+                    {{ 'birth' | translate }}<br>
                     68 blvd St-Marcel<br>
                     75005 Paris<br>
+                    {{ 'france' | translate }}
                     <a href="mailto:olivier@rougemine.com">olivier@rougemine.com</a><br>
                     Tel : +33 6 61 78 99 25
                 </section>
                 <section>
                     <span class="header-icon"><img src="img/icons/headers/github.png" alt="GitHub"></span>
-                    <h3>Projets <i>Open Source</i></h3>
+                    <h3>{{ 'open_source_projects' | translate }}</h3>
                     <a href="https://github.com/DrBenton" target="_blank">github.com/DrBenton</a>
                 </section>
                 <section>
                     <span class="header-icon"><img src="img/icons/headers/ruler.png" alt="school"></span>
-                    <h3>Formation</h3>
+                    <h3>{{ 'education' | translate }}</h3>
                     1998-2000 : DUT S.R.C<br>
-                    <i>(Services et Réseaux de Communication)</i><br>
-                    1998: Bac série S
+                    <i>{{ 'SRC' | translate }}</i><br>
+                    1998: {{ 'bac' | translate }}
                 </section>
                 <section>
                     <span class="header-icon"><img src="img/icons/headers/chat.png" alt="languages"></span>
-                    <h3>Langues</h3>
-                    Anglais technique,<br>
-                    espagnol scolaire
+                    <h3>{{ 'languages' | translate }}</h3>
+                    {{ 'language_english' | translate }},<br>
+                    {{ 'language_spanish' | translate }}
                 </section>
                 <section>
                     <span class="header-icon"><img src="img/icons/headers/fave.png" alt="hobbies"></span>
-                    <h3>Centres d'intérêts</h3>
-                    Dessin, astronomie,
-                    aïkijutsu
+                    <h3>{{ 'hobbies' | translate }}</h3>
+                    {{ 'hobbies_content' | translate }}
                 </section>
             </section><!-- end #misc-info -->
 
             <section id="main-panel">
                 <h1>Olivier Philippon</h1>
-                <h2>Digging into Web technologies since 1999</h2>
+                <h2>{{ 'digging' | translate }}</h2>
 
                 <section class="skills">
-                    <h3><img src="img/icons/headers/tool-red.png" alt="" > Compétences principales</h3>
+                    <h3><img src="img/icons/headers/tool-red.png" alt="" >{{ 'main_skills' | translate }}</h3>
                     <div class="technologies-container clearfix">
                         {% for tech in technologies %}
                             <div class="tech clearfix">
@@ -82,14 +99,20 @@
                                 </span>
                                 <span class="title">
                                     {% if 'url' in tech %}
-                                        <a href="{{ tech.url }}" target="_blank">{{ tech.title }}</a>
+                                        <a href="{{ tech.url }}" target="_blank">
+                                            {% if tech.title is not string %}
+                                                {{ tech.title | join(' / ') }}
+                                            {% else %}
+                                                {{ tech.title }}
+                                            {% endif %}
+                                        </a>
                                     {% else %}
                                       {{ tech.title }}
                                     {% endif %}
                                 </span>
                                 {% if 'contributor-url' in tech %}
                                 <div class="contributor">
-                                    <a href="{{ tech['contributor-url' ] }}" target="_blank">(contributeur)</a>
+                                    <a href="{{ tech['contributor-url' ] }}" target="_blank">({{ 'contributor' | translate }})</a>
                                 </div>
                                 {% endif %}
                             </div>
@@ -97,11 +120,11 @@
                     </div><!-- end .technologies-container -->
 
                     <div class="my-favorite-tech">
-                        Langage de programmation favori : <a href="http://coffeescript.org" target="_blank">CoffeeScript</a>
+                        {{ 'favorite_language' | translate }} : <i>JavaScript + Python + Ruby = </i><a href="http://coffeescript.org" target="_blank">CoffeeScript</a> ♥
                     </div>
 
                     <div class="tools">
-                        <h4>Logiciels et environnements</h4>
+                        <h4> {{ 'tools' | translate }}</h4>
                         {% for tool in tools %}
                             {% set separator = '...' if loop.last else ',' %}
                             {% if 'url' in tool %}
@@ -115,11 +138,11 @@
                 </section><!-- end .skills -->
 
                 <section class="experience">
-                    <h3><img src="img/icons/headers/video-red.png" alt="" > Parcours professionnel</h3>
+                    <h3><img src="img/icons/headers/video-red.png" alt="" >{{ 'job_experience' | translate }}</h3>
                     <ul>
                         {% for xp in experiences %}
                             <li>
-                                <span class="period">{{ xp.period }} :</span>
+                                <span class="heading">{{ xp.period }} :</span>
                                 {{ xp.content }}
                             </li>
                         {% endfor %}
@@ -127,10 +150,11 @@
                 </section><!-- end .experience -->
 
                 <section class="works">
-                    <h3><img src="img/icons/headers/lab-red.png" alt="" > Quelques réalisations</h3>
+                    <h3><img src="img/icons/headers/lab-red.png" alt="" >{{ 'works' | translate }}</h3>
                     <ul>
                         {% for work in works %}
                             <li>
+                                <span class="heading">{{ work.title }} :</span>
                                 {{ work.content }}
                             </li>
                         {% endfor %}

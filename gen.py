@@ -7,6 +7,8 @@ ENV = 'production'
 if len(sys.argv) > 1:
     ENV = str(sys.argv[1])
 
+LANGS = ('fr', 'en')
+
 def get_file_content(file_path):
     file = open(file_path, 'r')
     content = file.read()
@@ -23,11 +25,26 @@ def get_yaml_data(file_path):
 
 def render_template(file_path, **kwargs):
     env = Environment(trim_blocks=True,  lstrip_blocks=True)
+    env.filters['translate'] = translate
     template = env.from_string(get_file_content(file_path))
     return template.render(**kwargs)
 
+CURRENT_LANG = None
+I18N_REGISTRY = {}
+
+def init_i18n():
+    for lang in LANGS:
+        I18N_REGISTRY[lang] = get_yaml_data('data/%(lang)s/i18n.yml' % {'lang': lang})
+    # print (I18N_REGISTRY)
+
+def translate(value):
+    # print("CURRENT_LANG=", CURRENT_LANG, ", value=", value)
+    return I18N_REGISTRY[CURRENT_LANG][value]
+
 def generate():
-    for lang in ['fr']:
+    global CURRENT_LANG
+    for lang in LANGS:
+        CURRENT_LANG = lang
         interpolation = {'lang': lang}
         template_data = {
             'technologies': get_yaml_data('data/technologies.yml'),
@@ -36,6 +53,7 @@ def generate():
             'experiences': get_yaml_data('data/%(lang)s/experiences.yml' % interpolation),
             'generation_date': datetime.datetime.now(),
             'env': ENV,
+            'lang': lang,
         }
         result = render_template('template.jinja', **template_data)
         output = open('index.%(lang)s.html' % interpolation, 'w')
@@ -43,4 +61,5 @@ def generate():
         output.close()
 
 if __name__ == '__main__':
+    init_i18n()
     generate()

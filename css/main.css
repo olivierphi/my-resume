@@ -100,6 +100,31 @@ a {
   min-height: 200px;
   display: table;
   min-height: 100%;
+  position: relative;
+}
+#main #pdf-download,
+#main #language-selector {
+  position: absolute;
+  top: 0.5em;
+  right: 0;
+}
+#main #pdf-download a,
+#main #language-selector a,
+#main #pdf-download span,
+#main #language-selector span {
+  font-family: Arial, sans-serif;
+  color: black;
+  font-weight: normal;
+  font-size: 12px;
+}
+@media print {
+  #main #pdf-download,
+  #main #language-selector {
+    display: none;
+  }
+}
+#main #language-selector {
+  top: 1.5em;
 }
 #main #misc-info {
   width: 240px;
@@ -112,14 +137,14 @@ a {
 }
 #main #misc-info .logo-container {
   text-align: center;
-  margin: 1em 0;
+  margin: 0.4em 0px 1.5em 0;
 }
 #main #misc-info .logo-container .rougemine-logo {
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   margin: 0 auto;
-  background: url(../img/icons/rougemine.png) 0 0 no-repeat;
+  background: url(../img/icons/rougemine-70x70.png) 0 0 no-repeat;
   border: 3px solid #FFFFFF;
   border-radius: 5px;
 }
@@ -175,8 +200,9 @@ a {
 #main #main-panel section ul li {
   margin: 0 0 0.5em 0;
 }
-#main #main-panel section ul li .period {
+#main #main-panel section ul li .heading {
   color: black;
+  font-weight: bold;
 }
 #main #main-panel .technologies-container {
   margin-left: 1em;
@@ -218,7 +244,7 @@ a {
 }
 #main #main-panel .works .tech.backbone {
   background-image: url("../img/icons/techs/backbone.png");
-  background-position: 6px center;
+  padding-left: 24px;
 }
 #main #main-panel .works .tech.zend-framework {
   background-image: url("../img/icons/techs/zend-framework.png");
@@ -228,7 +254,10 @@ a {
 }
 #main #main-panel .works .tech.drupal {
   background-image: url("../img/icons/techs/drupal.png");
-  background-position: 6px center;
+  padding-left: 24px;
+}
+#main #main-panel .works .tech.jquery {
+  background-image: url("../img/icons/techs/jquery.png");
 }
 /* ==========================================================================
    Helper classes

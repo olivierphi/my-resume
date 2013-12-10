@@ -36,7 +36,7 @@ module.exports = (grunt)->
         tasks: ['less']
       }
       "jinja-template": {
-        files: ['template.jinja', 'data/**/*.yml']
+        files: ['gen.py', 'template.jinja', 'data/**/*.yml']
         tasks: ['exec:generate-page']
       }
     }
@@ -50,6 +50,22 @@ module.exports = (grunt)->
     }
     # end exec
 
+    # Deployment stuff
+    sshconfig: {
+      "rougemine": grunt.file.readJSON('ssh-config.json')
+    },
+    sftp: {
+      rougemine: {
+        files: {
+          "./": ["index.php", "index.fr.html", "index.en.html", "css/main.min.css"]
+        }
+        options: {
+          config: 'rougemine'
+        }
+      }
+    }
+    # end deployment
+
     'env': 'development' # default ENV
 
   })
@@ -59,6 +75,7 @@ module.exports = (grunt)->
   grunt.loadNpmTasks('grunt-contrib-less')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-exec')
+  grunt.loadNpmTasks('grunt-ssh')
 
   # Custom tasks
   grunt.registerTask('compile-all-prod', ()->

@@ -52,10 +52,10 @@
       title: MySQL
       icon: mysql
       url: http://www.mysql.com/
--
-      title: mongoDB
-      icon: mongodb
-      url: http://www.mongodb.org/
+#-
+#      title: mongoDB
+#      icon: mongodb
+#      url: http://www.mongodb.org/
 -
       title: Drupal
       icon: drupal
@@ -68,20 +68,16 @@
       title: Require.js
       icon: requirejs
       url: http://requirejs.org/
--
-      title: Robotlegs
-      icon: robotlegs
-      url: http://www.robotlegs.org/
+#-
+#      title: Robotlegs
+#      icon: robotlegs
+#      url: http://www.robotlegs.org/
 -
       title: Silex
       icon: silex
       url: http://silex.sensiolabs.org/
       contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
 -
-      title: SASS
-      icon: sass
-      url: http://sass-lang.com/
--
-      title: LESS
+      title: [LESS, SASS]
       icon: less
       url: http://lesscss.org/

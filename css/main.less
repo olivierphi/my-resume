@@ -30,6 +30,25 @@ body, p, a {
   min-height: 200px;
   display: table;
   min-height: 100%;
+  position: relative;
+
+  #pdf-download, #language-selector {
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    a, span {
+      font-family: Arial, sans-serif;
+      color: black;
+      font-weight: normal;
+      font-size: 12px;
+    }
+    @media print {
+      display: none;
+    }
+  }
+  #language-selector {
+    top: 1.5em;
+  }
 
   #misc-info {
     width: 240px;
@@ -42,13 +61,13 @@ body, p, a {
 
     .logo-container {
       text-align: center;
-      margin: 1em 0;
+      margin: 0.4em 0px 1.5em 0;
       .rougemine-logo {
         display: block;
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         margin: 0 auto;
-        background: url(../img/icons/rougemine.png) 0 0 no-repeat;
+        background: url(../img/icons/rougemine-70x70.png) 0 0 no-repeat;
         border: 3px solid #FFFFFF;
         border-radius: 5px;
       }
@@ -112,8 +131,9 @@ body, p, a {
 
     section ul li {
       margin: 0 0 0.5em 0;
-      .period {
+      .heading {
         color: black;
+        font-weight: bold;
       }
     }
 
@@ -153,6 +173,7 @@ body, p, a {
     .works {
       .tech {
         font-weight: bold;
+        //font-style: italic;
         &.icon {
           padding-left: 28px;
           background-repeat: no-repeat;
@@ -163,7 +184,7 @@ body, p, a {
         }
         &.backbone {
           .tech-icon(backbone);
-          background-position: 6px center;
+          padding-left: 24px;
         }
         &.zend-framework {
           .tech-icon(zend-framework);
@@ -173,7 +194,10 @@ body, p, a {
         }
         &.drupal {
           .tech-icon(drupal);
-          background-position: 6px center;
+          padding-left: 24px;
+        }
+        &.jquery {
+          .tech-icon(jquery);
         }
       }
     }
