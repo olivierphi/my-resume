@@ -79,13 +79,13 @@ module.exports = (grunt)->
 
   # Custom tasks
   grunt.registerTask('compile-all-prod', ()->
-    grunt.task.run(['less:production', 'exec:generate-page'])
     grunt.config('env', 'production')
+    grunt.task.run(['less:production', 'exec:generate-page'])
   )
 
   grunt.registerTask('compile-all-dev', ()->
-    grunt.task.run(['less:development', 'exec:generate-page'])
     grunt.config('env', 'development')
+    grunt.task.run(['less:development', 'exec:generate-page'])
   )
 
   # Default task(s).
