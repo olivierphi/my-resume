@@ -50,7 +50,7 @@ html(class="no-js", lang=lang)
         #main.clearfix
             
             #pdf-download
-                a(href='cv-olivier-philippon.' + lang + '.pdf')
+                a(href='cv-olivier-philippon.#{lang}.pdf')
                  = translate('download')
             //- end #pdf-download 
             
@@ -129,7 +129,7 @@ html(class="no-js", lang=lang)
                         each tech in technologies.main
                             .tech.clearfix
                                 span.icon
-                                    img(src='img/icons/techs/'+tech.icon+'.png', alt=tech.title)
+                                    img(src='img/icons/techs/#{tech.icon}.png', alt=tech.title)
                                 span.title
                                     +techDisplay(tech)
                                 if tech['contributor-url']
