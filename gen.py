@@ -51,7 +51,7 @@ def generate():
             'tools': get_yaml_data('data/tools.yml'),
             'works': get_yaml_data('data/%(lang)s/works.yml' % interpolation),
             'experiences': get_yaml_data('data/%(lang)s/experiences.yml' % interpolation),
-            'generation_date': datetime.datetime.now(),
+            'generation_date': datetime.datetime.utcnow(),
             'env': ENV,
             'lang': lang,
         }
