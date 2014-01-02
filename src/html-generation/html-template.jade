@@ -1,3 +1,19 @@
+//- Mixins
+mixin techDisplay(techData)
+    if techData['url']
+        if techData['url'] instanceof Array
+            each subTechUrl, subTechIndex in techData['url']
+                - subTechsSeparator = subTechIndex === (techData['url'].length-1) ? '' : ' / '
+                a(href=subTechUrl, target='_blank')
+                    = techData.title[subTechIndex]
+                | #{subTechsSeparator}
+        else
+            a(href=techData.url, target='_blank')
+                = techData.title
+    else
+        = techData.title
+
+//- Go!
 doctype html
 //[if lt IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=#{lang}><![endif]
 //[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8" lang=#{lang}><![endif]
@@ -32,6 +48,7 @@ html(class="no-js", lang=lang)
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 
         #main.clearfix
+            
             #pdf-download
                 a(href='cv-olivier-philippon.' + lang + '.pdf')
                  = translate('download')
@@ -114,18 +131,7 @@ html(class="no-js", lang=lang)
                                 span.icon
                                     img(src='img/icons/techs/'+tech.icon+'.png', alt=tech.title)
                                 span.title
-                                    if tech['url']
-                                        if tech['url'] instanceof Array
-                                            each subTech, index in tech['url']
-                                                - separator = index === (tech['url'].length-1) ? '' : '/'
-                                                a(href=subTech, target='_blank')
-                                                    = tech.title[index]
-                                                |  #{separator} 
-                                        else
-                                            a(href=tech.url, target='_blank')
-                                                = tech.title
-                                    else
-                                     = tech.title
+                                    +techDisplay(tech)
                                 if tech['contributor-url']
                                     .contributor
                                         a(href=tech['contributor-url'], target='_blank')
@@ -135,20 +141,9 @@ html(class="no-js", lang=lang)
                     .other-technologies.clearfix
                         h4= translate('other_skills')
                         each tech, index in technologies.others
-                            - separator = index === (technologies.others.length-1) ? ' ...' : ' , '
-                            //span
+                            - separator = index === (technologies.others.length-1) ? ' ...' : ', '
                             span(class=['tech-with-icon', tech.icon])
-                                if tech['url'] && (tech['url'] instanceof Array)
-                                    each subTech, i in tech['url']
-                                        - subSeparator = i === (tech['url'].length-1) ? '' : '/'
-                                        a(href=subTech, target='_blank')
-                                            = tech.title[i]
-                                        |  #{subSeparator} 
-                                else if tech['url']
-                                    a(href=tech.url, target='_blank')
-                                        = tech.title
-                                else
-                                    = tech.title
+                                +techDisplay(tech)
                                 if tech['contributor-url']
                                     span.contributor
                                         |  (
