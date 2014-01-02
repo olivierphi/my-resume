@@ -23,7 +23,7 @@ html(class="no-js", lang=lang)
         else
             link(rel="stylesheet", href="css/main.min.css")
         link(href='http://fonts.googleapis.com/css?family=Marcellus',rel='stylesheet',type='text/css')
-        link(href='http://fonts.googleapis.com/css?family=Lobster+Two',rel='stylesheet', type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Lobster+Two:400italic',rel='stylesheet', type='text/css')
 
         script(src="js/vendor/modernizr-2.6.2.min.js")
     
@@ -109,16 +109,20 @@ html(class="no-js", lang=lang)
                         img(src='img/icons/headers/tool-red.png', alt='')
                         = translate('main_skills')
                     .technologies-container.clearfix
-                        each tech in technologies
+                        each tech in technologies.main
                             .tech.clearfix
                                 span.icon
                                     img(src='img/icons/techs/'+tech.icon+'.png', alt=tech.title)
                                 span.title
                                     if tech['url']
-                                        a(href=tech.url, target='_blank')
-                                            if tech.title instanceof Array
-                                                = tech.title.join(' / ')
-                                            else
+                                        if tech['url'] instanceof Array
+                                            each subTech, index in tech['url']
+                                                - separator = index === (tech['url'].length-1) ? '' : '/'
+                                                a(href=subTech, target='_blank')
+                                                    = tech.title[index]
+                                                |  #{separator} 
+                                        else
+                                            a(href=tech.url, target='_blank')
                                                 = tech.title
                                     else
                                      = tech.title
@@ -128,11 +132,37 @@ html(class="no-js", lang=lang)
                                             = translate('contributor')
                     //- end .technologies-container 
                     
+                    .other-technologies.clearfix
+                        h4= translate('other_skills')
+                        each tech, index in technologies.others
+                            - separator = index === (technologies.others.length-1) ? ' ...' : ' , '
+                            //span
+                            span(class=['tech-with-icon', tech.icon])
+                                if tech['url'] && (tech['url'] instanceof Array)
+                                    each subTech, i in tech['url']
+                                        - subSeparator = i === (tech['url'].length-1) ? '' : '/'
+                                        a(href=subTech, target='_blank')
+                                            = tech.title[i]
+                                        |  #{subSeparator} 
+                                else if tech['url']
+                                    a(href=tech.url, target='_blank')
+                                        = tech.title
+                                else
+                                    = tech.title
+                                if tech['contributor-url']
+                                    span.contributor
+                                        |  (
+                                        a(href=tech['contributor-url'], target='_blank')
+                                            = translate('contributor')
+                                        | )
+                            = separator 
+                    //- end .other-technologies
+                    
                     .my-favorite-tech
-                        = translate('favorite_language')
+                        | #{translate('favorite_language')} : 
                         i JavaScript + Python + Ruby = 
                         a(href='http://coffeescript.org', target='_blank') CoffeeScript
-                        | ♥
+                        |  ♥
                     //- end .my-favorite-tech
                     
                     .tools

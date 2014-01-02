@@ -2,7 +2,7 @@
 
 // ------------ Mixins
 
-.tech-icon (@tech) {
+.tech-icon-bg (@tech) {
   background-image: url("../img/icons/techs/@{tech}.png");
 }
 
@@ -183,36 +183,54 @@ body, p, a {
       .tech {
         font-weight: bold;
         //font-style: italic;
-        &.icon {
-          padding-left: 28px;
-          background-repeat: no-repeat;
-          background-position: 2px center;
-        }
-        &.rails {
-          .tech-icon(rails);
-        }
-        &.backbone {
-          .tech-icon(backbone);
-          padding-left: 24px;
-        }
-        &.zend-framework {
-          .tech-icon(zend-framework);
-        }
-        &.symfony2 {
-          .tech-icon(symfony2);
-        }
-        &.drupal {
-          .tech-icon(drupal);
-          padding-left: 24px;
-        }
-        &.jquery {
-          .tech-icon(jquery);
-        }
       }
     }
 
-  }
-}
+    .tech-with-icon {
+      padding-left: 28px;
+      background-repeat: no-repeat;
+      background-position: 2px center;
+      &.rails {
+        .tech-icon-bg(rails);
+      }
+      &.backbone {
+        .tech-icon-bg(backbone);
+        padding-left: 24px;
+      }
+      &.zend-framework {
+        .tech-icon-bg(zend-framework);
+      }
+      &.symfony2 {
+        .tech-icon-bg(symfony2);
+      }
+      &.drupal {
+        .tech-icon-bg(drupal);
+        padding-left: 24px;
+      }
+      &.jquery {
+        .tech-icon-bg(jquery);
+      }
+      &.silex {
+        .tech-icon-bg(silex);
+      }
+      &.grunt {
+        .tech-icon-bg(grunt);
+      }
+      &.robotlegs {
+        .tech-icon-bg(robotlegs);
+      }
+      &.perl {
+        .tech-icon-bg(perl);
+      }
+//      &.mongodb {
+//        .tech-icon-bg(mongodb);
+//        padding-left: 20px;
+//      }
+    }
+
+  }//end #main-panel
+  
+}//end #main
 
 
 
