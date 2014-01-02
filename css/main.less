@@ -52,12 +52,17 @@ body, p, a {
 
   #misc-info {
     width: 240px;
-    /*float: left;*/
     /*border: solid blue 1px;*/
     padding-top: 3em;
     display: table-cell;
     vertical-align: top;
     background-color: #800000;
+    min-height: 100%;
+    
+    // <IE8 fix
+    .lt-ie8 & {
+      float: left;
+    }
 
     .logo-container {
       text-align: center;
@@ -94,13 +99,17 @@ body, p, a {
 
   #main-panel {
     width: 710px;
-    /*float: right;*/
     display: table-cell;
     vertical-align: top;
     padding-left: 25px;
     padding-top: 2em;
     padding-bottom: 3em;
     /*border: solid black 1px;*/
+
+    // <IE8 fix
+    .lt-ie8 & {
+      float: right;
+    }
 
     h1 {
       color: black;

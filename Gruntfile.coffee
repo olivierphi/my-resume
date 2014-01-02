@@ -88,5 +88,9 @@ module.exports = (grunt)->
     grunt.task.run(['less:development', 'exec:generate-page'])
   )
 
+  grunt.registerTask('deploy', ()->
+    grunt.task.run(['sftp'])
+  )
+
   # Default task(s).
   grunt.registerTask('default', ['compile-all-prod'])

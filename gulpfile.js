@@ -28,7 +28,7 @@ gulp.task('setup', function () {
 // end setup
 
 // LESS stuff
-gulp.task('less', function () {
+gulp.task('less', ['setup'], function () {
     
     var LESS_OPTS = DEV ? {} : { compress: true } ;
     
@@ -43,36 +43,40 @@ gulp.task('less', function () {
     
     stream.pipe(gulp.dest('css/'))
           .pipe(refresh(server));//LiveReload refresh
+
+    return stream;
     
 });
 // end LESS
 
 // Exec stuff
-gulp.task('generate-page', function() {
+gulp.task('generate-page', ['setup'], function() {
     var options = {
         env: ENV
     };
-    gulp.src('.')
+    var stream = gulp.src('.')
         .pipe(exec('python gen.py <%= options.env %>', options))
         .pipe(refresh(server));//LiveReload refresh
+
+    return stream;
 });
 // end exec
 
 
 gulp.task('compile-all', function () {
-   gulp.run('setup', 'less', 'generate-page');
+   gulp.run('less', 'generate-page');
 });
 
 gulp.task('default', function () {
-   gulp.run('setup', 'compile-all');
+   gulp.run('compile-all');
 });
 
 gulp.task('deploy', function () {
    gulp.env.production = true;//we force the "production" mode for this task!
-   gulp.run('setup', 'compile-all', 'grunt-sftp');
+   gulp.run('compile-all', 'grunt-sftp');
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', ['setup'], function () {
     
     var LESS_FILES = ['css/*.less'];
     var HTML_RELATED_FILES = ['gen.py', 'template.jinja', 'data/**/*.yml'];
@@ -80,12 +84,10 @@ gulp.task('watch', function () {
     gulp.watch(LESS_FILES, function(event) {
         console.log('File '+event.path+' was '+event.type+', running tasks...');
         gulp.run('less');
-        console.log('LiveReload server refresh...');
     });
     gulp.watch(HTML_RELATED_FILES, function(event) {
         console.log('File '+event.path+' was '+event.type+', running tasks...');
         gulp.run('generate-page');
-        console.log('LiveReload server refresh...');
     });
     
     

@@ -128,12 +128,15 @@ a {
 }
 #main #misc-info {
   width: 240px;
-  /*float: left;*/
   /*border: solid blue 1px;*/
   padding-top: 3em;
   display: table-cell;
   vertical-align: top;
   background-color: #800000;
+  min-height: 100%;
+}
+.lt-ie8 #main #misc-info {
+  float: left;
 }
 #main #misc-info .logo-container {
   text-align: center;
@@ -166,13 +169,15 @@ a {
 }
 #main #main-panel {
   width: 710px;
-  /*float: right;*/
   display: table-cell;
   vertical-align: top;
   padding-left: 25px;
   padding-top: 2em;
   padding-bottom: 3em;
   /*border: solid black 1px;*/
+}
+.lt-ie8 #main #main-panel {
+  float: right;
 }
 #main #main-panel h1 {
   color: black;
