@@ -1,10 +1,9 @@
 
 ssh-config.json
 
-img/icons/raw
-img/icons/headers/*.svg
+src/assets/img/icons/headers/*.svg
 
-css/*.css
+bin/*
 
 node_modules/
 

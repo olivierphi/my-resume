@@ -1,0 +1,12 @@
+{
+  "name": "Resume---HTML-pages-generation",
+  "version": "0.1.0",
+  "dependencies": {
+    "coffee-script": "~1.6.3",
+    "optimist": "~0.6.0",
+    "jade": "~1.0.2",
+    "lodash": "~2.4.1",
+    "yaml-js": "0.0.8",
+    "moment": "~2.5.0"
+  }
+}

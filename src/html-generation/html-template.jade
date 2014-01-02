@@ -1,0 +1,189 @@
+doctype html
+//[if lt IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=#{lang}><![endif]
+//[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8" lang=#{lang}><![endif]
+//[if IE 8]><html lang="en" class="no-js lt-ie9" lang=#{lang}><![endif]
+//[if gt IE 8]><!
+html(class="no-js", lang=lang)
+    // <![endif]
+    
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="language", content=lang)
+        title  
+            | Olivier Philippon - 
+            = translate('title')
+        meta(name="description", content="Olivier Philippon - Web Developer since 1999 - Ruby, Ruby on Rails, CoffeeScript, JavaScript, PHP, Flash freelance developer")
+        meta(http-equiv="last-modified", content=moment.format('ddd, DD MMM YYYY HH:mm:ss Z'))
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        link(rel="stylesheet", href="css/normalize.css")
+        if env == 'development'
+            link(rel="stylesheet", href="css/main.css")
+        else
+            link(rel="stylesheet", href="css/main.min.css")
+        link(href='http://fonts.googleapis.com/css?family=Marcellus',rel='stylesheet',type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Lobster+Two',rel='stylesheet', type='text/css')
+
+        script(src="js/vendor/modernizr-2.6.2.min.js")
+    
+    body
+        //[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+
+        #main.clearfix
+            #pdf-download
+                a(href='cv-olivier-philippon.' + lang + '.pdf')
+                 = translate('download')
+            //- end #pdf-download 
+            
+            #language-selector
+                span language: 
+                if lang === 'fr'
+                    a(href='?lang=en') EN
+                    span  FR
+                else
+                    span EN 
+                    a(href='?lang=fr') FR
+            //- end #language-selector 
+        
+            section#misc-info
+                .logo-container
+                    span.rougemine-logo
+                    a(href='http://rougemine.com', target='_blank') rougemine.com
+                    br
+                section
+                    span.header-icon
+                        img(src='img/icons/headers/user.png', alt='me')
+                    | Olivier Philippon
+                    br
+                    = translate('birth')
+                    br
+                    | 68 blvd St-Marcel
+                    br
+                    | 75005 Paris
+                    br
+                    != translate('france')
+                    a(href='mailto:olivier@rougemine.com') olivier@rougemine.com
+                    br
+                    | Tel : +33 6 61 78 99 25
+                section
+                    span.header-icon
+                        img(src='img/icons/headers/github.png', alt='GitHub')
+                    h3!= translate('open_source_projects')
+                    a(href='https://github.com/DrBenton', target='_blank') github.com/DrBenton
+                section
+                    span.header-icon
+                        img(src='img/icons/headers/ruler.png', alt='school')
+                    h3!= translate('education')
+                    | 1998-2000 : DUT S.R.C
+                    br
+                    i= translate('SRC')
+                    br
+                    | 1998: 
+                    = translate('bac')
+                section
+                    span.header-icon
+                        img(src='img/icons/headers/chat.png', alt='languages')
+                    h3!= translate('languages')
+                    = translate('language_english')
+                    br
+                    = translate('language_spanish')
+                section
+                    span.header-icon
+                        img(src='img/icons/headers/fave.png', alt='hobbies')
+                    h3!= translate('hobbies')
+                    != translate('hobbies_content')
+                section
+                    span.header-icon
+                        img(src='img/icons/headers/teaching.png', alt='teaching')
+                    h3!= translate('teaching')
+                    != translate('teaching_content')
+            // end #misc-info 
+
+            section#main-panel
+                h1 Olivier Philippon
+                h2!= translate('digging')
+                section.skills
+                    h3
+                        img(src='img/icons/headers/tool-red.png', alt='')
+                        = translate('main_skills')
+                    .technologies-container.clearfix
+                        each tech in technologies
+                            .tech.clearfix
+                                span.icon
+                                    img(src='img/icons/techs/'+tech.icon+'.png', alt=tech.title)
+                                span.title
+                                    if tech['url']
+                                        a(href=tech.url, target='_blank')
+                                            if tech.title instanceof Array
+                                                = tech.title.join(' / ')
+                                            else
+                                                = tech.title
+                                    else
+                                     = tech.title
+                                if tech['contributor-url']
+                                    .contributor
+                                        a(href=tech['contributor-url'], target='_blank')
+                                            = translate('contributor')
+                    //- end .technologies-container 
+                    
+                    .my-favorite-tech
+                        = translate('favorite_language')
+                        i JavaScript + Python + Ruby = 
+                        a(href='http://coffeescript.org', target='_blank') CoffeeScript
+                        | ♥
+                    //- end .my-favorite-tech
+                    
+                    .tools
+                        h4= translate('tools')
+                        each tool, index in tools
+                            - separator = index === (tools.length-1) ? '...' : ', '
+                            if tool['url']
+                                a(href=tool.url, target='_blank')= tool.title
+                                = separator
+                            else
+                                = tool.title
+                                = separator
+                    //- end .tools
+                
+                //- end .skills 
+
+                section.experience
+                    h3
+                        img(src='img/icons/headers/video-red.png', alt='')
+                        = translate('job_experience')
+                    ul
+                        each xp in experiences
+                            li
+                                span.heading #{xp.period} : 
+                                != xp.content
+                //- end .experience 
+                
+                section.works
+                    h3
+                        img(src='img/icons/headers/lab-red.png', alt='')
+                        = translate('works')
+                    ul
+                        each work in works
+                            li
+                                span.heading #{work.title} :
+                                != work.content
+                //- end .works 
+            
+            // end #main-panel 
+        
+        // end #main 
+
+        if env == 'production'
+            // Google Analytics 
+            script.
+                (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+                e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+                e.src='//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+                ga('create','#{misc.gaUid}');ga('send','pageview');
+    
+        if env == 'development'
+            script(src='http://localhost:35729/livereload.js')
