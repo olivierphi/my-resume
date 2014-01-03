@@ -3,7 +3,7 @@ mixin techDisplay(techData)
     if techData['url']
         if techData['url'] instanceof Array
             each subTechUrl, subTechIndex in techData['url']
-                - subTechsSeparator = subTechIndex === (techData['url'].length-1) ? '' : ' / '
+                - var subTechsSeparator = subTechIndex === (techData['url'].length-1) ? '' : ' / '
                 a(href=subTechUrl, target='_blank')
                     = techData.title[subTechIndex]
                 | #{subTechsSeparator}
@@ -15,9 +15,9 @@ mixin techDisplay(techData)
 
 //- Go!
 doctype html
-//[if lt IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=#{lang}><![endif]
-//[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8" lang=#{lang}><![endif]
-//[if IE 8]><html lang="en" class="no-js lt-ie9" lang=#{lang}><![endif]
+//[if lt IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7" lang="#{lang}"><![endif]
+//[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8" lang="#{lang}"><![endif]
+//[if IE 8]><html lang="en" class="no-js lt-ie9" lang="#{lang}"><![endif]
 //[if gt IE 8]><!
 html(class="no-js", lang=lang)
     // <![endif]
@@ -26,21 +26,25 @@ html(class="no-js", lang=lang)
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="language", content=lang)
-        title  
-            | Olivier Philippon - 
-            = translate('title')
+        link(rel="canonical" href="http://rougemine.com/?lang=#{lang}")
+        title Olivier Philippon - #{translate('title')}
         meta(name="description", content="Olivier Philippon - Web Developer since 1999 - Ruby, Ruby on Rails, CoffeeScript, JavaScript, PHP, Flash freelance developer")
-        meta(http-equiv="last-modified", content=moment.format('ddd, DD MMM YYYY HH:mm:ss Z'))
+        meta(http-equiv="last-modified", content="#{moment.clone().utc().format('ddd, DD MMM YYYY HH:mm:ss')} GMT")
         meta(name="viewport", content="width=device-width, initial-scale=1")
 
         link(rel="stylesheet", href="css/normalize.css")
+        
+        //- Our CSS file (minified or not)
         if env == 'development'
             link(rel="stylesheet", href="css/main.css")
         else
             link(rel="stylesheet", href="css/main.min.css")
+        
+        //- Web Fonts
         link(href='http://fonts.googleapis.com/css?family=Marcellus',rel='stylesheet',type='text/css')
         link(href='http://fonts.googleapis.com/css?family=Lobster+Two:400italic',rel='stylesheet', type='text/css')
 
+        //- Modernizr FTW!
         script(src="js/vendor/modernizr-2.6.2.min.js")
     
     body
@@ -141,7 +145,7 @@ html(class="no-js", lang=lang)
                     .other-technologies.clearfix
                         h4= translate('other_skills')
                         each tech, index in technologies.others
-                            - separator = index === (technologies.others.length-1) ? ' ...' : ', '
+                            - var separator = index === (technologies.others.length-1) ? ' ...' : ', '
                             span(class=['tech-with-icon', tech.icon])
                                 +techDisplay(tech)
                                 if tech['contributor-url']
@@ -163,7 +167,7 @@ html(class="no-js", lang=lang)
                     .tools
                         h4= translate('tools')
                         each tool, index in tools
-                            - separator = index === (tools.length-1) ? '...' : ', '
+                            - var separator = index === (tools.length-1) ? '...' : ', '
                             if tool['url']
                                 a(href=tool.url, target='_blank')= tool.title
                                 = separator
@@ -212,3 +216,6 @@ html(class="no-js", lang=lang)
     
         if env == 'development'
             script(src='http://localhost:35729/livereload.js')
+                
+        | 
+        | <!-- Generated (with love) by Jade on #{moment.format('YYYY-MM-DD HH:mm:ss Z')} -->

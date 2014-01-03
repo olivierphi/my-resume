@@ -1,5 +1,19 @@
 module.exports = (grunt)->
 
+  # Misc init setup...
+  SRC = "src/"
+  BIN = "bin/"
+  SRC_ASSETS= "#{SRC}/assets/"
+  BIN_ASSETS = "#{BIN}"
+  
+  # If we want to use CS interpolation in hashs keys, we have to do this... :-/
+  LESS_FILE_PATH = "#{SRC_ASSETS}css/main.less"
+  LESS_FILES_DEV = {}
+  LESS_FILES_DEV["#{BIN_ASSETS}css/main.css"] = LESS_FILE_PATH
+  LESS_FILES_PROD = {}
+  LESS_FILES_PROD["#{BIN_ASSETS}css/main.min.css"] = LESS_FILE_PATH
+  
+  
   # Project configuration.
   grunt.initConfig({
 
@@ -8,9 +22,7 @@ module.exports = (grunt)->
       development: {
         options: {
         }
-        files: {
-          "css/main.css": "css/main.less"
-        }
+        files: LESS_FILES_DEV
       } # end less:development
       production: {
         options: {
@@ -18,9 +30,7 @@ module.exports = (grunt)->
           cleancss: true
           strictImports: true
         }
-        files: {
-          "css/main.min.css": "css/main.less"
-        }
+        files: LESS_FILES_PROD
       } # end less:production
     }
     # end LESS
@@ -32,23 +42,15 @@ module.exports = (grunt)->
         livereload: true
       }
       "less": {
-        files: ['css/*.less']
+        files: ["#{SRC_ASSETS}css/*.less"]
         tasks: ['less']
       }
-      "jinja-template": {
-        files: ['gen.py', 'template.jinja', 'data/**/*.yml']
-        tasks: ['exec:generate-page']
+      "html-template": {
+        files: ["#{SRC}html-generation/*.*", 'template.jinja', "#{SRC}data/**/*.yml"]
+        tasks: ['generate-page']
       }
     }
     # end watch
-
-    # Exec stuff
-    exec: {
-      "generate-page": {
-        cmd: "python gen.py <%= env %>"
-      }
-    }
-    # end exec
 
     # Deployment stuff
     sshconfig: {
@@ -57,10 +59,11 @@ module.exports = (grunt)->
     sftp: {
       rougemine: {
         files: {
-          "./": ["index.php", "index.fr.html", "index.en.html", "css/main.min.css"]
+          "./": ["#{BIN}index.php", "#{BIN}index.fr.html", "#{BIN}index.en.html", "#{BIN}css/main.min.css"]
         }
         options: {
           config: 'rougemine'
+          srcBasePath: BIN
         }
       }
     }
@@ -80,12 +83,17 @@ module.exports = (grunt)->
   # Custom tasks
   grunt.registerTask('compile-all-prod', ()->
     grunt.config('env', 'production')
-    grunt.task.run(['less:production', 'exec:generate-page'])
+    grunt.task.run(['less:production', 'generate-page'])
   )
 
   grunt.registerTask('compile-all-dev', ()->
     grunt.config('env', 'development')
-    grunt.task.run(['less:development', 'exec:generate-page'])
+    grunt.task.run(['less:development', 'generate-page'])
+  )
+
+  grunt.registerTask('generate-page', ()->
+    htmlGeneration = require "./src/html-generation"
+    htmlGeneration.generatePages(grunt.config('env'))
   )
 
   grunt.registerTask('deploy', ()->
