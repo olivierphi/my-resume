@@ -95,6 +95,13 @@ body, p, a {
       color: white;
     }
 
+    .twitter-link {
+      display: inline-block;
+      background: url("../img/icons/headers/twitter.png") -5px -2px no-repeat;
+      padding-left: 23px;
+      margin-top: 8px;
+    }
+    
   }
 
   #main-panel {
@@ -169,6 +176,12 @@ body, p, a {
       }
     }
 
+    .other-technologies {
+      .tech-with-icon {
+        line-height: 1.8;
+      }
+    }
+    
     .my-favorite-tech {
       margin: 1.5em 0;
       background: url(../img/icons/laurel.png) 0 0 no-repeat;
@@ -200,6 +213,9 @@ body, p, a {
       &.zend-framework {
         .tech-icon-bg(zend-framework);
       }
+      &.requirejs {
+        .tech-icon-bg(requirejs);
+      }
       &.symfony2 {
         .tech-icon-bg(symfony2);
       }
@@ -212,6 +228,15 @@ body, p, a {
       }
       &.silex {
         .tech-icon-bg(silex);
+      }
+      &.less {
+        .tech-icon-bg(less);
+      }
+      &.flash {
+        .tech-icon-bg(flash);
+      }
+      &.mysql {
+        .tech-icon-bg(mysql);
       }
       &.grunt {
         .tech-icon-bg(grunt);

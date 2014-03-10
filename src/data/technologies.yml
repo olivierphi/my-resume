@@ -1,10 +1,10 @@
 main:
   -
-        title: JavaScript
-        icon: javascript
-  -
         title: PHP
         icon: php
+  -
+        title: JavaScript
+        icon: javascript
   -
         title: HTML / CSS
         icon: html5
@@ -29,12 +29,9 @@ main:
         icon: zend-framework
         url: http://www.zendframework.com/
   -
-        title: MySQL
-        icon: mysql
-        url: http://www.mysql.com/
-  -
-        title: Flash
-        icon: flash
+        title: Laravel
+        icon: laravel
+        url: http://www.laravel.com/
   -
         title: CoffeeScript
         icon: coffeescript
@@ -54,29 +51,37 @@ main:
         title: Backbone.js
         icon: backbone
         url: http://backbonejs.org/
+        url: http://requirejs.org/
+
+others:
   -
         title: Require.js
         icon: requirejs
         url: http://requirejs.org/
-  -
-        title: [LESS, SASS]
-        icon: less
-        url: ["http://lesscss.org/", "http://sass-lang.com/"]
-
-others:
-  -
-        title: Drupal
-        icon: drupal
-        url: http://drupal.org/
   -
         title: Silex
         icon: silex
         url: http://silex.sensiolabs.org/
         contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
   -
+        title: Drupal
+        icon: drupal
+        url: http://drupal.org/
+  -
+        title: MySQL
+        icon: mysql
+        url: http://www.mysql.com/
+  -
         title: [Grunt, Gulp]
         icon: grunt
         url: ["http://gruntjs.com", "http://gulpjs.com/"]
+  -
+        title: [LESS, SASS]
+        icon: less
+        url: ["http://lesscss.org/", "http://sass-lang.com/"]
+  -
+        title: Flash
+        icon: flash
   -
         title: Robotlegs
         icon: robotlegs

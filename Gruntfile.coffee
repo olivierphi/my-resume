@@ -5,14 +5,7 @@ module.exports = (grunt)->
   BIN = "bin/"
   SRC_ASSETS= "#{SRC}/assets/"
   BIN_ASSETS = "#{BIN}"
-  
-  # If we want to use CS interpolation in hashs keys, we have to do this... :-/
-  LESS_FILE_PATH = "#{SRC_ASSETS}css/main.less"
-  LESS_FILES_DEV = {}
-  LESS_FILES_DEV["#{BIN_ASSETS}css/main.css"] = LESS_FILE_PATH
-  LESS_FILES_PROD = {}
-  LESS_FILES_PROD["#{BIN_ASSETS}css/main.min.css"] = LESS_FILE_PATH
-  
+    
   
   # Project configuration.
   grunt.initConfig({
@@ -22,7 +15,10 @@ module.exports = (grunt)->
       development: {
         options: {
         }
-        files: LESS_FILES_DEV
+        files: [{
+          src: "#{BIN_ASSETS}css/main.css"
+          dest: "#{SRC_ASSETS}css/main.less"
+        }]
       } # end less:development
       production: {
         options: {
@@ -30,7 +26,10 @@ module.exports = (grunt)->
           cleancss: true
           strictImports: true
         }
-        files: LESS_FILES_PROD
+        files: [{
+          src: "#{BIN_ASSETS}css/main.min.css"
+          dest: "#{SRC_ASSETS}css/main.less"
+        }]
       } # end less:production
     }
     # end LESS

@@ -88,6 +88,9 @@ html(class="no-js", lang=lang)
                     a(href='mailto:olivier@rougemine.com') olivier@rougemine.com
                     br
                     | Tel : +33 6 61 78 99 25
+                    br
+                    a(href='https://twitter.com/RougeMine', class='twitter-link', target='_blank')
+                        | twitter.com/RougeMine
                 section
                     span.header-icon
                         img(src='img/icons/headers/github.png', alt='GitHub')
@@ -157,12 +160,13 @@ html(class="no-js", lang=lang)
                             = separator 
                     //- end .other-technologies
                     
-                    .my-favorite-tech
-                        | #{translate('favorite_language')} : 
-                        i JavaScript + Python + Ruby = 
-                        a(href='http://coffeescript.org', target='_blank') CoffeeScript
-                        |  ♥
-                    //- end .my-favorite-tech
+                    //-
+                        .my-favorite-tech
+                            | #{translate('favorite_language')} : 
+                            i JavaScript + Python + Ruby = 
+                            a(href='http://coffeescript.org', target='_blank') CoffeeScript
+                            |  ♥
+                        //- end .my-favorite-tech
                     
                     .tools
                         h4= translate('tools')
@@ -196,7 +200,7 @@ html(class="no-js", lang=lang)
                     ul
                         each work in works
                             li
-                                span.heading #{work.title} :
+                                span.heading #{work.title} : 
                                 != work.content
                 //- end .works 
             
