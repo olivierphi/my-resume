@@ -24,7 +24,7 @@ BIN = "./bin/"
 SRC_ASSETS= "#{SRC}/assets/"
 
 # Setup stuff
-gulp.task "setup", ->
+gulp.task "setup", ["clean"], ->
   PROD = !!gulp.env.production
   DEV = not PROD
   ENV = if PROD then "production" else "development"
@@ -33,8 +33,8 @@ gulp.task "setup", ->
 
 # Clean stuff
 gulp.task "clean", [], ->
-  stream = gulp.src(BIN).pipe(clean())
-  stream
+  #stream = gulp.src(BIN).pipe(clean())
+  #stream
 # end clean
 
 # Copy stuff
@@ -91,7 +91,7 @@ gulp.task "generate-page", ["setup"], ->
 
 
 gulp.task "compile-all", ->
-  gulp.run "clean", "copy-assets-to-bin", "less", "generate-page"
+  gulp.run "copy-assets-to-bin", "less", "generate-page"
 
 gulp.task "default", ->
   gulp.run "compile-all"

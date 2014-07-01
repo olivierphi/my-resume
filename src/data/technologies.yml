@@ -1,13 +1,17 @@
 main:
   -
-        title: PHP
-        icon: php
-  -
         title: JavaScript
         icon: javascript
   -
+        title: PHP
+        icon: php
+  -
         title: HTML / CSS
         icon: html5
+  -
+        title: Node.js
+        icon: nodejs
+        url: http://nodejs.org
   -
         title: Ruby
         icon: ruby
@@ -17,10 +21,6 @@ main:
         icon: rails
         url: http://rubyonrails.org
   -
-        title: Node.js
-        icon: nodejs
-        url: http://nodejs.org
-  -
         title: Symfony 2
         icon: symfony2
         url: http://symfony.com
@@ -29,9 +29,14 @@ main:
         icon: zend-framework
         url: http://www.zendframework.com/
   -
-        title: Laravel
-        icon: laravel
-        url: http://www.laravel.com/
+        title: Silex
+        icon: silex
+        url: http://silex.sensiolabs.org/
+        contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
+#  -
+#        title: Laravel
+#        icon: laravel
+#        url: http://www.laravel.com/
   -
         title: CoffeeScript
         icon: coffeescript
@@ -58,11 +63,6 @@ others:
         title: Require.js
         icon: requirejs
         url: http://requirejs.org/
-  -
-        title: Silex
-        icon: silex
-        url: http://silex.sensiolabs.org/
-        contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
   -
         title: Drupal
         icon: drupal

@@ -1,4 +1,8 @@
 -
+        title: LeMonde.fr
+        content: >
+            <span class="tech-with-icon nodejs">Node.js</span>, <span class="tech-with-icon backbone">Backbone</span> and PHP developer at <a href="http://www.lemonde.fr/" target="_blank">LeMonde.fr</a>, one of the main French news web site.
+-
         title: Ruby on Rails Mail App
         content: >
             Development of a mass mailing Web application for TV France International,

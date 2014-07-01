@@ -14,6 +14,9 @@
     title: "Git"
     url: "http://git-scm.com/"
 -    
+    title: "Docker"
+    url: "http://www.docker.com/"
+-
     title: "Vagrant"
     url: "http://vagrantup.com/"
 -

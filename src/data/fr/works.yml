@@ -1,4 +1,8 @@
 -
+        title: Projets internes@LeMonde.fr
+        content: >
+            Développeur <span class="tech-with-icon nodejs">Node.js</span>, <span class="tech-with-icon backbone">Backbone</span> et PHP chez <a href="http://www.lemonde.fr/" target="_blank">LeMonde.fr</a>
+-
         title: Ruby on Rails Mail App
         content: >
             Développement d'une application Web de <i>mass mailing</i> pour TV France International,
