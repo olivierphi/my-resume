@@ -1,25 +1,13 @@
 main:
   -
-        title: JavaScript
-        icon: javascript
-  -
         title: PHP
         icon: php
   -
+        title: JavaScript
+        icon: javascript
+  -
         title: HTML / CSS
         icon: html5
-  -
-        title: Node.js
-        icon: nodejs
-        url: http://nodejs.org
-  -
-        title: Ruby
-        icon: ruby
-        url: http://www.ruby-lang.org
-  -
-        title: Ruby on Rails
-        icon: rails
-        url: http://rubyonrails.org
   -
         title: Symfony 2
         icon: symfony2
@@ -33,6 +21,18 @@ main:
         icon: silex
         url: http://silex.sensiolabs.org/
         contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
+  -
+        title: Node.js
+        icon: nodejs
+        url: http://nodejs.org
+  -
+        title: Ruby
+        icon: ruby
+        url: http://www.ruby-lang.org
+  -
+        title: Ruby on Rails
+        icon: rails
+        url: http://rubyonrails.org
 #  -
 #        title: Laravel
 #        icon: laravel
@@ -60,13 +60,13 @@ main:
 
 others:
   -
-        title: Require.js
-        icon: requirejs
-        url: http://requirejs.org/
+        title: [PHPUnit, Behat]
+        icon: behat
+        url: ["https://phpunit.de/", "http://behat.org/"]
   -
-        title: Drupal
-        icon: drupal
-        url: http://drupal.org/
+        title: Doctrine
+        icon: doctrine
+        url: http://www.doctrine-project.org/
   -
         title: MySQL
         icon: mysql
@@ -79,6 +79,14 @@ others:
         title: [LESS, SASS]
         icon: less
         url: ["http://lesscss.org/", "http://sass-lang.com/"]
+  -
+        title: Require.js
+        icon: requirejs
+        url: http://requirejs.org/
+  -
+        title: Drupal
+        icon: drupal
+        url: http://drupal.org/
   -
         title: Flash
         icon: flash
