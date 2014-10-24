@@ -26,29 +26,6 @@ main:
         icon: nodejs
         url: http://nodejs.org
   -
-        title: Ruby
-        icon: ruby
-        url: http://www.ruby-lang.org
-  -
-        title: Ruby on Rails
-        icon: rails
-        url: http://rubyonrails.org
-#  -
-#        title: Laravel
-#        icon: laravel
-#        url: http://www.laravel.com/
-  -
-        title: CoffeeScript
-        icon: coffeescript
-        url: http://coffeescript.org
-  #-
-  #      title: Python
-  #      icon: python
-  #-
-  #      title: Django
-  #      icon: django
-  #      url: http://djangoproject.com
-  -
         title: jQuery
         icon: jquery
         url: http://jquery.com/
@@ -57,12 +34,24 @@ main:
         icon: backbone
         url: http://backbonejs.org/
         url: http://requirejs.org/
+  -
+        title: CoffeeScript
+        icon: coffeescript
+        url: http://coffeescript.org
+  -
+        title: Ruby
+        icon: ruby
+        url: http://www.ruby-lang.org
+  -
+        title: Ruby on Rails
+        icon: rails
+        url: http://rubyonrails.org
 
 others:
   -
-        title: [PHPUnit, Behat]
+        title: [phpspec, Behat]
         icon: behat
-        url: ["https://phpunit.de/", "http://behat.org/"]
+        url: ["http://www.phpspec.net/", "http://behat.org/"]
   -
         title: Doctrine
         icon: doctrine
