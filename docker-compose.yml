@@ -1,0 +1,29 @@
+wwwdata:
+  build: .
+  # for prod:
+  # image: rougemine/resume_wwwdata
+  volumes:
+    - /www-data
+
+nginx:
+  image: nginx:1.7
+  volumes_from:
+    - wwwdata
+  volumes:
+    - docker/nginx/shared/sites-enabled/:/etc/nginx/conf.d/:ro
+  ports:
+    - 80:80
+  links:
+    - phpfpm:webstack_phpfpm
+
+phpfpm:
+  image: php:5.6-fpm
+  volumes_from:
+    - wwwdata
+  working_dir: /www-data
+
+# Save the "wwwdata" Docker image with:
+# `docker save --output resume_wwwdata.tar rougemine/resume_wwwdata`
+# (after having tagged it with `docker tag [local Docker Compose image name] rougemine/resume_wwwdata`)
+# Copy it to the server, then load it there with:
+# `docker load -i resume_wwwdata.tar`

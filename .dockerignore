@@ -1,0 +1,5 @@
+.git/
+.idea/
+.vagrant/
+node_modules/
+src/
