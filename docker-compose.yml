@@ -1,3 +1,5 @@
+# Runtime containers
+
 wwwdata:
   build: .
   # for prod:
@@ -27,3 +29,14 @@ phpfpm:
 # (after having tagged it with `docker tag [local Docker Compose image name] rougemine/resume_wwwdata`)
 # Copy it to the server, then load it there with:
 # `docker load -i resume_wwwdata.tar`
+
+# Build containers
+nodejs:
+  image: node:0.10-slim
+
+gulp:
+  image: node:0.10-slim
+  volumes:
+    - .:/app
+  working_dir: /app
+  entrypoint: ['./node_modules/.bin/gulp']
