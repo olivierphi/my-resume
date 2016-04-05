@@ -1,0 +1,17 @@
+{
+  "name": "rougemine/website",
+  "description": "Rougemine.com web site",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Olivier Philippon",
+      "email": "olivier@rougemine.com"
+    }
+  ],
+  "require": {
+    "leafo/scssphp": "^0.6.3",
+    "codegyre/robo": "^0.7.1",
+    "twig/twig": "^1.24"
+  }
+}
