@@ -1,5 +1,6 @@
 /vendor/*
 
+/web/img
 /web/*.html
 /web/css/*
 !/web/css/.gitkeep

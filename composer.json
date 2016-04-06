@@ -9,9 +9,16 @@
       "email": "olivier@rougemine.com"
     }
   ],
+  "autoload": {
+    "psr-4": {"Rougemine\\": "src/Rougemine"}
+  },
   "require": {
     "leafo/scssphp": "^0.6.3",
     "codegyre/robo": "^0.7.1",
-    "twig/twig": "^1.24"
+    "twig/twig": "^1.24",
+    "symfony/translation": "^3.0",
+    "symfony/finder": "^3.0",
+    "symfony/yaml": "^3.0",
+    "symfony/dependency-injection": "^3.0"
   }
 }

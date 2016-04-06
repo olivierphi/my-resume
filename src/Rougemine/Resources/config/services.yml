@@ -1,0 +1,22 @@
+parameters:
+    translations.path: '%app.dir%/src/Rougemine/resources/translations'
+
+services:
+
+    app.generator.presenter.document_properties:
+        class: Rougemine\Resume\Generator\Presenter\DocumentPropertiesGenerator
+        arguments:
+            - '@app.translator'
+
+    app.translator:
+        class: Symfony\Component\Translation\Translator
+        arguments:
+        - 'en'
+        calls:
+            - [addLoader, ['yaml', '@app.translation.loader']]
+            - [addResource, ['yaml', '%translations.path%/messages.en.yml', 'en']]
+            - [addResource, ['yaml', '%translations.path%/messages.fr.yml', 'fr']]
+
+    app.translation.loader:
+        class: Symfony\Component\Translation\Loader\YamlFileLoader
+        public: false
