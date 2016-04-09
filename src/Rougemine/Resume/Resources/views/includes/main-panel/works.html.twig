@@ -1,0 +1,16 @@
+
+<section class="works-container">
+    <h3>
+        <img src="img/icons/headers/lab-red.png" alt="">
+        {{ 'works'|trans }}
+    </h3>
+
+    <ul>
+        {% for work in works.works %}
+            <li>
+                <span class="heading">{{ work.title }} :</span>
+                {{ work.content|raw }}
+            </li>
+        {% endfor %}
+    </ul>
+</section>{# end .works-container #}

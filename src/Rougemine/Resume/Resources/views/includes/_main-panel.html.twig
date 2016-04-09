@@ -3,64 +3,9 @@
 <h1>{{ me.name }}</h1>
 <h2>{{ document.punchline }}</h2>
 
-<section class="skills-container">
-    <h3>
-        <img src="img/icons/headers/tool-red.png" alt="">
-        {{ 'main_skills'|trans }}
-    </h3>
+{{ include('includes/main-panel/skills.html.twig') }}
 
-    <div class="main-technologies-container">
-        {% for technology in technologies.mainTechnologies %}
-            <div class="tech clearfix">
-                <span class="icon">
-                    <img src="img/icons/techs/{{ technology.icon }}.png" alt="{{ technology.title }}">
-                </span>
-                <span class="title">
-                    {{ macros.techDisplay(technology) }}
-                </span>
-                {% if technology.hasContributorUrl() %}
-                    {{ macros.techContributorDisplay(technology, document.language) }}
-                {% endif %}
-            </div>
-        {% endfor %}
-    </div>{# end .main-technologies-container #}
+{{ include('includes/main-panel/job-experience.html.twig') }}
 
-    <div class="other-technologies-container">
-        <h4>{{ 'other_skills'|trans }}</h4>
-        {% for technology in technologies.otherTechnologies %}
-            <span class="tech-with-icon {{ technology.icon }}">
-                {{ macros.techDisplay(technology) }}
-                {% if technology.hasContributorUrl() %}
-                    {{ macros.techContributorDisplay(technology, document.language) }}
-                {% endif %}
-            </span>
-            {% if not loop.last %}, {% endif %}
-        {% endfor %}
-    </div>{# end .other-technologies-container #}
+{{ include('includes/main-panel/works.html.twig') }}
 
-    <div class="tools-container">
-        <h4>{{ 'tools'|trans }}</h4>
-        {% for tool in technologies.tools %}
-            {{ macros.toolDisplay(tool) }}
-            {{- loop.last ? '...' : ', ' -}}
-        {% endfor %}
-
-    </div>{# end .tools-container #}
-
-</section>{# end .skills-container #}
-
-<section class="jobs-experience-container">
-    <h3>
-        <img src="img/icons/headers/video-red.png" alt="">
-        {{ 'job_experience'|trans }}
-    </h3>
-
-    <ul>
-        {% for jobsXP in jobsExperience.jobsExperiences %}
-            <li>
-                <span class="heading">{{ jobsXP.period }}</span>
-                {{ jobsXP.content|raw }}
-            </li>
-        {% endfor %}
-    </ul>
-</section>{# end .jobs-experience-container #}

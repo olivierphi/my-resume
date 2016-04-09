@@ -3,7 +3,6 @@
 namespace Rougemine\Resume\Generator\Presenter;
 
 use Rougemine\Resume\Model\Presenter\JobsExperiences;
-use Rougemine\Resume\Model\Presenter\Technologies;
 use Rougemine\Resume\Model\ValueObject\JobExperience;
 use Symfony\Component\Yaml\Yaml;
 
@@ -24,7 +23,7 @@ class JobsExperienceGenerator
     }
 
     /**
-     * @return Technologies
+     * @return JobsExperiences
      */
     public function getJobsExperience($language)
     {

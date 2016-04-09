@@ -6,6 +6,7 @@ use Rougemine\Resume\Generator\Presenter\DocumentPropertiesGenerator;
 use Rougemine\Resume\Generator\Presenter\JobsExperienceGenerator;
 use Rougemine\Resume\Generator\Presenter\MePropertiesGenerator;
 use Rougemine\Resume\Generator\Presenter\TechnologiesGenerator;
+use Rougemine\Resume\Generator\Presenter\WorksGenerator;
 
 class PresentersGenerator
 {
@@ -25,23 +26,30 @@ class PresentersGenerator
      * @var JobsExperienceGenerator
      */
     private $jobsExperienceGenerator;
+    /**
+     * @var WorksGenerator
+     */
+    private $worksGenerator;
 
     /**
      * @param DocumentPropertiesGenerator $documentPropertiesGenerator
      * @param MePropertiesGenerator $mePropertiesGenerator
      * @param TechnologiesGenerator $technologiesGenerator
      * @param JobsExperienceGenerator $jobsExperienceGenerator
+     * @param WorksGenerator $worksGenerator
      */
     public function __construct(
         DocumentPropertiesGenerator $documentPropertiesGenerator,
         MePropertiesGenerator $mePropertiesGenerator,
         TechnologiesGenerator $technologiesGenerator,
-        JobsExperienceGenerator $jobsExperienceGenerator
+        JobsExperienceGenerator $jobsExperienceGenerator,
+        WorksGenerator $worksGenerator
     ) {
         $this->documentPropertiesGenerator = $documentPropertiesGenerator;
         $this->mePropertiesGenerator = $mePropertiesGenerator;
         $this->technologiesGenerator = $technologiesGenerator;
         $this->jobsExperienceGenerator = $jobsExperienceGenerator;
+        $this->worksGenerator = $worksGenerator;
     }
 
     /**
@@ -63,12 +71,16 @@ class PresentersGenerator
         $jobsExperience = $this->jobsExperienceGenerator
             ->getJobsExperience($language)
         ;
+        $works = $this->worksGenerator
+            ->getWorks($language)
+        ;
 
         return [
             'document' => $documentProperties,
             'me' => $meProperties,
             'technologies' => $technologies,
             'jobsExperience' => $jobsExperience,
+            'works' => $works,
         ];
     }
 }
