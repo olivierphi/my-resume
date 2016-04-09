@@ -14,6 +14,7 @@ services:
             - '@app.generator.presenter.document_properties'
             - '@app.generator.presenter.me_properties'
             - '@app.generator.presenter.technologies'
+            - '@app.generator.presenter.jobs_experience'
 
     #
     # View vars presenters
@@ -34,6 +35,12 @@ services:
         class: Rougemine\Resume\Generator\Presenter\TechnologiesGenerator
         arguments:
             - '%data.path%/technologies.yml'
+        public: false
+
+    app.generator.presenter.jobs_experience:
+        class: Rougemine\Resume\Generator\Presenter\JobsExperienceGenerator
+        arguments:
+            - '%data.path%/jobs-experience.${language}.yml'
         public: false
 
     #

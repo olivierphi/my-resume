@@ -3,6 +3,7 @@
 namespace Rougemine\Resume\View;
 
 use Rougemine\Resume\Generator\Presenter\DocumentPropertiesGenerator;
+use Rougemine\Resume\Generator\Presenter\JobsExperienceGenerator;
 use Rougemine\Resume\Generator\Presenter\MePropertiesGenerator;
 use Rougemine\Resume\Generator\Presenter\TechnologiesGenerator;
 
@@ -20,20 +21,27 @@ class PresentersGenerator
      * @var TechnologiesGenerator
      */
     private $technologiesGenerator;
+    /**
+     * @var JobsExperienceGenerator
+     */
+    private $jobsExperienceGenerator;
 
     /**
      * @param DocumentPropertiesGenerator $documentPropertiesGenerator
      * @param MePropertiesGenerator $mePropertiesGenerator
      * @param TechnologiesGenerator $technologiesGenerator
+     * @param JobsExperienceGenerator $jobsExperienceGenerator
      */
     public function __construct(
         DocumentPropertiesGenerator $documentPropertiesGenerator,
         MePropertiesGenerator $mePropertiesGenerator,
-        TechnologiesGenerator $technologiesGenerator
+        TechnologiesGenerator $technologiesGenerator,
+        JobsExperienceGenerator $jobsExperienceGenerator
     ) {
         $this->documentPropertiesGenerator = $documentPropertiesGenerator;
         $this->mePropertiesGenerator = $mePropertiesGenerator;
         $this->technologiesGenerator = $technologiesGenerator;
+        $this->jobsExperienceGenerator = $jobsExperienceGenerator;
     }
 
     /**
@@ -52,11 +60,15 @@ class PresentersGenerator
         $technologies = $this->technologiesGenerator
             ->getTechnologies()
         ;
+        $jobsExperience = $this->jobsExperienceGenerator
+            ->getJobsExperience($language)
+        ;
 
         return [
             'document' => $documentProperties,
             'me' => $meProperties,
             'technologies' => $technologies,
+            'jobsExperience' => $jobsExperience,
         ];
     }
 }

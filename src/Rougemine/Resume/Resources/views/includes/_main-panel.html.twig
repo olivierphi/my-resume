@@ -48,3 +48,19 @@
     </div>{# end .tools-container #}
 
 </section>{# end .skills-container #}
+
+<section class="jobs-experience-container">
+    <h3>
+        <img src="img/icons/headers/video-red.png" alt="">
+        {{ 'job_experience'|trans }}
+    </h3>
+
+    <ul>
+        {% for jobsXP in jobsExperience.jobsExperiences %}
+            <li>
+                <span class="heading">{{ jobsXP.period }}</span>
+                {{ jobsXP.content|raw }}
+            </li>
+        {% endfor %}
+    </ul>
+</section>{# end .jobs-experience-container #}

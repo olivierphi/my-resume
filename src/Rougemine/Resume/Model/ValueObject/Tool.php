@@ -5,7 +5,7 @@ namespace Rougemine\Resume\Model\ValueObject;
 class Tool
 {
     /**
-     * @var string|string[]
+     * @var string
      */
     private $title;
     /**
@@ -32,7 +32,7 @@ class Tool
     }
 
     /**
-     * @return string|string[]|null
+     * @return string|null
      */
     public function getUrl()
     {

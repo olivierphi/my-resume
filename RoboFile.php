@@ -185,5 +185,7 @@ class RoboFile extends Tasks
         $targetFilePath = sprintf(__DIR__ . '/web/index.%s.html', $language);
 
         file_put_contents($targetFilePath, $twig->render('index.html.twig', $viewVars));
+
+        $this->say(sprintf('"%s" HTML template generated.', $targetFilePath));
     }
 }
