@@ -4,16 +4,9 @@ namespace Rougemine\Resume\View;
 
 use Rougemine\Resume\Generator\Presenter\DocumentPropertiesGenerator;
 use Rougemine\Resume\Generator\Presenter\MePropertiesGenerator;
-use Symfony\Component\Translation\TranslatorBagInterface;
 
 class PresentersGenerator
 {
-    const MISC_MESSAGES_TRANSLATION_DOMAIN = 'misc';
-
-    /**
-     * @var TranslatorBagInterface
-     */
-    private $translatorBag;
     /**
      * @var DocumentPropertiesGenerator
      */
@@ -24,11 +17,9 @@ class PresentersGenerator
     private $mePropertiesGenerator;
 
     public function __construct(
-        TranslatorBagInterface $translatorBag,
         DocumentPropertiesGenerator $documentPropertiesGenerator,
         MePropertiesGenerator $mePropertiesGenerator
     ) {
-        $this->translatorBag = $translatorBag;
         $this->documentPropertiesGenerator = $documentPropertiesGenerator;
         $this->mePropertiesGenerator = $mePropertiesGenerator;
     }
@@ -40,8 +31,6 @@ class PresentersGenerator
      */
     public function getViewVarsPresenters($language)
     {
-        $miscMessages = $this->translatorBag->getCatalogue($language)->all(self::MISC_MESSAGES_TRANSLATION_DOMAIN);
-
         $documentProperties = $this->documentPropertiesGenerator
             ->getDocumentProperties($language)
         ;
@@ -52,7 +41,6 @@ class PresentersGenerator
         return [
             'document' => $documentProperties,
             'me' => $meProperties,
-            'misc' => $miscMessages,
         ];
     }
 }

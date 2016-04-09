@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ document.language }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="language" content="{{ document.language }}">
+        <link rel="canonical" href="http://rougemine.com/?lang={{ document.language }}">
+        <title>{{ document.title }}</title>
+        <meta name="description" content="{{ document.description }}">
+        <meta http-equiv="last-modified" content="{{ document.generationDate|date(constant('DATE_W3C')) }}">
+
+        <link href="http://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lobster+Two:400italic" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body>
+        <div id="content-container">
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+    </body>
+</html>

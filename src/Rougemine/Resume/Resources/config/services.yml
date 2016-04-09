@@ -10,7 +10,6 @@ services:
     app.view.presenters_generator:
         class: Rougemine\Resume\View\PresentersGenerator
         arguments:
-            - '@app.translator'
             - '@app.generator.presenter.document_properties'
             - '@app.generator.presenter.me_properties'
 
@@ -42,3 +41,11 @@ services:
     app.translation.loader:
         class: Symfony\Component\Translation\Loader\YamlFileLoader
         public: false
+
+    #
+    # Twig extensions
+    #
+    app.twig.extension.resume:
+        class: Rougemine\Resume\View\Twig\ResumeExtension
+        arguments:
+            - '@app.translator'

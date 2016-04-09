@@ -25,7 +25,13 @@ class MePropertiesGenerator extends AbstractTranslatedPropertiesGenerator
         return new MeProperties(
             $this->trans($language, 'name'),
             $this->trans($language, 'birth'),
-            $this->trans($language, 'address')
+            $this->trans($language, 'jobTitle'),
+            $this->trans($language, 'address'),
+            $this->trans($language, 'email'),
+            $this->trans($language, 'phoneNumber'),
+            $this->trans($language, 'url'),
+            $this->trans($language, 'twitterId'),
+            $this->trans($language, 'githubId')
         );
     }
 }

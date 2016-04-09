@@ -3,17 +3,104 @@
     <a href="http://rougemine.com" target="_blank">rougemine.com</a>
 </div>
 
-<section>
+<section class="me-container">
     <span class="header-icon">
         <img src="img/icons/headers/user.png" alt="me">
     </span>
-    {{ me.name }}
-    <br>
-    {{ me.birth }}
-    <br>
-    {{ me.address|nl2br }}
-    <a href="mailto:{{ me.email }}">{{ me.email }}</a>
-    <br>
-    Tel
-    : +33 6 61 78 99 25<br/><a href="https://twitter.com/RougeMine" target="_blank" class="twitter-link">twitter.com/RougeMine</a>
-</section>
+
+    <p>
+        <span itemprop="name">{{ me.name }}</span>
+    </p>
+
+    <p class="rich-snippet-only">
+        <span itemprop="jobTitle">{{ me.jobTitle }}</span>
+    </p>
+
+    <p>
+        {{ me.birth }}<br>
+    </p>
+
+    <p>
+        <span itemprop="address">{{ me.address|nl2br }}</span>
+    </p>
+
+    <p>
+        <a itemprop="email" href="mailto:{{ me.email }}">{{ me.email }}</a>
+    </p>
+
+    <p>
+        {{ 'me.phone'|trans }}<span itemprop="telephone">{{ me.phoneNumber }}</span>
+    </p>
+
+
+    <p class="rich-snippet-only">
+        <span itemprop="url">{{ me.url }}</span>
+    </p>
+    <p>
+        <a itemprop="sameAs" href="https://twitter.com/{{ me.twitterId }}" target="_blank" class="twitter-link">
+            twitter.com/{{ me.twitterId }}
+        </a>
+    </p>
+</section>{# end .me-container #}
+
+<section class="open-source-projects-container">
+    <span class="header-icon">
+        <img src="img/icons/headers/github.png" alt="GitHub">
+    </span>
+
+    <h3>{{ 'open_source_projects.title'|trans|raw }}</h3>
+    <a itemprop="sameAs" href="https://github.com/{{ me.githubId }}" target="_blank" class="github-link">
+        github.com/{{ me.githubId }}
+    </a>
+</section>{# end .open-source-projects-container #}
+
+<section class="education-container">
+    <span class="header-icon">
+        <img src="img/icons/headers/ruler.png" alt="education">
+    </span>
+
+    <h3>{{ 'education.title'|trans }}</h3>
+    <p>
+        {{ 'education.src'|trans }}
+        <i>{{ 'education.src.details'|trans }}</i>
+    </p>
+    <p>
+        {{ 'education.baccalaureate'|trans }}
+    </p>
+</section>{# end .education-container #}
+
+<section class="languages-container">
+    <span class="header-icon">
+        <img src="img/icons/headers/chat.png" alt="languages">
+    </span>
+
+    <h3>{{ 'languages.title'|trans }}</h3>
+    <p>
+        {{ 'languages.english'|trans }}
+    </p>
+    <p>
+        {{ 'languages.spanish'|trans }}
+    </p>
+</section>{# end .languages-container #}
+
+<section class="hobbies-container">
+    <span class="header-icon">
+        <img src="img/icons/headers/fave.png" alt="hobbies">
+    </span>
+
+    <h3>{{ 'hobbies.title'|trans }}</h3>
+    <p>
+        {{ 'hobbies.content'|trans }}
+    </p>
+</section>{# end .hobbies-container #}
+
+<section class="teaching-container">
+    <span class="header-icon">
+        <img src="img/icons/headers/teaching.png" alt="teaching">
+    </span>
+
+    <h3>{{ 'teaching.title'|trans }}</h3>
+    <p>
+        {{ 'teaching.content'|trans|raw }}
+    </p>
+</section>{# end .teaching-container #}

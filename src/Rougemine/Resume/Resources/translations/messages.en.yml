@@ -1,0 +1,30 @@
+top_links:
+    pdf.download: Download in PDF format
+    language: 'language:'
+
+me:
+    phone: 'Tel. :'
+
+open_source_projects:
+    title: Open Source projects
+
+education:
+    title: Education
+    src: '1998-2000: DUT S.R.C'
+    src.details: Communication Services and Networks
+    baccalaureate: '1998: Scientific Baccalaureate'
+
+languages:
+    title: Languages
+    english: Technical English
+    spanish: School-level Spanish
+
+hobbies:
+    title: Hobbies
+    content: >
+        Astronomy, running, aïkijutsu, drawing
+
+hobbies:
+    title: Web development Trainer
+    content: >
+        HTML/CSS, JavaScript and Flash trainer for <br><a href="http://www.iesamultimedia.fr/" target="_blank">IESA Multimedia</a>

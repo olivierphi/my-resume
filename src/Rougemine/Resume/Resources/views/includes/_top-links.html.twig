@@ -1,9 +1,9 @@
 <div id="pdf-download">
-    <a href="cv-olivier-philippon.{{ document.language }}.pdf">{{ misc['pdf.download'] }}</a>
+    <a href="cv-olivier-philippon.{{ document.language }}.pdf">{{ 'top_links.pdf.download'|trans }}</a>
 </div>
 
 <div id="language-selector">
-    <span>{{ misc['language'] }}</span>
+    <span>{{ 'top_links.language'|trans }}</span>
     {% if 'en' == document.language %}
         <span>EN</span>
         <a href="?lang=fr">FR</a>

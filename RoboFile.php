@@ -92,9 +92,7 @@ class RoboFile extends Tasks
 
     public function buildHtml()
     {
-        $viewsPath = $this->getContainer()->getParameter('views.path');
-        $loader = new Twig_Loader_Filesystem($viewsPath);
-        $twig = new Twig_Environment($loader, []);
+        $twig = $this->getTwig();
 
         foreach (['en', 'fr'] as $language) {
             $viewVars = $this->getContainer()->get('app.view.presenters_generator')->getViewVarsPresenters($language);
@@ -144,6 +142,20 @@ class RoboFile extends Tasks
         }
 
         return $container;
+    }
+
+    /**
+     * @return Twig_Environment
+     */
+    private function getTwig()
+    {
+        $viewsPath = $this->getContainer()->getParameter('views.path');
+        $loader = new Twig_Loader_Filesystem($viewsPath);
+        $twig = new Twig_Environment($loader, []);
+
+        $twig->addExtension($this->getContainer()->get('app.twig.extension.resume'));
+
+        return $twig;
     }
 
     private function getThirdPartyResourcesDirPath()
