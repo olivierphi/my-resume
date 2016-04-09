@@ -13,18 +13,18 @@ class Technology
      */
     private $icon;
     /**
-     * @var string|string[]
+     * @var string|string[]|null
      */
     private $url;
     /**
-     * @var string
+     * @var string|null
      */
     private $contributorUrl;
 
     /**
      * @param string|string[] $title
      * @param string $icon
-     * @param string|string[]|null $url|null
+     * @param string|string[]|null $url
      * @param string|null $contributorUrl
      */
     public function __construct($title, $icon, $url = null, $contributorUrl = null)

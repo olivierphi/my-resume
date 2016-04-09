@@ -11,7 +11,7 @@
                 {% endfor %}
             {% else %}
                 <a href="{{ tech.url }}" target="_blank">
-                    {{ tech.title }}
+                    {{- tech.title -}}
                 </a>
             {% endif %}
         {% else %}
@@ -24,4 +24,16 @@
     <div class="contributor">
         <a href="{{ tech.contributorUrl }}" target="_blank">{{ 'contributor'|trans({}, lang) }}</a>
     </div>
+{% endmacro %}
+
+{% macro toolDisplay(tool) %}
+    {% spaceless %}
+        {% if tool.hasUrl() %}
+            <a href="{{ tool.url }}" target="_blank">
+                {{- tool.title -}}
+            </a>
+        {% else %}
+            {{- tool.title -}}
+        {% endif %}
+    {% endspaceless %}
 {% endmacro %}

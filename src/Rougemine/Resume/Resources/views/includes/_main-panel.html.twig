@@ -38,4 +38,13 @@
         {% endfor %}
     </div>{# end .other-technologies-container #}
 
+    <div class="tools-container">
+        <h4>{{ 'tools'|trans }}</h4>
+        {% for tool in technologies.tools %}
+            {{ macros.toolDisplay(tool) }}
+            {{- loop.last ? '...' : ', ' -}}
+        {% endfor %}
+
+    </div>{# end .tools-container #}
+
 </section>{# end .skills-container #}

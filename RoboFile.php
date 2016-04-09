@@ -149,27 +149,23 @@ class RoboFile extends Tasks
      */
     private function getTwig()
     {
-        static $twig;
+        $viewsPath = $this->getContainer()->getParameter('views.path');
+        $loader = new Twig_Loader_Filesystem($viewsPath);
+        $twig = new Twig_Environment($loader, [
+            'strict_variables' => true,
+            'debug' => true,
+            'auto_reload' => true,
+            'cache' => false,
+        ]);
 
-        if (null === $twig) {
-            $viewsPath = $this->getContainer()->getParameter('views.path');
-            $loader = new Twig_Loader_Filesystem($viewsPath);
-            $twig = new Twig_Environment($loader, [
-                'strict_variables' => true,
-                'debug' => true,
-                'auto_reload' => true,
-                'cache' => false,
-            ]);
-
-            if (class_exists('Symfony\Bridge\Twig\Extension\DumpExtension')) {
-                $twig->addExtension(new Symfony\Bridge\Twig\Extension\DumpExtension(
-                    new \Symfony\Component\VarDumper\Cloner\VarCloner()
-                ));
-            } else {
-                $twig->addExtension(new Twig_Extension_Debug());
-            }
-            $twig->addExtension($this->getContainer()->get('app.twig.extension.resume'));
+        if (class_exists('Symfony\Bridge\Twig\Extension\DumpExtension')) {
+            $twig->addExtension(new Symfony\Bridge\Twig\Extension\DumpExtension(
+                new \Symfony\Component\VarDumper\Cloner\VarCloner()
+            ));
+        } else {
+            $twig->addExtension(new Twig_Extension_Debug());
         }
+        $twig->addExtension($this->getContainer()->get('app.twig.extension.resume'));
 
         return $twig;
     }

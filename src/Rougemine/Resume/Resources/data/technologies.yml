@@ -86,3 +86,33 @@ others:
         title: Perl
         icon: perl
         url: http://www.perl.org/
+
+tools:
+    -
+        title: Docker
+        url: http://www.docker.com/
+    -
+        title: Docker Composer
+        url: https://docs.docker.com/compose/overview/
+    -
+        title: Git
+        url: http://git-scm.com/
+    -
+        title: Debian
+        url: http://www.debian.org/
+    -
+        title: IntelliJ IDEA
+        url: http://www.jetbrains.com/idea/
+    -
+        title: Netbeans
+        url: http://netbeans.org/
+    -
+        title: Eclipse
+        url: http://www.eclipse.org/
+    -
+        title: Vagrant
+        url: http://vagrantup.com/
+    -
+        title: Flash
+    -
+        title: Photoshop

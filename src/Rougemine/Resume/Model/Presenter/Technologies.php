@@ -3,6 +3,7 @@
 namespace Rougemine\Resume\Model\Presenter;
 
 use Rougemine\Resume\Model\ValueObject\Technology;
+use Rougemine\Resume\Model\ValueObject\Tool;
 
 class Technologies
 {
@@ -14,17 +15,24 @@ class Technologies
      * @var Technology[]
      */
     private $otherTechnologies;
+    /**
+     * @var Tool[]
+     */
+    private $tools;
 
     /**
      * @param Technology[] $mainTechnologies
      * @param Technology[] $otherTechnologies
+     * @param Tool[] $tools
      */
     public function __construct(
         $mainTechnologies,
-        $otherTechnologies
+        $otherTechnologies,
+        $tools
     ) {
         $this->mainTechnologies = $mainTechnologies;
         $this->otherTechnologies = $otherTechnologies;
+        $this->tools = $tools;
     }
 
     /**
@@ -41,5 +49,13 @@ class Technologies
     public function getOtherTechnologies()
     {
         return $this->otherTechnologies;
+    }
+
+    /**
+     * @return Tool[]
+     */
+    public function getTools()
+    {
+        return $this->tools;
     }
 }
