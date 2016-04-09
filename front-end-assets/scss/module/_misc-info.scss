@@ -20,6 +20,15 @@
             border: 3px solid #FFFFFF;
             border-radius: 5px;
         }
+
+        @media (max-width: $mobileThemeThreshold) {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: $red;
+            height: $logoContainerHeightInMobileMode;
+            margin: 0;
+        }
     }
 
     section {
@@ -50,6 +59,13 @@
                 margin-top: 8px;
             }
         }
+
+        @media (max-width: $mobileThemeThreshold) {
+            width: 46%;
+            height: 208px;
+            float: left;
+        }
+
     }
 
 }

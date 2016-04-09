@@ -48,6 +48,10 @@ others:
         icon: mysql
         url: http://www.mysql.com/
   -
+        title: Algolia
+        icon: algolia
+        url: http://www.algolia.com/
+  -
         title: Ruby
         icon: ruby
         url: http://www.ruby-lang.org
@@ -59,6 +63,10 @@ others:
         title: [Grunt, Gulp]
         icon: grunt
         url: ["http://gruntjs.com", "http://gulpjs.com/"]
+  -
+        title: Backbone
+        icon: backbone
+        url: http://backbonejs.org/
   -
         title: CoffeeScript
         icon: coffeescript
@@ -92,7 +100,7 @@ tools:
         title: Docker
         url: http://www.docker.com/
     -
-        title: Docker Composer
+        title: Docker Compose
         url: https://docs.docker.com/compose/overview/
     -
         title: Git

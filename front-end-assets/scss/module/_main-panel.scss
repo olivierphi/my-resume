@@ -5,6 +5,10 @@
         color: black;
         font-size: 3em;
         margin: 0;
+
+        @media (max-width: $mobileThemeThreshold) {
+            margin-top: $logoContainerHeightInMobileMode;
+        }
     }
 
     h2 {
