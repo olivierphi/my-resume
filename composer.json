@@ -19,6 +19,16 @@
     "symfony/translation": "^3.0",
     "symfony/finder": "^3.0",
     "symfony/yaml": "^3.0",
-    "symfony/dependency-injection": "^3.0"
+    "symfony/dependency-injection": "^3.0",
+    "mouf/nodejs-installer": "^1.0",
+    "symfony/process": "^3.0"
+  },
+  "extra": {
+    "mouf": {
+      "nodejs": {
+        "targetDir": "vendor/nodejs/nodejs",
+        "forceLocal": true
+      }
+    }
   }
 }

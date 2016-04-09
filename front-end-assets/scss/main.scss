@@ -1,6 +1,11 @@
 
-$width: 50%;
+$thirdPartyResourcesPath: "../js/node_modules";
 
-#main {
-  width: $width;
-}
+@import "layout";
+@import "misc";
+@import "module/_misc-info";
+
+// No way to easily include CSS files content in a SCSS file, too bad :-/
+// @see https://github.com/sass/sass/issues/556
+// @see "build:scss" task of the Robofile for details about this (a bit ugly) workaround.
+@import "#{$thirdPartyResourcesPath}/normalize.css/_normalize";

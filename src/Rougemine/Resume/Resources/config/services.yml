@@ -1,0 +1,44 @@
+parameters:
+    translations.path: '%app.dir%/src/Rougemine/Resume/resources/translations'
+    views.path: '%app.dir%/src/Rougemine/Resume/resources/views'
+
+services:
+
+    #
+    # View vars presenters generator
+    #
+    app.view.presenters_generator:
+        class: Rougemine\Resume\View\PresentersGenerator
+        arguments:
+            - '@app.translator'
+            - '@app.generator.presenter.document_properties'
+            - '@app.generator.presenter.me_properties'
+
+    #
+    # View vars presenters
+    #
+    app.generator.presenter.document_properties:
+        class: Rougemine\Resume\Generator\Presenter\DocumentPropertiesGenerator
+        arguments:
+            - '@app.translator'
+        public: false
+
+    app.generator.presenter.me_properties:
+        class: Rougemine\Resume\Generator\Presenter\MePropertiesGenerator
+        arguments:
+            - '@app.translator'
+        public: false
+
+    #
+    # Translation stuff
+    #
+    app.translator:
+        class: Symfony\Component\Translation\Translator
+        arguments:
+            - 'en'
+        calls:
+            - [addLoader, ['yaml', '@app.translation.loader']]
+
+    app.translation.loader:
+        class: Symfony\Component\Translation\Loader\YamlFileLoader
+        public: false

@@ -1,0 +1,19 @@
+<div class="logo-container">
+    <span class="rougemine-logo"></span>
+    <a href="http://rougemine.com" target="_blank">rougemine.com</a>
+</div>
+
+<section>
+    <span class="header-icon">
+        <img src="img/icons/headers/user.png" alt="me">
+    </span>
+    {{ me.name }}
+    <br>
+    {{ me.birth }}
+    <br>
+    {{ me.address|nl2br }}
+    <a href="mailto:{{ me.email }}">{{ me.email }}</a>
+    <br>
+    Tel
+    : +33 6 61 78 99 25<br/><a href="https://twitter.com/RougeMine" target="_blank" class="twitter-link">twitter.com/RougeMine</a>
+</section>

@@ -2,15 +2,12 @@
 
 namespace Rougemine\Resume\Generator\Presenter;
 
-use Rougemine\Model\Presenter\DocumentProperties;
+use Rougemine\Resume\Model\Presenter\DocumentProperties;
 use Symfony\Component\Translation\TranslatorInterface;
 
-class DocumentPropertiesGenerator
+class DocumentPropertiesGenerator extends AbstractTranslatedPropertiesGenerator
 {
-    /**
-     * @var TranslatorInterface
-     */
-    private $translator;
+    protected static $transDomain = 'document';
 
     public function __construct(
         TranslatorInterface $translator
@@ -27,8 +24,8 @@ class DocumentPropertiesGenerator
     {
         return new DocumentProperties(
             $language,
-            $this->translator->trans('meta.title', [], 'messages', $language),
-            $this->translator->trans('meta.description', [], 'messages', $language),
+            $this->trans($language, 'meta.title'),
+            $this->trans($language, 'meta.description'),
             new \DateTimeImmutable('now')
         );
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rougemine\Model\Presenter;
+namespace Rougemine\Resume\Model\Presenter;
 
 class DocumentProperties
 {

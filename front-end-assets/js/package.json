@@ -1,0 +1,12 @@
+{
+  "name": "rougemine-resume",
+  "version": "1.0.0",
+  "description": "Rougemine.com resume",
+  "scripts": {
+  },
+  "author": "Olivier Philippon",
+  "license": "beerware",
+  "dependencies": {
+    "normalize.css": "^4.0.0"
+  }
+}

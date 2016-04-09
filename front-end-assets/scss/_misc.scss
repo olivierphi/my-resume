@@ -1,0 +1,17 @@
+#pdf-download, #language-selector {
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    a, span {
+        font-family: Arial, sans-serif;
+        color: black;
+        font-weight: normal;
+        font-size: 12px;
+    }
+    @media print {
+        display: none;
+    }
+}
+#language-selector {
+    top: 1.5em;
+}
