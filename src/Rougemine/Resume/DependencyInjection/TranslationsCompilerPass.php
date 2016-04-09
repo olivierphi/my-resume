@@ -14,7 +14,7 @@ class TranslationsCompilerPass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         $appTranslatorDefinition = $container->getDefinition('app.translator');
-        $translationsPath = $container->getParameter('translations.path');
+        $translationsPath = explode(',', $container->getParameter('translations.path'));
 
         $translationsFiles = (new Finder())
             ->files()

@@ -1,0 +1,36 @@
+
+.skills-container {
+    .main-technologies-container {
+        margin-left: 1em;
+        .tech {
+            width: 33%;
+            float: left;
+            margin-bottom: 1em;
+            position: relative;
+            /*border: solid red 1px;*/
+
+            .icon {
+                display: inline-block;
+                width: 35px;
+                //text-align: center;
+                img {
+                }
+            }
+            .title {
+            }
+            .contributor {
+                float: none;
+                margin-left: 35px;
+                a {
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    .other-technologies-container {
+        .tech-with-icon {
+            line-height: 1.8;
+        }
+    }
+}

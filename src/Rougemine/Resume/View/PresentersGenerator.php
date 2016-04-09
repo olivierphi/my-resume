@@ -4,6 +4,7 @@ namespace Rougemine\Resume\View;
 
 use Rougemine\Resume\Generator\Presenter\DocumentPropertiesGenerator;
 use Rougemine\Resume\Generator\Presenter\MePropertiesGenerator;
+use Rougemine\Resume\Generator\Presenter\TechnologiesGenerator;
 
 class PresentersGenerator
 {
@@ -15,13 +16,24 @@ class PresentersGenerator
      * @var MePropertiesGenerator
      */
     private $mePropertiesGenerator;
+    /**
+     * @var TechnologiesGenerator
+     */
+    private $technologiesGenerator;
 
+    /**
+     * @param DocumentPropertiesGenerator $documentPropertiesGenerator
+     * @param MePropertiesGenerator $mePropertiesGenerator
+     * @param TechnologiesGenerator $technologiesGenerator
+     */
     public function __construct(
         DocumentPropertiesGenerator $documentPropertiesGenerator,
-        MePropertiesGenerator $mePropertiesGenerator
+        MePropertiesGenerator $mePropertiesGenerator,
+        TechnologiesGenerator $technologiesGenerator
     ) {
         $this->documentPropertiesGenerator = $documentPropertiesGenerator;
         $this->mePropertiesGenerator = $mePropertiesGenerator;
+        $this->technologiesGenerator = $technologiesGenerator;
     }
 
     /**
@@ -37,10 +49,14 @@ class PresentersGenerator
         $meProperties = $this->mePropertiesGenerator
             ->getMeProperties($language)
         ;
+        $technologies = $this->technologiesGenerator
+            ->getTechnologies()
+        ;
 
         return [
             'document' => $documentProperties,
             'me' => $meProperties,
+            'technologies' => $technologies,
         ];
     }
 }

@@ -17,7 +17,7 @@
     </p>
 
     <p>
-        {{ me.birth }}<br>
+        {{ 'me.birthDate'|trans }}{{ me.birthDate|date('date_format'|trans) }}
     </p>
 
     <p>

@@ -1,0 +1,46 @@
+@import "../variables";
+
+#main-panel {
+    h1 {
+        color: black;
+        font-size: 3em;
+        margin: 0;
+    }
+
+    h2 {
+        color: $red;
+        font-family: 'Lobster Two', cursive;
+        font-size: 2.2em;
+        font-style: italic;
+        margin: 0;
+    }
+
+    h3 {
+        margin: 1em 0 0.5em 0;
+        font-size: 1.75em;
+        color: $red;
+        img {
+            vertical-align: middle;
+            margin-top: -4px;
+        }
+    }
+
+    h4 {
+        margin: 1em 0 0.25em 0;
+    }
+
+    p, a {
+        color: $grey;
+    }
+
+    section ul li {
+        margin: 0 0 0.5em 0;
+        .heading {
+            color: black;
+            font-weight: bold;
+        }
+    }
+
+    @import "main-panel/skills";
+
+}

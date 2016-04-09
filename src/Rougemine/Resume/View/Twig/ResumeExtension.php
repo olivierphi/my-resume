@@ -28,14 +28,20 @@ class ResumeExtension extends \Twig_Extension
 
     /**
      * @param array $context
-     * @param $transKey
+     * @param string $transKey
      * @param array $transParams
+     * @param string $language
      *
      * @return string
      */
-    public function trans(array $context, $transKey, array $transParams = [])
+    public function trans(array $context, $transKey, array $transParams = [], $language = null)
     {
-        $language = $context['document']->getLanguage();
+        if (null === $language) {
+            if (empty($context['document'])) {
+                throw new \RuntimeException('No language found in "trans()" Twig function.');
+            }
+            $language = $context['document']->getLanguage();
+        }
 
         return $this->translator->trans($transKey, $transParams, self::TRANSLATION_DOMAIN, $language);
     }

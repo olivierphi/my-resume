@@ -17,6 +17,10 @@ class DocumentProperties
      */
     private $description;
     /**
+     * @var string
+     */
+    private $punchline;
+    /**
      * @var \DateTimeImmutable
      */
     private $generationDate;
@@ -25,13 +29,20 @@ class DocumentProperties
      * @param string $language
      * @param string $title
      * @param string $description
+     * @param string $punchline
      * @param \DateTimeImmutable $generationDate
      */
-    public function __construct($language, $title, $description, \DateTimeImmutable $generationDate)
-    {
+    public function __construct(
+        $language,
+        $title,
+        $description,
+        $punchline,
+        \DateTimeImmutable $generationDate
+    ) {
         $this->language = $language;
         $this->title = $title;
         $this->description = $description;
+        $this->punchline = $punchline;
         $this->generationDate = $generationDate;
     }
 
@@ -57,6 +68,14 @@ class DocumentProperties
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPunchline()
+    {
+        return $this->punchline;
     }
 
     /**

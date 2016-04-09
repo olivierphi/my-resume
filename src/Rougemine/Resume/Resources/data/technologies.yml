@@ -1,0 +1,88 @@
+main:
+  -
+        title: PHP
+        icon: php
+  -
+        title: JavaScript
+        icon: javascript
+  -
+        title: HTML / CSS
+        icon: html5
+  -
+        title: Symfony 2+
+        icon: symfony2
+        url: http://symfony.com
+  -
+        title: Zend Framework
+        icon: zend-framework
+        url: http://www.zendframework.com/
+  -
+        title: Silex
+        icon: silex
+        url: http://silex.sensiolabs.org/
+        contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
+  -
+        title: Node.js
+        icon: nodejs
+        url: http://nodejs.org
+  -
+        title: Express
+        icon: express
+        url: http://expressjs.com/
+  -
+        title: Browserify
+        icon: browserify
+        url: http://browserify.org/
+
+others:
+  -
+        title: [phpunit, Behat]
+        icon: behat
+        url: ["https://phpunit.de/", "http://behat.org/"]
+  -
+        title: Doctrine
+        icon: doctrine
+        url: http://www.doctrine-project.org/
+  -
+        title: MySQL
+        icon: mysql
+        url: http://www.mysql.com/
+  -
+        title: Ruby
+        icon: ruby
+        url: http://www.ruby-lang.org
+  -
+        title: Ruby on Rails
+        icon: rails
+        url: http://rubyonrails.org
+  -
+        title: [Grunt, Gulp]
+        icon: grunt
+        url: ["http://gruntjs.com", "http://gulpjs.com/"]
+  -
+        title: CoffeeScript
+        icon: coffeescript
+        url: http://coffeescript.org/
+  -
+        title: Require.js
+        icon: requirejs
+        url: http://requirejs.org/
+  -
+        title: [LESS, SASS]
+        icon: less
+        url: ["http://lesscss.org/", "http://sass-lang.com/"]
+  -
+        title: Drupal
+        icon: drupal
+        url: http://drupal.org/
+  -
+        title: Flash
+        icon: flash
+  -
+        title: Robotlegs
+        icon: robotlegs
+        url: http://www.robotlegs.org/
+  -
+        title: Perl
+        icon: perl
+        url: http://www.perl.org/

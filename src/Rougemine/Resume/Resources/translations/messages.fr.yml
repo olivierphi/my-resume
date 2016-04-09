@@ -1,8 +1,11 @@
+date_format: d/m/Y
+
 top_links:
     pdf.download: Télécharger au format PDF
     language: 'language:'
 
 me:
+    birthDate: 'Né le '
     phone: 'Tel. :'
 
 open_source_projects:
@@ -28,3 +31,10 @@ teaching:
     title: Formateur en développement Web
     content: >
         Formateur HTML/CSS, JavaScript et Flash pour l'école <br><a href="http://www.iesamultimedia.fr/" target="_blank">IESA Multimedia</a>
+
+main_skills: Compétences principales
+contributor: (contributeur)
+other_skills: Mais aussi...
+tools: Logiciels et environnements
+job_experience: Parcours professionnel
+works: Quelques réalisations

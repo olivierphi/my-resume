@@ -4,6 +4,8 @@ $thirdPartyResourcesPath: "../js/node_modules";
 @import "layout";
 @import "misc";
 @import "module/_misc-info";
+@import "module/_main-panel";
+@import "module/tech-icons";
 
 // No way to easily include CSS files content in a SCSS file, too bad :-/
 // @see https://github.com/sass/sass/issues/556

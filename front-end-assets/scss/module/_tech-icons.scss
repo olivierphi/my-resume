@@ -1,0 +1,76 @@
+
+@mixin tech-icon-bg ($tech) {
+    background-image: url("../img/icons/techs/#{$tech}.png");
+}
+
+.tech-with-icon {
+    padding-left: 28px;
+    background-repeat: no-repeat;
+    background-position: 2px center;
+    &.rails {
+        @include tech-icon-bg(rails);
+    }
+    &.backbone {
+        @include tech-icon-bg(backbone);
+        padding-left: 24px;
+    }
+    &.zend-framework {
+        @include tech-icon-bg(zend-framework);
+    }
+    &.requirejs {
+        @include tech-icon-bg(requirejs);
+    }
+    &.symfony2 {
+        @include tech-icon-bg(symfony2);
+    }
+    &.drupal {
+        @include tech-icon-bg(drupal);
+        padding-left: 24px;
+    }
+    &.jquery {
+        @include tech-icon-bg(jquery);
+    }
+    &.silex {
+        @include tech-icon-bg(silex);
+    }
+    &.less {
+        @include tech-icon-bg(less);
+    }
+    &.coffeescript {
+        @include tech-icon-bg(coffeescript);
+    }
+    &.ruby {
+        @include tech-icon-bg(ruby);
+    }
+    &.rails {
+        @include tech-icon-bg(rails);
+    }
+    &.flash {
+        @include tech-icon-bg(flash);
+    }
+    &.mysql {
+        @include tech-icon-bg(mysql);
+    }
+    &.grunt {
+        @include tech-icon-bg(grunt);
+    }
+    &.robotlegs {
+        @include tech-icon-bg(robotlegs);
+    }
+    &.perl {
+        @include tech-icon-bg(perl);
+    }
+    &.nodejs {
+        @include tech-icon-bg(nodejs);
+    }
+    &.behat {
+        @include tech-icon-bg(behat);
+    }
+    &.doctrine {
+        @include tech-icon-bg(doctrine);
+    }
+    //      &.mongodb {
+    //        @include tech-icon-bg(mongodb);
+    //        padding-left: 20px;
+    //      }
+}

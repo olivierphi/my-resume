@@ -1,0 +1,27 @@
+{% macro techDisplay(tech) %}
+    {% spaceless %}
+        {% if tech.hasUrl() %}
+            {% if tech.hasMultipleTitles() %}
+                {% for subTechTitle in tech.title %}
+                    {% set subTechUrl = tech.getTechUrlAt(loop.index0) %}
+                    <a href="{{ subTechUrl }}" target="_blank">
+                        {{- subTechTitle -}}
+                    </a>
+                    {% if not loop.last %} / {% endif %}
+                {% endfor %}
+            {% else %}
+                <a href="{{ tech.url }}" target="_blank">
+                    {{ tech.title }}
+                </a>
+            {% endif %}
+        {% else %}
+            {{ tech.title }}
+        {% endif %}
+    {% endspaceless %}
+{% endmacro %}
+
+{% macro techContributorDisplay(tech, lang) %}
+    <div class="contributor">
+        <a href="{{ tech.contributorUrl }}" target="_blank">{{ 'contributor'|trans({}, lang) }}</a>
+    </div>
+{% endmacro %}

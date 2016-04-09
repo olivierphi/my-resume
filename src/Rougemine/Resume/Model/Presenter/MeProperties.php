@@ -12,7 +12,7 @@ class MeProperties
      */
     private $name;
     /**
-     * @var string
+     * @var \DateTimeImmutable
      */
     private $birthDate;
     /**
@@ -38,7 +38,7 @@ class MeProperties
 
     /**
      * @param string $name
-     * @param string $birthDate
+     * @param \DateTimeImmutable $birthDate
      * @param string $jobTitle
      * @param string $address
      * @param string $email
@@ -49,7 +49,7 @@ class MeProperties
      */
     public function __construct(
         $name,
-        $birthDate,
+        \DateTimeImmutable $birthDate,
         $jobTitle,
         $address,
         $email,
@@ -78,7 +78,7 @@ class MeProperties
     }
 
     /**
-     * @return string
+     * @return \DateTimeImmutable
      */
     public function getBirthDate()
     {

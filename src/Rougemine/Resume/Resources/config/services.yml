@@ -1,5 +1,6 @@
 parameters:
-    translations.path: '%app.dir%/src/Rougemine/Resume/resources/translations'
+    data.path: '%app.dir%/src/Rougemine/Resume/resources/data'
+    translations.path: '%app.dir%/src/Rougemine/Resume/resources/translations,%data.path%'
     views.path: '%app.dir%/src/Rougemine/Resume/resources/views'
 
 services:
@@ -12,6 +13,7 @@ services:
         arguments:
             - '@app.generator.presenter.document_properties'
             - '@app.generator.presenter.me_properties'
+            - '@app.generator.presenter.technologies'
 
     #
     # View vars presenters
@@ -26,6 +28,12 @@ services:
         class: Rougemine\Resume\Generator\Presenter\MePropertiesGenerator
         arguments:
             - '@app.translator'
+        public: false
+
+    app.generator.presenter.technologies:
+        class: Rougemine\Resume\Generator\Presenter\TechnologiesGenerator
+        arguments:
+            - '%data.path%/technologies.yml'
         public: false
 
     #

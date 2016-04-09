@@ -11,10 +11,20 @@ html, body {
 
     #misc-info {
         width: 240px;
-        min-height: 100%;
-        /*border: solid blue 1px;*/
-        padding-top: 3em;
         display: table-cell;
+        min-height: 100%;
+        padding-top: 3em;
         vertical-align: top;
+        /*border: solid blue 1px;*/
+    }
+
+    #main-panel {
+        width: 710px;
+        display: table-cell;
+        padding-left: 25px;
+        padding-top: 2em;
+        padding-bottom: 3em;
+        vertical-align: top;
+        /*border: solid red 1px;*/
     }
 }

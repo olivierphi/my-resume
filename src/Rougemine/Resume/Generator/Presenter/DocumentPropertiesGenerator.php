@@ -26,6 +26,7 @@ class DocumentPropertiesGenerator extends AbstractTranslatedPropertiesGenerator
             $language,
             $this->trans($language, 'meta.title'),
             $this->trans($language, 'meta.description'),
+            $this->trans($language, 'punchline.digging'),
             new \DateTimeImmutable('now')
         );
     }

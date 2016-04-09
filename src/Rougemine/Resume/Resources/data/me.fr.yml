@@ -1,12 +1,11 @@
 name: Olivier Philippon
-birth: 11/07/1980
-jobTitle: Web Developer
+birth: 1980-07-11
+jobTitle: Développeur Web
 address: |
     122 rue Raymond Losserand
     75014 Paris
-    France
 email: olivier@rougemine.com
-phoneNumber: +33 6 61 78 99 25
+phoneNumber: 06 61 78 99 25
 url: http://rougemine.com/
 twitterId: RougeMine
 githubId: DrBenton
