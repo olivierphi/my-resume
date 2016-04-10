@@ -2,5 +2,6 @@
 
 /web/img
 /web/*.html
+/web/*.pdf
 /web/css/*
 !/web/css/.gitkeep

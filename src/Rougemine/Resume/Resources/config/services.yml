@@ -71,3 +71,7 @@ services:
         class: Rougemine\Resume\View\Twig\ResumeExtension
         arguments:
             - '@app.translator'
+            - '@app.figlet'
+
+    app.figlet:
+        class: Povils\Figlet\Figlet

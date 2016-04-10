@@ -6,7 +6,7 @@
         font-size: 3em;
         margin: 0;
 
-        @media (max-width: $mobileThemeThreshold) {
+        @media (max-width: $mobileThemeThreshold) and (not print) {
             margin-top: $logoContainerHeightInMobileMode;
         }
     }

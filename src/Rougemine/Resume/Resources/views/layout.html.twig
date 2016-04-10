@@ -2,8 +2,13 @@
 <html lang="{{ document.language }}">
     <head>
         <meta charset="utf-8">
+        <!--
+        {{ '    rougemine.com'|figlet|raw }}
+
+        Hi there! :-)
+        -->
         <meta name="language" content="{{ document.language }}">
-        <link rel="canonical" href="http://rougemine.com/?lang={{ document.language }}">
+        <link rel="canonical" href="{{ me.url }}/?lang={{ document.language }}">
         <title>{{ document.title }}</title>
         <meta name="description" content="{{ document.description }}">
         <meta http-equiv="last-modified" content="{{ document.generationDate|date(constant('DATE_W3C')) }}">

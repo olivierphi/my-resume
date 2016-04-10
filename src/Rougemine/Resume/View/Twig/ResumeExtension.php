@@ -2,7 +2,7 @@
 
 namespace Rougemine\Resume\View\Twig;
 
-
+use Povils\Figlet\FigletInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 
 class ResumeExtension extends \Twig_Extension
@@ -13,16 +13,24 @@ class ResumeExtension extends \Twig_Extension
      * @var TranslatorInterface
      */
     private $translator;
+    /**
+     * @var FigletInterface
+     */
+    private $figlet;
 
-    public function __construct(TranslatorInterface $translator)
-    {
+    public function __construct(
+        TranslatorInterface $translator,
+        FigletInterface $figlet
+    ) {
         $this->translator = $translator;
+        $this->figlet = $figlet;
     }
 
     public function getFilters()
     {
         return [
             new \Twig_SimpleFilter('trans', [$this, 'trans'], ['needs_context' => true]),
+            new \Twig_SimpleFilter('figlet', [$this, 'figlet']),
         ];
     }
 
@@ -44,6 +52,16 @@ class ResumeExtension extends \Twig_Extension
         }
 
         return $this->translator->trans($transKey, $transParams, self::TRANSLATION_DOMAIN, $language);
+    }
+
+    /**
+     * @param $text
+     *
+     * @return string
+     */
+    public function figlet($text)
+    {
+        return $this->figlet->render($text);
     }
 
     /**

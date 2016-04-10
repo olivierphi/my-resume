@@ -21,7 +21,7 @@
             border-radius: 5px;
         }
 
-        @media (max-width: $mobileThemeThreshold) {
+        @media (max-width: $mobileThemeThreshold) and (not print) {
             position: absolute;
             top: 0;
             width: 100%;
@@ -60,7 +60,7 @@
             }
         }
 
-        @media (max-width: $mobileThemeThreshold) {
+        @media (max-width: $mobileThemeThreshold) and (not print) {
             width: 46%;
             height: 208px;
             float: left;

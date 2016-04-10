@@ -4,43 +4,55 @@ use Robo\Tasks;
 use Rougemine\Resume\ContainerBuilder;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
-use Symfony\Component\Process\Process;
 
+/**
+ * Use these tasks with `php vendor/codegyre/robo/robo` (easier to use with an alias :-)
+ * @link http://robo.li/
+ */
 class RoboFile extends Tasks
 {
+    const AVAILABLE_LANGUAGES = ['en', 'fr'];
+
+    /**
+     * This launches all our tasks, in the right order.
+     */
     public function build()
     {
         $this->npmInstall();
         $this->buildScss();
         $this->assetsInstall();
         $this->buildHtml();
+        $this->buildPdf();
     }
 
+    /**
+     * We don't use Robo NPM built-in tasks here, as we do want to use the Node.js install we've requested in the "composer.json" file.
+     */
     public function npmInstall()
     {
         $npmPath = __DIR__ . '/vendor/nodejs/nodejs/npm';
         $thirdPartyResourcesPackageFilePath = dirname($this->getThirdPartyResourcesDirPath());
 
-        $npmInstallCommand = "$npmPath install";
-        $npmInstallProcess = new Process($npmInstallCommand, $thirdPartyResourcesPackageFilePath);
-        $npmInstallProcess->run(function ($type, $buffer) {
-            if (Process::ERR === $type) {
-                echo 'ERR > '.$buffer;
-            } else {
-                echo 'OUT > '.$buffer;
-            }
-        });
+        $npmInstallCommand = sprintf('%s install', $npmPath);
+        $npmInstallProcess = $this
+            ->taskExec($npmInstallCommand)
+            ->dir($thirdPartyResourcesPackageFilePath)
+            ->run()
+        ;
 
-        if (!$npmInstallProcess->isSuccessful()) {
+        if (!$npmInstallProcess->wasSuccessful()) {
             throw new RuntimeException('Failed to "npm install"');
         }
     }
 
+    /**
+     * We'll never say "Thanks!" enough to Leaf Corcoran for his PHP implementations of LESS and SCSS compilers :-)
+     */
     public function buildScss()
     {
         // No way to easily include CSS files content in a SCSS file, too bad :-/
         // --> we have to manually create "underscored-and-scss-ized" versions of third-party CSS assets...
-        // @see https://github.com/sass/sass/issues/556#issuecomment-73439666
+        // @link https://github.com/sass/sass/issues/556#issuecomment-73439666
         $thirdPartyResourcesDirPath = $this->getThirdPartyResourcesDirPath();
         $thirdPartyCssFiles = (new Finder())
             ->files()
@@ -64,6 +76,9 @@ class RoboFile extends Tasks
         ;
     }
 
+    /**
+     * Copies images from "front-end-assets/img" to "web/img".
+     */
     public function assetsInstall()
     {
         $sourceDirPath = __DIR__ . '/front-end-assets/img';
@@ -90,16 +105,22 @@ class RoboFile extends Tasks
         );
     }
 
+    /**
+     * Creates HTML files from data and Twig templates, for each language.
+     */
     public function buildHtml()
     {
         $twig = $this->getTwig();
 
-        foreach (['en', 'fr'] as $language) {
+        foreach (self::AVAILABLE_LANGUAGES as $language) {
             $viewVars = $this->getContainer()->get('app.view.presenters_generator')->getViewVarsPresenters($language);
             $this->generateHtmlPage($twig, $language, $viewVars);
         }
     }
 
+    /**
+     * Useful for development.
+     */
     public function watch()
     {
         $this->build();
@@ -113,18 +134,57 @@ class RoboFile extends Tasks
                 $this->say(sprintf('CSS compilation done. (%ss.)', round(microtime(true) - $startTime, 3)));
             })->monitor('src', function() {
                 $this->say('PHP/YAML files modified. HTML compilation...');
-                $startTime = microtime(true);
-                $this->buildHtml();
-                $this->say(sprintf('HTML compilation done. (%ss.)', round(microtime(true) - $startTime, 3)));
+                // We could have triggered `$this->buildHtml()`, but we have Twig cache issues...
+                // --> let's ask Robo to trigger a new Robo task! (oh, this is so meta)
+                $this->_exec('php vendor/codegyre/robo/robo build:html');
             })
             ->run()
         ;
     }
 
+    /**
+     * Builds PDF files from HTML files, thanks to "wkhtmltopdf".
+     */
+    public function buildPdf()
+    {
+        if (false === $wkhtmltopdfPath = getenv('WKHTML_TO_PDF_PATH')) {
+            if ($this->isWindows()) {
+                $wkhtmltopdfPath = __DIR__ . '/vendor/wemersonjanuario/wkhtmltopdf-windows/bin/64bit/wkhtmltopdf.exe';
+            } else {
+                $wkhtmltopdfPath = __DIR__ . '/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64';
+            }
+        }
+
+        foreach (self::AVAILABLE_LANGUAGES as $language) {
+            $wkhtmltopdfCommand = vsprintf('%s --print-media-type web/index.%s.html web/index.%s.pdf', [
+                $wkhtmltopdfPath,
+                $language,
+                $language,
+            ]);
+            $wkhtmltopdfProcess = $this
+                ->taskExec($wkhtmltopdfCommand)
+                ->run()
+            ;
+
+            if (!$wkhtmltopdfProcess->wasSuccessful()) {
+                throw new RuntimeException('Failed to "wkhtmltopdf"');
+            } else {
+                $this->say(sprintf('"web/index.%s.pdf" PDF file built.', $language));
+            }
+        }
+    }
+
+    /**
+     * Starts PHP built-in HTTP server.
+     */
     public function serverStart()
     {
+        if (false === $port = getenv('RESUME_PORT')) {
+            $port = 8000;
+        }
+
         $this
-            ->taskServer(8000)
+            ->taskServer($port)
             ->dir('web')
             ->run()
         ;
@@ -149,30 +209,45 @@ class RoboFile extends Tasks
      */
     private function getTwig()
     {
-        $viewsPath = $this->getContainer()->getParameter('views.path');
-        $loader = new Twig_Loader_Filesystem($viewsPath);
-        $twig = new Twig_Environment($loader, [
-            'strict_variables' => true,
-            'debug' => true,
-            'auto_reload' => true,
-            'cache' => false,
-        ]);
+        static $twig;
 
-        if (class_exists('Symfony\Bridge\Twig\Extension\DumpExtension')) {
-            $twig->addExtension(new Symfony\Bridge\Twig\Extension\DumpExtension(
-                new \Symfony\Component\VarDumper\Cloner\VarCloner()
-            ));
-        } else {
-            $twig->addExtension(new Twig_Extension_Debug());
+        if (null === $twig) {
+            $viewsPath = $this->getContainer()->getParameter('views.path');
+            $loader = new Twig_Loader_Filesystem($viewsPath);
+            $twig = new Twig_Environment($loader, [
+                'strict_variables' => true,
+                'debug' => true,
+                'auto_reload' => true,
+                'cache' => false,
+            ]);
+
+            if (class_exists('Symfony\Bridge\Twig\Extension\DumpExtension')) {
+                $twig->addExtension(new Symfony\Bridge\Twig\Extension\DumpExtension(
+                    new \Symfony\Component\VarDumper\Cloner\VarCloner()
+                ));
+            } else {
+                $twig->addExtension(new Twig_Extension_Debug());
+            }
+            $twig->addExtension($this->getContainer()->get('app.twig.extension.resume'));
         }
-        $twig->addExtension($this->getContainer()->get('app.twig.extension.resume'));
 
         return $twig;
     }
 
+    /**
+     * @return string
+     */
     private function getThirdPartyResourcesDirPath()
     {
         return __DIR__ . '/front-end-assets/js/node_modules';
+    }
+
+    /**
+     * @return bool
+     */
+    private function isWindows()
+    {
+        return 0 === strncasecmp(php_uname('s'), 'WIN', 3);
     }
 
     /**

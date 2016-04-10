@@ -1,6 +1,5 @@
 #pdf-download, #language-selector {
     position: absolute;
-    top: 0.5em;
     right: 0;
     a, span {
         font-family: Arial, sans-serif;
@@ -11,6 +10,10 @@
     @media print {
         display: none;
     }
+}
+
+#pdf-download {
+    top: 0.5em;
 }
 
 #language-selector {
