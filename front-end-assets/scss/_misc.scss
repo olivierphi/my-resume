@@ -1,3 +1,6 @@
+$outline-color: white;
+$outline-size: 2px;
+
 #pdf-download, #language-selector {
     position: absolute;
     right: 0;
@@ -6,6 +9,30 @@
         color: black;
         font-weight: normal;
         font-size: 12px;
+        // Let's apply *a lot* of text shadows to give a outline effect to the text
+        // (for when it's over the GitHub ribbon)
+        // Ugly, but... efficient :-)
+        text-shadow: 
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color,
+                0 0 $outline-size $outline-color;
     }
     @media print {
         display: none;
@@ -18,4 +45,10 @@
 
 #language-selector {
     top: 1.5em;
+}
+
+#github-ribbon {
+    @media print, (max-width: $mobileThemeThreshold) {
+        display: none;
+    }
 }

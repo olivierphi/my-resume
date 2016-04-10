@@ -22,12 +22,15 @@ class DocumentPropertiesGenerator extends AbstractTranslatedPropertiesGenerator
      */
     public function getDocumentProperties($language)
     {
+        $prodMode = getenv('PROD_MODE') ? true : false;
+
         return new DocumentProperties(
             $language,
             $this->trans($language, 'meta.title'),
             $this->trans($language, 'meta.description'),
             $this->trans($language, 'punchline.digging'),
-            new \DateTimeImmutable('now')
+            new \DateTimeImmutable('now'),
+            $prodMode
         );
     }
 }

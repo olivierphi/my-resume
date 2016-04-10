@@ -24,6 +24,10 @@ class DocumentProperties
      * @var \DateTimeImmutable
      */
     private $generationDate;
+    /**
+     * @var bool
+     */
+    private $prodMode;
 
     /**
      * @param string $language
@@ -31,19 +35,22 @@ class DocumentProperties
      * @param string $description
      * @param string $punchline
      * @param \DateTimeImmutable $generationDate
+     * @param bool $prodMode
      */
     public function __construct(
         $language,
         $title,
         $description,
         $punchline,
-        \DateTimeImmutable $generationDate
+        \DateTimeImmutable $generationDate,
+        $prodMode
     ) {
         $this->language = $language;
         $this->title = $title;
         $this->description = $description;
         $this->punchline = $punchline;
         $this->generationDate = $generationDate;
+        $this->prodMode = $prodMode;
     }
 
     /**
@@ -84,5 +91,13 @@ class DocumentProperties
     public function getGenerationDate()
     {
         return $this->generationDate;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isProdMode()
+    {
+        return $this->prodMode;
     }
 }

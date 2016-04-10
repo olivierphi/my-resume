@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c63b00136e61006c52d3a9c1ad30d1b0",
-    "content-hash": "726f1de9d1699d2a5ff624fc7f7e3c43",
+    "hash": "8dee748a92042c3590c81ff529821470",
+    "content-hash": "4718b24eb9ec601e9cf87f10ce2c8bff",
     "packages": [
         {
             "name": "codegyre/robo",
@@ -229,6 +229,53 @@
                 "npm"
             ],
             "time": "2016-01-05 14:00:57"
+        },
+        {
+            "name": "natxet/CssMin",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/natxet/CssMin.git",
+                "reference": "92de3fe3ccb4f8298d31952490ef7d5395855c39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/natxet/CssMin/zipball/92de3fe3ccb4f8298d31952490ef7d5395855c39",
+                "reference": "92de3fe3ccb4f8298d31952490ef7d5395855c39",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Scylla",
+                    "email": "joe.scylla@gmail.com",
+                    "homepage": "https://profiles.google.com/joe.scylla"
+                }
+            ],
+            "description": "Minifying CSS",
+            "homepage": "http://code.google.com/p/cssmin/",
+            "keywords": [
+                "css",
+                "minify"
+            ],
+            "time": "2015-09-25 11:13:11"
         },
         {
             "name": "povils/figlet",

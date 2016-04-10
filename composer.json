@@ -22,7 +22,8 @@
     "symfony/dependency-injection": "^3.0",
     "mouf/nodejs-installer": "^1.0",
     "symfony/process": "^3.0",
-    "povils/figlet": "dev-master"
+    "povils/figlet": "dev-master",
+    "natxet/CssMin": "^3.0"
   },
   "extra": {
     "mouf": {

@@ -12,7 +12,7 @@ html, body {
     display: table;
     min-height: 100%;
 
-    @media (max-width: $mobileThemeThreshold) and (not print) {
+    @media screen and (max-width: $mobileThemeThreshold) {
         width: auto;
     }
 
@@ -24,9 +24,17 @@ html, body {
         vertical-align: top;
         /*border: solid blue 1px;*/
 
-        @media (max-width: $mobileThemeThreshold) and (not print) {
+        @media screen and (max-width: $mobileThemeThreshold) {
+            // In mobile mode, this block is moved at the bottom of the page
             width: 100%;
             display: table-footer-group;
+            &:before {
+                content: "";
+                display: table;
+                width: 100%;
+                margin: 0 0 1em 0;
+                border-top: solid 3px darken($red, 10%);
+            }
         }
     }
 
@@ -39,7 +47,7 @@ html, body {
         vertical-align: top;
         /*border: solid red 1px;*/
 
-        @media (max-width: $mobileThemeThreshold) and (not print) {
+        @media screen and (max-width: $mobileThemeThreshold) {
             width: 100%;
             display: table-row-group;
         }

@@ -21,13 +21,15 @@
             border-radius: 5px;
         }
 
-        @media (max-width: $mobileThemeThreshold) and (not print) {
+        @media screen and (max-width: $mobileThemeThreshold) {
+            // In mobile mode, this logo is the first item on the page :-)
             position: absolute;
             top: 0;
             width: 100%;
             background-color: $red;
             height: $logoContainerHeightInMobileMode;
             margin: 0;
+            border-bottom: solid 3px darken($red, 10%);
         }
     }
 
@@ -60,10 +62,11 @@
             }
         }
 
-        @media (max-width: $mobileThemeThreshold) and (not print) {
+        @media screen and (max-width: $mobileThemeThreshold) {
             width: 46%;
             height: 208px;
             float: left;
+            margin-top: 5px;
         }
 
     }

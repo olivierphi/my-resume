@@ -18,6 +18,10 @@ class RoboFile extends Tasks
      */
     public function build()
     {
+        if (false === getenv('PROD_MODE')) {
+            putenv('PROD_MODE=1');//this task is meant to be used for "prod" builds
+        }
+
         $this->npmInstall();
         $this->buildScss();
         $this->assetsInstall();
@@ -74,6 +78,20 @@ class RoboFile extends Tasks
             ->importDir($scssDirPath)
             ->run()
         ;
+
+        $this->minifyCss();
+    }
+
+    /**
+     * Well... That task name should be self-explanatory :-)
+     */
+    public function minifyCss()
+    {
+        $this
+            ->taskMinify('web/css/main.css')
+            ->to('web/css/main.min.css')
+            ->run()
+        ;
     }
 
     /**
@@ -123,6 +141,8 @@ class RoboFile extends Tasks
      */
     public function watch()
     {
+        putenv('PROD_MODE=0');//this task is meant to be used for "dev" builds
+
         $this->build();
 
         $this
@@ -156,10 +176,12 @@ class RoboFile extends Tasks
         }
 
         foreach (self::AVAILABLE_LANGUAGES as $language) {
-            $wkhtmltopdfCommand = vsprintf('%s --print-media-type web/index.%s.html web/index.%s.pdf', [
+            $sourceFilePath = sprintf('web/index.%s.html', $language);
+            $targetFilePath = sprintf('web/cv-olivier-philippon.%s.pdf', $language);
+            $wkhtmltopdfCommand = vsprintf('%s --print-media-type %s %s', [
                 $wkhtmltopdfPath,
-                $language,
-                $language,
+                $sourceFilePath,
+                $targetFilePath,
             ]);
             $wkhtmltopdfProcess = $this
                 ->taskExec($wkhtmltopdfCommand)
@@ -169,7 +191,7 @@ class RoboFile extends Tasks
             if (!$wkhtmltopdfProcess->wasSuccessful()) {
                 throw new RuntimeException('Failed to "wkhtmltopdf"');
             } else {
-                $this->say(sprintf('"web/index.%s.pdf" PDF file built.', $language));
+                $this->say(sprintf('"%s" PDF file built.', $language));
             }
         }
     }
