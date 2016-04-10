@@ -1,14 +1,14 @@
 <div id="pdf-download">
-    <a href="cv-olivier-philippon.{{ document.language }}.pdf">{{ 'top_links.pdf.download'|trans }}</a>
+    <a href="cv-olivier-philippon.{{ document.language }}.pdf" target="_blank">{{ 'top_links.pdf.download'|trans }}</a>
 </div>
 
 <div id="language-selector">
     <span>{{ 'top_links.language'|trans }}</span>
     {% if 'en' == document.language %}
         <span>EN</span>
-        <a href="?lang=fr">FR</a>
+        <a href="/fr">FR</a>
     {% elseif 'fr' == document.language %}
-        <a href="?lang=en">EN</a>
+        <a href="/en">EN</a>
         <span>FR</span>
     {% endif %}
 </div>

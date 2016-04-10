@@ -9,7 +9,7 @@
         Hi there! :-)
         -->
         <meta name="language" content="{{ document.language }}">
-        <link rel="canonical" href="{{ me.url }}/?lang={{ document.language }}">
+        <link rel="canonical" href="{{ me.url }}{{ document.language }}">
         <meta name="description" content="{{ document.description }}">
         <meta http-equiv="last-modified" content="{{ document.generationDate|date(constant('DATE_W3C')) }}">
 

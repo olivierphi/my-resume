@@ -11,7 +11,7 @@ $outline-size: 2px;
         font-size: 12px;
         // Let's apply *a lot* of text shadows to give a outline effect to the text
         // (for when it's over the GitHub ribbon)
-        // Ugly, but... efficient :-)
+        // Ugly and hacky, but... its makes the job :-)
         text-shadow: 
                 0 0 $outline-size $outline-color,
                 0 0 $outline-size $outline-color,
@@ -34,6 +34,14 @@ $outline-size: 2px;
                 0 0 $outline-size $outline-color,
                 0 0 $outline-size $outline-color;
     }
+    @media (max-width: $mobileThemeThreshold) {
+        left: 0;
+        z-index: 1;
+        span, a {
+            color: white;
+            text-shadow: none;
+        }
+    }
     @media print {
         display: none;
     }
@@ -48,7 +56,12 @@ $outline-size: 2px;
 }
 
 #github-ribbon {
-    @media print, (max-width: $mobileThemeThreshold) {
+    img {
+        @media (max-width: $mobileThemeThreshold) {
+            z-index: 2;
+        }
+    }
+    @media print {
         display: none;
     }
 }
