@@ -8,6 +8,7 @@
 
         @media screen and (max-width: $mobileThemeThreshold) {
             margin-top: $logoContainerHeightInMobileMode;
+            font-size: 2em;
         }
     }
 
@@ -17,6 +18,10 @@
         font-size: 2.2em;
         font-style: italic;
         margin: 0;
+        
+        @media screen and (max-width: $mobileThemeThreshold) {
+            font-size: 1.2em;
+        }
     }
 
     h3 {
@@ -26,6 +31,10 @@
         img {
             vertical-align: middle;
             margin-top: -4px;
+        }
+        
+        @media screen and (max-width: $mobileThemeThreshold) {
+            font-size: 1em;
         }
     }
 

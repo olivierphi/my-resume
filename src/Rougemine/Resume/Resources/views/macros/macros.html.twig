@@ -1,5 +1,5 @@
 {% macro techDisplay(tech) %}
-    {% spaceless %}
+    {%- spaceless -%}
         {% if tech.hasUrl() %}
             {% if tech.hasMultipleTitles() %}
                 {% for subTechTitle in tech.title %}
@@ -17,7 +17,7 @@
         {% else %}
             {{ tech.title }}
         {% endif %}
-    {% endspaceless %}
+    {%- endspaceless -%}
 {% endmacro %}
 
 {% macro techContributorDisplay(tech, lang) %}

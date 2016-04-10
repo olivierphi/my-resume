@@ -37,7 +37,7 @@
     <div class="tools-container">
         <h4>{{ 'tools'|trans }}</h4>
         {% for tool in technologies.tools %}
-            {{ macros.toolDisplay(tool) }}
+            {{ macros.toolDisplay(tool) -}}
             {{- loop.last ? '...' : ', ' -}}
         {% endfor %}
 

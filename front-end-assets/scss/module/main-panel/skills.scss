@@ -1,6 +1,9 @@
 
+@import "../../utils";
+
 .skills-container {
     .main-technologies-container {
+        @include clearfix;
         margin-left: 1em;
         .tech {
             width: 33%;
@@ -25,10 +28,15 @@
                     font-style: italic;
                 }
             }
+
+            @media screen and (max-width: $mobileThemeThreshold) {
+                width: 48%;
+            }
         }
     }
 
     .other-technologies-container {
+        @include clearfix;
         .tech-with-icon {
             line-height: 1.8;
         }

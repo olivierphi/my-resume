@@ -7,6 +7,7 @@
     padding-left: 28px;
     background-repeat: no-repeat;
     background-position: 2px center;
+    display: inline-block;
     &.rails {
         @include tech-icon-bg(rails);
     }

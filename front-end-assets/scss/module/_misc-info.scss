@@ -63,10 +63,11 @@
         }
 
         @media screen and (max-width: $mobileThemeThreshold) {
-            width: 46%;
+            width: 48%;
             height: 208px;
             float: left;
-            margin-top: 5px;
+            margin: 5px 0 0 0;
+            font-size: 0.85em;
         }
 
     }

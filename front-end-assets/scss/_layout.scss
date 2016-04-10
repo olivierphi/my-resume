@@ -50,6 +50,7 @@ html, body {
         @media screen and (max-width: $mobileThemeThreshold) {
             width: 100%;
             display: table-row-group;
+            padding-left: 0;
         }
     }
 }
