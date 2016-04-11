@@ -30,6 +30,7 @@
             .contributor {
                 float: none;
                 margin-left: 35px;
+                margin-bottom: -0.5em;
                 a {
                     font-style: italic;
                 }
@@ -37,6 +38,14 @@
 
             @media screen and (max-width: $mobileThemeThreshold) {
                 width: 48%;
+                &:nth-child(even) {
+                    float: right;
+                    margin-left: 2px;
+                }
+                &:nth-child(odd) {
+                    float: left;
+                    margin-right: 2px;
+                }
             }
         }
     }

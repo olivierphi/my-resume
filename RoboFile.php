@@ -204,9 +204,13 @@ class RoboFile extends Tasks
         if (false === $port = getenv('RESUME_PORT')) {
             $port = 8000;
         }
+        if (false === $host = getenv('RESUME_HOST')) {
+            $host = '0.0.0.0';
+        }
 
         $this
             ->taskServer($port)
+            ->host($host)
             ->dir('web')
             ->run()
         ;

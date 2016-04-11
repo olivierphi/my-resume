@@ -23,21 +23,23 @@
 
     <div class="other-technologies-container">
         <h4>{{ 'other_skills'|trans }}</h4>
+        {% spaceless %}
         {% for technology in technologies.otherTechnologies %}
             <span class="tech-with-icon {{ technology.icon }}">
-                {{ macros.techDisplay(technology) }}
+                {{- macros.techDisplay(technology) -}}
                 {% if technology.hasContributorUrl() %}
-                    {{ macros.techContributorDisplay(technology, document.language) }}
+                    {{- macros.techContributorDisplay(technology, document.language) -}}
                 {% endif %}
             </span>
-            {% if not loop.last %}, {% endif %}
+            {%- if not loop.last %}, {% endif -%}
         {% endfor %}
+        {% endspaceless %}
     </div>{# end .other-technologies-container #}
 
     <div class="tools-container">
         <h4>{{ 'tools'|trans }}</h4>
         {% for tool in technologies.tools %}
-            {{ macros.toolDisplay(tool) -}}
+            {{- macros.toolDisplay(tool) -}}
             {{- loop.last ? '...' : ', ' -}}
         {% endfor %}
 

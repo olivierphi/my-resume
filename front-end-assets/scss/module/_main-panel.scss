@@ -7,7 +7,7 @@
         margin: 0;
 
         @media screen and (max-width: $mobileThemeThreshold) {
-            margin-top: $logoContainerHeightInMobileMode;
+            margin-top: $logoContainerHeightInMobileMode + 5px;
             font-size: 2em;
         }
     }
@@ -20,7 +20,8 @@
         margin: 0;
         
         @media screen and (max-width: $mobileThemeThreshold) {
-            font-size: 1.2em;
+            font-size: 1.3em;
+            margin-bottom: 1em;
         }
     }
 
@@ -51,6 +52,7 @@
 
             @media screen and (max-width: $mobileThemeThreshold) {
                 padding-left: 8%;
+                padding-right: 1em;
             }
             
             li {

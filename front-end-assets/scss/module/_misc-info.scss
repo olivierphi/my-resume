@@ -1,11 +1,13 @@
 @import "../variables";
 
+$miscInfoWhite: #F0F0F0;
+
 #misc-info {
     background-color: $red;
-    color: white;
+    color: $miscInfoWhite;
 
-    a {
-        color: white;
+    p, a {
+        color: $miscInfoWhite;
     }
 
     .logo-container {
@@ -41,6 +43,7 @@
 
         h3 {
             margin: 0 0 0.25em 0;
+            font-weight: normal;
         }
 
         p {
@@ -59,8 +62,10 @@
         &.me-container {
             .twitter-link {
                 display: inline-block;
+                /*
                 background: url("../img/icons/headers/twitter.png") -5px -2px no-repeat;
                 padding-left: 23px;
+                */
                 margin-top: 8px;
             }
         }
@@ -68,9 +73,16 @@
         @media screen and (max-width: $mobileThemeThreshold) {
             width: 48%;
             height: 208px;
-            float: left;
             margin: 5px 0 0 0;
             font-size: 0.85em;
+            &:nth-child(even) {
+                float: left;
+                margin-left: 2px;
+            }
+            &:nth-child(odd) {
+                float: right;
+                margin-right: 2px;
+            }
         }
 
     }

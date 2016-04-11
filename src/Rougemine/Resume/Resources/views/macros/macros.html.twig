@@ -7,7 +7,7 @@
                     <a href="{{ subTechUrl }}" target="_blank">
                         {{- subTechTitle -}}
                     </a>
-                    {% if not loop.last %} / {% endif %}
+                    {% if not loop.last %}&nbsp;/&nbsp;{% endif %}
                 {% endfor %}
             {% else %}
                 <a href="{{ tech.url }}" target="_blank">
