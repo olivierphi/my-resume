@@ -29,7 +29,10 @@
             background-color: $red;
             height: $logoContainerHeightInMobileMode;
             margin: 0;
-            border-bottom: solid 3px darken($red, 10%);
+            border-bottom: solid 2px darken($red, 10%);
+            .rougemine-logo {
+                margin-top: 2em;
+            }
         }
     }
 

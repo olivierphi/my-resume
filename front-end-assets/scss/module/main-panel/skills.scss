@@ -5,6 +5,12 @@
     .main-technologies-container {
         @include clearfix;
         margin-left: 1em;
+
+        @media screen and (max-width: $mobileThemeThreshold) {
+            width: 95%;
+            margin: 0 auto;
+        }
+        
         .tech {
             width: 33%;
             float: left;
