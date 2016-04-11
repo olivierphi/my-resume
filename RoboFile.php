@@ -4,9 +4,11 @@ use Robo\Tasks;
 use Rougemine\Resume\ContainerBuilder;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
+use Symfony\CS\Console\Command\FixCommand;
 
 /**
- * Use these tasks with `php vendor/codegyre/robo/robo` (easier to use with an alias :-)
+ * Use these tasks with `php vendor/codegyre/robo/robo` (easier to use with an alias :-).
+ *
  * @link http://robo.li/
  */
 class RoboFile extends Tasks
@@ -50,7 +52,7 @@ class RoboFile extends Tasks
     }
 
     /**
-     * We'll never say "Thanks!" enough to Leaf Corcoran for his PHP implementations of LESS and SCSS compilers :-)
+     * We'll never say "Thanks!" enough to Leaf Corcoran for his PHP implementations of LESS and SCSS compilers :-).
      */
     public function buildScss()
     {
@@ -73,7 +75,7 @@ class RoboFile extends Tasks
         $scssDirPath = 'front-end-assets/scss/';
         $this
             ->taskScss([
-                "$scssDirPath/main.scss" => 'web/css/main.css'
+                "$scssDirPath/main.scss" => 'web/css/main.css',
             ])
             ->importDir($scssDirPath)
             ->run()
@@ -83,7 +85,7 @@ class RoboFile extends Tasks
     }
 
     /**
-     * Well... That task name should be self-explanatory :-)
+     * Well... That task name should be self-explanatory :-).
      */
     public function minifyCss()
     {
@@ -147,12 +149,12 @@ class RoboFile extends Tasks
 
         $this
             ->taskWatch()
-            ->monitor('front-end-assets/scss', function() {
+            ->monitor('front-end-assets/scss', function () {
                 $this->say('SCSS files modified. CSS compilation...');
                 $startTime = microtime(true);
                 $this->buildScss();
                 $this->say(sprintf('CSS compilation done. (%ss.)', round(microtime(true) - $startTime, 3)));
-            })->monitor('src', function() {
+            })->monitor('src', function () {
                 $this->say('PHP/YAML files modified. HTML compilation...');
                 // We could have triggered `$this->buildHtml()`, but we have Twig cache issues...
                 // --> let's ask Robo to trigger a new Robo task! (oh, this is so meta)
@@ -212,6 +214,17 @@ class RoboFile extends Tasks
             ->taskServer($port)
             ->host($host)
             ->dir('web')
+            ->run()
+        ;
+    }
+
+    /**
+     * Just a very thin wrapper around PHP-CS-Fixer.
+     */
+    public function phpcs()
+    {
+        $this
+            ->taskSymfonyCommand(new FixCommand())
             ->run()
         ;
     }

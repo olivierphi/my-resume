@@ -34,7 +34,7 @@ class TranslationsCompilerPass implements CompilerPassInterface
                 'yaml',
                 $translationFile->getPathname(),
                 $language,
-                $domain
+                $domain,
             ]);
         }
     }
