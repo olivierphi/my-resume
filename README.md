@@ -16,6 +16,18 @@ So, in order to generate only 2 HTML pages and 2 PDF files, I've had the pleasur
 Because my new shiny-but-not-yet-supported-laptop can't run Ubuntu at the moment, I had to work on this app on Windows. Yes, it's been a pain.  
 But thanks to that I could notice that PHP tools (and especially Symfony components) have a better support of Windows nowadays. PHP is really a multiplatform programming language now!
 
+## Usage
+
+See [the Robofile](https://github.com/DrBenton/rougemine.com-online-resume/blob/master/RoboFile.php) for build tasks.
+
+TL;DR:
+```bash
+# For a single prod build:
+$ php vendor/codegyre/robo/robo build
+# For a continuous "dev" build, automatically updated on files changes:
+$ php vendor/codegyre/robo/robo watch
+```
+
 ## LICENSE
 
 Excepted files in the *"front-end-assets/img/icons/"* folder, this app is licensed under the MIT license.
