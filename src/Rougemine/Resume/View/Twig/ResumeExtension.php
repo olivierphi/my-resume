@@ -4,6 +4,7 @@ namespace Rougemine\Resume\View\Twig;
 
 use Povils\Figlet\FigletInterface;
 use Symfony\Component\Translation\TranslatorInterface;
+use Twig_SimpleFilter;
 
 class ResumeExtension extends \Twig_Extension
 {
@@ -29,8 +30,8 @@ class ResumeExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('trans', [$this, 'trans'], ['needs_context' => true]),
-            new \Twig_SimpleFilter('figlet', [$this, 'figlet']),
+            new Twig_SimpleFilter('trans', [$this, 'trans'], ['needs_context' => true]),
+            new Twig_SimpleFilter('figlet', [$this, 'figlet']),
         ];
     }
 

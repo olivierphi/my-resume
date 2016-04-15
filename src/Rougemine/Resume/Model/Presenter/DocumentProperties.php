@@ -28,6 +28,10 @@ class DocumentProperties
      * @var bool
      */
     private $prodMode;
+    /**
+     * @var string|null
+     */
+    private $googleAnalyticsTrackingCode;
 
     /**
      * @param string $language
@@ -36,6 +40,7 @@ class DocumentProperties
      * @param string $punchline
      * @param \DateTimeImmutable $generationDate
      * @param bool $prodMode
+     * @param string|null $googleAnalyticsTrackingCode
      */
     public function __construct(
         $language,
@@ -43,7 +48,8 @@ class DocumentProperties
         $description,
         $punchline,
         \DateTimeImmutable $generationDate,
-        $prodMode
+        $prodMode,
+        $googleAnalyticsTrackingCode
     ) {
         $this->language = $language;
         $this->title = $title;
@@ -51,6 +57,7 @@ class DocumentProperties
         $this->punchline = $punchline;
         $this->generationDate = $generationDate;
         $this->prodMode = $prodMode;
+        $this->googleAnalyticsTrackingCode = $googleAnalyticsTrackingCode;
     }
 
     /**
@@ -99,5 +106,21 @@ class DocumentProperties
     public function isProdMode()
     {
         return $this->prodMode;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasGoogleAnalyticsTrackingCode()
+    {
+        return null !== $this->googleAnalyticsTrackingCode;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getGoogleAnalyticsTrackingCode()
+    {
+        return $this->googleAnalyticsTrackingCode;
     }
 }

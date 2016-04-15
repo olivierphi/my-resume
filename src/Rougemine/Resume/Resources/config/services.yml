@@ -24,6 +24,8 @@ services:
         class: Rougemine\Resume\Generator\Presenter\DocumentPropertiesGenerator
         arguments:
             - '@app.translator'
+            - '%app.prodMode%'
+            - '%app.google.analytics.trackingCode%'
         public: false
 
     app.generator.presenter.me_properties:

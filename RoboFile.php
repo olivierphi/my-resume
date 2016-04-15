@@ -4,7 +4,7 @@ use Robo\Tasks;
 use Rougemine\Resume\ContainerBuilder;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
-use Symfony\CS\Console\Command\FixCommand;
+use Symfony\CS\Console\Command\FixCommand as PHPCSFixCommand;
 
 /**
  * Use these tasks with `php vendor/codegyre/robo/robo` (easier to use with an alias :-).
@@ -224,7 +224,7 @@ class RoboFile extends Tasks
     public function phpcs()
     {
         $this
-            ->taskSymfonyCommand(new FixCommand())
+            ->taskSymfonyCommand(new PHPCSFixCommand())
             ->run()
         ;
     }

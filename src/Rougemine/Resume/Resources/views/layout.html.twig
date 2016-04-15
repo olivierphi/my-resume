@@ -29,5 +29,11 @@
             {% endblock %}
 
         </div>
+    
+        {% if document.hasGoogleAnalyticsTrackingCode() %}
+            {{ include('includes/_google-analytics.html.twig', {
+                googleAnalyticsTrackingCode: document.googleAnalyticsTrackingCode,
+            }, with_context = false) }}
+        {% endif %}
     </body>
 </html>

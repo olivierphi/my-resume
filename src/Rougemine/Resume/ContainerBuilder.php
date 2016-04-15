@@ -36,6 +36,10 @@ class ContainerBuilder
 
         // Some runtime parameters...
         $container->setParameter('app.dir', $this->appDir);
+        $prodMode = getenv('PROD_MODE') ? true : false;
+        $container->setParameter('app.prodMode', $prodMode);
+        $googleAnalyticsTrackingCode = getenv('GA_TRACKING_CODE') ?: null;
+        $container->setParameter('app.google.analytics.trackingCode', $googleAnalyticsTrackingCode);
 
         // Services definitions loading
         $loader = new YamlFileLoader($container, new FileLocator($servicesDir));
