@@ -17,26 +17,7 @@ $outline-size: 2px;
         // Let's apply *a lot* of text shadows to give a outline effect to the text
         // (for when it's over the GitHub ribbon)
         // Ugly and hacky, but... its makes the job :-)
-        text-shadow: 0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color,
-        0 0 $outline-size $outline-color;
+        text-shadow: make-long-shadow($outline-size, $outline-color, 20);
     }
     @include mobile-theme-all {
         left: 4px;
