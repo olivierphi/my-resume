@@ -1,12 +1,11 @@
-
-@import "../../utils";
+@import "../../_mixins";
 
 .skills-container {
     .main-technologies-container {
         @include clearfix;
         margin-left: 1em;
 
-        @media screen and (max-width: $mobileThemeThreshold) {
+        @include mobile-theme-screen {
             width: 95%;
             margin: 0 auto;
         }
@@ -36,7 +35,7 @@
                 }
             }
 
-            @media screen and (max-width: $mobileThemeThreshold) {
+            @include mobile-theme-screen {
                 width: 48%;
                 &:nth-child(even) {
                     float: right;

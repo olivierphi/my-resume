@@ -1,5 +1,6 @@
 
 @import "variables";
+@import "mixins";
 
 $outline-color: white;
 $outline-size: 2px;
@@ -37,7 +38,7 @@ $outline-size: 2px;
         0 0 $outline-size $outline-color,
         0 0 $outline-size $outline-color;
     }
-    @media (max-width: $mobileThemeThreshold) {
+    @include mobile-theme-all {
         left: 4px;
         z-index: 1;
         span, a {
@@ -114,8 +115,8 @@ $outline-size: 2px;
     }
     // end "pure CSS" GitHub ribbon
 
-    
-    @media (max-width: $mobileThemeThreshold) {
+
+    @include mobile-theme-all {
         z-index: 2;
     }
     @media print {

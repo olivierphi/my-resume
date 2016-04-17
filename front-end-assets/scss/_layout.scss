@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 html, body {
     font-family: 'Droid Sans', sans-serif;
@@ -7,24 +8,24 @@ html, body {
 
 #content-container {
     position: relative;
-    width: $contentContainerWith;
+    width: $content-container-width;
     margin: 0 auto;
     display: table;
     min-height: 100%;
 
-    @media screen and (max-width: $mobileThemeThreshold) {
+    @include mobile-theme-screen {
         width: auto;
     }
 
     #misc-info {
-        width: $miscInfoWith;
+        width: $misc-info-width;
         display: table-cell;
         min-height: 100%;
         padding-top: 3em;
         vertical-align: top;
         /*border: solid blue 1px;*/
 
-        @media screen and (max-width: $mobileThemeThreshold) {
+        @include mobile-theme-screen {
             // In mobile mode, this block is moved at the bottom of the page
             width: 100%;
             display: table-footer-group;
@@ -39,7 +40,7 @@ html, body {
     }
 
     #main-panel {
-        width: $mainPanelWith;
+        width: $main-panel-width;
         display: table-cell;
         padding-left: 25px;
         padding-top: 2em;
@@ -47,7 +48,7 @@ html, body {
         vertical-align: top;
         /*border: solid red 1px;*/
 
-        @media screen and (max-width: $mobileThemeThreshold) {
+        @include mobile-theme-screen {
             width: 100%;
             display: table-row-group;
             padding-left: 0;

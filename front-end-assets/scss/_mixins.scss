@@ -1,0 +1,21 @@
+@import "variables";
+
+@mixin clearfix {
+    &:after {
+        content:"";
+        display:block;
+        clear:both;
+    }
+}
+
+@mixin mobile-theme-screen {
+    @media screen and (max-width: $mobile-theme-threshold) {
+        @content;
+    }
+}
+
+@mixin mobile-theme-all {
+    @media (max-width: $mobile-theme-threshold) {
+        @content;
+    }
+}
