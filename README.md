@@ -22,11 +22,21 @@ See [the Robofile](https://github.com/DrBenton/rougemine.com-online-resume/blob/
 
 TL;DR:
 ```bash
+# PROD
 # For a single prod build:
 $ php vendor/codegyre/robo/robo build
+# For a single prod build with Google Analytics tracking: (Twelve Factors app! :-)
+$ GA_TRACKING_CODE=UA-XXXXXXXX-X php vendor/codegyre/robo/robo build
+# (Similarly, you can set a "WKHTML_TO_PDF_PATH" env var for a custom wkhtmltopdf binary file path)  
+#
+# DEV
 # For a continuous "dev" build, automatically updated on files changes:
 $ php vendor/codegyre/robo/robo watch
+#
+# Of course, Robo commands are easier with something like this:
+$ alias robo='php vendor/codegyre/robo/robo'
 ```
+
 
 ## LICENSE
 
