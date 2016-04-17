@@ -4,7 +4,8 @@
             Lead Développeur
             <span class="tech-with-icon symfony2">Symfony2</span> et
             JavaScript
-            pour la refonte des sites <a href="https://www.balinea.com/" target="_blank">Balinea</a>
+            pour la refonte de la plateforme <a href="https://www.balinea.com/" target="_blank">Balinea</a>
+            - qui inclut le site public, un middle-office, un back-end, deux API (une publique et une privée)...
 -
         title: Projets internes@LeMonde.fr
         content: >
