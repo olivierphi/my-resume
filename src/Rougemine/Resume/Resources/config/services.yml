@@ -1,7 +1,7 @@
 parameters:
-    data.path: '%app.dir%/src/Rougemine/Resume/resources/data'
-    translations.path: '%app.dir%/src/Rougemine/Resume/resources/translations,%data.path%'
-    views.path: '%app.dir%/src/Rougemine/Resume/resources/views'
+    data.path: '%app.dir%/src/Rougemine/Resume/Resources/data'
+    translations.path: '%app.dir%/src/Rougemine/Resume/Resources/translations,%data.path%'
+    views.path: '%app.dir%/src/Rougemine/Resume/Resources/views'
 
 services:
 

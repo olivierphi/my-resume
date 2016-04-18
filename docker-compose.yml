@@ -1,0 +1,25 @@
+# Install vendor dependencies with `docker-compose run --rm composer install`,
+# then build with `docker-compose run --rm robo build`.
+# Live-test with `docker-compose run --rm robo watch`.
+
+wwwdata:
+  image: busybox
+  volumes:
+    - .:/www-data
+
+phpcli: &phpcli
+  build: docker/phpcli
+  volumes_from:
+    - wwwdata
+  working_dir: /www-data
+  entrypoint: php
+
+composer:
+  <<: *phpcli
+  entrypoint: composer
+
+robo:
+  <<: *phpcli
+  entrypoint:
+    - php
+    - vendor/codegyre/robo/robo

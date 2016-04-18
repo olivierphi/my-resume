@@ -35,6 +35,11 @@ $ php vendor/codegyre/robo/robo watch
 #
 # Of course, Robo commands are easier with something like this:
 $ alias robo='php vendor/codegyre/robo/robo'
+#
+# Docker
+# If you have Docker & Docker Compose:
+$ docker-compose run --rm composer install
+$ docker-compose run --rm robo build
 ```
 
 
