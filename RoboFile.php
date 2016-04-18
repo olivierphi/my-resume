@@ -36,7 +36,10 @@ class RoboFile extends Tasks
      */
     public function npmInstall()
     {
-        $npmPath = __DIR__ . '/vendor/nodejs/nodejs/bin/npm';
+        $npmPath = $this->isWindows()
+            ? __DIR__ . '/vendor/nodejs/nodejs/npm'
+            : __DIR__ . '/vendor/nodejs/nodejs/bin/npm'
+        ;
         $thirdPartyResourcesPackageFilePath = dirname($this->getThirdPartyResourcesDirPath());
 
         $npmInstallCommand = sprintf('%s install', $npmPath);
