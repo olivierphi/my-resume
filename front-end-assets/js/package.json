@@ -5,7 +5,8 @@
   "scripts": {
   },
   "author": "Olivier Philippon",
-  "license": "beerware",
+  "license": "MIT",
+  "homepage": "https://rougemine.com",
   "dependencies": {
     "normalize.css": "^4.0.0"
   }

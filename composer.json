@@ -2,7 +2,8 @@
   "name": "rougemine/website",
   "description": "Rougemine.com web site",
   "minimum-stability": "stable",
-  "license": "proprietary",
+  "license": "MIT",
+  "homepage": "https://rougemine.com",
   "authors": [
     {
       "name": "Olivier Philippon",
