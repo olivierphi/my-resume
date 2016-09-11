@@ -13,44 +13,44 @@ main:
         icon: symfony2
         url: http://symfony.com
   -
-        title: Zend Framework
-        icon: zend-framework
-        url: http://www.zendframework.com/
+        title: Node.js
+        icon: nodejs
+        url: http://nodejs.org
+  -
+        title: Browserify
+        icon: browserify
+        url: http://browserify.org/
+others:
+
+  -
+        title: Doctrine
+        icon: doctrine
+        url: http://www.doctrine-project.org/
+  -
+        title: Elasticsearch
+        icon: elasticsearch
+        url: https://www.elastic.co/products/elasticsearch
+  -
+        title: Redis
+        icon: redis
+        url: http://www.redis.io/
+  -
+        title: Algolia
+        icon: algolia
+        url: http://www.algolia.com/
   -
         title: Silex
         icon: silex
         url: http://silex.sensiolabs.org/
         contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
   -
-        title: Node.js
-        icon: nodejs
-        url: http://nodejs.org
-  -
         title: Express
         icon: express
         url: http://expressjs.com/
   -
-        title: Browserify
-        icon: browserify
-        url: http://browserify.org/
-
-others:
-  -
         title: [phpunit, Behat]
         icon: behat
         url: ["https://phpunit.de/", "http://behat.org/"]
-  -
-        title: Doctrine
-        icon: doctrine
-        url: http://www.doctrine-project.org/
-  -
-        title: MySQL
-        icon: mysql
-        url: http://www.mysql.com/
-  -
-        title: Algolia
-        icon: algolia
-        url: http://www.algolia.com/
   -
         title: Ruby
         icon: ruby
@@ -60,40 +60,16 @@ others:
         icon: rails
         url: http://rubyonrails.org
   -
-        title: [Grunt, Gulp]
-        icon: grunt
-        url: ["http://gruntjs.com", "http://gulpjs.com/"]
+        title: Gulp
+        icon: gulp
+        url: http://gulpjs.com/
   -
-        title: Backbone
-        icon: backbone
-        url: http://backbonejs.org/
-  -
-        title: CoffeeScript
-        icon: coffeescript
-        url: http://coffeescript.org/
-  -
-        title: Require.js
-        icon: requirejs
-        url: http://requirejs.org/
-  -
-        title: [LESS, SASS]
+        title: [LESS, SCSS]
         icon: less
         url: ["http://lesscss.org/", "http://sass-lang.com/"]
   -
-        title: Drupal
-        icon: drupal
-        url: http://drupal.org/
-  -
         title: Flash
         icon: flash
-  -
-        title: Robotlegs
-        icon: robotlegs
-        url: http://www.robotlegs.org/
-  -
-        title: Perl
-        icon: perl
-        url: http://www.perl.org/
 
 tools:
     -
@@ -111,12 +87,6 @@ tools:
     -
         title: IntelliJ IDEA
         url: http://www.jetbrains.com/idea/
-    -
-        title: Netbeans
-        url: http://netbeans.org/
-    -
-        title: Eclipse
-        url: http://www.eclipse.org/
     -
         title: Vagrant
         url: http://vagrantup.com/

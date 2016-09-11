@@ -2,12 +2,12 @@
   "name": "rougemine-resume",
   "version": "1.0.0",
   "description": "Rougemine.com resume",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Olivier Philippon",
   "license": "MIT",
   "homepage": "https://rougemine.com",
   "dependencies": {
+    "dejavu-sans": "^1.0.0",
     "normalize.css": "^4.0.0"
   }
 }

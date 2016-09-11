@@ -104,12 +104,13 @@ class RoboFile extends Tasks
      */
     public function assetsInstall()
     {
-        $sourceDirPath = __DIR__ . '/front-end-assets/img';
-        $targetDirPath = __DIR__ . '/web/img';
+        // Images copy
+        $imagesSourceDirPath = __DIR__ . '/front-end-assets/img';
+        $imagesTargetDirPath = __DIR__ . '/web/img';
 
         $this
             ->taskCopyDir([
-                $sourceDirPath => $targetDirPath,
+                $imagesSourceDirPath => $imagesTargetDirPath,
             ])
             ->run()
         ;
@@ -118,7 +119,7 @@ class RoboFile extends Tasks
         $svgFiles = (new Finder())
             ->files()
             ->name('*.svg')
-            ->in($targetDirPath)
+            ->in($imagesTargetDirPath)
         ;
         array_map(
             function (SplFileInfo $fileInfo) {
@@ -126,6 +127,17 @@ class RoboFile extends Tasks
             },
             iterator_to_array($svgFiles)
         );
+        
+        // Fonts copy
+        $fontsSourceDirPath = __DIR__ . '/front-end-assets/js/node_modules/dejavu-sans/fonts';
+        $fontsTargetDirPath = __DIR__ . '/web/fonts';
+
+        $this
+            ->taskCopyDir([
+                $fontsSourceDirPath => $fontsTargetDirPath,
+            ])
+            ->run()
+        ;
     }
 
     /**

@@ -54,5 +54,13 @@
         .tech-with-icon {
             line-height: 1.8;
         }
+
+        .contributor {
+            display: inline-block;
+            a {
+                padding-left: 8px;
+                font-style: italic;
+            }
+        }
     }
 }

@@ -4,10 +4,26 @@
 }
 
 .tech-with-icon {
+    display: inline-block;
+    line-height: 20px;
     padding-left: 28px;
     background-repeat: no-repeat;
     background-position: 2px center;
-    display: inline-block;
+    &.elasticsearch {
+        @include tech-icon-bg(elasticsearch);
+    }
+    &.redis {
+        @include tech-icon-bg(redis);
+    }
+    &.browserify {
+        @include tech-icon-bg(browserify);
+    }
+    &.express {
+        @include tech-icon-bg(express);
+    }    
+    &.gulp {
+        @include tech-icon-bg(gulp);
+    }    
     &.rails {
         @include tech-icon-bg(rails);
     }

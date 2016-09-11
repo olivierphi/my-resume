@@ -5,5 +5,8 @@
 /web/*.pdf
 /web/css/*
 !/web/css/.gitkeep
+/web/img/*
+!/web/img/.gitkeep
+
 /var/tmp/*
 !/var/tmp/.gitkeep

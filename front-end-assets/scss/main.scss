@@ -9,5 +9,8 @@ $vendor-path: "../js/node_modules";
 
 // No way to easily include CSS files content in a SCSS file, too bad :-/
 // @see https://github.com/sass/sass/issues/556
+// (it's possible with the C implementation of SCSS, though; but here we'using a PHP version)
 // @see "build:scss" task of the Robofile for details about this (a bit ugly) workaround.
 @import "#{$vendor-path}/normalize.css/_normalize";
+
+@import "#{$vendor-path}/dejavu-sans/_dejavu-sans";
