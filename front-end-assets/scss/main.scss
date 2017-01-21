@@ -13,4 +13,4 @@ $vendor-path: "../js/node_modules";
 // @see "build:scss" task of the Robofile for details about this (a bit ugly) workaround.
 @import "#{$vendor-path}/normalize.css/_normalize";
 
-@import "#{$vendor-path}/dejavu-sans/_dejavu-sans";
+@import "#{$vendor-path}/dejavu-sans/css/_dejavu-sans";

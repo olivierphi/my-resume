@@ -33,7 +33,7 @@ $ GA_TRACKING_CODE=UA-XXXXXXXX-X php vendor/codegyre/robo/robo build
 # For a continuous "dev" build, automatically updated on files changes:
 $ php vendor/codegyre/robo/robo watch
 #
-# Of course, Robo commands are easier with something like this:
+# Of course, Robo commands are easier to use with something like this:
 $ alias robo='php vendor/codegyre/robo/robo'
 #
 # Docker

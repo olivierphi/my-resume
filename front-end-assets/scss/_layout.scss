@@ -2,7 +2,7 @@
 @import "mixins";
 
 html, body {
-    font-family: 'DejaVu Sans', sans-serif;
+    font-family: $font-main;
 }
 
 
@@ -52,6 +52,12 @@ html, body {
             width: 100%;
             display: table-row-group;
             padding-left: 0;
+        }
+
+        @media print {
+            //running out of space to fit all in a single page :-)
+            padding-top: 0;
+            padding-bottom: 0;
         }
     }
 }
