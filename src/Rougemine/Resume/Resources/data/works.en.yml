@@ -1,4 +1,11 @@
 -
+        title: Collector Square
+        content: >
+            <span class="tech-with-icon symfony2">Symfony2</span> and
+            JavaScript Lead Developer
+            for the new version of the <a href="https://www.collectorsquare.com/en" target="_blank">Collector Square</a>
+            website and CMS, heavily based on Elasticsearch and Redis
+-
         title: Balinea
         content: >
             <span class="tech-with-icon symfony2">Symfony2</span> and
@@ -36,9 +43,3 @@
             Technical lead on the
             <a href="http://www.musee-rodin.fr/en" target="_blank">Rodin Museum</a> development,
             based on <span class="tech-with-icon drupal">Drupal</span> and <span class="tech-with-icon zend-framework">Zend Framework</span>
--
-        title: VisitProvence.com
-        content: >
-            Development of the
-            « <a href="http://www.visitprovence.com/en/travel-guide" target="_blank">Travel Guide</a> »
-            of VisitProvence.com, based on <span class="tech-with-icon zend-framework">Zend Framework</span> and a lot of <span class="tech-with-icon jquery">jQuery</span>

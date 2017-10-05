@@ -21,11 +21,14 @@ main:
         icon: browserify
         url: http://browserify.org/
 others:
-
   -
-        title: Doctrine
-        icon: doctrine
-        url: http://www.doctrine-project.org/
+        title: Go
+        icon: go
+        url: https://golang.org/
+  -
+        title: Ruby
+        icon: ruby
+        url: http://www.ruby-lang.org
   -
         title: Elasticsearch
         icon: elasticsearch
@@ -51,10 +54,6 @@ others:
         title: [phpunit, Behat]
         icon: behat
         url: ["https://phpunit.de/", "http://behat.org/"]
-  -
-        title: Ruby
-        icon: ruby
-        url: http://www.ruby-lang.org
   -
         title: Ruby on Rails
         icon: rails

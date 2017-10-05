@@ -9,6 +9,9 @@
     padding-left: 28px;
     background-repeat: no-repeat;
     background-position: 2px center;
+    &.go {
+        @include tech-icon-bg(go);
+    }
     &.elasticsearch {
         @include tech-icon-bg(elasticsearch);
     }
