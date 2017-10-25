@@ -1,0 +1,8 @@
+
+/node_modules/
+
+/dist/*
+!/dist/.gitkeep
+
+# Let's ignore the dependencies lock for the moment...
+/yarn.lock
