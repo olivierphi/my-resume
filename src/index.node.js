@@ -1,15 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import AppReducer from "./reducers";
+import ReactDOMServer from "react-dom/server";
+import AppReducer from "reducers";
 import { Provider } from "react-redux";
 import BioContainer from "container/bio";
 import { createStore } from "redux";
 
 const store = createStore(AppReducer);
 
-ReactDOM.render(
+const app = ReactDOMServer.renderToStaticMarkup(
   <Provider store={store}>
     <BioContainer />
-  </Provider>,
-  document.getElementById("root")
+  </Provider>
 );
+
+console.log(app);
