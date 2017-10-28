@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
-import Bio from "../component/bio";
+import Bio from "component/about-me/bio";
 
 const mapStateToProps = state => {
   return {
-    bio: state.currentData.bio
+    bio: state.currentData.bio,
+    i18n: state.currentI18n
   };
 };
 

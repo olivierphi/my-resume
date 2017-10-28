@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "api:dump": "cd api && npm run build && npm run dump && cd -",
     "ssr:webpack": "webpack --config webapp/webpack/webpack.config.node.js",
     "ssr:render:en": "node webapp/bin/generate-static.js 'en'",
     "ssr:render:fr": "node webapp/bin/generate-static.js 'fr'",

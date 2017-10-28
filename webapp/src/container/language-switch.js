@@ -4,7 +4,8 @@ import LanguageSwitch from "../component/language-switch";
 
 const mapStateToProps = state => {
   return {
-    currentLang: state.currentLang
+    currentLang: state.currentLang,
+    i18n: state.currentI18n
   };
 };
 

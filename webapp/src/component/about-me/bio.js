@@ -14,6 +14,7 @@ export default class Bio extends React.Component {
         <p className="rich-snippet-only">
           <span itemProp="jobTitle">{this.props.bio.jobTitle}</span>
         </p>
+        <p>{this.props.i18n.me.birthDate}</p>
       </section>
     );
   }
@@ -23,5 +24,10 @@ Bio.propTypes = {
   bio: PropTypes.shape({
     name: PropTypes.string.isRequired,
     jobTitle: PropTypes.string.isRequired
+  }).isRequired,
+  i18n: PropTypes.shape({
+    me: PropTypes.shape({
+      birthDate: PropTypes.string.isRequired
+    }).isRequired
   }).isRequired
 };

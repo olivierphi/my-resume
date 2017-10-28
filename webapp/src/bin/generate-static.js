@@ -1,4 +1,4 @@
-import HtmlTemplate from "../index.html";
+import HtmlTemplate from "../../assets/index.tpl.html";
 import AppDataEn from "../../../var/app-data.en.json";
 import AppDataFr from "../../../var/app-data.fr.json";
 import React from "react";
@@ -35,20 +35,30 @@ const renderedHtmlPage = HtmlTemplate.replace(
 console.log(renderedHtmlPage);
 
 function getAppInitialState() {
+  const appData = {
+    en: JSON.parse(AppDataEn),
+    fr: JSON.parse(AppDataFr)
+  };
+
   return {
     currentLang: lang,
     dataByLang: {
-      en: JSON.parse(AppDataEn),
-      fr: JSON.parse(AppDataFr)
+      en: appData.en.cvData,
+      fr: appData.fr.cvData
     },
-    currentData: {}
+    i18nByLang: {
+      en: appData.en.i18nData,
+      fr: appData.fr.i18nData
+    },
+    currentData: {},
+    currentI18n: {}
   };
 }
 
 function renderApp(/** Object */ appState) {
   const store = createStore(AppReducer, appState);
 
-  return ReactDOMServer.renderToStaticMarkup(
+  return ReactDOMServer.renderToString(
     <Provider store={store}>
       <App />
     </Provider>

@@ -1,0 +1,40 @@
+date_format: d/m/Y
+
+top_links:
+    pdf.download: Télécharger au format PDF
+    language: 'language:'
+
+me:
+    birthDate: 'Né le '
+    phone: 'Tel. :'
+
+open_source_projects:
+    title: 'Projets <i>Open Source</i>'
+
+education:
+    title: Formation
+    src: '1998-2000 : DUT S.R.C'
+    src.details: Services et Réseaux de Communication
+    baccalaureate: '1998 : Bac. Série S'
+
+languages:
+    title: Langues
+    english: Anglais technique
+    spanish: Espagnol scolaire
+
+hobbies:
+    title: Centres d'intérêts
+    content: >
+        Astronomie, course à pied, aïkijutsu, dessin
+
+teaching:
+    title: Formateur en développement Web
+    content: >
+        Formateur HTML/CSS, JavaScript et Flash pour l'école <br><a href="http://www.iesamultimedia.fr/" target="_blank">IESA Multimedia</a>
+
+main_skills: Compétences principales
+contributor: (contributeur)
+other_skills: Mais aussi...
+tools: Logiciels et environnements
+job_experience: Parcours professionnel
+works: Quelques réalisations
