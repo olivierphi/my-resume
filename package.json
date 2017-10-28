@@ -1,16 +1,22 @@
 {
   "name": "rougemine.com-react",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build:node": "webpack --config webpack/webpack.config.node.js",
-    "render": "npm run build:node && babel-node dist/bundle.node.js",
-    "watch":
-      "cp src/index.html dist/ && webpack --watch --config webpack/webpack.config.dev.js",
-    "build":
-      "cp src/index.html dist/ && webpack --config webpack/webpack.config.dev.js",
-    "prettier": "prettier --write \"src/*.js\" \"src/**/*.js\"",
+    "ssr:webpack": "webpack --config webapp/webpack/webpack.config.node.js",
+    "ssr:render:en": "node webapp/bin/generate-static.js 'en'",
+    "ssr:render:fr": "node webapp/bin/generate-static.js 'fr'",
+    "ssr:render":
+      "npm run --silent ssr:render:en > dist/index.en.html && npm run --silent ssr:render:fr > dist/index.fr.html ",
+    "ssr:watch":
+      "webpack --watch --config webapp/webpack/webpack.config.node.js",
+    "ssr:build": "webpack --config webapp/webpack/webpack.config.node.js",
+    "webapp:dev:watch":
+      "webpack --watch --config webapp/webpack/webpack.config.dev.js",
+    "webapp:dev:build": "webpack --config webapp/webpack/webpack.config.dev.js",
+    "prettier:api": "prettier --write 'api/**/*.js' ",
+    "prettier:webapp": "prettier --write 'webapp/**/*.js' ",
+    "prettier": "npm run prettier:api && npm run prettier:webapp",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -21,10 +27,12 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
+    "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-node-externals": "^1.6.0"
   },
@@ -32,7 +40,8 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
     "prettier": "1.7.4",
-    "redux-devtools": "^3.4.0"
+    "redux-devtools": "^3.4.0",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "lint-staged": {
     "*.{js,json,css}": ["prettier --write", "git add"]

@@ -3,10 +3,10 @@ const path = require("path");
 const ROOT_DIR = path.resolve(__dirname, "../");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: path.resolve(ROOT_DIR, "src/index.js"),
   output: {
-    filename: "bundle.js",
-    path: path.resolve(ROOT_DIR, "dist")
+    filename: "app.js",
+    path: path.resolve(ROOT_DIR, "../dist")
   },
   resolve: {
     modules: ["node_modules", "src"],
@@ -22,6 +22,16 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["env"]
+          }
+        }
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 8000, // Convert images < 8kb to base64 strings
+            name: "images/[hash]-[name].[ext]"
           }
         }
       }

@@ -2,7 +2,9 @@ import { connect } from "react-redux";
 import Bio from "../component/bio";
 
 const mapStateToProps = state => {
-  return state.bio;
+  return {
+    bio: state.currentData.bio
+  };
 };
 
 const BioContainer = connect(mapStateToProps)(Bio);
