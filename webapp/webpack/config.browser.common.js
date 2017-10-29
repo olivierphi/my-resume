@@ -50,6 +50,7 @@ module.exports = {
           options: {
             limit: 5000, // Convert images < 5kb to base64 strings
             name: "img/[hash]-[name].[ext]",
+            emitFile: false,
             fallback: "file-loader",
           },
         },

@@ -65,10 +65,14 @@ Bio.propTypes = {
     jobTitle: PropTypes.string.isRequired,
     birth: PropTypes.string.isRequired,
     address: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string.isRequired,
+    twitterId: PropTypes.string.isRequired,
   }).isRequired,
   i18n: PropTypes.shape({
     me: PropTypes.shape({
       birthDate: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 };

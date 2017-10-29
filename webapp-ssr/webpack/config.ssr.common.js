@@ -11,7 +11,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ROOT_DIR = path.resolve(__dirname, "../");
 
 const extractSass = new ExtractTextPlugin({
-  filename: "../../dist/css/main.css",
+  filename: "css/main.css",
   allChunks: true,
   disable: false,
 });
@@ -20,7 +20,7 @@ module.exports = {
   entry: path.resolve(ROOT_DIR, "src/bin/generate-static.js"),
   output: {
     filename: "generate-static.js",
-    path: path.resolve(ROOT_DIR, "bin"),
+    path: path.resolve(ROOT_DIR, "../dist"),
   },
   resolve: {
     modules: ["node_modules", "webapp/src", "webapp-ssr/src"],
@@ -31,7 +31,10 @@ module.exports = {
   plugins: [
     new WebpackShellPlugin({
       dev: false, //we *do* want to trigger that "build end" hook after *each* file change
-      onBuildEnd: ["npm run ssr:render"],
+      onBuildEnd: [
+        "mv dist/generate-static.js webapp-ssr/bin/generate-static.js",
+        "npm run ssr:render",
+      ],
     }),
     extractSass,
   ],
@@ -57,7 +60,8 @@ module.exports = {
           loader: "url-loader",
           options: {
             limit: 5000, // Convert images < 5kb to base64 strings
-            name: "../../dist/img/[hash]-[name].[ext]",
+            name: "[hash]-[name].[ext]",
+            outputPath: "img/",
             fallback: "file-loader",
           },
         },
