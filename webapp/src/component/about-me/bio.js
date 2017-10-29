@@ -22,6 +22,21 @@ export default class Bio extends React.Component {
             inputDateFormat="YYYY-MM-DD"
           />
         </p>
+        <span itemProp="address">
+          {this.props.bio.address.split("\n").map((addressLine, key) => {
+            return (
+              <span key={key}>
+                {addressLine}
+                <br />
+              </span>
+            );
+          })}
+        </span>
+        <p>
+          <a itemProp="email" href={`mailto:${this.props.bio.email}`}>
+            {this.props.bio.email}
+          </a>
+        </p>
       </section>
     );
   }
@@ -32,6 +47,7 @@ Bio.propTypes = {
     name: PropTypes.string.isRequired,
     jobTitle: PropTypes.string.isRequired,
     birth: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
   }).isRequired,
   i18n: PropTypes.shape({
     me: PropTypes.shape({
