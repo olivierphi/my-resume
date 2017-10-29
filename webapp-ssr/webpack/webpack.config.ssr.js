@@ -56,8 +56,9 @@ module.exports = {
         use: {
           loader: "url-loader",
           options: {
-            limit: 8000, // Convert images < 8kb to base64 strings
-            name: "images/[hash]-[name].[ext]",
+            limit: 5000, // Convert images < 5kb to base64 strings
+            name: "../../dist/img/[hash]-[name].[ext]",
+            fallback: "file-loader",
           },
         },
       },
@@ -68,6 +69,11 @@ module.exports = {
           use: [
             {
               loader: "css-loader",
+              options: {
+                alias: {
+                  "/img": path.resolve(ROOT_DIR, "../webapp/assets/img"),
+                },
+              },
             },
             {
               loader: "sass-loader",

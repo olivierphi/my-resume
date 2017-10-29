@@ -44,7 +44,7 @@ LanguageSwitch.propTypes = {
 
 class SwitchLink extends React.PureComponent {
   render() {
-    return this.props.currentLang != this.props.btnLang ? (
+    return this.props.currentLang !== this.props.btnLang ? (
       <a
         href={`/${this.props.btnLang}`}
         onClick={this.props.onClick.bind(null, this.props.btnLang)}
