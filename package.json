@@ -4,20 +4,23 @@
   "license": "MIT",
   "scripts": {
     "api:dump": "cd api && npm run build && npm run dump && cd -",
-    "ssr:webpack": "webpack --config webapp/webpack/webpack.config.node.js",
-    "ssr:render:en": "node webapp/bin/generate-static.js 'en'",
-    "ssr:render:fr": "node webapp/bin/generate-static.js 'fr'",
+    "ssr:webpack": "webpack --config webapp-ssr/webpack/webpack.config.ssr.js",
+    "ssr:render:en": "node webapp-ssr/bin/generate-static.js 'en'",
+    "ssr:render:fr": "node webapp-ssr/bin/generate-static.js 'fr'",
     "ssr:render":
       "npm run --silent ssr:render:en > dist/index.en.html && npm run --silent ssr:render:fr > dist/index.fr.html ",
     "ssr:watch":
-      "webpack --watch --config webapp/webpack/webpack.config.node.js",
-    "ssr:build": "webpack --config webapp/webpack/webpack.config.node.js",
+      "webpack --watch --config webapp-ssr/webpack/webpack.config.ssr.js",
+    "ssr:build": "webpack --config webapp-ssr/webpack/webpack.config.ssr.js",
     "webapp:dev:watch":
-      "webpack --watch --config webapp/webpack/webpack.config.dev.js",
-    "webapp:dev:build": "webpack --config webapp/webpack/webpack.config.dev.js",
+      "webpack --watch --config webapp/webpack/webpack.config.browser.dev.js",
+    "webapp:dev:build":
+      "webpack --config webapp/webpack/webpack.config.browser.dev.js",
     "prettier:api": "prettier --write 'api/**/*.js' ",
     "prettier:webapp": "prettier --write 'webapp/**/*.js' ",
-    "prettier": "npm run prettier:api && npm run prettier:webapp",
+    "prettier:webapp-ssr": "prettier --write 'webapp-ssr/**/*.js' ",
+    "prettier":
+      "npm run prettier:api && npm run prettier:webapp && npm run prettier:webapp-ssr",
     "precommit": "lint-staged"
   },
   "dependencies": {
