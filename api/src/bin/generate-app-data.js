@@ -1,3 +1,4 @@
+import moment from "moment";
 import BioRepository from "repository/bio-repository";
 import I18nRepository from "repository/i18n-repository";
 import DocumentRepository from "repository/document-repository";
@@ -19,12 +20,15 @@ if (!validLangs.includes(lang)) {
   process.exit(1);
 }
 
+const W3C_DATE_FORMAT = "YYYY-MM-DD\\THH:mm:ssZZ";
+
 const appData = {
   cvData: {
     bio: new BioRepository(dataBasePath).getBio(lang),
     document: new DocumentRepository(dataBasePath).getDocument(lang),
   },
   i18nData: new I18nRepository(dataBasePath).getInternationalisationData(lang),
+  buildTime: moment().format(W3C_DATE_FORMAT),
 };
 
 console.log(JSON.stringify(appData));

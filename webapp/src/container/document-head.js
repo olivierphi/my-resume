@@ -5,6 +5,7 @@ const mapStateToProps = state => {
   return {
     currentLang: state.currentLang,
     document: state.currentData.document,
+    buildTime: state.buildTime,
   };
 };
 

@@ -15,6 +15,8 @@ export default class DocumentHead extends React.PureComponent {
         <meta name="language" content={this.props.currentLang} />
         <link rel="canonical" href={this.props.currentLang} />
         <meta name="viewport" content="initial-scale=1" />
+        <meta httpEquiv="last-modified" content={this.props.buildTime} />
+        }/>
         <link
           href="https://fonts.googleapis.com/css?family=Lobster+Two:400italic"
           rel="stylesheet"
@@ -28,6 +30,7 @@ export default class DocumentHead extends React.PureComponent {
 
 DocumentHead.propTypes = {
   currentLang: PropTypes.string.isRequired,
+  buildTime: PropTypes.string.isRequired,
   document: PropTypes.shape({
     meta: PropTypes.shape({
       title: PropTypes.string.isRequired,

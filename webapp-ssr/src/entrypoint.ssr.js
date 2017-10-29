@@ -22,6 +22,7 @@ function getAppInitialState(appDataEn, appDataFr, currentLang) {
       en: appDataEn.i18nData,
       fr: appDataFr.i18nData,
     },
+    buildTime: appDataEn.buildTime,
     currentData: {},
     currentI18n: {},
   };
