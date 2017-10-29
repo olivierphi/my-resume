@@ -1,4 +1,4 @@
-date_format: d/m/Y
+date_format: DD/MM/YYYY
 
 top_links:
     pdf.download: Télécharger au format PDF
