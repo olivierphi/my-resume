@@ -43,8 +43,8 @@ module.exports = {
         use: {
           loader: "url-loader",
           options: {
-            limit: 1, // Never convert images to base64 strings - we handle that in the SSR part anyway
-            name: "../var/unused.img/[name].unused.[ext]",
+            limit: 5000, // Convert images < 5kb to base64 strings
+            name: "img/[hash]-[name].[ext]",
             fallback: "file-loader",
           },
         },
