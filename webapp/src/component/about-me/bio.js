@@ -23,11 +23,11 @@ export default class Bio extends React.Component {
 Bio.propTypes = {
   bio: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    jobTitle: PropTypes.string.isRequired
+    jobTitle: PropTypes.string.isRequired,
   }).isRequired,
   i18n: PropTypes.shape({
     me: PropTypes.shape({
-      birthDate: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired
+      birthDate: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };

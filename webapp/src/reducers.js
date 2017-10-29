@@ -6,6 +6,6 @@ export default function cvApp(state, action) {
   return {
     ...state,
     currentData: state.dataByLang[state.currentLang],
-    currentI18n: state.i18nByLang[state.currentLang]
+    currentI18n: state.i18nByLang[state.currentLang],
   };
 }

@@ -20,7 +20,7 @@ if (!validLangs.includes(lang)) {
 
 const appData = {
   cvData: {},
-  i18nData: {}
+  i18nData: {},
 };
 
 appData.cvData["bio"] = new BioRepository(dataBasePath).getBio(lang);

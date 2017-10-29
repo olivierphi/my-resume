@@ -37,21 +37,21 @@ console.log(renderedHtmlPage);
 function getAppInitialState() {
   const appData = {
     en: JSON.parse(AppDataEn),
-    fr: JSON.parse(AppDataFr)
+    fr: JSON.parse(AppDataFr),
   };
 
   return {
     currentLang: lang,
     dataByLang: {
       en: appData.en.cvData,
-      fr: appData.fr.cvData
+      fr: appData.fr.cvData,
     },
     i18nByLang: {
       en: appData.en.i18nData,
-      fr: appData.fr.i18nData
+      fr: appData.fr.i18nData,
     },
     currentData: {},
-    currentI18n: {}
+    currentI18n: {},
   };
 }
 

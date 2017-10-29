@@ -4,7 +4,7 @@ import Bio from "component/about-me/bio";
 const mapStateToProps = state => {
   return {
     bio: state.currentData.bio,
-    i18n: state.currentI18n
+    i18n: state.currentI18n,
   };
 };
 

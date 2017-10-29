@@ -6,11 +6,11 @@ module.exports = {
   entry: "./src/bin/generate-app-data.js",
   output: {
     filename: "generate-app-data.js",
-    path: path.resolve(ROOT_DIR, "bin")
+    path: path.resolve(ROOT_DIR, "bin"),
   },
   resolve: {
     modules: ["node_modules", "src"],
-    extensions: [".js"]
+    extensions: [".js"],
   },
   target: "node",
   module: {
@@ -20,14 +20,14 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["env"]
-          }
-        }
+            presets: ["env"],
+          },
+        },
       },
       {
         test: /\.yaml/,
-        use: "raw-loader"
-      }
-    ]
-  }
+        use: "raw-loader",
+      },
+    ],
+  },
 };

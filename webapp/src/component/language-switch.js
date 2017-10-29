@@ -43,7 +43,7 @@ LanguageSwitch.propTypes = {
   i18n: PropTypes.shape({
     top_links: PropTypes.shape({
       language: PropTypes.string.isRequired,
-      ["pdf.download"]: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired
+      ["pdf.download"]: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };

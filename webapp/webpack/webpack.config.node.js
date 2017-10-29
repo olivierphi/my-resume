@@ -13,17 +13,17 @@ module.exports = {
   entry: path.resolve(ROOT_DIR, "src/bin/generate-static.js"),
   output: {
     filename: "generate-static.js",
-    path: path.resolve(ROOT_DIR, "bin")
+    path: path.resolve(ROOT_DIR, "bin"),
   },
   resolve: {
     modules: ["node_modules", "webapp/src"],
-    extensions: [".js"]
+    extensions: [".js"],
   },
   target: "node",
   externals: nodeExternals(),
   plugins: [new WebpackShellPlugin({ onBuildEnd: ["npm run ssr:render"] })],
   watchOptions: {
-    ignored: "bin/*"
+    ignored: "bin/*",
   },
   module: {
     rules: [
@@ -32,9 +32,9 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["env"]
-          }
-        }
+            presets: ["env"],
+          },
+        },
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,
@@ -42,14 +42,14 @@ module.exports = {
           loader: "url-loader",
           options: {
             limit: 8000, // Convert images < 8kb to base64 strings
-            name: "images/[hash]-[name].[ext]"
-          }
-        }
+            name: "images/[hash]-[name].[ext]",
+          },
+        },
       },
       {
         test: /\.(html|json)/,
-        use: "raw-loader"
-      }
-    ]
-  }
+        use: "raw-loader",
+      },
+    ],
+  },
 };

@@ -6,11 +6,11 @@ module.exports = {
   entry: path.resolve(ROOT_DIR, "src/index.js"),
   output: {
     filename: "app.js",
-    path: path.resolve(ROOT_DIR, "../dist")
+    path: path.resolve(ROOT_DIR, "../dist"),
   },
   resolve: {
     modules: ["node_modules", "src"],
-    extensions: [".js"]
+    extensions: [".js"],
   },
   devtool: "inline-source-map",
   module: {
@@ -21,9 +21,9 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["env"]
-          }
-        }
+            presets: ["env"],
+          },
+        },
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,
@@ -31,10 +31,10 @@ module.exports = {
           loader: "url-loader",
           options: {
             limit: 8000, // Convert images < 8kb to base64 strings
-            name: "images/[hash]-[name].[ext]"
-          }
-        }
-      }
-    ]
-  }
+            name: "images/[hash]-[name].[ext]",
+          },
+        },
+      },
+    ],
+  },
 };

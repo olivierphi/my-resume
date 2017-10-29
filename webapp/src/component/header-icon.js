@@ -13,5 +13,5 @@ export default class HeaderIcon extends React.PureComponent {
 
 HeaderIcon.propTypes = {
   icon: PropTypes.string.isRequired,
-  alt: PropTypes.string
+  alt: PropTypes.string,
 };

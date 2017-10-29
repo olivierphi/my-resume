@@ -5,7 +5,7 @@ import LanguageSwitch from "../component/language-switch";
 const mapStateToProps = state => {
   return {
     currentLang: state.currentLang,
-    i18n: state.currentI18n
+    i18n: state.currentI18n,
   };
 };
 
@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onLanguageSwitchClick: newlang => {
       dispatch(switchLanguage(newlang));
-    }
+    },
   };
 };
 
