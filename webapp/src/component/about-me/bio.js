@@ -37,6 +37,23 @@ export default class Bio extends React.Component {
             {this.props.bio.email}
           </a>
         </p>
+        <p>
+          {this.props.i18n.me.phone}
+          <span itemProp="telephone">{this.props.bio.phoneNumber}</span>
+        </p>
+        <p className="rich-snippet-only">
+          <span itemProp="url">{this.props.bio.url}</span>
+        </p>
+        <p>
+          <a
+            itemProp="sameAs"
+            href={`https://twitter.com/${this.props.bio.twitterId}`}
+            target="_blank"
+            className="twitter-link"
+          >
+            twitter.com/RougeMine
+          </a>
+        </p>
       </section>
     );
   }
