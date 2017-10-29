@@ -1,0 +1,63 @@
+@import "variables";
+@import "mixins";
+
+html, body {
+    font-family: $font-main;
+}
+
+
+#content-container {
+    position: relative;
+    width: $content-container-width;
+    margin: 0 auto;
+    display: table;
+    min-height: 100%;
+
+    @include mobile-theme-screen {
+        width: auto;
+    }
+
+    #misc-info {
+        width: $misc-info-width;
+        display: table-cell;
+        min-height: 100%;
+        padding-top: 3em;
+        vertical-align: top;
+        /*border: solid blue 1px;*/
+
+        @include mobile-theme-screen {
+            // In mobile mode, this block is moved at the bottom of the page
+            width: 100%;
+            display: table-footer-group;
+            &:before {
+                content: "";
+                display: table;
+                width: 100%;
+                margin: 0 0 1em 0;
+                border-top: solid 2px darken($red, 10%);
+            }
+        }
+    }
+
+    #main-panel {
+        width: $main-panel-width;
+        display: table-cell;
+        padding-left: 25px;
+        padding-top: 2em;
+        padding-bottom: 3em;
+        vertical-align: top;
+        /*border: solid red 1px;*/
+
+        @include mobile-theme-screen {
+            width: 100%;
+            display: table-row-group;
+            padding-left: 0;
+        }
+
+        @media print {
+            //running out of space to fit all in a single page :-)
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}

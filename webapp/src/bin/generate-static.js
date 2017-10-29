@@ -4,7 +4,7 @@ import AppReducer from "reducers";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { Helmet } from "react-helmet";
-import App from "container/app";
+import App from "component/app";
 import HtmlTemplate from "../../assets/index.tpl.html";
 import AppDataEn from "../../../var/app-data.en.json";
 import AppDataFr from "../../../var/app-data.fr.json";
@@ -31,7 +31,10 @@ const { appContent, documentHeadContent } = renderApp(initialState);
 const renderedHtmlPage = HtmlTemplate.replace("%RENDERED_APP%", appContent)
   .replace("%RENDERED_APP_HTML_ATTRIBUTES%", documentHeadContent.htmlAttributes)
   .replace("%RENDERED_APP_TITLE%", documentHeadContent.title)
-  .replace("%RENDERED_APP_META%", documentHeadContent.meta)
+  .replace(
+    "%RENDERED_APP_META%",
+    documentHeadContent.meta + documentHeadContent.link
+  )
   .replace("%INITIAL_STATE%", JSON.stringify(initialState));
 
 console.log(renderedHtmlPage);

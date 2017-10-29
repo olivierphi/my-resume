@@ -15,6 +15,12 @@ export default class DocumentHead extends React.PureComponent {
         <meta name="language" content={this.props.currentLang} />
         <link rel="canonical" href={this.props.currentLang} />
         <meta name="viewport" content="initial-scale=1" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Lobster+Two:400italic"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
       </Helmet>
     );
   }

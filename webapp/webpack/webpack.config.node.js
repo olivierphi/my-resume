@@ -1,6 +1,7 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const WebpackShellPlugin = require("webpack-shell-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 /**
  * Many many many (many) thanks to:
@@ -8,6 +9,12 @@ const WebpackShellPlugin = require("webpack-shell-plugin");
  */
 
 const ROOT_DIR = path.resolve(__dirname, "../");
+
+const extractSass = new ExtractTextPlugin({
+  filename: "../../dist/css/main.css",
+  allChunks: true,
+  disable: false,
+});
 
 module.exports = {
   entry: path.resolve(ROOT_DIR, "src/bin/generate-static.js"),
@@ -26,12 +33,14 @@ module.exports = {
       dev: false, //we *do* want to trigger that "build end" hook after *each* file change
       onBuildEnd: ["npm run ssr:render"],
     }),
+    extractSass,
   ],
   watchOptions: {
     ignored: "bin/*",
   },
   module: {
     rules: [
+      // Base setup: Babel!
       {
         exclude: /node_modules/,
         use: {
@@ -41,6 +50,7 @@ module.exports = {
           },
         },
       },
+      // Images management
       {
         test: /\.(png|jp(e*)g|svg)$/,
         use: {
@@ -51,6 +61,24 @@ module.exports = {
           },
         },
       },
+      // SCSS management
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+          use: [
+            {
+              loader: "css-loader",
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                includePaths: [path.resolve(ROOT_DIR, "assets/scss")],
+              },
+            },
+          ],
+        }),
+      },
+      // SSR-specific assets management (we load HTML & JSON files)
       {
         test: /\.(html|json)/,
         use: "raw-loader",
