@@ -1,6 +1,6 @@
 const path = require("path");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-const webpackCommonConfig = require("./webpack.config.browser.common");
+const webpackCommonConfig = require("./config.browser.common");
 const webpack = require("webpack");
 const webpackMerge = require("webpack-merge");
 const WebpackMonitor = require("webpack-monitor");
@@ -24,7 +24,10 @@ module.exports = webpackMerge(webpackCommonConfig, {
     }),
     new WebpackMonitor({
       capture: true,
-      target: path.resolve(ROOT_DIR, "../var/webpack-monitor.store.json"),
+      target: path.resolve(
+        ROOT_DIR,
+        "../var/webpack-monitor.browser.store.json"
+      ),
       launch: true,
       port: 3030, // default -> 8081
     }),

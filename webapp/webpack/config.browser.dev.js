@@ -1,6 +1,8 @@
 const path = require("path");
-const webpackCommonConfig = require("./webpack.config.browser.common");
+const webpackCommonConfig = require("./config.browser.common");
 const webpackMerge = require("webpack-merge");
+
+const ROOT_DIR = path.resolve(__dirname, "../");
 
 module.exports = webpackMerge(webpackCommonConfig, {
   devtool: "inline-source-map",

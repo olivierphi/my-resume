@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import HeaderIcon from "component/misc/header-icon";
-import UserIcon from "component/header-icons/user.svg";
+import UserIcon from "../../../assets/img/icons/header-icons/user.svg";
 import DateDisplayContainer from "container/misc/date-display";
 
 export default class Bio extends React.Component {

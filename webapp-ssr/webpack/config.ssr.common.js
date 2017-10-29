@@ -70,6 +70,7 @@ module.exports = {
             {
               loader: "css-loader",
               options: {
+                minimize: process.env.NODE_ENV === "prod",
                 alias: {
                   "/img": path.resolve(ROOT_DIR, "../webapp/assets/img"),
                 },
