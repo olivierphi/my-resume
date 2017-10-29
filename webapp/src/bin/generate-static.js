@@ -1,12 +1,13 @@
-import HtmlTemplate from "../../assets/index.tpl.html";
-import AppDataEn from "../../../var/app-data.en.json";
-import AppDataFr from "../../../var/app-data.fr.json";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import AppReducer from "reducers";
 import { Provider } from "react-redux";
-import App from "container/app";
 import { createStore } from "redux";
+import { Helmet } from "react-helmet";
+import App from "container/app";
+import HtmlTemplate from "../../assets/index.tpl.html";
+import AppDataEn from "../../../var/app-data.en.json";
+import AppDataFr from "../../../var/app-data.fr.json";
 
 if (process.argv.length < 3) {
   console.log("Usage: node bin/generate-static.js [lang]");
@@ -25,12 +26,13 @@ if (!validLangs.includes(lang)) {
 }
 
 const initialState = getAppInitialState();
-const renderedApp = renderApp(initialState);
+const { appContent, documentHeadContent } = renderApp(initialState);
 
-const renderedHtmlPage = HtmlTemplate.replace(
-  "%RENDERED_APP%",
-  renderedApp
-).replace("%INITIAL_STATE%", JSON.stringify(initialState));
+const renderedHtmlPage = HtmlTemplate.replace("%RENDERED_APP%", appContent)
+  .replace("%RENDERED_APP_HTML_ATTRIBUTES%", documentHeadContent.htmlAttributes)
+  .replace("%RENDERED_APP_TITLE%", documentHeadContent.title)
+  .replace("%RENDERED_APP_META%", documentHeadContent.meta)
+  .replace("%INITIAL_STATE%", JSON.stringify(initialState));
 
 console.log(renderedHtmlPage);
 
@@ -58,9 +60,16 @@ function getAppInitialState() {
 function renderApp(/** Object */ appState) {
   const store = createStore(AppReducer, appState);
 
-  return ReactDOMServer.renderToString(
+  const reactAppContent = ReactDOMServer.renderToString(
     <Provider store={store}>
       <App />
     </Provider>
   );
+
+  const reactAppDocumentHeadContent = Helmet.renderStatic();
+
+  return {
+    appContent: reactAppContent,
+    documentHeadContent: reactAppDocumentHeadContent,
+  };
 }

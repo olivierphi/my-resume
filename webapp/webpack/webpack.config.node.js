@@ -21,7 +21,12 @@ module.exports = {
   },
   target: "node",
   externals: nodeExternals(),
-  plugins: [new WebpackShellPlugin({ onBuildEnd: ["npm run ssr:render"] })],
+  plugins: [
+    new WebpackShellPlugin({
+      dev: false, //we *do* want to trigger that "build end" hook after *each* file change
+      onBuildEnd: ["npm run ssr:render"],
+    }),
+  ],
   watchOptions: {
     ignored: "bin/*",
   },
