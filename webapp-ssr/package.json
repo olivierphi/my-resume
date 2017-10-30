@@ -1,0 +1,19 @@
+{
+  "name": "rougemine.com-reactwebapp-ssr",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "webpack":
+      "../node_modules/.bin/webpack --config webpack/config.ssr.dev.js",
+    "render:en": "node bin/generate-static.js 'en'",
+    "render:fr": "node bin/generate-static.js 'fr'",
+    "render":
+      "npm run --silent render:en > ../dist/index.en.html && npm run --silent render:fr > ../dist/index.fr.html ",
+    "watch":
+      "../node_modules/.bin/webpack --watch --config webpack/config.ssr.dev.js",
+    "dev:build":
+      "../node_modules/.bin/webpack --config webpack/config.ssr.dev.js",
+    "prod:build":
+      "../node_modules/.bin/webpack --config webpack/config.ssr.prod.js"
+  }
+}

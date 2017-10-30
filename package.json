@@ -4,15 +4,8 @@
   "license": "MIT",
   "scripts": {
     "api:dump": "cd api && npm run build && npm run dump && cd -",
-    "ssr:webpack": "webpack --config webapp-ssr/webpack/config.ssr.dev.js",
-    "ssr:render:en": "node webapp-ssr/bin/generate-static.js 'en'",
-    "ssr:render:fr": "node webapp-ssr/bin/generate-static.js 'fr'",
-    "ssr:render":
-      "npm run --silent ssr:render:en > dist/index.en.html && npm run --silent ssr:render:fr > dist/index.fr.html ",
-    "ssr:watch":
-      "webpack --watch --config webapp-ssr/webpack/config.ssr.dev.js",
-    "ssr:dev:build": "webpack --config webapp-ssr/webpack/config.ssr.dev.js",
-    "ssr:prod:build": "webpack --config webapp-ssr/webpack/config.ssr.prod.js",
+    "ssr:webpack": "cd webapp-ssr && npm run webpack && cd -",
+    "ssr:render": "cd webapp-ssr && npm run render && cd -",
     "webapp:dev:watch":
       "webpack --watch --config webapp/webpack/config.browser.dev.js",
     "webapp:dev:build": "webpack --config webapp/webpack/config.browser.dev.js",
@@ -38,6 +31,7 @@
     "file-loader": "^1.1.5",
     "moment": "^2.19.1",
     "node-sass": "^4.5.3",
+    "null-loader": "^0.1.1",
     "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

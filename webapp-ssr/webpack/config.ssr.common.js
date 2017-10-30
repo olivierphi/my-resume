@@ -1,7 +1,6 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const WebpackShellPlugin = require("webpack-shell-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 /**
  * Many many many (many) thanks to:
@@ -10,33 +9,25 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const ROOT_DIR = path.resolve(__dirname, "../");
 
-const extractSass = new ExtractTextPlugin({
-  filename: "css/main.css",
-  allChunks: true,
-  disable: false,
-});
-
 module.exports = {
   entry: path.resolve(ROOT_DIR, "src/bin/generate-static.js"),
   output: {
     filename: "generate-static.js",
-    path: path.resolve(ROOT_DIR, "../dist"),
+    path: path.resolve(ROOT_DIR, "bin/"),
   },
   resolve: {
     modules: ["node_modules", "webapp/src", "webapp-ssr/src"],
     extensions: [".js"],
   },
   target: "node",
-  externals: nodeExternals(),
+  externals: nodeExternals({
+    modulesDir: path.resolve(ROOT_DIR, "../node_modules"),
+  }),
   plugins: [
     new WebpackShellPlugin({
       dev: false, //we *do* want to trigger that "build end" hook after *each* file change
-      onBuildEnd: [
-        "mv dist/generate-static.js webapp-ssr/bin/generate-static.js",
-        "npm run ssr:render",
-      ],
+      onBuildEnd: ["npm run render"],
     }),
-    extractSass,
   ],
   watchOptions: {
     ignored: "bin/*",
@@ -53,7 +44,7 @@ module.exports = {
           },
         },
       },
-      // Images management
+      // Images management (on the SSR side we just send that to the null-loader)
       {
         test: /\.(png|jp(e*)g|svg)$/,
         use: {
@@ -63,31 +54,14 @@ module.exports = {
             name: "[hash]-[name].[ext]",
             outputPath: "img/",
             fallback: "file-loader",
+            emitFile: false, //images > 5kb will just be sent to the great nowhere (they are managed by the browser-side build)
           },
         },
       },
-      // SCSS management
+      // SCSS management (on the SSR side we just send that to the null-loader)
       {
         test: /\.scss$/,
-        use: extractSass.extract({
-          use: [
-            {
-              loader: "css-loader",
-              options: {
-                minimize: process.env.NODE_ENV === "prod",
-                alias: {
-                  "/img": path.resolve(ROOT_DIR, "../webapp/assets/img"),
-                },
-              },
-            },
-            {
-              loader: "sass-loader",
-              options: {
-                includePaths: [path.resolve(ROOT_DIR, "../webapp/assets/scss")],
-              },
-            },
-          ],
-        }),
+        use: "null-loader",
       },
       // SSR-specific assets management (we load HTML & JSON files)
       {
