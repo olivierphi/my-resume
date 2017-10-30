@@ -6,7 +6,7 @@ import EducationIcon from "../../../assets/img/icons/header-icons/ruler.svg";
 const Education = props => {
   return (
     <section className="education-container">
-      <HeaderIcon icon={EducationIcon} alt="GitHub" />
+      <HeaderIcon icon={EducationIcon} alt="education" />
 
       <h3>{props.i18n.education.title}</h3>
 

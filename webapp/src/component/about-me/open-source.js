@@ -6,7 +6,7 @@ import GitHubIcon from "../../../assets/img/icons/header-icons/github.svg";
 const OpenSource = props => {
   return (
     <section className="open-source-projects-container">
-      <HeaderIcon icon={GitHubIcon} alt="GitHub" />
+      <HeaderIcon icon={GitHubIcon} alt="open source" />
 
       <h3>{props.i18n.open_source_projects.title}</h3>
       <a

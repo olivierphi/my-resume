@@ -19,13 +19,14 @@ education:
 
 languages:
     title: Languages
-    english: Technical English
-    spanish: School-level Spanish
+    english: English (B2)
+    french: French (mother tongue)
+    spanish: Spanish (school level)
 
 hobbies:
     title: Hobbies
     content: >
-        Astronomy, running, aïkijutsu, drawing
+        Running, astronomy, aïkijutsu, drawing
 
 teaching:
     title: Web development Trainer

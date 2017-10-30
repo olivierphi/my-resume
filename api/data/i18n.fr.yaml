@@ -19,13 +19,13 @@ education:
 
 languages:
     title: Langues
-    english: Anglais technique
-    spanish: Espagnol scolaire
+    english: Anglais parlé (B2)
+    spanish: Espagnol (scolaire)
 
 hobbies:
     title: Centres d'intérêts
     content: >
-        Astronomie, course à pied, aïkijutsu, dessin
+        Course à pied, astronomie, aikijutsu, dessin
 
 teaching:
     title: Formateur en développement Web
