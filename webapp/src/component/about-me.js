@@ -1,6 +1,7 @@
 import React from "react";
 import BioContainer from "container/about-me/bio";
 import OpenSourceContainer from "container/about-me/open-source";
+import EducationContainer from "container/about-me/education";
 import "./about-me.scss";
 
 export default class AboutMe extends React.Component {
@@ -15,6 +16,7 @@ export default class AboutMe extends React.Component {
         </div>
         <BioContainer />
         <OpenSourceContainer />
+        <EducationContainer />
       </section>
     );
   }
