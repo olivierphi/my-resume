@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import moment from "moment";
+import dateFormat from "date-fns/format";
+import dateParse from "date-fns/parse";
 
 export default class DateDisplay extends React.PureComponent {
   render() {
     const inputDate =
       this.props.inputDate instanceof Date
         ? this.props.inputDate
-        : moment(this.props.inputDate, this.props.inputDateFormat);
+        : dateParse(this.props.inputDate, this.props.inputDateFormat);
 
-    return inputDate.format(this.props.outputDateFormat);
+    return dateFormat(inputDate, this.props.outputDateFormat);
   }
 }
 

@@ -1,4 +1,4 @@
-import moment from "moment";
+import dateFormat from "date-fns/format";
 import BioRepository from "repository/bio-repository";
 import I18nRepository from "repository/i18n-repository";
 import DocumentRepository from "repository/document-repository";
@@ -28,7 +28,7 @@ const appData = {
     document: new DocumentRepository(dataBasePath).getDocument(lang),
   },
   i18nData: new I18nRepository(dataBasePath).getInternationalisationData(lang),
-  buildTime: moment().format(W3C_DATE_FORMAT),
+  buildTime: dateFormat(new Date(), W3C_DATE_FORMAT),
 };
 
 console.log(JSON.stringify(appData));

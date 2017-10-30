@@ -20,11 +20,7 @@ module.exports = {
     extensions: [".js"],
   },
   devtool: "inline-source-map",
-  plugins: [
-    extractSass,
-    // Don't include tens of Moment.js locales, please :-)
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
-  ],
+  plugins: [extractSass],
   module: {
     rules: [
       // Base setup: Babel!
