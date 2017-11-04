@@ -7,6 +7,7 @@ const mapStateToProps = state => {
     technologies: {
       mainTechnologies: state.currentData.technologies.main,
       otherTechnologies: state.currentData.technologies.others,
+      tools: state.currentData.technologies.tools,
     },
   };
 };

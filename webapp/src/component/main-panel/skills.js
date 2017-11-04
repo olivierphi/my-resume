@@ -7,6 +7,7 @@ export default class Skills extends React.PureComponent {
   render() {
     const nbOtherTechnologies = this.props.technologies.otherTechnologies
       .length;
+    const nbToolss = this.props.technologies.tools.length;
 
     return (
       <section className="skills-container">
@@ -32,6 +33,11 @@ export default class Skills extends React.PureComponent {
         <div className="other-technologies-container">
           <h4>{this.props.i18n.other_skills}</h4>
           {this.props.technologies.otherTechnologies.map((technology, i) => {
+            const separator =
+              i < nbOtherTechnologies - 1 ? (
+                <span dangerouslySetInnerHTML={{ __html: ",&nbsp;" }} />
+              ) : null;
+
             return (
               <span
                 className={`tech-with-icon ${technology.icon}`}
@@ -45,37 +51,39 @@ export default class Skills extends React.PureComponent {
                     </a>
                   </div>
                 ) : null}
-                {i < nbOtherTechnologies - 1 ? (
-                  <span dangerouslySetInnerHTML={{ __html: ",&nbsp;" }} />
-                ) : null}
+                {separator}
               </span>
             );
           })}
         </div>
         {/* end .other-technologies-container */}
-        {/*<div className="other-technologies-container">*/}
-        {/*<h4>{{ 'other_skills'|trans }}</h4>*/}
-        {/*{% spaceless %}*/}
-        {/*{% for technology in technologies.otherTechnologies %}*/}
-        {/*<span className="tech-with-icon {{ technology.icon }}">*/}
-        {/*{{- macros.techDisplay(technology) -}}*/}
-        {/*{% if technology.hasContributorUrl() %}*/}
-        {/*{{- macros.techContributorDisplay(technology, document.language) -}}*/}
-        {/*{% endif %}*/}
-        {/*</span>*/}
-        {/*{%- if not loop.last %}, {% endif -%}*/}
-        {/*{% endfor %}*/}
-        {/*{% endspaceless %}*/}
-        {/*</div>{# end .other-technologies-container #}*/}
 
-        {/*<div className="tools-container">*/}
-        {/*<h4>{{ 'tools'|trans }}</h4>*/}
-        {/*{% for tool in technologies.tools %}*/}
-        {/*{{- macros.toolDisplay(tool) -}}*/}
-        {/*{{- loop.last ? '...' : ', ' -}}*/}
-        {/*{% endfor %}*/}
+        <div className="tools-container">
+          <h4>{this.props.i18n.tools}</h4>
+          {this.props.technologies.tools.map((tool, i) => {
+            const separator = i < nbToolss - 1 ? ", " : null;
 
-        {/*</div>{# end .tools-container #}*/}
+            if (tool.url) {
+              return (
+                <span>
+                  <a href={tool.url} target="_blank">
+                    {tool.title}
+                  </a>
+                  {separator}
+                </span>
+              );
+            }
+
+            return (
+              <span>
+                {tool.title}
+                {separator}
+              </span>
+            );
+          })}
+          ...
+        </div>
+        {/* end .tools-container */}
       </section>
     );
   }
@@ -86,12 +94,27 @@ Skills.propTypes = {
     main_skills: PropTypes.string.isRequired,
     other_skills: PropTypes.string.isRequired,
     contributor: PropTypes.string.isRequired,
+    tools: PropTypes.string.isRequired,
   }),
   technologies: PropTypes.shape({
     mainTechnologies: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
         icon: PropTypes.string.isRequired,
+        url: PropTypes.string,
+      })
+    ),
+    otherTechnologies: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired,
+        url: PropTypes.string,
+        "contributor-url": PropTypes.string,
+      })
+    ),
+    tools: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
         url: PropTypes.string,
       })
     ),
