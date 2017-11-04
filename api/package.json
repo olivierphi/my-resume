@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build":
-      "../node_modules/.bin/webpack --config webpack/webpack.config.node.js",
     "dump:en":
-      "node bin/generate-app-data.js data en > ../var/app-data.en.json",
+      "node -r @std/esm bin/generate-app-data.mjs data en > ../var/app-data.en.json",
     "dump:fr":
-      "node bin/generate-app-data.js data fr > ../var/app-data.fr.json",
+      "node -r @std/esm bin/generate-app-data.mjs data fr > ../var/app-data.fr.json",
     "dump": "npm run dump:en && npm run dump:fr"
   },
   "dependencies": {
+    "@std/esm": "^0.13.0",
     "js-yaml": "^3.10.0"
   }
 }

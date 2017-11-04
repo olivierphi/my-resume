@@ -1,10 +1,12 @@
 import dateFormat from "date-fns/format";
-import BioRepository from "repository/bio-repository";
-import I18nRepository from "repository/i18n-repository";
-import DocumentRepository from "repository/document-repository";
+import BioRepository from "../src/repository/bio-repository";
+import I18nRepository from "../src/repository/i18n-repository";
+import DocumentRepository from "../src/repository/document-repository";
+
+const USAGE_STR = "Usage: node bin/generate-app-data.mjs [data path] [lang]";
 
 if (process.argv.length < 4) {
-  console.log("Usage: node bin/generate-app-data.js [data path] [lang]");
+  console.log(USAGE_STR);
 }
 
 const dataBasePath = process.argv[2];
@@ -13,7 +15,7 @@ const lang = process.argv[3];
 const validLangs = ["en", "fr"];
 if (!validLangs.includes(lang)) {
   console.log(
-    `Usage: node bin/generate-app-data.js [data path] [lang] - "lang" must be ${validLangs.join(
+    `${USAGE_STR} - "lang" must be ${validLangs.join(
       "|"
     )}, got ${lang}`
   );

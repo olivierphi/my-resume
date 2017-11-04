@@ -1,5 +1,5 @@
 import fs from "fs";
-import { safeLoad as loadYaml } from "js-yaml";
+import yaml from "js-yaml";
 
 export default class BaseRepository {
   constructor(/** String */ dataBasePath) {
@@ -7,7 +7,7 @@ export default class BaseRepository {
   }
 
   _loadYaml(/** String*/ fileName, /** String*/ lang) /** String */ {
-    return loadYaml(
+    return yaml.safeLoad(
       fs.readFileSync(`${this._dataBasePath}/${fileName}.${lang}.yaml`),
       "utf8"
     );

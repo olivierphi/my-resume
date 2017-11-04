@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist/*",
-    "api:dump": "cd api && npm run build && npm run dump && cd -",
+    "api:dump": "cd api && npm run dump && cd -",
     "ssr:webpack": "cd webapp-ssr && npm run webpack && cd -",
     "ssr:render": "cd webapp-ssr && npm run render && cd -",
     "ssr:dev:watch": "cd webapp-ssr && npm run watch && cd -",
