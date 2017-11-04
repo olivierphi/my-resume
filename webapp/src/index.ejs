@@ -10,7 +10,7 @@
     <div id="<%- htmlWebpackPlugin.options.appMountId%>"></div>
     <% } %>
 
-    <script>
+    <script type="text/javascript" id="app-initial-state">
         window.__INITIAL__STATE__ = <%= JSON.stringify(htmlWebpackPlugin.options.appInitialState) %>;
     </script>
 </body>

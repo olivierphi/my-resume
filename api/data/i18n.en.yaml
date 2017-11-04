@@ -5,6 +5,7 @@ top_links:
     language: 'language:'
 
 me:
+    nationality: 'Nationality: '
     birthDate: 'Birth: '
     phone: 'Tel. :'
 
@@ -19,8 +20,8 @@ education:
 
 languages:
     title: Languages
-    english: English (B2)
     french: French (mother tongue)
+    english: English (B2)
     spanish: Spanish (school level)
 
 hobbies:

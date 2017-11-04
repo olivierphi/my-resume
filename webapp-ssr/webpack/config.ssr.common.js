@@ -53,6 +53,7 @@ module.exports = {
             limit: 5000, // Convert images < 5kb to base64 strings
             name: "[hash]-[name].[ext]",
             outputPath: "img/",
+            publicPath: "/",
             fallback: "file-loader",
             emitFile: false, //images > 5kb will just be sent to the great nowhere (they are managed by the browser-side build)
           },

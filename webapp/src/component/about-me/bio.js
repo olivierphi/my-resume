@@ -14,6 +14,13 @@ const Bio = props => {
       <p className="rich-snippet-only">
         <span itemProp="jobTitle">{props.bio.jobTitle}</span>
       </p>
+
+      {props.bio.nationality ? (
+        <p>
+          {props.i18n.me.nationality} {props.bio.nationality}
+        </p>
+      ) : null}
+
       <p>
         {props.i18n.me.birthDate}
         <DateDisplayContainer
@@ -61,6 +68,7 @@ Bio.propTypes = {
   bio: PropTypes.shape({
     name: PropTypes.string.isRequired,
     jobTitle: PropTypes.string.isRequired,
+    nationality: PropTypes.string,
     birth: PropTypes.string.isRequired,
     address: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
@@ -69,6 +77,7 @@ Bio.propTypes = {
   }).isRequired,
   i18n: PropTypes.shape({
     me: PropTypes.shape({
+      nationality: PropTypes.string,
       birthDate: PropTypes.string.isRequired,
       phone: PropTypes.string.isRequired,
     }).isRequired,

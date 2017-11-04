@@ -54,13 +54,13 @@ const { appContent, documentHeadContent, initialState } = getRenderedApp(
 const renderedHtmlPage = htmlTemplate
   .replace('<div id="root"></div>', `<div id="root">${appContent}</div>`)
   .replace("$htmlAttributes", documentHeadContent.htmlAttributes)
-  .replace("$title", documentHeadContent.title)
+  .replace(/<title>.+<\/title>/, documentHeadContent.title)
   .replace(
     "<!-- $metadata -->",
     documentHeadContent.meta + documentHeadContent.link
   )
   .replace(
-    /window\.__INITIAL__STATE__ = \{.+\};$/,
+    /window.__INITIAL__STATE__\s*=\s*\{.+\};\s*$/m,
     `window.__INITIAL__STATE__ = ${JSON.stringify(initialState)};`
   );
 
