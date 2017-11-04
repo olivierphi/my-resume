@@ -12,8 +12,6 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-delete window.__INITIAL__STATE__;
-
 ReactDOM.hydrate(
   <Provider store={store}>
     <App />

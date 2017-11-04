@@ -5,8 +5,8 @@
   "scripts": {
     "webpack":
       "../node_modules/.bin/webpack --config webpack/config.ssr.dev.js",
-    "render:en": "node bin/generate-static.js 'en'",
-    "render:fr": "node bin/generate-static.js 'fr'",
+    "render:en": "node bin/generate-static.js ../var ../dist/index.html 'en'",
+    "render:fr": "node bin/generate-static.js ../var ../dist/index.html 'fr'",
     "render":
       "npm run --silent render:en > ../dist/index.en.html && npm run --silent render:fr > ../dist/index.fr.html ",
     "watch":

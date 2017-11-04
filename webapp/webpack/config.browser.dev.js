@@ -8,5 +8,10 @@ module.exports = webpackMerge(webpackCommonConfig, {
   devtool: "inline-source-map",
   devServer: {
     contentBase: path.resolve(ROOT_DIR, "../dist"),
+    port: 9000,
+    overlay: {
+      warnings: true,
+      errors: true,
+    },
   },
 });

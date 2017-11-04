@@ -31,4 +31,4 @@ const appData = {
   buildTime: dateFormat(new Date(), W3C_DATE_FORMAT),
 };
 
-console.log(JSON.stringify(appData));
+console.log(JSON.stringify(appData, null, 2));

@@ -22,7 +22,6 @@ export default class DocumentHead extends React.PureComponent {
           rel="stylesheet"
           type="text/css"
         />
-        <link href="css/main.css" rel="stylesheet" type="text/css" />
       </Helmet>
     );
   }

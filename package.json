@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf dist/*",
     "api:dump": "cd api && npm run build && npm run dump && cd -",
     "ssr:webpack": "cd webapp-ssr && npm run webpack && cd -",
     "ssr:render": "cd webapp-ssr && npm run render && cd -",
     "ssr:dev:watch": "cd webapp-ssr && npm run watch && cd -",
+    "webapp:dev:start":
+      "webpack-dev-server --config webapp/webpack/config.browser.dev.js --open",
     "webapp:dev:watch":
-      "webpack --watch --config webapp/webpack/config.browser.dev.js",
+      "webpack --progress --watch --config webapp/webpack/config.browser.dev.js",
     "webapp:dev:build": "webpack --config webapp/webpack/config.browser.dev.js",
     "webapp:prod:build":
       "webpack --config webapp/webpack/config.browser.prod.js",
@@ -31,6 +34,7 @@
     "date-fns": "^1.29.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
     "null-loader": "^0.1.1",
     "raw-loader": "^0.5.1",
@@ -51,6 +55,7 @@
     "lint-staged": "^4.3.0",
     "prettier": "1.7.4",
     "redux-devtools": "^3.4.0",
+    "webpack-dev-server": "^2.9.3",
     "webpack-monitor": "^1.0.13",
     "webpack-shell-plugin": "^0.5.0"
   },

@@ -1,42 +1,67 @@
+import fs from "fs";
 import { getRenderedApp } from "entrypoint.ssr";
-import HtmlTemplate from "../../../webapp/assets/index.tpl.html";
-import AppDataEn from "../../../var/app-data.en.json";
-import AppDataFr from "../../../var/app-data.fr.json";
+import ApiUtils from "../../../api/utils";
 
-if (process.argv.length < 3) {
-  console.log("Usage: node bin/generate-static.js [lang]");
+const USAGE_STR =
+  "Usage: node bin/generate-static.js [jsonFilesPath] [htmlTemplatePath] [lang]";
+
+if (process.argv.length < 5) {
+  console.log(USAGE_STR);
 }
 
-const lang = process.argv[2];
+const jsonFilesPath = process.argv[2];
+
+try {
+  const jsonFilesPathStats = fs.statSync(jsonFilesPath);
+  if (!jsonFilesPathStats.isDirectory()) {
+    throw '"jsonFilesPath" exists but is not a folder';
+  }
+} catch (err) {
+  console.log(`${USAGE_STR} - "jsonFilesPath" must be a valid folder`);
+  console.log(err);
+  process.exit(1);
+}
+
+const htmlTemplatePath = process.argv[3];
+
+let htmlTemplate;
+try {
+  htmlTemplate = fs.readFileSync(htmlTemplatePath, "utf-8");
+} catch (err) {
+  console.log(
+    `${USAGE_STR} - "htmlTemplatePath" must be a valid readbable file path`
+  );
+  console.log(err);
+  process.exit(1);
+}
+
+const lang = process.argv[4];
 
 const validLangs = ["en", "fr"];
 if (!validLangs.includes(lang)) {
   console.log(
-    `Usage: node bin/generate-static.js [lang] - "lang" must be ${validLangs.join(
-      "|"
-    )}, got ${lang}`
+    `${USAGE_STR} -  "lang" must be ${validLangs.join("|")}, got ${lang}`
   );
   process.exit(1);
 }
 
-const appData = {
-  en: JSON.parse(AppDataEn),
-  fr: JSON.parse(AppDataFr),
-};
+const appInitialState = ApiUtils.getAppInitialState(jsonFilesPath, lang);
 
 const { appContent, documentHeadContent, initialState } = getRenderedApp(
-  appData.en,
-  appData.fr,
-  lang
+  appInitialState
 );
 
-const renderedHtmlPage = HtmlTemplate.replace("%RENDERED_APP%", appContent)
-  .replace("%RENDERED_APP_HTML_ATTRIBUTES%", documentHeadContent.htmlAttributes)
-  .replace("%RENDERED_APP_TITLE%", documentHeadContent.title)
+const renderedHtmlPage = htmlTemplate
+  .replace('<div id="root"></div>', `<div id="root">${appContent}</div>`)
+  .replace("$htmlAttributes", documentHeadContent.htmlAttributes)
+  .replace("$title", documentHeadContent.title)
   .replace(
-    "%RENDERED_APP_META%",
+    "<!-- $metadata -->",
     documentHeadContent.meta + documentHeadContent.link
   )
-  .replace("%INITIAL_STATE%", JSON.stringify(initialState));
+  .replace(
+    /window\.__INITIAL__STATE__ = \{.+\};$/,
+    `window.__INITIAL__STATE__ = ${JSON.stringify(initialState)};`
+  );
 
 console.log(renderedHtmlPage);

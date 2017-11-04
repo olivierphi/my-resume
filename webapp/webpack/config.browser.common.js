@@ -1,18 +1,18 @@
 const path = require("path");
-const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ApiUtils = require("../../api/utils");
 
 const ROOT_DIR = path.resolve(__dirname, "../");
 
 const extractSass = new ExtractTextPlugin({
-  filename: "css/main.css",
-  allChunks: true,
+  filename: "css/main.[hash].css",
 });
 
 module.exports = {
   entry: path.resolve(ROOT_DIR, "src/entrypoint.browser.js"),
   output: {
-    filename: "app.js",
+    filename: "js/app.bundle.[hash].js",
     path: path.resolve(ROOT_DIR, "../dist"),
   },
   resolve: {
@@ -20,7 +20,15 @@ module.exports = {
     extensions: [".js"],
   },
   devtool: "inline-source-map",
-  plugins: [extractSass],
+  plugins: [
+    extractSass,
+    new HtmlWebpackPlugin({
+      template: path.resolve(ROOT_DIR, "src/index.ejs"),
+      // Template vars:
+      appMountId: "root",
+      appInitialState: ApiUtils.getAppInitialState("en"),
+    }),
+  ],
   module: {
     rules: [
       // Base setup: Babel!
