@@ -8,7 +8,7 @@ export default class BaseRepository {
 
   _loadYaml(/** String*/ fileName, /** String*/ lang) /** String */ {
     return yaml.safeLoad(
-      fs.readFileSync(`${this._dataBasePath}/${fileName}.${lang}.yaml`),
+      fs.readFileSync(`${this._dataBasePath}/${fileName}${lang ? `.${lang}` : ''}.yaml`),
       "utf8"
     );
   }

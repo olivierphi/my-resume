@@ -9,7 +9,7 @@
     "ssr:render": "cd webapp-ssr && npm run render && cd -",
     "ssr:dev:watch": "cd webapp-ssr && npm run watch && cd -",
     "webapp:dev:start":
-      "webpack-dev-server --config webapp/webpack/config.browser.dev.js --open",
+      "webpack-dev-server --config webapp/webpack/config.browser.dev.js",
     "webapp:dev:watch":
       "webpack --progress --watch --config webapp/webpack/config.browser.dev.js",
     "webapp:dev:build": "webpack --config webapp/webpack/config.browser.dev.js",
@@ -32,10 +32,12 @@
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.7",
     "date-fns": "^1.29.0",
+    "dejavu-sans": "^1.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
+    "normalize.css": "^7.0.0",
     "null-loader": "^0.1.1",
     "raw-loader": "^0.5.1",
     "react": "^16.0.0",

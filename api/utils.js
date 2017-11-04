@@ -1,4 +1,4 @@
-import fs from "fs";
+const fs = require("fs");
 
 function getAppInitialState(dataJsonFilesPath, currentLang) {
   const AppDataEn = JSON.parse(

@@ -26,7 +26,10 @@ module.exports = {
       template: path.resolve(ROOT_DIR, "src/index.ejs"),
       // Template vars:
       appMountId: "root",
-      appInitialState: ApiUtils.getAppInitialState("en"),
+      appInitialState: ApiUtils.getAppInitialState(
+        path.resolve(ROOT_DIR, "../var"),
+        "en"
+      ),
     }),
   ],
   module: {
@@ -64,6 +67,10 @@ module.exports = {
               options: {
                 alias: {
                   "/img": path.resolve(ROOT_DIR, "assets/img"),
+                  "../fonts": path.resolve(
+                    ROOT_DIR,
+                    "../node_modules/dejavu-sans/fonts"
+                  ),
                 },
               },
             },
@@ -75,6 +82,19 @@ module.exports = {
             },
           ],
         }),
+      },
+      // Fonts management
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "fonts/[hash]-[name].[ext]",
+              publicPath: "/",
+            },
+          },
+        ],
       },
     ],
   },

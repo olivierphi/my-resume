@@ -9,6 +9,7 @@ module.exports = webpackMerge(webpackCommonConfig, {
   devServer: {
     contentBase: path.resolve(ROOT_DIR, "../dist"),
     port: 9000,
+    open: false,
     overlay: {
       warnings: true,
       errors: true,

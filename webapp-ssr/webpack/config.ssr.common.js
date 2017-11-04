@@ -68,6 +68,11 @@ module.exports = {
         test: /\.(html|json)/,
         use: "raw-loader",
       },
+      // Fonts management (on the SSR side we just send that to the null-loader)
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ["null-loader"],
+      },
     ],
   },
 };

@@ -7,7 +7,7 @@ import Hobbies from "container/about-me/hobbies";
 import Teaching from "container/about-me/teaching";
 import "./about-me.scss";
 
-export default class AboutMe extends React.Component {
+export default class AboutMe extends React.PureComponent {
   render() {
     return (
       <section id="about-me" itemScope itemType="http://schema.org/Person">

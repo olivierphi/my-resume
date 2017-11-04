@@ -1,8 +1,12 @@
 @import "variables";
 @import "mixins";
 
+@import "~normalize.css/normalize";
+@import "~dejavu-sans/css/dejavu-sans";
+
 html, body {
     font-family: $font-main;
+    line-height: 1.25;
 }
 
 
@@ -17,7 +21,7 @@ html, body {
         width: auto;
     }
 
-    #misc-info {
+    #about-me {
         width: $misc-info-width;
         display: table-cell;
         min-height: 100%;

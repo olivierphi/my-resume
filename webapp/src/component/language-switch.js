@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./language-switch.scss";
 
 export default class LanguageSwitch extends React.Component {
   constructor() {
@@ -9,9 +10,11 @@ export default class LanguageSwitch extends React.Component {
   }
 
   render() {
-    return (
-      <div className="language-selector">
+    return [
+      <div className="pdf-download" key="pdf-download">
         <span>{this.props.i18n.top_links["pdf.download"]}</span>
+      </div>,
+      <div className="language-selector" key="language-selector">
         <span>{this.props.i18n.top_links.language}</span>
         {["en", "fr"].map(lang => (
           <SwitchLink
@@ -21,8 +24,8 @@ export default class LanguageSwitch extends React.Component {
             onClick={this.onClick}
           />
         ))}
-      </div>
-    );
+      </div>,
+    ];
   }
 
   onClick(lang, event) {

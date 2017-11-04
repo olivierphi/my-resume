@@ -1,0 +1,22 @@
+
+@mixin tech-icon-bg ($tech) {
+    background-image: url("/img/icons/techs/#{$tech}.png");
+}
+
+.tech-with-icon {
+    display: inline-block;
+    line-height: 20px;
+    padding-left: 28px;
+    background-repeat: no-repeat;
+    background-position: 2px center;
+
+    $techs:
+        javascript, php, html5, react, symfony2, nodejs,
+        koa, express, browserify, elasticsearch, redis, algolia, silex, zend-framework, behat, go, ruby, rails, gulp, less, flash;
+    @each $tech in $techs {
+        &.#{$tech} {
+            @include tech-icon-bg($tech);
+        }
+    }
+
+}
