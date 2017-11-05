@@ -65,7 +65,7 @@ export default class Skills extends React.PureComponent {
 
             if (tool.url) {
               return (
-                <span>
+                <span key={tool.title}>
                   <a href={tool.url} target="_blank">
                     {tool.title}
                   </a>
@@ -75,7 +75,7 @@ export default class Skills extends React.PureComponent {
             }
 
             return (
-              <span>
+              <span key={tool.title}>
                 {tool.title}
                 {separator}
               </span>
@@ -106,9 +106,10 @@ Skills.propTypes = {
     ),
     otherTechnologies: PropTypes.arrayOf(
       PropTypes.shape({
-        title: PropTypes.string.isRequired,
+        title: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+          .isRequired,
         icon: PropTypes.string.isRequired,
-        url: PropTypes.string,
+        url: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
         "contributor-url": PropTypes.string,
       })
     ),

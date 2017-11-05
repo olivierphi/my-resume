@@ -1,6 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import SkillsContainer from "../container/main-panel/skills";
+import JobExperienceContainer from "../container/main-panel/job-experience";
 import "./main-panel.scss";
 
 export default class MainPanel extends React.PureComponent {
@@ -11,6 +12,7 @@ export default class MainPanel extends React.PureComponent {
         <h2>{this.props.punchline}</h2>
 
         <SkillsContainer />
+        {<JobExperienceContainer />}
       </section>
     );
   }
