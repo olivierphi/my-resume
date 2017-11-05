@@ -11,7 +11,15 @@
     <% } %>
 
     <script type="text/javascript" id="app-initial-state">
+      (function() {
+
         window.__INITIAL__STATE__ = <%= JSON.stringify(htmlWebpackPlugin.options.appInitialState) %>;
+
+        var langMatch = window.location.search.match(/lang=(fr|en)$/);
+        if (null !== langMatch) {
+            window.__INITIAL__STATE__.currentLang = langMatch[1];
+        }
+      })();
     </script>
 </body>
 </html>

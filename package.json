@@ -6,7 +6,8 @@
     "clean": "rm -rf dist/*",
     "api:dump": "cd api && npm run dump && cd -",
     "ssr:webpack": "cd webapp-ssr && npm run webpack && cd -",
-    "ssr:render": "cd webapp-ssr && npm run render && cd -",
+    "ssr:render":
+      "cd webapp-ssr && npm run render && cd - && cp webapp-ssr/src/index.php dist/",
     "ssr:dev:watch": "cd webapp-ssr && npm run watch && cd -",
     "webapp:dev:start":
       "webpack-dev-server --config webapp/webpack/config.browser.dev.js",
@@ -15,6 +16,9 @@
     "webapp:dev:build": "webpack --config webapp/webpack/config.browser.dev.js",
     "webapp:prod:build":
       "webpack --config webapp/webpack/config.browser.prod.js",
+    "pdf:render:en": "node bin/create-pdf.js http://localhost:9000 en",
+    "pdf:render:fr": "node bin/create-pdf.js http://localhost:9000 fr",
+    "pdf:render": "npm run pdf:render:en && npm run pdf:render:fr",
     "prettier:api": "prettier --write 'api/**/*.js' ",
     "prettier:webapp": "prettier --write 'webapp/**/*.js' ",
     "prettier:webapp-ssr": "prettier --write 'webapp-ssr/**/*.js' ",
@@ -39,6 +43,7 @@
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
     "null-loader": "^0.1.1",
+    "puppeteer": "^0.12.0",
     "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
