@@ -32,7 +32,7 @@
         color: $red;
         img {
             vertical-align: middle;
-            margin-top: -4px;
+            margin-top: -12px;
         }
 
         @include mobile-theme-screen {
@@ -65,7 +65,5 @@
             }
         }
     }
-
-    //@import "main-panel/skills";
 
 }

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { switchLanguage } from "../actions";
-import LanguageSwitch from "../component/language-switch";
+import { switchLanguage } from "../../actions";
+import LanguageSwitch from "../../component/misc/language-switch";
 
 const mapStateToProps = state => {
   return {

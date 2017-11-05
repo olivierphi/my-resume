@@ -1,7 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import JobExperienceIcon from "../../../assets/img/icons/header-icons/video-red.svg";
-// import "./skills.scss";
 
 export default class JobExperience extends React.PureComponent {
   render() {

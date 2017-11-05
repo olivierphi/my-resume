@@ -11,9 +11,11 @@ export default class LanguageSwitch extends React.Component {
 
   render() {
     return [
-      <div className="pdf-download" key="pdf-download">
-        <span>{this.props.i18n.top_links["pdf.download"]}</span>
-      </div>,
+      <PdfDownload
+        currentLang={this.props.currentLang}
+        i18n={this.props.i18n}
+        key="pdf-download"
+      />,
       <div className="language-selector" key="language-selector">
         <span>{this.props.i18n.top_links.language}</span>
         {["en", "fr"].map(lang => (
@@ -40,6 +42,27 @@ LanguageSwitch.propTypes = {
   i18n: PropTypes.shape({
     top_links: PropTypes.shape({
       language: PropTypes.string.isRequired,
+      ["pdf.download"]: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+class PdfDownload extends React.PureComponent {
+  render() {
+    return (
+      <div className="pdf-download">
+        <a href={`cv-olivier-philippon.${this.props.currentLang}.pdf`}>
+          {this.props.i18n.top_links["pdf.download"]}
+        </a>
+      </div>
+    );
+  }
+}
+
+PdfDownload.propTypes = {
+  currentLang: PropTypes.string.isRequired,
+  i18n: PropTypes.shape({
+    top_links: PropTypes.shape({
       ["pdf.download"]: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,

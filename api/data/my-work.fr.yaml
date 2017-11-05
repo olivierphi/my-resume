@@ -1,0 +1,48 @@
+-
+        title: Collector Square
+        content: >
+            Lead Développeur
+            <span class="tech-with-icon symfony2">Symfony2</span> et
+            JavaScript
+            pour la nouvelle version du site et du CMS de <a href="https://www.collectorsquare.com/de" target="_blank">Collector Square</a>
+            fortement basés sur Elasticsearch et Redis
+-
+        title: Balinea
+        content: >
+            Lead Développeur
+            <span class="tech-with-icon symfony2">Symfony2</span> et
+            JavaScript
+            pour la refonte de la plateforme <a href="https://www.balinea.com/" target="_blank">Balinea</a>
+            - qui inclut le site public, un middle-office, un back-end, deux API (une publique et une privée)...
+-
+        title: Projets internes@LeMonde.fr
+        content: >
+            Développeur
+            PHP,
+            <span class="tech-with-icon nodejs">Node.js</span> et
+            <span class="tech-with-icon backbone">Backbone</span>
+            chez <a href="http://www.lemonde.fr/" target="_blank">LeMonde.fr</a>
+-
+        title: Ruby on Rails Mail App
+        content: >
+            Développement d'une application Web de <i>mass mailing</i> pour TV France International,
+            basée sur <span class="tech-with-icon rails">Ruby on Rails</span>
+-
+        title: Site mobile de Mappy
+        content: >
+            Lead Developer JavaScript pour le
+            <a href="http://iphone.mappy.com/" target="_blank">site mobile</a> de <a href="http://www.mappy.com/" target="_blank">Mappy</a>,
+            basé sur <span class="tech-with-icon backbone">Backbone</span>.
+            Membre de l'équipe back-end <span class="tech-with-icon symfony2">Symfony2</span>
+-
+        title: Bopler Games, application Facebook
+        content: >
+            Direction technique du développement PHP de l'app
+            Facebook <a href="https://www.facebook.com/BoplerGames" target="_blank">Bopler Games</a>,
+            basée sur <span class="tech-with-icon zend-framework">Zend Framework</span>
+-
+        title: Musée Rodin
+        content: >
+            Direction technique sur le site du
+            <a href="http://www.musee-rodin.fr/" target="_blank">Musée Rodin</a>,
+            basé sur <span class="tech-with-icon drupal">Drupal</span> et <span class="tech-with-icon zend-framework">Zend Framework</span>

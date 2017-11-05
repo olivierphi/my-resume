@@ -31,6 +31,10 @@ others:
         icon: express
         url: http://expressjs.com/
   -
+        title: Webpack
+        icon: webpack
+        url: https://webpack.js.org/
+  -
         title: Browserify
         icon: browserify
         url: http://browserify.org/

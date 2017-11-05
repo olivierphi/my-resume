@@ -1,47 +1,7 @@
-
-@import "variables";
 @import "mixins";
 
-$outline-color: white;
-$outline-size: 2px;
+.github-ribbon {
 
-#pdf-download, #language-selector {
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    a, span {
-        font-family: $font-native;
-        color: black;
-        font-weight: normal;
-        font-size: 12px;
-        // Let's apply *a lot* of text shadows to give a outline effect to the text
-        // (for when it's over the GitHub ribbon)
-        // Ugly and hacky, but... its does the job :-)
-        text-shadow: make-long-shadow($outline-size, $outline-color, 20);
-    }
-    @include mobile-theme-all {
-        left: 4px;
-        z-index: 1;
-        span, a {
-            color: white;
-            text-shadow: none;
-        }
-    }
-    @media print {
-        display: none;
-    }
-}
-
-#pdf-download {
-    top: 0.5em;
-}
-
-#language-selector {
-    top: 1.5em;
-}
-
-#github-ribbon {
-    
     // start "pure CSS" GitHub ribbon
     // @link https://codepo8.github.io/css-fork-on-github-ribbon/
     position: absolute;
@@ -52,7 +12,7 @@ $outline-size: 2px;
     overflow: hidden;
     height: 160px;
     z-index: 1;
-    
+
     a {
         position:absolute;
         width: 150px;
@@ -64,7 +24,7 @@ $outline-size: 2px;
         -moz-transform: rotate(45deg);
         -o-transform: rotate(45deg);
         box-shadow: 4px 4px 10px rgba(0,0,0,0.8);
-        
+
         background: #AA0000;
         color: white;
         text-decoration: none;
