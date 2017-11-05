@@ -12,7 +12,7 @@
 
     $techs:
         javascript, php, html5, react, symfony2, nodejs,
-        koa, express, webpack, browserify, elasticsearch, redis, algolia, silex, zend-framework, behat, go, ruby, rails, gulp, less, flash, backbone;
+        koa, express, webpack, browserify, elasticsearch, redis, algolia, silex, zend-framework, behat, go, ruby, rails, gulp, less, flash, backbone, drupal;
     @each $tech in $techs {
         &.#{$tech} {
             @include tech-icon-bg($tech);
