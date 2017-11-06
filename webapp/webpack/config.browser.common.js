@@ -6,7 +6,7 @@ const ApiUtils = require("../../api/utils");
 const ROOT_DIR = path.resolve(__dirname, "../");
 
 const extractSass = new ExtractTextPlugin({
-  filename: "css/main.[hash].css",
+  filename: "css/main.[md5:contenthash:hex:12].css",
 });
 
 module.exports = {
@@ -14,6 +14,8 @@ module.exports = {
   output: {
     filename: "js/app.bundle.[hash].js",
     path: path.resolve(ROOT_DIR, "../dist"),
+    hashDigest: "hex",
+    hashDigestLength: 12,
   },
   resolve: {
     modules: ["node_modules", "src"],
@@ -24,6 +26,8 @@ module.exports = {
     extractSass,
     new HtmlWebpackPlugin({
       template: path.resolve(ROOT_DIR, "src/index.ejs"),
+      // We handle the CSS and JS ourselves in the template:
+      inject: false,
       // Template vars:
       appMountId: "root",
       appInitialState: ApiUtils.getAppInitialState(
@@ -52,7 +56,7 @@ module.exports = {
           loader: "url-loader",
           options: {
             limit: 5000, // Convert images < 5kb to base64 strings
-            name: "img/[hash]-[name].[ext]",
+            name: "img/[name]-[hash:hex:12].[ext]",
             publicPath: "/",
             fallback: "file-loader",
           },
@@ -91,7 +95,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "fonts/[hash]-[name].[ext]",
+              name: "fonts/[name]-[hash:hex:12].[ext]",
               publicPath: "/",
             },
           },
