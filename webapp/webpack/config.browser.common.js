@@ -34,6 +34,7 @@ module.exports = {
         path.resolve(ROOT_DIR, "../var"),
         "en"
       ),
+      gaTrackingId: process.env.GA_TRACKING_ID,
     }),
   ],
   module: {
