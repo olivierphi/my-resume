@@ -21,7 +21,13 @@ if (!validLangs.includes(lang)) {
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto(`${cvUrl}lang=${lang}`, { waitUntil: ["networkidle2"] });
+
+  const cvFullUrl = `${cvUrl}?lang=${lang}`;
+  console.log(
+    `Generating PDF for language "${lang}" (from URL ${cvFullUrl})...`
+  );
+
+  await page.goto(cvFullUrl);
   await waitFor(2000); //we have to give some time to the browser for loading the WebFont
   await page.pdf({
     path: `dist/cv-olivier-philippon.${lang}.pdf`,
@@ -29,6 +35,8 @@ if (!validLangs.includes(lang)) {
     printBackground: true,
     pageRanges: "1-1",
   });
+
+  console.log("PDF generated, closing browser.");
 
   await browser.close();
 })();
