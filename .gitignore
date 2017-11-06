@@ -5,6 +5,3 @@ node_modules/
 !/dist/.gitkeep
 /var/*
 !/var/.gitkeep
-
-# Let's ignore the dependencies lock for the moment...
-yarn.lock

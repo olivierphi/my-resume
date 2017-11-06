@@ -1,3 +1,6 @@
+install:
+	cd api && yarn install && cd -
+	yarn install
 
 build:
 	# Clean "dist/" & "var/" folders
