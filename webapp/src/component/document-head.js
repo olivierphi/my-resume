@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
+import Favicon from "../../assets/img/icons/rougemine-16x16.png";
 
 export default class DocumentHead extends React.PureComponent {
   render() {
@@ -22,6 +23,7 @@ export default class DocumentHead extends React.PureComponent {
           rel="stylesheet"
           type="text/css"
         />
+        <link rel="icon" href={Favicon} type="image/png" />
       </Helmet>
     );
   }
