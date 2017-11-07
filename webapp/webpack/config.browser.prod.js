@@ -1,3 +1,5 @@
+process.env.NODE_ENV = "production";
+
 const path = require("path");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const webpackCommonConfig = require("./config.browser.common");

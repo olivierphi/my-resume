@@ -71,6 +71,7 @@ module.exports = {
             {
               loader: "css-loader",
               options: {
+                minimize: process.env.NODE_ENV === "production",
                 alias: {
                   "/img": path.resolve(ROOT_DIR, "assets/img"),
                   "../fonts": path.resolve(
