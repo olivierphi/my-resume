@@ -6,8 +6,9 @@ main:
         title: PHP
         icon: php
   -
-        title: HTML / CSS
-        icon: html5
+        title: Ruby
+        icon: ruby
+        # url: https://www.ruby-lang.org/
   -
         title: React
         icon: react
@@ -17,27 +18,26 @@ main:
         icon: symfony2
         url: http://symfony.com
   -
-        title: Node.js
-        icon: nodejs
-        url: http://nodejs.org
+        title: Ruby on Rails
+        icon: rails
+        url: https://rubyonrails.org/
 
 others:
   -
-        title: Koa
-        icon: koa
-        url: http://koajs.com/
+        title: HTML / CSS
+        icon: html5
   -
-        title: Express
-        icon: express
-        url: http://expressjs.com/
+        title: Node.js
+        icon: nodejs
+        url: http://nodejs.org
   -
-        title: Webpack
-        icon: webpack
-        url: https://webpack.js.org/
+        title: Python
+        icon: python
+        url: https://www.python.org/
   -
-        title: Browserify
-        icon: browserify
-        url: http://browserify.org/
+        title: PostgreSQL
+        icon: postgres
+        url: https://www.postgresql.org/about/
   -
         title: Elasticsearch
         icon: elasticsearch
@@ -45,44 +45,16 @@ others:
   -
         title: Redis
         icon: redis
-        url: http://www.redis.io/
+        url: https://www.redis.io/
   -
         title: Algolia
         icon: algolia
-        url: http://www.algolia.com/
+        url: https://www.algolia.com/
   -
         title: Silex
         icon: silex
-        url: http://silex.sensiolabs.org/
+        url: https://silex.sensiolabs.org/
         contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
-  -
-        title: Zend Framework 1.x
-        icon: zend-framework
-        url: https://framework.zend.com/
-  -
-        title: [phpunit, Behat]
-        icon: behat
-        url: ["https://phpunit.de/", "http://behat.org/"]
-  -
-        title: Go
-        icon: go
-        url: https://golang.org/
-  -
-        title: Ruby
-        icon: ruby
-        url: http://www.ruby-lang.org
-  -
-        title: Ruby on Rails
-        icon: rails
-        url: http://rubyonrails.org
-  -
-        title: Gulp
-        icon: gulp
-        url: http://gulpjs.com/
-  -
-        title: [SCSS, LESS]
-        icon: less
-        url: ["http://sass-lang.com/", "http://lesscss.org/"]
   -
         title: Flash
         icon: flash
@@ -100,12 +72,6 @@ tools:
     -
         title: Debian
         url: http://www.debian.org/
-    -
-        title: IntelliJ IDEA
-        url: http://www.jetbrains.com/idea/
-    -
-        title: Vagrant
-        url: http://vagrantup.com/
     -
         title: Flash
     -

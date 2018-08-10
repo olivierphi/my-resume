@@ -11,8 +11,10 @@
     background-position: 2px center;
 
     $techs:
-        javascript, php, html5, react, symfony2, nodejs,
-        koa, express, webpack, browserify, elasticsearch, redis, algolia, silex, zend-framework, behat, go, ruby, rails, gulp, less, flash, backbone, drupal;
+            algolia, backbone, behat, browserify, drupal, elasticsearch, express,
+            flash, go, gulp, html5, javascript, koa, less, nodejs, php, postgres,
+            python, rails, react, redis, ruby, silex, symfony2, webpack, zend-framework
+    ;
     @each $tech in $techs {
         &.#{$tech} {
             @include tech-icon-bg($tech);
