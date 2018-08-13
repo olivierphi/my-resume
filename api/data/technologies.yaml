@@ -1,79 +1,61 @@
 main:
-  -
-        title: JavaScript
-        icon: javascript
-  -
-        title: PHP
-        icon: php
-  -
-        title: Ruby
-        icon: ruby
-        # url: https://www.ruby-lang.org/
-  -
-        title: Node.js
-        icon: nodejs
-        url: http://nodejs.org
-  -
-        title: Symfony 2+
-        icon: symfony2
-        url: http://symfony.com
-  -
-        title: Ruby on Rails
-        icon: rails
-        url: https://rubyonrails.org/
+  - title: JavaScript
+    icon: javascript
+  - title: PHP
+    icon: php
+  - title: Ruby
+    icon: ruby
+    # url: https://www.ruby-lang.org/
+  - title: Node.js
+    icon: nodejs
+    url: http://nodejs.org
+  - title: Symfony 2+
+    icon: symfony2
+    url: http://symfony.com
+  - title: Ruby on Rails
+    icon: rails
+    url: https://rubyonrails.org/
 
 others:
-  -
-        title: Python
-        icon: python
-        url: https://www.python.org/
-  -
-        title: HTML / CSS
-        icon: html5
-  -
-        title: React
-        icon: react
-        url: https://reactjs.org/
-  -
-        title: PostgreSQL
-        icon: postgres
-        url: https://www.postgresql.org/about/
-  -
-        title: Elasticsearch
-        icon: elasticsearch
-        url: https://www.elastic.co/products/elasticsearch
-  -
-        title: Algolia
-        icon: algolia
-        url: https://www.algolia.com/
-  -
-        title: Redis
-        icon: redis
-        url: https://www.redis.io/
-  -
-        title: Silex
-        icon: silex
-        url: https://silex.sensiolabs.org/
-        contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
-  -
-        title: Express
-        icon: express
-        url: http://expressjs.com/
+  - title: Python
+    icon: python
+    url: https://www.python.org/
+  - title: HTML / CSS
+    icon: html5
+  - title: React
+    icon: react
+    url: https://reactjs.org/
+  - title: TypeScript
+    icon: typescript
+    url: https://www.typescriptlang.org/
+  - title: PostgreSQL
+    icon: postgres
+    url: https://www.postgresql.org/about/
+  - title: Elasticsearch
+    icon: elasticsearch
+    url: https://www.elastic.co/products/elasticsearch
+  - title: Algolia
+    icon: algolia
+    url: https://www.algolia.com/
+  - title: Redis
+    icon: redis
+    url: https://www.redis.io/
+  - title: Silex
+    icon: silex
+    url: https://silex.sensiolabs.org/
+    contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
+  - title: Express
+    icon: express
+    url: http://expressjs.com/
 
 tools:
-    -
-        title: Docker
-        url: http://www.docker.com/
-    -
-        title: Docker Compose
-        url: https://docs.docker.com/compose/overview/
-    -
-        title: Git
-        url: http://git-scm.com/
-    -
-        title: Debian
-        url: http://www.debian.org/
-    -
-        title: Flash
-    -
-        title: Photoshop
+  - title: Docker
+    url: http://www.docker.com/
+  - title: Docker Compose
+    url: https://docs.docker.com/compose/overview/
+  - title: Git
+    url: http://git-scm.com/
+  - title: Debian
+    url: http://www.debian.org/
+  - title: Flash
+  - title: Photoshop

@@ -1,24 +1,21 @@
-
 @mixin tech-icon-bg ($tech) {
-    background-image: url("/img/icons/techs/#{$tech}.png");
+  background-image: url("/img/icons/techs/#{$tech}.png");
 }
 
 .tech-with-icon {
-    display: inline-block;
-    line-height: 20px;
-    padding-left: 28px;
-    background-repeat: no-repeat;
-    background-position: 2px center;
+  display: inline-block;
+  line-height: 20px;
+  padding-left: 28px;
+  background-repeat: no-repeat;
+  background-position: 2px center;
 
-    $techs:
-            algolia, backbone, behat, browserify, drupal, elasticsearch, express,
-            flash, go, gulp, html5, javascript, koa, less, nodejs, php, postgres,
-            python, rails, react, redis, ruby, silex, symfony2, webpack, zend-framework
-    ;
-    @each $tech in $techs {
-        &.#{$tech} {
-            @include tech-icon-bg($tech);
-        }
+  $techs: algolia, backbone, behat, browserify, drupal, elasticsearch, express,
+    flash, go, gulp, html5, javascript, koa, less, nodejs, php, postgres, python,
+    rails, react, redis, ruby, silex, symfony2, typescript, webpack,
+    zend-framework;
+  @each $tech in $techs {
+    &.#{$tech} {
+      @include tech-icon-bg($tech);
     }
-
+  }
 }
