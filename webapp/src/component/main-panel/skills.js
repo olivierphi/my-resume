@@ -55,6 +55,7 @@ export default class Skills extends React.PureComponent {
               </span>
             );
           })}
+          ...
         </div>
         {/* end .other-technologies-container */}
 

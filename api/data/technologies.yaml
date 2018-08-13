@@ -10,9 +10,9 @@ main:
         icon: ruby
         # url: https://www.ruby-lang.org/
   -
-        title: React
-        icon: react
-        url: https://reactjs.org/
+        title: Node.js
+        icon: nodejs
+        url: http://nodejs.org
   -
         title: Symfony 2+
         icon: symfony2
@@ -24,16 +24,16 @@ main:
 
 others:
   -
-        title: HTML / CSS
-        icon: html5
-  -
-        title: Node.js
-        icon: nodejs
-        url: http://nodejs.org
-  -
         title: Python
         icon: python
         url: https://www.python.org/
+  -
+        title: HTML / CSS
+        icon: html5
+  -
+        title: React
+        icon: react
+        url: https://reactjs.org/
   -
         title: PostgreSQL
         icon: postgres
@@ -43,21 +43,22 @@ others:
         icon: elasticsearch
         url: https://www.elastic.co/products/elasticsearch
   -
-        title: Redis
-        icon: redis
-        url: https://www.redis.io/
-  -
         title: Algolia
         icon: algolia
         url: https://www.algolia.com/
+  -
+        title: Redis
+        icon: redis
+        url: https://www.redis.io/
   -
         title: Silex
         icon: silex
         url: https://silex.sensiolabs.org/
         contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
   -
-        title: Flash
-        icon: flash
+        title: Express
+        icon: express
+        url: http://expressjs.com/
 
 tools:
     -
