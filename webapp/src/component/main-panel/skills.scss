@@ -1,64 +1,70 @@
 @import "mixins";
 
 .skills-container {
-    .main-technologies-container {
-        @include clearfix;
-        margin-left: 1em;
+  .main-technologies-container {
+    @include clearfix;
+    margin-left: 1em;
 
-        @include mobile-theme-screen {
-            width: 95%;
-            margin: 0 auto;
-        }
-        
-        .tech {
-            width: 33%;
-            float: left;
-            margin-bottom: 1em;
-            position: relative;
-            /*border: solid red 1px;*/
-
-            .tech-with-icon {
-                display: inline-block;
-                width: 35px;
-                height: 22px;
-                padding-left: 0;
-            }
-
-            .contributor {
-                float: none;
-                margin-left: 35px;
-                margin-bottom: -0.5em;
-                a {
-                    font-style: italic;
-                }
-            }
-
-            @include mobile-theme-screen {
-                width: 48%;
-                &:nth-child(even) {
-                    float: right;
-                    margin-left: 2px;
-                }
-                &:nth-child(odd) {
-                    float: left;
-                    margin-right: 2px;
-                }
-            }
-        }
+    @include mobile-theme-screen {
+      width: 95%;
+      margin: 0 auto;
     }
 
-    .other-technologies-container {
-        @include clearfix;
-        .tech-with-icon {
-            line-height: 1.8;
-        }
+    .tech {
+      width: 33%;
+      float: left;
+      margin-bottom: 1em;
+      position: relative;
+      /*border: solid red 1px;*/
 
-        .contributor {
-            display: inline-block;
-            a {
-                padding-left: 8px;
-                font-style: italic;
-            }
+      .tech-with-icon {
+        display: inline-block;
+        width: 35px;
+        height: 22px;
+        padding-left: 0;
+      }
+
+      .title {
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 3px;
+      }
+
+      .contributor {
+        float: none;
+        margin-left: 35px;
+        margin-bottom: -0.5em;
+        a {
+          font-style: italic;
         }
+      }
+
+      @include mobile-theme-screen {
+        width: 48%;
+        &:nth-child(even) {
+          float: right;
+          margin-left: 2px;
+        }
+        &:nth-child(odd) {
+          float: left;
+          margin-right: 2px;
+        }
+      }
     }
+  }
+
+  .other-technologies-container {
+    @include clearfix;
+    .tech-with-icon {
+      line-height: 1.8;
+    }
+
+    .contributor {
+      display: inline-block;
+      a {
+        padding-left: 8px;
+        font-style: italic;
+      }
+    }
+  }
 }

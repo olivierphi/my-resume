@@ -1,36 +1,30 @@
 main:
   - title: JavaScript
     icon: javascript
-  - title: PHP
-    icon: php
-  - title: Ruby
-    icon: ruby
-    # url: https://www.ruby-lang.org/
   - title: Node.js
     icon: nodejs
     url: http://nodejs.org
-  - title: Symfony 2+
-    icon: symfony2
-    url: http://symfony.com
-  - title: Ruby on Rails
-    icon: rails
-    url: https://rubyonrails.org/
-
-others:
-  - title: Python
-    icon: python
-    url: https://www.python.org/
-  - title: HTML / CSS
-    icon: html5
   - title: React
     icon: react
     url: https://reactjs.org/
-  - title: TypeScript
-    icon: typescript
-    url: https://www.typescriptlang.org/
+  - title: PHP
+    icon: php
+  - title: Symfony 2+
+    icon: symfony2
+    url: http://symfony.com
   - title: PostgreSQL
     icon: postgres
     url: https://www.postgresql.org/about/
+
+others:
+  - title: HTML / CSS
+    icon: html5
+  - title: TypeScript
+    icon: typescript
+    url: https://www.typescriptlang.org/
+  - title: Python
+    icon: python
+    url: https://www.python.org/
   - title: Elasticsearch
     icon: elasticsearch
     url: https://www.elastic.co/products/elasticsearch
@@ -40,13 +34,19 @@ others:
   - title: Redis
     icon: redis
     url: https://www.redis.io/
+  - title: Express
+    icon: express
+    url: http://expressjs.com/
+  - title: Ruby
+    icon: ruby
+    # url: https://www.ruby-lang.org/
+  - title: Ruby on Rails
+    icon: rails
+    url: https://rubyonrails.org/
   - title: Silex
     icon: silex
     url: https://silex.sensiolabs.org/
     contributor-url: https://github.com/fabpot/Silex/commit/6445b9e
-  - title: Express
-    icon: express
-    url: http://expressjs.com/
 
 tools:
   - title: Docker
