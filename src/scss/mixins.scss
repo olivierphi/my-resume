@@ -1,0 +1,31 @@
+@import "variables";
+
+@mixin clearfix {
+    &:after {
+        content:"";
+        display:block;
+        clear:both;
+    }
+}
+
+@mixin mobile-theme-screen {
+    @media screen and (max-width: $mobile-theme-threshold) {
+        @content;
+    }
+}
+
+@mixin mobile-theme-all {
+    @media (max-width: $mobile-theme-threshold) {
+        @content;
+    }
+}
+
+// @link http://dtott.com/thoughts/2013/07/03/a-sass-mixin-for-long-shadows
+@function make-long-shadow($outline-size, $outline-color, $nb-iterations) {
+    $val: 0 0 #{$outline-size} #{$outline-color};
+    $comma: ',';//had to do that, otherwise SASS processor strips the comma :-/
+    @for $i from 1 through $nb-iterations {
+        $val: #{$val}#{$comma} 0 0 #{$outline-size} #{$outline-color};
+    }
+    @return $val;
+}
