@@ -1,28 +1,41 @@
 <template>
   <section id="about-me" itemScope itemType="http://schema.org/Person">
+
       <div class="logo-container">
         <span class="rougemine-logo" />
         <a href="http://rougemine.com" target="_blank">
           rougemine.com
         </a>
       </div>
+
       <Bio />
+      <OpenSource />
+      <Education />
+      <Languages />
+      <Hobbies />
+      <Teaching />
+
   </section>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Bio from "@/components/about-me/Bio.vue";
+import OpenSource from "@/components/about-me/OpenSource.vue";
+import Education from "@/components/about-me/Education.vue";
+import Languages from "@/components/about-me/Languages.vue";
+import Hobbies from "@/components/about-me/Hobbies.vue";
+import Teaching from "@/components/about-me/Teaching.vue";
 
 export default Vue.extend({
   name: "about-me",
-  components: { Bio },
+  components: { Bio, OpenSource, Education, Languages, Hobbies, Teaching },
 });
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/variables.scss";
-@import "@/scss/mixins.scss";
+@import "@/scss/_variables.scss";
+@import "@/scss/_mixins.scss";
 
 $miscInfoWhite: #f0f0f0;
 

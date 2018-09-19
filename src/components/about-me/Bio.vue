@@ -63,7 +63,8 @@
 <script lang="ts">
 import Vue from "vue";
 import { mapState } from "vuex";
-import { AppState, ResumeDataBio } from "@/domain";
+import { ResumeDataBio } from "@/domain";
+import { AppStoreWithGetters } from "@/store";
 import DateDisplay from "@/components/misc/DateDisplay.vue";
 import HeaderIcon from "@/components/misc/HeaderIcon.vue";
 
@@ -73,12 +74,10 @@ export default Vue.extend({
     DateDisplay,
   },
   computed: {
-    ...mapState({
-      // Returns the "Bio" data for the current language
-      bio: function(state: AppState): ResumeDataBio {
-        return state.resume.bio[state.lang];
-      },
-    }),
+    // Returns the "Bio" data for the current language
+    bio: function(): ResumeDataBio {
+      return this.$store.getters.currentLangState.bio;
+    },
     addressArray: function(): string[] {
       const me = this as any; // yeah. sometimes TypeScript makes me do that :-/
       const bio = me.bio as ResumeDataBio;

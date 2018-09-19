@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueI18n from "vue-i18n";
 import App from "./App.vue";
-import store from "./store";
+import { appStore } from "./store";
 import "./registerServiceWorker";
 import { Lang } from "@/domain";
 import { I18N_DATA } from "@/data/i18n-data";
@@ -15,7 +15,7 @@ const i18n = new VueI18n({
 });
 
 new Vue({
-  store,
+  store: appStore,
   i18n,
   render: h => h(App),
 }).$mount("#app");

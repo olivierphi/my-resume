@@ -11,7 +11,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { mapMutations } from "vuex";
 import { Lang } from "@/domain";
 
 export default Vue.extend({
@@ -22,7 +21,13 @@ export default Vue.extend({
     },
   },
   methods: {
-    ...mapMutations(["setLang"]),
+    setLang: function(lang: Lang): void {
+      // We have 2 things to do here:
+      // 1. Change our app state
+      this.$store.commit("setLang", lang);
+      // 2. Change the locale we use for i18n
+      this.$i18n.locale = lang;
+    },
   },
 });
 </script>

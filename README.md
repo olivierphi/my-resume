@@ -1,21 +1,25 @@
 # resume
 
 ## Project setup
+
 ```
-yarn install
+make install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-yarn run serve
+make serve
 ```
 
 ### Compiles and minifies for production
+
 ```
-yarn run build
+make build
 ```
 
 ### Lints and fixes files
+
 ```
-yarn run lint
+make lint
 ```

@@ -46,14 +46,18 @@ async function dumpResumeData() {
   const rawResumeData = await Promise.all([
     dumpDataFromFile("bio.en.toml"),
     dumpDataFromFile("bio.fr.toml"),
+    dumpDataFromFile("document.en.toml"),
+    dumpDataFromFile("document.fr.toml"),
   ]);
 
   const structuredResumeData = {
     en: {
       bio: rawResumeData[0],
+      document: rawResumeData[2],
     },
     fr: {
       bio: rawResumeData[1],
+      document: rawResumeData[3],
     },
   };
 
