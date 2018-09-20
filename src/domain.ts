@@ -6,11 +6,17 @@ export enum Lang {
 export interface ResumeData {
   bio: { [lang: string]: ResumeDataBio };
   document: { [lang: string]: ResumeDataDocument };
+  technologies: ResumeDataTechnologies;
+  jobExperience: { [lang: string]: ResumeDataJobExperience[] };
+  projects: { [lang: string]: ResumeDataProject[] };
 }
 
 export interface ResumeCurrentLangData {
   bio: ResumeDataBio;
   document: ResumeDataDocument;
+  technologies: ResumeDataTechnologies;
+  jobExperience: ResumeDataJobExperience[];
+  projects: ResumeDataProject[];
 }
 
 // @see data/bio.*.toml
@@ -33,6 +39,32 @@ export interface ResumeDataDocument {
 interface ResumeDataDocumentMeta {
   title: string;
   description: string;
+}
+
+// @see data/technologies.toml
+export interface ResumeDataTechnologies {
+  main: ResumeDataTech[];
+  others: ResumeDataTech[];
+  tools: ResumeDataTech[];
+}
+
+export interface ResumeDataTech {
+  name: string;
+  icon?: string;
+  url?: string;
+  contributor_url?: string;
+}
+
+// @see data/job-experience.*.toml
+export interface ResumeDataJobExperience {
+  period: string;
+  content: string;
+}
+
+// @see data/projects.*.toml
+export interface ResumeDataProject {
+  title: string;
+  content: string;
 }
 
 export interface AppState {

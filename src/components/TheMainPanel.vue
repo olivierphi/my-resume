@@ -3,18 +3,26 @@
         <h1>{{name}}</h1>
         <h2>{{punchline}}</h2>
 
-        <!-- <Skills /> -->
-        <!-- <JobExperience /> -->
-        <!-- <MyWork /> -->
+        <TheSkills />
+        <TheJobExperience />
+        <TheProjects />
       </section>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { AppState } from "@/domain";
+import TheSkills from "@/components/main-panel/TheSkills.vue";
+import TheJobExperience from "@/components/main-panel/TheJobExperience.vue";
+import TheProjects from "@/components/main-panel/TheProjects.vue";
 
 export default Vue.extend({
   name: "the-main-panel",
+  components: {
+    TheSkills,
+    TheJobExperience,
+    TheProjects,
+  },
   computed: {
     name: function(): string {
       return this.$store.getters.currentLangState.bio.name;
@@ -26,7 +34,7 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/scss/_variables.scss";
 @import "@/scss/_mixins.scss";
 
@@ -76,6 +84,7 @@ export default Vue.extend({
   p,
   a {
     color: $grey;
+    text-decoration: navy underline;
   }
 
   section {
@@ -92,6 +101,13 @@ export default Vue.extend({
           font-weight: bold;
         }
       }
+    }
+  }
+
+  .tech-with-icon {
+    img {
+      display: inline-block;
+      margin-right: 4px;
     }
   }
 }

@@ -1,0 +1,41 @@
+[[experiences]]
+period = "December 2017 - May 2018"
+content = """
+    Remote <b>lead PHP developer</b> for
+    <a href="https://moovone.eu/en/" target="_blank">MoovOne</a>."""
+[[experiences]]
+period = "2016 - November 2017"
+content = """
+    <b>Lead PHP APIs developer</b> at
+    <a href="https://en.wikipedia.org/wiki/People%27s_Postcode_Lottery" target="_blank">People's Postcode Lottery</a> (Edinburgh)."""
+[[experiences]]
+period = "2014 - 2016"
+content = """
+    <b>Symfony / JavaScript consultant and developer</b> for
+    <a href="http://knplabs.com/" target="_blank">KNP Labs</a> clients."""
+[[experiences]]
+period = "2008 - 2014"
+content = """
+    <b>PHP / JavaScript / Ruby / Flash freelance developer</b>,
+    working with companies like
+    <a href="https://www.lemonde.fr/" target="_blank">Le Monde</a>,
+    <a href="https://en.mappy.com/" target="_blank">Mappy</a>,
+    <a href="https://www.uzik.com/" target="_blank">Uzik</a>..."""
+[[experiences]]
+period = "January to May 2009"
+content = """
+    <b>Flash Lead Developer</b> at <a href="http://tribalnova.com/?langue=en" target="_blank">Tribal Nova</a>, Montréal, QC"""
+[[experiences]]
+period = "2006 to 2007"
+content = """
+    <b>Flash / PHP Developper</b> at "<a href="http://www.parishanghai.fr/" target="_blank">Les Chinois</a>"<br>
+    (which was the most advanced ActionScript french Web Agency at that time)"""
+[[experiences]]
+period = "2005"
+content = """
+    <b>Flash / PHP Developer</b> at WCube<br>
+    (acquired by <a href="http://www.publicis-modem.fr/" target="_blank">Publicis Modem</a> afterwards)"""
+[[experiences]]
+period = "2000 to 2004"
+content = """
+    <b>Web Developer</b> at <a href="http://www.lp-digital.fr/en/" target="_blank">Lp digital</a>"""

@@ -1,0 +1,43 @@
+[[experiences]]
+period = "December 2017 - May 2018"
+content = """
+<b>Lead PHP developer</b> en remote pour
+<a href="https://moovone.eu/" target="_blank">MoovOne</a>."""
+[[experiences]]
+period = "2016 à 2017"
+content = """
+<b>Lead PHP APIs developer</b> chez
+<a href="https://en.wikipedia.org/wiki/People%27s_Postcode_Lottery" target="_blank">People's Postcode Lottery</a> (Édimbourg)."""
+[[experiences]]
+period = "2014 à 2016"
+content = """
+<b>Consultant et développeur Symfony / JavaScript</b> chez les clients de
+<a href="http://knplabs.com/fr" target="_blank">KNP Labs</a>."""
+[[experiences]]
+period = "2008 à 2014"
+content = """
+<b>Développeur PHP / JavaScript / Flash / Ruby</b>
+en freelance, en régie chez divers clients comme
+<a href="https://www.lemonde.fr/" target="_blank">Le Monde</a>,
+<a href="https://fr.mappy.com/" target="_blank">Mappy</a>,
+<a href="https://www.uzik.com/" target="_blank">Uzik</a>..."""
+[[experiences]]
+period = "Janvier à mai 2009"
+content = """
+<b>Lead Developer Flash</b> de la
+société <a href="http://tribalnova.com/" target="_blank">Tribal Nova</a>, à Montréal"""
+[[experiences]]
+period = "2006 à 2007"
+content = """
+<b>Développeur Flash / PHP</b> chez l'agence
+Web <a href="http://www.parishanghai.fr/" target="_blank">Les Chinois</a><br>
+(à cette époque leaders du développement Flash en France)"""
+[[experiences]]
+period = "2005"
+content = """
+<b>Développeur Flash / PHP</b> chez l'agence WCube<br>
+(intégrée à <a href="http://www.publicis-modem.fr/" target="_blank">Publicis Modem</a> depuis)"""
+[[experiences]]
+period = "2000 à 2004"
+content = """
+<b>Développeur Web</b> chez l'agence <a href="http://www.lp-digital.fr/fr/" target="_blank">Lp digital</a>"""

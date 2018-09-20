@@ -32,8 +32,10 @@ content = """Formateur HTML/CSS, JavaScript et Flash pour l'école <br><a href="
 
 [captions]
 main_skills = "Compétences principales"
-contributor = "(contributeur)"
 other_skills = "Mais aussi..."
 tools = "Logiciels et environnements"
 job_experience = "Parcours professionnel"
-my_work = "Quelques réalisations"
+projects = "Quelques réalisations"
+
+[misc]
+contributor = "contributeur"

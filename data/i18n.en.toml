@@ -34,8 +34,10 @@ content = """HTML/CSS, JavaScript and Flash trainer for <br><a href="http://www.
 
 [captions]
 main_skills = "Main skills"
-contributor = "(contributor)"
 other_skills = "And also..."
 tools = "Tools and environments"
 job_experience = "Job experience"
-my_work = "Some of my work"
+projects = "Some of the projects I worked on"
+
+[misc]
+contributor = "contributor"

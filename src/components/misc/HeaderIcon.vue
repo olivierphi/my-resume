@@ -1,5 +1,5 @@
 <template>
-    <span className="header-icon">
+    <span class="header-icon">
         <img :src="icon" :alt="alt || null" />
       </span>
 </template>

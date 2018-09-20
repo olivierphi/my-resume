@@ -24,6 +24,9 @@ export const appStore = new Vuex.Store<AppState>({
       return {
         bio: state.resume.bio[state.lang],
         document: state.resume.document[state.lang],
+        technologies: state.resume.technologies,
+        jobExperience: state.resume.jobExperience[state.lang],
+        projects: state.resume.projects[state.lang],
       };
     },
   },
@@ -48,6 +51,15 @@ function getResumeData(): ResumeData {
     document: {
       [Lang.EN]: rawResumeData.en.document,
       [Lang.FR]: rawResumeData.fr.document,
+    },
+    technologies: rawResumeData.technologies,
+    jobExperience: {
+      [Lang.EN]: rawResumeData.en.jobExperience,
+      [Lang.FR]: rawResumeData.fr.jobExperience,
+    },
+    projects: {
+      [Lang.EN]: rawResumeData.en.projects,
+      [Lang.FR]: rawResumeData.fr.projects,
     },
   };
 }

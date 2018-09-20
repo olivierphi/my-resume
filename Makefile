@@ -4,7 +4,7 @@ install:
 	yarn install
 	${MAKE} src/data/resume-data.ts
 
-src/data/resume-data.ts: data/*.toml
+src/data/resume-data.ts: data/*.toml bin/dump-data.js
 	node -r esm bin/dump-data.js
 
 .PHONY: serve

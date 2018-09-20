@@ -44,20 +44,30 @@ async function dumpI18nData() {
 
 async function dumpResumeData() {
   const rawResumeData = await Promise.all([
-    dumpDataFromFile("bio.en.toml"),
-    dumpDataFromFile("bio.fr.toml"),
+    dumpDataFromFile("technologies.toml"),
     dumpDataFromFile("document.en.toml"),
     dumpDataFromFile("document.fr.toml"),
+    dumpDataFromFile("bio.en.toml"),
+    dumpDataFromFile("bio.fr.toml"),
+    dumpDataFromFile("job-experience.en.toml"),
+    dumpDataFromFile("job-experience.fr.toml"),
+    dumpDataFromFile("projects.en.toml"),
+    dumpDataFromFile("projects.fr.toml"),
   ]);
 
   const structuredResumeData = {
+    technologies: rawResumeData[0],
     en: {
-      bio: rawResumeData[0],
-      document: rawResumeData[2],
+      document: rawResumeData[1],
+      bio: rawResumeData[3],
+      jobExperience: rawResumeData[5].experiences,
+      projects: rawResumeData[7].projects,
     },
     fr: {
-      bio: rawResumeData[1],
-      document: rawResumeData[3],
+      document: rawResumeData[2],
+      bio: rawResumeData[4],
+      jobExperience: rawResumeData[6].experiences,
+      projects: rawResumeData[8].projects,
     },
   };
 

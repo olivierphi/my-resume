@@ -33,7 +33,7 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/scss/_variables.scss";
 @import "@/scss/_mixins.scss";
 
