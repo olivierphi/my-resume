@@ -12,7 +12,7 @@ clean:
 
 .PHONY: generate-server-bundle-json
 generate-server-bundle-json:
-	./node_modules/.bin/webpack-cli --config bin/generate-static.webpack-config.js
+	./node_modules/.bin/webpack-cli --config bin/_generate-static.webpack-config.js --mode production
 
 .PHONY: generate-server-html
 generate-server-html: 

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex, { Store } from "vuex";
 import { AppState, Lang, ResumeData, ResumeCurrentLangData } from "@/domain";
+import { AppContext } from "@/app";
 
 Vue.use(Vuex);
 
@@ -11,10 +12,10 @@ interface AppStoreGetters {
   currentLangState: ResumeCurrentLangData;
 }
 
-export function getAppStore(initialLang: Lang | null): AppStoreWithGetters {
+export function getAppStore(appContext: AppContext): AppStoreWithGetters {
   const appStore = new Vuex.Store<AppState>({
     strict: process.env.NODE_ENV !== "production",
-    state: getBaseAppState(initialLang),
+    state: getBaseAppState(appContext),
     mutations: {
       setLang(state: AppState, lang: Lang) {
         state.lang = lang;
@@ -36,12 +37,13 @@ export function getAppStore(initialLang: Lang | null): AppStoreWithGetters {
   return appStore;
 }
 
-function getBaseAppState(initialLang: Lang | null): AppState {
+function getBaseAppState(appContext: AppContext): AppState {
   return {
-    lang: initialLang || Lang.EN,
+    lang: appContext.lang || Lang.EN,
     resume: {
       ...getResumeData(),
     },
+    buildTime: appContext.buildTime || null,
   };
 }
 

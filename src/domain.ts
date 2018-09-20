@@ -70,4 +70,5 @@ export interface ResumeDataProject {
 export interface AppState {
   lang: Lang;
   resume: ResumeData;
+  buildTime?: string | null;
 }

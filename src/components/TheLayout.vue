@@ -12,11 +12,13 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { MetaInfo } from "vue-meta";
 
 import TheGitHubRibbon from "@/components/TheGitHubRibbon.vue";
 import TheAboutMe from "@/components/TheAboutMe.vue";
 import TheMainPanel from "@/components/TheMainPanel.vue";
 import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
+import { AppStoreWithGetters } from "@/store";
 
 export default Vue.extend({
   name: "the-layout",
@@ -25,6 +27,20 @@ export default Vue.extend({
     TheAboutMe,
     TheMainPanel,
     LanguageSwitcher,
+  },
+  metaInfo: function(): MetaInfo {
+    const me = this as Vue;
+    const store: AppStoreWithGetters = this.$store;
+    const documentData = store.getters.currentLangState.document;
+
+    return {
+      title: documentData.meta.title,
+      meta: [
+        { property: "description", content: documentData.meta.description },
+        { property: "language", content: store.state.lang },
+        { property: "date", content: store.state.buildTime || "" },
+      ],
+    };
   },
 });
 </script>

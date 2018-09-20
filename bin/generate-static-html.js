@@ -1,6 +1,8 @@
 import { promisify } from "util";
 import * as fs from "fs";
 import { join as pathJoin } from "path";
+
+import dateFormat from "date-fns/format";
 import { createBundleRenderer } from "vue-server-renderer";
 
 const fsAsync = {
@@ -8,6 +10,8 @@ const fsAsync = {
   writeFile: promisify(fs.writeFile),
   stat: promisify(fs.stat),
 };
+
+const W3C_DATE_FORMAT = "YYYY-MM-DD\\THH:mm:ssZZ";
 
 try {
   run();
@@ -19,11 +23,19 @@ try {
 
 async function run() {
   const { htmlTemplatesFolderPath, lang } = await parseAndCheckArgs();
+
   const baseHtml = await getBaseHtml(htmlTemplatesFolderPath);
-  const renderedApp = await getRenderedAppHtml({ lang });
-  const htmlForThisLang = baseHtml
+
+  const appContext = {
+    lang,
+    buildTime: dateFormat(new Date(), W3C_DATE_FORMAT),
+  };
+  const renderedApp = await getRenderedAppHtml(appContext);
+
+  let htmlForThisLang = baseHtml
     .replace("$html-attributes", `lang="${lang}"`)
-    .replace(`<div id=app></div>`, `<div id=app>${renderedApp}</div>`);
+    .replace(`<div id=app></div>`, `<div id=app>${renderedApp.html}</div>`);
+  htmlForThisLang = addHeadContentFromApp(htmlForThisLang, renderedApp.meta);
   await writeHtml(htmlTemplatesFolderPath, lang, htmlForThisLang);
 
   console.log(`Generated "dist/index.${lang}.html".`);
@@ -90,9 +102,43 @@ async function getRenderedAppHtml(appContext) {
   const renderToString = promisify(renderer.renderToString);
   try {
     const html = await renderToString(appContext);
-    return html;
+    const meta = appContext.meta.inject();
+
+    return { html, meta };
   } catch (err) {
     console.log("An error has occured while rendering the app to a string");
     throw err;
   }
+}
+
+function addHeadContentFromApp(htmlDocument, vueMeta) {
+  const {
+    title,
+    htmlAttrs,
+    bodyAttrs,
+    link,
+    style,
+    script,
+    noscript,
+    meta,
+  } = vueMeta;
+
+  const additionalMeta = `
+    ${meta.text()}
+    ${title.text()}
+    ${link.text()}
+    ${style.text()}
+    ${script.text()}
+    ${noscript.text()}
+  `;
+  htmlDocument = htmlDocument.replace(
+    "<meta charset=utf-8>",
+    `<meta charset=utf-8>\n${additionalMeta}`,
+  );
+  htmlDocument = htmlDocument.replace(
+    "<html ",
+    `<html data-vue-meta-server-rendered ${htmlAttrs.text()} `,
+  );
+
+  return htmlDocument;
 }

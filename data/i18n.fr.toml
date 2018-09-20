@@ -2,7 +2,7 @@ date_format = "DD/MM/YYYY"
 
 [top_links]
 "pdf.download" = "Télécharger au format PDF"
-language = "'language:'"
+language = "language:"
 
 [me]
 birthDate = "Né le "
