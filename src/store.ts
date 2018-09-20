@@ -11,30 +11,34 @@ interface AppStoreGetters {
   currentLangState: ResumeCurrentLangData;
 }
 
-export const appStore = new Vuex.Store<AppState>({
-  strict: process.env.NODE_ENV !== "production",
-  state: getBaseAppState(),
-  mutations: {
-    setLang(state: AppState, lang: Lang) {
-      state.lang = lang;
+export function getAppStore(initialLang: Lang | null): AppStoreWithGetters {
+  const appStore = new Vuex.Store<AppState>({
+    strict: process.env.NODE_ENV !== "production",
+    state: getBaseAppState(initialLang),
+    mutations: {
+      setLang(state: AppState, lang: Lang) {
+        state.lang = lang;
+      },
     },
-  },
-  getters: {
-    currentLangState(state: AppState): ResumeCurrentLangData {
-      return {
-        bio: state.resume.bio[state.lang],
-        document: state.resume.document[state.lang],
-        technologies: state.resume.technologies,
-        jobExperience: state.resume.jobExperience[state.lang],
-        projects: state.resume.projects[state.lang],
-      };
+    getters: {
+      currentLangState(state: AppState): ResumeCurrentLangData {
+        return {
+          bio: state.resume.bio[state.lang],
+          document: state.resume.document[state.lang],
+          technologies: state.resume.technologies,
+          jobExperience: state.resume.jobExperience[state.lang],
+          projects: state.resume.projects[state.lang],
+        };
+      },
     },
-  },
-});
+  });
 
-function getBaseAppState(): AppState {
+  return appStore;
+}
+
+function getBaseAppState(initialLang: Lang | null): AppState {
   return {
-    lang: Lang.EN,
+    lang: initialLang || Lang.EN,
     resume: {
       ...getResumeData(),
     },

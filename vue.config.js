@@ -4,6 +4,12 @@ module.exports = {
 
   lintOnSave: true,
 
+  configureWebpack: function(webpackConfig) {
+    webpackConfig.entry = {
+      app: ["./src/entry-point-browser.ts"],
+    };
+  },
+
   devServer: {
     overlay: {
       warnings: true,
