@@ -1,3 +1,4 @@
+PDF_GENERATION_SERVER_PORT ?= 8000
 
 .PHONY: install
 install:
@@ -7,6 +8,7 @@ install:
 .PHONY: clean
 clean:
 	rm -rf dist/* || true
+	${MAKE} dist/.gitkeep
 
 .PHONY: generate-server-bundle-json
 generate-server-bundle-json:
@@ -34,9 +36,22 @@ build:
 	${MAKE} generate-server-html APP_LANG=en
 	${MAKE} generate-server-html APP_LANG=fr
 
+.PHONY: generate-pdfs
+generate-pdfs:
+# Launch the HTTP server, in order to generate the PDF files from the HTML pages. Saves its PID.
+	node_modules/.bin/http-server dist/ -p ${PDF_GENERATION_SERVER_PORT} & echo $$! > dist/http-server.pid
+# Generates the PDF files
+	sleep 1
+	node bin/create-pdf.js 'http://127.0.0.1:${PDF_GENERATION_SERVER_PORT}' en
+	node bin/create-pdf.js 'http://127.0.0.1:${PDF_GENERATION_SERVER_PORT}' fr
+# Kills the HTTP server
+	kill `cat dist/http-server.pid`
+	rm dist/http-server.pid
+
 .PHONY: vue-build
 vue-build: 
 	./node_modules/.bin/vue-cli-service build
+	${MAKE} dist/.gitkeep
 
 .PHONY: lint
 lint: 
@@ -44,6 +59,10 @@ lint:
 
 src/data/resume-data.ts: data/*.toml bin/dump-data.js
 	${MAKE} dump-data-to-typescript
+
+dist/.gitkeep:
+	mkdir dist || true
+	touch dist/.gitkeep
 
 dist/index.fr.html: dist/vue-ssr-server-bundle.json dist/index.html
 	${MAKE} generate-server-html APP_LANG=fr
