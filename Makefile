@@ -15,8 +15,9 @@ generate-server-bundle-json:
 	./node_modules/.bin/webpack-cli --config bin/_generate-static.webpack-config.js --mode production
 
 .PHONY: generate-server-html
+generate-server-html: GA_TRACKING_ID ?= 
 generate-server-html: 
-	NO_SERVICE_WORKER=1 node -r esm bin/generate-static-html.js "$$(pwd)/dist/" ${APP_LANG}
+	NO_SERVICE_WORKER=1 GA_TRACKING_ID=${GA_TRACKING_ID} node -r esm bin/generate-static-html.js "$$(pwd)/dist/" ${APP_LANG}
 
 .PHONY: dump-data-to-typescript
 dump-data-to-typescript:
@@ -58,6 +59,9 @@ lint:
 	./node_modules/.bin/vue-cli-service lint
 
 src/data/resume-data.ts: data/*.toml bin/dump-data.js
+	${MAKE} dump-data-to-typescript
+
+src/data/i18n-data.ts: data/*.toml bin/dump-data.js
 	${MAKE} dump-data-to-typescript
 
 dist/.gitkeep:

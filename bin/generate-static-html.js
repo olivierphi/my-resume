@@ -36,6 +36,7 @@ async function run() {
     .replace("$html-attributes", `lang="${lang}"`)
     .replace(`<div id=app></div>`, `<div id=app>${renderedApp.html}</div>`);
   htmlForThisLang = addHeadContentFromApp(htmlForThisLang, renderedApp.meta);
+  htmlForThisLang = addGoogleTrackingIdIfAny(htmlForThisLang);
   await writeHtml(htmlTemplatesFolderPath, lang, htmlForThisLang);
 
   console.log(`Generated "dist/index.${lang}.html".`);
@@ -138,6 +139,31 @@ function addHeadContentFromApp(htmlDocument, vueMeta) {
   htmlDocument = htmlDocument.replace(
     "<html ",
     `<html data-vue-meta-server-rendered ${htmlAttrs.text()} `,
+  );
+
+  return htmlDocument;
+}
+
+function addGoogleTrackingIdIfAny(htmlDocument) {
+  const trackingId = process.env.GA_TRACKING_ID;
+  if (!trackingId) {
+    return htmlDocument;
+  }
+
+  const trackingHtmlCode = `
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${trackingId}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '${trackingId}');
+  </script>  
+  `;
+  htmlDocument = htmlDocument.replace(
+    `</head>`,
+    `${trackingHtmlCode}\n</head>`,
   );
 
   return htmlDocument;
