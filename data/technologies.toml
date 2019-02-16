@@ -2,36 +2,44 @@
 title = "JavaScript"
 icon = "javascript"
 [[main]]
-title = "Node.js"
-icon = "nodejs"
-url = "http://nodejs.org"
+title = "TypeScript"
+icon = "typescript"
+url = "https://www.typescriptlang.org/"
 [[main]]
 title = "React"
 icon = "react"
 url = "https://reactjs.org/"
 [[main]]
+title = "Python"
+icon = "python"
+url = "https://www.python.org/"
+[[main]]
+title = "Django"
+icon = "django"
+url = "https://www.djangoproject.com/start/overview/"
+[[main]]
+title = "GraphQL"
+icon = "graphql"
+url = "https://graphql.org/"
+
+[[others]]
 title = "PHP"
 icon = "php"
-[[main]]
+[[others]]
 title = "Symfony 2+"
 icon = "symfony2"
 url = "http://symfony.com"
-[[main]]
-title = "PostgreSQL"
-icon = "postgres"
-url = "https://www.postgresql.org/about/"
-
 [[others]]
 title = "HTML / CSS"
 icon = "html5"
 [[others]]
-title = "TypeScript"
-icon = "typescript"
-url = "https://www.typescriptlang.org/"
+title = "PostgreSQL"
+icon = "postgres"
+url = "https://www.postgresql.org/about/"
 [[others]]
-title = "Python"
-icon = "python"
-url = "https://www.python.org/"
+title = "Redis"
+icon = "redis"
+url = "https://www.redis.io/"
 [[others]]
 title = "Elasticsearch"
 icon = "elasticsearch"
@@ -41,9 +49,9 @@ title = "Algolia"
 icon = "algolia"
 url = "https://www.algolia.com/"
 [[others]]
-title = "Redis"
-icon = "redis"
-url = "https://www.redis.io/"
+title = "Node.js"
+icon = "nodejs"
+url = "http://nodejs.org"
 [[others]]
 title = "Express"
 icon = "express"

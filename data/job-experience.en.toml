@@ -1,4 +1,9 @@
 [[experiences]]
+period = "Since October 2018"
+content = """
+    <b>Lead Django/React developer</b> for
+    <a href="https://www.connectedenergy.net/cloud-solar" target="_blank">Connected Energy</a>."""
+[[experiences]]
 period = "December 2017 - May 2018"
 content = """
     Remote <b>lead PHP developer</b> for
