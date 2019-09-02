@@ -1,0 +1,8 @@
+Hello!!
+<section id="main-skills-container">
+    <% skills.each do |skill| %>
+        <div class="skill">
+            <img src="assets/img/icons/skills/<%= skill["icon"] %>.png" alt=""><%= skill["name"] %>
+        </div>
+    <% end%>
+</section>

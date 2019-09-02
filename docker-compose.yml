@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  ruby:
+    image: ruby:2.6
+    volumes:
+      - .:/resume
+    working_dir: /resume
+    # Example usages:
+    #  - `dc run --rm --entrypoint bash --user $(id -u) ruby`, and then `rake` in the container
