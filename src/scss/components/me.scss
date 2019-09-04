@@ -1,0 +1,11 @@
+@import "../variables";
+
+#me {
+  background-color: $color-red;
+
+  section,
+  a {
+    font-family: $font-main;
+    color: $color-white;
+  }
+}

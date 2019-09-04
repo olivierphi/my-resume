@@ -1,1 +1,3 @@
 /build/*
+
+/.docker/volumes/bundle/*

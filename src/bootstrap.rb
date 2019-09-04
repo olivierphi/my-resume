@@ -5,7 +5,6 @@ module Rougemine
                 src_dir = __dir__
                 return if $LOAD_PATH.include?(src_dir)
                 $LOAD_PATH << src_dir 
-                puts $LOAD_PATH
             end
         end
     end

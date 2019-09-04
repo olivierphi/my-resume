@@ -4,3 +4,6 @@ skills:
 
   - name: Ruby
     icon: ruby
+
+  - name: Python
+    icon: python

@@ -1,18 +1,21 @@
-require "pathname"
-require "psych"
+require 'date'
+require 'pathname'
+require 'psych'
+require 'singleton'
 
 require 'concerns/project_path_aware'
 
 module Rougemine
-    class DataProvider
+    class DataBucket
+        include Singleton
         include ProjectPathAware
 
         def skills
             @skills_data ||= data_from_yaml("skills")["skills"]
         end
 
-        def get_binding
-            binding
+        def now
+            @now ||= DateTime.now.iso8601
         end
 
         private

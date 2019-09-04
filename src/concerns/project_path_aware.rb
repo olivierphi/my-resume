@@ -9,19 +9,35 @@ module Rougemine
         end
 
         def src_path
-            @src_path ||= File.expand_path("src", project_path)
+            @src_path ||= project_folder "src"
         end
 
         def build_path
-            @build_path ||= File.expand_path("build", project_path)
+            @build_path ||= project_folder "build"
         end
 
         def data_path
-            @data_path ||= File.expand_path("data", project_path)
+            @data_path ||= project_folder "data"
         end
 
         def assets_path
-            @assets_path ||= File.expand_path(File.join("src", "assets"), project_path)
+            @assets_path ||= project_folder File.join("src", "assets")
+        end
+
+        def html_path
+            @html_path ||= project_folder File.join("src", "html")
+        end
+
+        def scss_path
+            @scss_path ||= project_folder File.join("src", "scss")
+        end
+
+        def views_path
+            @views_path ||= project_folder File.join("src", "views")
+        end
+
+        def project_folder(folder_path)
+            File.expand_path(folder_path, project_path)
         end
     end
 end

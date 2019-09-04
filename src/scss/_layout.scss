@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#resume-container {
+  width: 950px;
+  margin: 0 auto;
+  display: flex;
+
+  border: solid red 1px;
+  min-height: 800px;
+
+  #me {
+    width: 220px;
+    border: solid blue 1px;
+  }
+
+  #main-content {
+    flex-grow: 3;
+    border: solid lime 1px;
+  }
+}

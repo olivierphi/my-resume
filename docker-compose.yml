@@ -5,6 +5,8 @@ services:
     image: ruby:2.6
     volumes:
       - .:/resume
+      - ./.docker/volumes/bundle/:/usr/local/bundle
     working_dir: /resume
     # Example usages:
     #  - `dc run --rm --entrypoint bash --user $(id -u) ruby`, and then `rake` in the container
+    #  - `dc run --rm --entrypoint rake --user $(id -u) ruby dev`

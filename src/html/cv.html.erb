@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1" />
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="resume-container">
+        <aside id="me">
+            <%= me %>
+        </aside>
+        <main id="main-container">
+            <section id="main-skills-container">
+                <% data.skills.each do |skill| %>
+                    <div class="skill">
+                        <img src="assets/img/icons/skills/<%= skill["icon"] %>.png" alt=""><%= skill["name"] %>
+                    </div>
+                <% end%>
+            </section>
+        </main>
+    </div>
+</body>
+<!-- generated with ❤ by Ruby on <%= data.now %> -->
