@@ -2,9 +2,7 @@ require_relative 'base_view'
 
 module Rougemine
     class CvView < BaseView
-        def initialize
-            @html_template = "cv"
-        end
+        set_html_template_name "cv"
 
         def me
             require_relative 'me_view'

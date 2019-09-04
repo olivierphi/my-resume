@@ -6,10 +6,6 @@ require 'data_bucket'
 module Rougemine
     class BaseView
         include ProjectPathAware
-
-        def initialize
-            @html_template = nil # override this value in sub-classes :-)
-        end
         
         def get_html
             rhtml = ERB.new(template)
@@ -28,8 +24,18 @@ module Rougemine
         end
 
         def template
-            template_path = File.join(html_path, "#{@html_template}.html.erb")
+            template_path = File.join(html_path, "#{html_template_name}.html.erb")
             File.read(template_path)
+        end
+
+        def self.set_html_template_name(html_template)
+            define_method :html_template_name do
+                html_template
+              end
+        end
+
+        def html_template_name
+            raise "`set_html_template_name` class method must be called on subclasses of BaseView, but it wasn't on #{self.class}"
         end
     end
 end
