@@ -6,7 +6,7 @@ module Rougemine
         include ProjectPathAware
         
         def build(target_dir: nil)
-            cv_html = CvView.new.get_html
+            cv_html = View::CvView.new.get_html
             create_html_file html: cv_html, target_dir: target_dir
         end
         

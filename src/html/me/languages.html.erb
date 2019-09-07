@@ -1,0 +1,11 @@
+<section class="languages-container">
+    <%# <HeaderIcon icon="/assets/img/icons/header-icons/chat.svg" alt="languages" /> %>
+
+    <h3><%= t :languages, :title %></h3>
+
+    <% languages.each do |lang| %>
+        <p> 
+            <%= t :languages, lang %>
+        </p> 
+    <% end %>
+</section>

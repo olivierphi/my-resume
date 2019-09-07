@@ -9,4 +9,4 @@ services:
     working_dir: /resume
     # Example usages:
     #  - `dc run --rm --entrypoint bash --user $(id -u) ruby`, and then `rake` in the container
-    #  - `dc run --rm --entrypoint rake --user $(id -u) ruby dev`
+    #  - `dc run --rm --entrypoint bundle --user $(id -u) ruby exec guard`

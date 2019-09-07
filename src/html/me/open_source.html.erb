@@ -1,0 +1,14 @@
+<section id="open-source">
+    <%# <HeaderIcon icon="/assets/img/icons/header-icons/github.svg" alt="open source" /> %>
+
+    <h3><%= t :open_source_projects, :title %></h3>
+    <a
+    itemProp="sameAs"
+    href="https://github.com/<%= data.bio["githubId"] %>"
+    target="_blank"
+    class="github-link"
+    >
+        github.com/<%= data.bio["githubId"] %>
+    </a>
+
+</section>

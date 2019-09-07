@@ -1,0 +1,57 @@
+<section id="bio">
+    <a href="https://rougemine.com">rougemine.com</a>
+    <div class="bio-content">
+        <%# <HeaderIcon icon="/assets/img/icons/header-icons/user.svg" alt="me" /> %>
+
+        <p>
+            <span itemProp="name"><%= data.bio["name"] %></span>
+        </p> 
+
+        <p class="rich-snippet-only">
+            <span itemProp="jobTitle"><%= data.bio["jobTitle"] %></span>
+        </p>
+
+        <% unless t(:me, :nationality).nil? %>
+            <p>
+                <%= t :me, :nationality %> <%= data.bio["nationality"] %>
+            </p>
+        <% end %>
+
+        <p>
+            <%= t :me, :birthDate %>
+            <%= format_date(data.bio["birth"]) %>
+        </p>
+
+        <span itemProp="address">
+            <%= data.bio["address"].gsub("\n", "<br />") %>
+        </span>
+
+        <p>
+            <a itemProp="email" href="mailto:<%= data.bio["email"] %>">
+                <%= data.bio["email"] %>
+            </a>
+        </p>
+
+        <p>
+            <%= t :me, :phone %>
+            <span itemProp="telephone"><%= data.bio["phoneNumber"] %></span>
+        </p>
+
+        <p class="rich-snippet-only">
+            <span itemProp="url"><%= data.bio["url"] %></span>
+        </p>
+
+        <p>
+            <a
+                itemProp="sameAs"
+                href="https://twitter.com/<%= data.bio["twitterId"] %>"
+                target="_blank"
+                class="twitter-link"
+            >
+            twitter.com/<%= data.bio["twitterId"] %>
+            </a>
+        </p>
+
+    </div>
+
+</section>
