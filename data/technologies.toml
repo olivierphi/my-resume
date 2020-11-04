@@ -1,15 +1,4 @@
 [[main]]
-title = "JavaScript"
-icon = "javascript"
-[[main]]
-title = "TypeScript"
-icon = "typescript"
-url = "https://www.typescriptlang.org/"
-[[main]]
-title = "React"
-icon = "react"
-url = "https://reactjs.org/"
-[[main]]
 title = "Python"
 icon = "python"
 url = "https://www.python.org/"
@@ -18,24 +7,45 @@ title = "Django"
 icon = "django"
 url = "https://www.djangoproject.com/start/overview/"
 [[main]]
+title = "Flask"
+icon = "flask"
+url = "https://flask.palletsprojects.com/en/1.1.x/"
+[[main]]
+title = "JavaScript/TypeScript"
+icon = "typescript"
+url = "https://www.typescriptlang.org/"
+[[main]]
+title = "Node.js"
+icon = "nodejs"
+url = "https://nodejs.org/en/about/"
+[[main]]
+title = "React"
+icon = "react"
+url = "https://reactjs.org/"
+
+[[main]]
+title = "HTML / CSS"
+icon = "html5"
+[[main]]
 title = "GraphQL"
 icon = "graphql"
 url = "https://graphql.org/"
+[[main]]
+title = "PostgreSQL"
+icon = "postgres"
+url = "https://www.postgresql.org/about/"
 
 [[others]]
 title = "PHP"
 icon = "php"
 [[others]]
-title = "Symfony 2+"
+title = "Laravel"
+icon = "laravel"
+url = "https://laravel.com"
+[[others]]
+title = "Symfony"
 icon = "symfony2"
-url = "http://symfony.com"
-[[others]]
-title = "HTML / CSS"
-icon = "html5"
-[[others]]
-title = "PostgreSQL"
-icon = "postgres"
-url = "https://www.postgresql.org/about/"
+url = "https://symfony.com"
 [[others]]
 title = "Redis"
 icon = "redis"
@@ -49,9 +59,13 @@ title = "Algolia"
 icon = "algolia"
 url = "https://www.algolia.com/"
 [[others]]
-title = "Node.js"
-icon = "nodejs"
-url = "http://nodejs.org"
+title = "MQTT"
+icon = "mqtt"
+url = "https://mqtt.org/"
+[[others]]
+title = "Rabbit MQ"
+icon = "rabbitmq"
+url = "https://www.rabbitmq.com/"
 [[others]]
 title = "Express"
 icon = "express"

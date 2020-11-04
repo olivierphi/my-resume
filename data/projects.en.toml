@@ -1,14 +1,22 @@
 [[projects]]
+title = "Cloud Solar"
+content = """
+<span class="tech tech-with-icon python">Python</span> and
+<span class="tech javascript">TypeScript</span> Lead Software Developer
+for
+<a href="https://connectedenergy.net/cloud-solar" target="_blank">Cloud Solar</a>,
+an IoT platform that allow businesses to manage their solar panels fleet"""
+[[projects]]
 title = "Collector Square"
 content = """
-<span class="tech tech-with-icon symfony2">Symfony2</span> and
+<span class="tech tech-with-icon symfony2">Symfony</span> and
 <span class="tech javascript">JavaScript</span> Lead Developer
 for the new version of the <a href="https://www.collectorsquare.com/en" target="_blank">Collector Square</a>
 website and CMS, heavily based on Elasticsearch and Redis"""
 [[projects]]
 title = "Balinea"
 content = """
-<span class="tech tech-with-icon symfony2">Symfony2</span> and
+<span class="tech tech-with-icon symfony2">Symfony</span> and
 <span class="tech javascript">JavaScript</span> Lead Developer
 for the new version of the <a href="https://www.balinea.com/" target="_blank">Balinea</a> platform
 - which includes the public website, a middle-office, a back-end, a public and a private API..."""

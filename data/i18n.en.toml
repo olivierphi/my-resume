@@ -1,4 +1,4 @@
-date_format = "YYYY-MM-DD"
+date_format = "DD/MM/YYYY"
 
 [top_links]
 "pdf.download" = "Download in PDF format"

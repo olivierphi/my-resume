@@ -1,15 +1,15 @@
 <template>
     <section class="projects-container">
         <h3>
-          <img src="/assets/img/icons/header-icons/video-red.svg" alt="" />
+          <img src="/assets/img/icons/header-icons/lab-red.png" alt="" />
           {{ $t("captions.projects") }}
         </h3>
 
         <ul>
-            <li 
+            <li
               v-for="project in projects"
               :key="project.title">
-                <span class="heading">{{project.title}} : </span>
+                <span class="heading">{{project.title}}: </span>
                 <span v-html="project.content"></span>
             </li>
         </ul>

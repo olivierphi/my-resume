@@ -7,10 +7,10 @@
         </h3>
 
         <div class="main-technologies-container">
-              <div 
+              <div
                 v-for="technology in mainTechnologies"
                 :key="technology.title"
-                class="tech-with-icon clearfix"
+                class="tech-with-icon"
                 >
                 <span class="title">
                   <TechDisplay :tech="technology" />
@@ -27,7 +27,7 @@
             :key="technology.title"
           >
             <TechDisplay :tech="technology" />
-            <div 
+            <div
               v-if="technology.contributor_url"
               class="contributor">
               <a :href="technology.contributor_url" target="_blank">
@@ -44,7 +44,7 @@
 
         <div class="tools-container">
           <h4>{{ $t("captions.tools") }}</h4>
-          <span 
+          <span
             v-for="(tool, i) in tools"
             :key="tool.title"
             class="tool">
@@ -89,7 +89,8 @@ export default Vue.extend({
 
 .skills-container {
   .main-technologies-container {
-    @include clearfix;
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 1em;
 
     @include mobile-theme-screen {
@@ -99,7 +100,6 @@ export default Vue.extend({
 
     .tech-with-icon {
       width: 33%;
-      float: left;
       margin-bottom: 1em;
       position: relative;
 
@@ -116,6 +116,11 @@ export default Vue.extend({
         a {
           font-style: italic;
         }
+      }
+
+      img {
+        position: relative;
+        top: 3px;
       }
 
       @include mobile-theme-screen {
@@ -138,6 +143,10 @@ export default Vue.extend({
       display: inline-block;
       line-height: 1.8;
       margin-right: 8px;
+      img {
+        position: relative;
+        top: 3px;
+      }
     }
 
     .contributor {

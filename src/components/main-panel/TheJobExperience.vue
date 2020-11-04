@@ -6,10 +6,10 @@
         </h3>
 
         <ul>
-            <li 
+            <li
               v-for="experience in jobExperience"
               :key="experience.period">
-                <span class="heading">{{experience.period}} :</span>
+                <span class="heading">{{experience.period}}: </span>
                 <span v-html="experience.content"></span>
             </li>
         </ul>
