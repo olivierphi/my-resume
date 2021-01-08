@@ -1,0 +1,8 @@
+
+/dist/*
+!/dist/.gitkeep
+
+/src/data/*
+!/src/data/.gitkeep
+
+/node_modules/
