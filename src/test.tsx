@@ -1,6 +1,6 @@
 import * as React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
-import { Hi } from "./components/hi";
+import { Resume } from "./components/hi";
 
-console.log(renderToStaticMarkup(<Hi lang="en" />));
+console.log(renderToStaticMarkup(<Resume lang="en" />));
