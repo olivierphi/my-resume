@@ -7,7 +7,7 @@ import { Layout } from "./Layout";
 
 type ResumeProps = { lang: LANG };
 
-export function Resume(props: ResumeProps): JSX.Element {
+export function Resume(props: ResumeProps): React.ReactElement {
   return (
     <LangContext.Provider value={props.lang}>
       <Layout>

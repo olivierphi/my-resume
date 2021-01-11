@@ -16,7 +16,9 @@ export async function dumpI18nData(): Promise<void> {
     fr: rawI18nData[1],
   };
 
-  const typeScriptI18nData = `export const I18N_DATA = ${JSON.stringify(structuredI18nData, null, 2)};`;
+  const typeScriptI18nData = `import { I18nData } from "../domain";
+
+export const I18N_DATA:I18nData = ${JSON.stringify(structuredI18nData, null, 2)};`;
   await writeFile(I18N_TARGET_FILE_PATH, typeScriptI18nData);
 }
 
@@ -49,7 +51,9 @@ export async function dumpResumeData(): Promise<void> {
     },
   };
 
-  const typeScriptResumeData = `export const RESUME_DATA = ${JSON.stringify(structuredResumeData, null, 2)};`;
+  const typeScriptResumeData = `import { ResumeData } from "../domain";
+
+export const RESUME_DATA: ResumeData = ${JSON.stringify(structuredResumeData, null, 2)};`;
   await writeFile(RESUME_TARGET_FILE_PATH, typeScriptResumeData);
 }
 

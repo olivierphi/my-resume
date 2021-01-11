@@ -18,7 +18,7 @@ if (!isValidLang(langCode)) {
   process.exit(1);
 }
 
-const htmlCode = DOCTYPE + renderToStaticMarkup(<Resume lang={langCode} />);
+const htmlCode = DOCTYPE + renderToStaticMarkup(React.createElement(Resume, { lang: langCode }));
 // The original promise of the Web was to be able to read the source of an HTML page, let's keep
 // that sprit alive ^_^ (even though Dev Tools can beautify if we ask them to of course)
 const htmlCodeReadable = prettier.format(htmlCode, { parser: "html" });
