@@ -1,13 +1,7 @@
-import { promisify } from "util";
-import { readFile, writeFile } from "fs";
+import * as fsAsync from "fs/promises";
 import { join as pathJoin } from "path";
 
 import * as toml from "toml";
-
-const fsAsync = {
-  readFile: promisify(readFile),
-  writeFile: promisify(writeFile),
-};
 
 const TARGET_FILES_FOLDER_PATH = pathJoin(__dirname, "..", "src", "data");
 const I18N_TARGET_FILE_PATH = pathJoin(

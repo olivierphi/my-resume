@@ -7,9 +7,10 @@ title = "Django"
 icon = "django"
 url = "https://www.djangoproject.com/start/overview/"
 [[main]]
-title = "Flask"
-icon = "flask"
-url = "https://flask.palletsprojects.com/en/1.1.x/"
+title = "PostgreSQL"
+icon = "postgres"
+url = "https://www.postgresql.org/about/"
+
 [[main]]
 title = "JavaScript/TypeScript"
 icon = "typescript"
@@ -24,28 +25,27 @@ icon = "react"
 url = "https://reactjs.org/"
 
 [[main]]
-title = "HTML / CSS"
-icon = "html5"
-[[main]]
-title = "GraphQL"
-icon = "graphql"
-url = "https://graphql.org/"
-[[main]]
-title = "PostgreSQL"
-icon = "postgres"
-url = "https://www.postgresql.org/about/"
-
-[[others]]
 title = "PHP"
 icon = "php"
-[[others]]
+[[main]]
 title = "Laravel"
 icon = "laravel"
 url = "https://laravel.com"
-[[others]]
+[[main]]
 title = "Symfony"
 icon = "symfony2"
 url = "https://symfony.com"
+
+[[others]]
+title = "HTML / CSS"
+icon = "html5"
+[[others]]
+title = "REST"
+icon = "api"
+[[others]]
+title = "GraphQL"
+icon = "graphql"
+url = "https://graphql.org/"
 [[others]]
 title = "Redis"
 icon = "redis"
