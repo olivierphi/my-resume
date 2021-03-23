@@ -1,8 +1,8 @@
 [[projects]]
 title = "Cloud Solar"
 content = """
-<span class="tech tech-with-icon python">Python</span> and
-<span class="tech javascript">TypeScript</span> Lead Software Developer
+<span class="tech tech-with-icon django">Django</span> and
+<span class="tech react">React</span> Lead Software Developer
 for
 <a href="https://connectedenergy.net/cloud-solar" target="_blank">Cloud Solar</a>,
 an IoT platform that allow businesses to manage their solar panels fleet"""

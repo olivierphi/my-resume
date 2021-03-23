@@ -15,8 +15,8 @@ generate-server-bundle-json:
 	./node_modules/.bin/webpack-cli --config bin/_generate-static.webpack-config.js --mode production
 
 .PHONY: generate-server-html
-generate-server-html: GA_TRACKING_ID ?= 
-generate-server-html: 
+generate-server-html: GA_TRACKING_ID ?=
+generate-server-html:
 	NO_SERVICE_WORKER=1 GA_TRACKING_ID=${GA_TRACKING_ID} node -r esm bin/generate-static-html.js "$$(pwd)/dist/" ${APP_LANG}
 
 .PHONY: dump-data-to-typescript
@@ -24,11 +24,11 @@ dump-data-to-typescript:
 	node -r esm bin/dump-data.js
 
 .PHONY: serve
-serve: 
+serve:
 	./node_modules/.bin/vue-cli-service serve
 
 .PHONY: build
-build: 
+build: dump-data-to-typescript
 # 1. Build the "dist/" folder
 	${MAKE} vue-build
 # 2. Generate a JSON file ("dist/vue-ssr-server-bundle.json") that contains our app content, to be used by the Webpack VueSSRServerPlugin
@@ -50,12 +50,12 @@ generate-pdfs:
 	rm dist/http-server.pid
 
 .PHONY: vue-build
-vue-build: 
+vue-build:
 	./node_modules/.bin/vue-cli-service build
 	${MAKE} dist/.gitkeep
 
 .PHONY: lint
-lint: 
+lint:
 	./node_modules/.bin/vue-cli-service lint
 
 src/data/resume-data.ts: data/*.toml bin/dump-data.js

@@ -73,6 +73,7 @@ url = "http://expressjs.com/"
 [[others]]
 title = "Ruby"
 icon = "ruby"
+url = "https://www.ruby-lang.org/"
 [[others]]
 title = "Ruby on Rails"
 icon = "rails"
@@ -93,8 +94,16 @@ url = "https://docs.docker.com/compose/overview/"
 title = "Git"
 url = "http://git-scm.com/"
 [[tools]]
+title = "Heroku"
+url = "https://www.heroku.com/"
+[[tools]]
+title = "Ansible"
+url = "https://www.ansible.com/"
+[[tools]]
 title = "Debian"
 url = "http://www.debian.org/"
+[[tools]]
+title = "Make"
 [[tools]]
 title = "Flash"
 [[tools]]
