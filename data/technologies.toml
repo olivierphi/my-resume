@@ -16,25 +16,14 @@ title = "JavaScript/TypeScript"
 icon = "typescript"
 url = "https://www.typescriptlang.org/"
 [[main]]
-title = "Node.js"
-icon = "nodejs"
-url = "https://nodejs.org/en/about/"
-[[main]]
 title = "React"
 icon = "react"
 url = "https://reactjs.org/"
+[[main]]
+title = "GraphQL"
+icon = "graphql"
+url = "https://graphql.org/"
 
-[[main]]
-title = "PHP"
-icon = "php"
-[[main]]
-title = "Laravel"
-icon = "laravel"
-url = "https://laravel.com"
-[[main]]
-title = "Symfony"
-icon = "symfony2"
-url = "https://symfony.com"
 
 [[others]]
 title = "HTML / CSS"
@@ -42,10 +31,6 @@ icon = "html5"
 [[others]]
 title = "REST"
 icon = "api"
-[[others]]
-title = "GraphQL"
-icon = "graphql"
-url = "https://graphql.org/"
 [[others]]
 title = "Redis"
 icon = "redis"
@@ -67,6 +52,21 @@ title = "Rabbit MQ"
 icon = "rabbitmq"
 url = "https://www.rabbitmq.com/"
 [[others]]
+title = "PHP"
+icon = "php"
+[[others]]
+title = "Laravel"
+icon = "laravel"
+url = "https://laravel.com"
+[[others]]
+title = "Symfony"
+icon = "symfony2"
+url = "https://symfony.com"
+[[others]]
+title = "Node.js"
+icon = "nodejs"
+url = "https://nodejs.org/en/about/"
+[[others]]
 title = "Express"
 icon = "express"
 url = "http://expressjs.com/"
@@ -85,14 +85,13 @@ url = "https://silex.sensiolabs.org/"
 contributor_url = "https://github.com/fabpot/Silex/commit/6445b9e"
 
 [[tools]]
+title = "Git"
+[[tools]]
 title = "Docker"
 url = "http://www.docker.com/"
 [[tools]]
 title = "Docker Compose"
 url = "https://docs.docker.com/compose/overview/"
-[[tools]]
-title = "Git"
-url = "http://git-scm.com/"
 [[tools]]
 title = "Heroku"
 url = "https://www.heroku.com/"
@@ -101,7 +100,6 @@ title = "Ansible"
 url = "https://www.ansible.com/"
 [[tools]]
 title = "Debian"
-url = "http://www.debian.org/"
 [[tools]]
 title = "Make"
 [[tools]]

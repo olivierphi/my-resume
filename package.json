@@ -2,6 +2,9 @@
   "name": "resume",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "date-fns": "^1.29.0",
     "dejavu-sans": "^1.0.0",
