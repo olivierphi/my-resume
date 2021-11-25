@@ -1,8 +1,14 @@
 [[experiences]]
+period = "Octobre 2021 - Aujourd'hui"
+content = """
+    <b>Senior backend developer</b> en tant que freelance pour
+    <a href="https://www.planhub.ca/" target="_blank">PlanHub.ca</a> (Go) et
+    <a href="https://www.inclusive.energy/cloud-solar" target="_blank">Inclusive Energy</a> (Django)."""
+[[experiences]]
 period = "Octobre 2018 - Mai 2021"
 content = """
 <b>Lead developer</b> (Django/React) pour
-<a href="https://www.connectedenergy.net/cloud-solar" target="_blank">Connected Energy</a>."""
+<a href="https://www.inclusive.energy/cloud-solar" target="_blank">Inclusive Energy</a>."""
 [[experiences]]
 period = "Décembre 2017 - Mai 2018"
 content = """
