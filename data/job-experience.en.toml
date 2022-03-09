@@ -1,5 +1,10 @@
 [[experiences]]
-period = "October 2021 - Present"
+period = "February 2022 - Present"
+content = """
+    <b>Senior product enginner</b> at
+    <a href="https://www.wayflyer.com/" target="_blank">Wayflyer</a> 🦄 (Django/React)."""
+[[experiences]]
+period = "October 2021 - January 2022"
 content = """
     <b>Senior backend developer</b> as a contractor for
     <a href="https://www.planhub.ca/" target="_blank">PlanHub.ca</a> (Go) and
@@ -39,13 +44,11 @@ content = """
 [[experiences]]
 period = "2006 to 2007"
 content = """
-    <b>Flash / PHP Developper</b> at "<a href="http://www.parishanghai.fr/" target="_blank">Les Chinois</a>"<br>
-    (which was the most advanced ActionScript french Web Agency at that time)"""
+    <b>Flash / PHP Developper</b> at "<a href="http://www.parishanghai.fr/" target="_blank">Les Chinois</a>" """
 [[experiences]]
 period = "2005"
 content = """
-    <b>Flash / PHP Developer</b> at WCube<br>
-    (acquired by <a href="http://www.publicis-modem.fr/" target="_blank">Publicis Modem</a> afterwards)"""
+    <b>Flash / PHP Developer</b> at WCube"""
 [[experiences]]
 period = "2000 to 2004"
 content = """

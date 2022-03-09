@@ -1,5 +1,10 @@
 [[experiences]]
-period = "Octobre 2021 - Aujourd'hui"
+period = "Février 2022 - Aujourd'hui"
+content = """
+    <b>Senior product enginner</b> pour
+    <a href="https://www.wayflyer.com/" target="_blank">Wayflyer</a> 🦄 (Django/React)."""
+[[experiences]]
+period = "Octobre 2021 - Janvier 2022"
 content = """
     <b>Senior backend developer</b> en tant que freelance pour
     <a href="https://www.planhub.ca/" target="_blank">PlanHub.ca</a> (Go) et
@@ -41,13 +46,11 @@ société <a href="http://tribalnova.com/" target="_blank">Tribal Nova</a>, à M
 period = "2006 à 2007"
 content = """
 <b>Développeur Flash / PHP</b> chez l'agence
-Web <a href="http://www.parishanghai.fr/" target="_blank">Les Chinois</a><br>
-(à cette époque leaders du développement Flash en France)"""
+Web <a href="http://www.parishanghai.fr/" target="_blank">Les Chinois</a>"""
 [[experiences]]
 period = "2005"
 content = """
-<b>Développeur Flash / PHP</b> chez l'agence WCube<br>
-(intégrée à <a href="http://www.publicis-modem.fr/" target="_blank">Publicis Modem</a> depuis)"""
+<b>Développeur Flash / PHP</b> chez l'agence WCube"""
 [[experiences]]
 period = "2000 à 2004"
 content = """
