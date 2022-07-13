@@ -30,6 +30,10 @@ title = "Node.js"
 icon = "nodejs"
 url = "https://nodejs.org/en/about/"
 [[others]]
+title = "Next.js"
+icon = "nextjs"
+url = "https://nextjs.org/"
+[[others]]
 title = "Express"
 icon = "express"
 url = "http://expressjs.com/"

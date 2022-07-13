@@ -1,7 +1,12 @@
 [[experiences]]
-period = "February 2022 - Present"
+period = "March 2022 - July 2022"
 content = """
-    <b>Senior product enginner</b> at
+    <b>Senior software engineer</b> at
+    <a href="https://www.textualize.io/" target="_blank">Textualize</a> (Python/Next.js)."""
+[[experiences]]
+period = "February 2022 - March 2022"
+content = """
+    <b>Senior product engineer</b> at
     <a href="https://www.wayflyer.com/" target="_blank">Wayflyer</a> 🦄 (Django/React)."""
 [[experiences]]
 period = "October 2021 - January 2022"
