@@ -3,8 +3,8 @@
 
       <div class="logo-container">
         <span class="rougemine-logo" />
-        <a href="http://rougemine.com" target="_blank">
-          rougemine.com
+        <a href="http://dunsap.com" target="_blank">
+          dunsap.com
         </a>
       </div>
 
@@ -56,7 +56,7 @@ $miscInfoWhite: #f0f0f0;
       width: 70px;
       height: 70px;
       margin: 0 auto;
-      background: url(/assets/img/icons/rougemine-70x70.png) 0 0 no-repeat;
+      background: url(/assets/img/icons/me-70x70.jpg) 0 0 no-repeat;
       border: 3px solid #ffffff;
       border-radius: 5px;
     }

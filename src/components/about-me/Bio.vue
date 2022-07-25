@@ -53,7 +53,7 @@
                 target="_blank"
                 class="twitter-link"
             >
-            twitter.com/RougeMine
+            twitter.com/{{ bio.twitterId }}
             </a>
         </p>
 
@@ -86,5 +86,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-
