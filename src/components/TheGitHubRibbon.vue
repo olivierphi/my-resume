@@ -1,7 +1,7 @@
 <template>
     <div id="github-ribbon">
       <a
-        href="https://github.com/DrBenton/rougemine.com-online-resume"
+        href="https://github.com/olivierphi/rougemine.com-online-resume"
         target="_blank"
       >
         Fork me on GitHub
