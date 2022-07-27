@@ -49,6 +49,15 @@ generate-pdfs:
 	kill `cat dist/http-server.pid`
 	rm dist/http-server.pid
 
+.PHONY: generate-light-pdfs
+generate-light-pdfs:
+# N.B. Requires GhostScript. Tends to generate errors related to "embedded font streams", but it seems that the
+# generated PDFs work ok?
+	@echo "Generating a lighter version of the English PDF..."
+	@gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=dist/cv-olivier-philippon.en.light.pdf dist/cv-olivier-philippon.en.pdf	
+	@echo "Generating a lighter version of the French PDF..."
+	@gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=dist/cv-olivier-philippon.fr.light.pdf dist/cv-olivier-philippon.fr.pdf
+	
 .PHONY: vue-build
 vue-build:
 	./node_modules/.bin/vue-cli-service build

@@ -48,7 +48,7 @@ export default Vue.extend({
 <style lang="scss">
 @import "@/scss/_variables.scss";
 @import "@/scss/_mixins.scss";
-@import "@/scss/fonts.scss";
+//@import "@/scss/fonts.scss";
 
 @import "~normalize.css/normalize";
 
