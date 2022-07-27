@@ -10,6 +10,7 @@
             <span itemProp="jobTitle">{{bio.jobTitle}}</span>
         </p>
 
+        <!--
         <p v-if="bio.nationality">
           {{ $t("me.nationality") }} {{bio.nationality}}
         </p>
@@ -30,31 +31,49 @@
             <br />
             </span>
         </span>
-
+        -->
+      
         <p>
             <a itemProp="email" :href="'mailto:' + bio.email">
             {{bio.email}}
             </a>
         </p>
 
+        <!--
         <p>
             {{ $t("me.phone") }}
             <span itemProp="telephone">{{bio.phoneNumber}}</span>
         </p>
+        -->
 
         <p class="rich-snippet-only">
             <span itemProp="url">{{bio.url}}</span>
         </p>
-
+      
+        <br>
         <p>
+          <span>My DevBlog:</span><br>
+          <a
+            href="https://devblog.dunsap.com/"
+            target="_blank"
+            class="github-link"
+          >
+            devblog.dunsap.com
+          </a>
+        </p>
+      
+        <br>
+        <p>
+            <span>Twitter:</span><br>
             <a
                 itemProp="sameAs"
                 :href="'https://twitter.com/' + bio.twitterId"
                 target="_blank"
                 class="twitter-link"
             >
-            twitter.com/{{ bio.twitterId }}
+            @{{ bio.twitterId }}
             </a>
+        </p>
         </p>
 
     </section>

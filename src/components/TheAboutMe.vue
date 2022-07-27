@@ -1,12 +1,14 @@
 <template>
   <section id="about-me" itemScope itemType="http://schema.org/Person">
 
+      <!--
       <div class="logo-container">
         <span class="rougemine-logo" />
         <a href="http://dunsap.com" target="_blank">
           dunsap.com
         </a>
       </div>
+      -->
 
       <Bio />
       <OpenSource />
@@ -97,16 +99,18 @@ $miscInfoWhite: #f0f0f0;
       display: none;
     }
 
+    /*
     &.me-container {
       .twitter-link {
         display: inline-block;
         /*
         background: url("/assets/img/icons/headers/twitter.png") -5px -2px no-repeat;
         padding-left: 23px;
-        */
+        * /
         margin-top: 8px;
       }
     }
+    */
 
     @include mobile-theme-screen {
       width: 48%;

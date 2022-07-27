@@ -45,7 +45,8 @@ export default Vue.extend({
     margin: 0;
 
     @include mobile-theme-screen {
-      margin-top: $logo-container-height-in-mobile-mode + 5px;
+      margin-top: 5px;//$logo-container-height-in-mobile-mode + 5px;
+      text-align: center;
       font-size: 2em;
     }
   }
@@ -59,6 +60,7 @@ export default Vue.extend({
 
     @include mobile-theme-screen {
       font-size: 1.3em;
+      text-align: center;
       margin-bottom: 1em;
     }
   }
@@ -112,5 +114,3 @@ export default Vue.extend({
   }
 }
 </style>
-
-

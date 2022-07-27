@@ -1,6 +1,6 @@
 <template>
     <div id="layout">
-        <TheGitHubRibbon />
+        <!--<TheGitHubRibbon />-->
         <div id="content-container">
             <TheAboutMe />
             <TheMainPanel />
@@ -14,7 +14,7 @@
 import Vue from "vue";
 import { MetaInfo } from "vue-meta";
 
-import TheGitHubRibbon from "@/components/TheGitHubRibbon.vue";
+// import TheGitHubRibbon from "@/components/TheGitHubRibbon.vue";
 import TheAboutMe from "@/components/TheAboutMe.vue";
 import TheMainPanel from "@/components/TheMainPanel.vue";
 import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
@@ -23,7 +23,7 @@ import { AppStoreWithGetters } from "@/store";
 export default Vue.extend({
   name: "the-layout",
   components: {
-    TheGitHubRibbon,
+    // TheGitHubRibbon,
     TheAboutMe,
     TheMainPanel,
     LanguageSwitcher,
@@ -112,5 +112,3 @@ body {
   }
 }
 </style>
-
-

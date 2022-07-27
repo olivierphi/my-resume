@@ -59,7 +59,7 @@ $outline-size: 2px;
 
 .pdf-download, .language-selector {
   position: absolute;
-  right: 0;
+  right: 10px;
   z-index: 2;
   a, span {
     font-family: $font-native;
@@ -72,12 +72,12 @@ $outline-size: 2px;
     text-shadow: make-long-shadow($outline-size, $outline-color, 20);
   }
   @include mobile-theme-all {
-    left: 4px;
+    //left: 4px;
     z-index: 1;
-    span, a {
-      color: white;
-      text-shadow: none;
-    }
+    //span, a {
+    //  color: white;
+    //  text-shadow: none;
+    //}
   }
   @media print {
     display: none;

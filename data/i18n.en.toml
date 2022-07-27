@@ -20,8 +20,8 @@ baccalaureate = "1998: Scientific Baccalaureate"
 
 [languages]
 title = "Languages"
-french = "French (mother tongue)"
-english = "English (B2)"
+french = "French (native speaker)"
+english = "English (fluent)"
 spanish = "Spanish (school level)"
 
 [hobbies]

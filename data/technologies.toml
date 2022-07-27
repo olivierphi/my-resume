@@ -3,6 +3,15 @@ title = "Python"
 icon = "python"
 url = "https://www.python.org/"
 [[main]]
+title = "Django"
+icon = "django"
+url = "https://www.djangoproject.com/start/overview/"
+[[main]]
+title = "GraphQL"
+icon = "graphql"
+url = "https://graphql.org/"
+
+[[main]]
 title = "JavaScript/TypeScript"
 icon = "typescript"
 url = "https://www.typescriptlang.org/"
@@ -10,19 +19,10 @@ url = "https://www.typescriptlang.org/"
 title = "Go"
 icon = "go"
 url = "https://go.dev/"
-
-[[main]]
-title = "Django"
-icon = "django"
-url = "https://www.djangoproject.com/start/overview/"
 [[main]]
 title = "PostgreSQL"
 icon = "postgres"
 url = "https://www.postgresql.org/about/"
-[[main]]
-title = "GraphQL"
-icon = "graphql"
-url = "https://graphql.org/"
 
 
 [[others]]
@@ -96,21 +96,17 @@ contributor_url = "https://github.com/fabpot/Silex/commit/6445b9e"
 title = "Git"
 [[tools]]
 title = "Docker"
-url = "http://www.docker.com/"
 [[tools]]
 title = "Docker Compose"
-url = "https://docs.docker.com/compose/overview/"
 [[tools]]
 title = "Heroku"
-url = "https://www.heroku.com/"
 [[tools]]
 title = "Ansible"
-url = "https://www.ansible.com/"
 [[tools]]
 title = "Debian"
 [[tools]]
 title = "Make"
 [[tools]]
-title = "Flash"
-[[tools]]
 title = "Photoshop"
+[[tools]]
+title = "Flash"

@@ -11,17 +11,6 @@
       >
         github.com/{{bio.githubId}}
       </a>
-      
-      <br><br>
-
-      <h3>Devblog</h3>
-      <a
-        href="https://devblog.dunsap.com/"
-        target="_blank"
-        class="github-link"
-      >
-        devblog.dunsap.com
-      </a>
     </section>
 </template>
 
