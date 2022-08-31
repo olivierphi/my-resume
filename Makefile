@@ -1,14 +1,19 @@
-PDF_GENERATION_SERVER_PORT ?= 8000
+MAKE_NO_PRINT = ${MAKE} --no-print-directory
 
 .PHONY: install
 install:
 	yarn install
-	${MAKE} src/data/resume-data.ts
+	${MAKE_NO_PRINT} src/data/resume-data.ts
+
+.PHONY: install-vercel
+install-vercel: install
+# @link https://github.com/alixaxel/chrome-aws-lambda/issues/154
+	yarn add chrome-aws-lambda@3.0.4 puppeteer-core@3.0.4 
 
 .PHONY: clean
 clean:
 	rm -rf dist/* || true
-	${MAKE} dist/.gitkeep
+	${MAKE_NO_PRINT} dist/.gitkeep
 
 .PHONY: generate-server-bundle-json
 generate-server-bundle-json:
@@ -30,21 +35,22 @@ serve:
 .PHONY: build
 build: dump-data-to-typescript
 # 1. Build the "dist/" folder
-	${MAKE} vue-build
+	${MAKE_NO_PRINT} vue-build
 # 2. Generate a JSON file ("dist/vue-ssr-server-bundle.json") that contains our app content, to be used by the Webpack VueSSRServerPlugin
-	${MAKE} generate-server-bundle-json
+	${MAKE_NO_PRINT} generate-server-bundle-json
 # 3. Generate a "dist/index.[lang].html" file for each lang, based on the JSON generated during the previous step
-	${MAKE} generate-server-html APP_LANG=en
-	${MAKE} generate-server-html APP_LANG=fr
+	${MAKE_NO_PRINT} generate-server-html APP_LANG=en
+	${MAKE_NO_PRINT} generate-server-html APP_LANG=fr
 
 .PHONY: generate-pdfs
+generate-pdfs: pdf_generation_server_port ?= 8000
 generate-pdfs:
 # Launch the HTTP server, in order to generate the PDF files from the HTML pages. Saves its PID.
-	node_modules/.bin/http-server dist/ -p ${PDF_GENERATION_SERVER_PORT} & echo $$! > dist/http-server.pid
+	node_modules/.bin/http-server dist/ -p ${pdf_generation_server_port} & echo $$! > dist/http-server.pid
 # Generates the PDF files
 	sleep 1
-	node bin/create-pdf.js 'http://127.0.0.1:${PDF_GENERATION_SERVER_PORT}' en
-	node bin/create-pdf.js 'http://127.0.0.1:${PDF_GENERATION_SERVER_PORT}' fr
+	node bin/create-pdf.js 'http://127.0.0.1:${pdf_generation_server_port}' en
+	node bin/create-pdf.js 'http://127.0.0.1:${pdf_generation_server_port}' fr
 # Kills the HTTP server
 	kill `cat dist/http-server.pid`
 	rm dist/http-server.pid
@@ -61,30 +67,30 @@ generate-light-pdfs:
 .PHONY: vue-build
 vue-build:
 	./node_modules/.bin/vue-cli-service build
-	${MAKE} dist/.gitkeep
+	${MAKE_NO_PRINT} dist/.gitkeep
 
 .PHONY: lint
 lint:
 	./node_modules/.bin/vue-cli-service lint
 
 src/data/resume-data.ts: data/*.toml bin/dump-data.js
-	${MAKE} dump-data-to-typescript
+	${MAKE_NO_PRINT} dump-data-to-typescript
 
 src/data/i18n-data.ts: data/*.toml bin/dump-data.js
-	${MAKE} dump-data-to-typescript
+	${MAKE_NO_PRINT} dump-data-to-typescript
 
 dist/.gitkeep:
 	mkdir dist || true
 	touch dist/.gitkeep
 
 dist/index.fr.html: dist/vue-ssr-server-bundle.json dist/index.html
-	${MAKE} generate-server-html APP_LANG=fr
+	${MAKE_NO_PRINT} generate-server-html APP_LANG=fr
 
 dist/index.en.html: dist/vue-ssr-server-bundle.json dist/index.html
-	${MAKE} generate-server-html APP_LANG=en
+	${MAKE_NO_PRINT} generate-server-html APP_LANG=en
 
 dist/index.html: public/index.html
-	${MAKE} build
+	${MAKE_NO_PRINT} build
 
 dist/vue-ssr-server-bundle.json:
-	${MAKE} generate-server-bundle
+	${MAKE_NO_PRINT} generate-server-bundle

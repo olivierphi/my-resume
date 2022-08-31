@@ -1,4 +1,7 @@
-const puppeteer = require("puppeteer");
+const IS_VERCEL = !!process.env["VERCEL"];
+const puppeteer = IS_VERCEL
+  ? require("chrome-aws-lambda").puppeteer
+  : require("puppeteer");
 
 const USAGE_STR = "Usage: node bin/create-pdf.js [cv URL] [lang]";
 
@@ -19,7 +22,14 @@ if (!validLangs.includes(lang)) {
 }
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch(
+    IS_VERCEL
+      ? {
+          // @link https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
+          args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        }
+      : {},
+  );
   const page = await browser.newPage();
 
   const cvFullUrl = `${cvUrl}?lang=${lang}`;
