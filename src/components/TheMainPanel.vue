@@ -100,17 +100,11 @@ export default Vue.extend({
         margin: 0 0 0.5em 0;
         .heading {
           color: black;
-          font-weight: bold;
+          text-decoration: underline dotted;
         }
       }
     }
   }
 
-  .tech-with-icon {
-    img {
-      display: inline-block;
-      margin-right: 4px;
-    }
-  }
 }
 </style>

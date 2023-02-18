@@ -1,4 +1,9 @@
 [[experiences]]
+period = "September 2022 - Present"
+content = """
+    <b>Senior Django developer</b> at
+    <a href="https://www.sporteasy.net/" target="_blank">SportEasy</a>."""
+[[experiences]]
 period = "March 2022 - July 2022"
 content = """
     <b>Senior software engineer</b> at
@@ -32,7 +37,7 @@ content = """
 [[experiences]]
 period = "2014 - 2016"
 content = """
-    <b>Symfony / JavaScript consultant and developer</b> at
+    <b>Symfony / JavaScript consultant and developer</b> for
     <a href="http://knplabs.com/" target="_blank">KNP Labs</a> clients."""
 [[experiences]]
 period = "2008 - 2014"

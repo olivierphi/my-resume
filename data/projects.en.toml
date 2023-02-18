@@ -1,16 +1,24 @@
 [[projects]]
+title = "SportEasy"
+content = """
+Features shipping, technical debt tackling, bug fixing and codebase modernisation as a 
+<span class="tech tech-with-icon django">Django</span> Senior Software Developer
+at <a href="https://www.sporteasy.net/" target="_blank">SportEasy</a>
+"""
+[[projects]]
 title = "Neve"
 content = """
-<span class="tech tech-with-icon django">Django</span> and
-<span class="tech react">React</span> Lead Software Developer
-at <a href="https://www.thisismilk.co.uk/"  target="_blank">This Is Milk</a>,
-for the pilot of the Neve e-learning platform
+As a Lead Software Developer, bootstrapping of the 
+<a href="https://www.nevelearning.co.uk/" target="_blank">Neve</a>
+e-learning platform, so that hits the mark for its first pilot test.<br/>
+I chose to use the productivity given by <span class="tech tech-with-icon django">Django</span> and
+<span class="tech tech-with-icon nextjs">Next.js</span> to deliver it in due time
 """
 [[projects]]
 title = "Cloud Solar"
 content = """
 <span class="tech tech-with-icon django">Django</span> and
-<span class="tech react">React</span> Lead Software Developer
+<span class="tech tech-with-icon react">React</span> Lead Software Developer
 for
 <a href="https://connectedenergy.net/cloud-solar" target="_blank">Cloud Solar</a>,
 an IoT platform that allow businesses to manage their solar panels fleet"""
@@ -18,22 +26,22 @@ an IoT platform that allow businesses to manage their solar panels fleet"""
 title = "Collector Square"
 content = """
 <span class="tech tech-with-icon symfony2">Symfony</span> and
-<span class="tech javascript">JavaScript</span> Lead Developer
+<span class="tech tech-with-icon javascript">JavaScript</span> Lead Developer
 for the new version of the <a href="https://www.collectorsquare.com/en" target="_blank">Collector Square</a>
-website and CMS, heavily based on Elasticsearch and Redis"""
+website and CMS, heavily based on <span class="tech-with-icon elasticsearch">Elasticsearch</span> and <span class="tech-with-icon redis">Redis</span>"""
 [[projects]]
 title = "Balinea"
 content = """
 <span class="tech tech-with-icon symfony2">Symfony</span> and
-<span class="tech javascript">JavaScript</span> Lead Developer
+<span class="tech tech-with-icon javascript">JavaScript</span> Lead Developer
 for the new version of the <a href="https://www.balinea.com/" target="_blank">Balinea</a> platform
 - which includes the public website, a middle-office, a back-end, a public and a private API..."""
 [[projects]]
 title = "LeMonde.fr"
 content = """
-<span class="tech php">PHP</span>,
+<span class="tech tech-with-icon php">PHP</span>,
 <span class="tech tech-with-icon nodejs">Node.js</span> and
-<span class="tech tech-with-icon backbone">Backbone</span>
+<span class="tech tech-with-icon javascript">JavaScript</span>
 developer at <a href="http://www.lemonde.fr/" target="_blank">LeMonde.fr</a>, one of the main French news web site."""
 [[projects]]
 title = "Ruby on Rails Mail App"
@@ -45,17 +53,17 @@ title = "Mappy Mobile website"
 content = """
 Technical lead of the <span class="tech javascript">JavaScript</span> development of the
 <a href="http://iphone.mappy.com/" target="_blank">mobile site</a> of <a href="http://www.mappy.com/" target="_blank">Mappy</a>,
-based on <span class="tech tech-with-icon backbone">Backbone</span>.
+based on <span class="tech tech-with-icon javascript">JavaScript</span>.
 Member of the back-end <span class="tech tech-with-icon symfony2">Symfony2</span> team"""
 [[projects]]
 title = "Bopler Games, Facebook application"
 content = """
 Technical lead of the <span class="tech php">PHP</span> development of the Facebook app
 <a href="https://www.facebook.com/BoplerGames" target="_blank">Bopler Games</a>,
-based on <span class="tech tech-with-icon zend-framework">Zend Framework</span>"""
+based on <span class="tech tech-with-icon php">Zend Framework</span>"""
 [[projects]]
 title = "Rodin Museum"
 content = """
 Technical lead on the
 <a href="http://www.musee-rodin.fr/en" target="_blank">Rodin Museum</a> development,
-based on <span class="tech tech-with-icon drupal">Drupal</span> and <span class="tech tech-with-icon zend-framework">Zend Framework</span>"""
+based on <span class="tech tech-with-icon php">Zend Framework</span> and <span class="tech tech drupal">Drupal</span>"""

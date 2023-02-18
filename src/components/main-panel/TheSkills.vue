@@ -121,6 +121,9 @@ export default Vue.extend({
       img {
         position: relative;
         top: 3px;
+        height: 24px;
+        aspect-ratio: 1/1;
+        margin-right: 6px;
       }
 
       @include mobile-theme-screen {
@@ -145,7 +148,10 @@ export default Vue.extend({
       margin-right: 8px;
       img {
         position: relative;
+        height: 24px;
+        aspect-ratio: 1/1;
         top: 3px;
+        margin-right: 6px;
       }
     }
 

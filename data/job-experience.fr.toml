@@ -1,4 +1,9 @@
 [[experiences]]
+period = "Septembre 2022 - Aujourd'hui"
+content = """
+    <b>Développeur Django senior</b> pour
+    <a href="https://www.sporteasy.net/" target="_blank">SportEasy</a>."""
+[[experiences]]
 period = "Mars 2022 - Juillet 2022"
 content = """
     <b>Senior software engineer</b> pour

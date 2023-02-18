@@ -12,7 +12,7 @@ icon = "graphql"
 url = "https://graphql.org/"
 
 [[main]]
-title = "JavaScript/TypeScript"
+title = "TypeScript"
 icon = "typescript"
 url = "https://www.typescriptlang.org/"
 [[main]]
@@ -26,31 +26,37 @@ url = "https://www.postgresql.org/about/"
 
 
 [[others]]
-title = "Node.js"
-icon = "nodejs"
-url = "https://nodejs.org/en/about/"
-[[others]]
-title = "Next.js"
-icon = "nextjs"
-url = "https://nextjs.org/"
-[[others]]
-title = "Express"
-icon = "express"
-url = "http://expressjs.com/"
-[[others]]
-title = "REST"
-icon = "api"
-[[others]]
-title = "HTML / CSS"
-icon = "html5"
+title = "JavaScript"
+icon = "javascript"
 [[others]]
 title = "React"
 icon = "react"
 url = "https://reactjs.org/"
 [[others]]
+title = "Next.js"
+icon = "nextjs"
+url = "https://nextjs.org/"
+[[others]]
 title = "Redis"
 icon = "redis"
 url = "https://www.redis.io/"
+[[others]]
+title = "MySQL"
+icon = "mysql"
+[[others]]
+title = "REST"
+icon = "rest"
+[[others]]
+title = "HTML / CSS"
+icon = "html5"
+[[others]]
+title = "Node.js"
+icon = "nodejs"
+url = "https://nodejs.org/en/about/"
+[[others]]
+title = "Express"
+icon = "express"
+url = "http://expressjs.com/"
 [[others]]
 title = "Elasticsearch"
 icon = "elasticsearch"

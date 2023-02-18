@@ -29,3 +29,25 @@
     }
     @return $val;
 }
+
+@mixin tech-icon-bg ($tech) {
+  background-image: url("/assets/img/icons/techs/#{$tech}.png");
+}
+
+@mixin tech-with-icon {
+  display: inline-block;
+  line-height: 20px;
+  padding-left: 28px;
+  background-repeat: no-repeat;
+  background-position: 2px center;
+
+  $techs: algolia, backbone, behat, browserify, django, drupal, elasticsearch, express,
+    flash, go, gulp, html5, javascript, koa, less, nodejs, nextjs, php, postgres, python,
+    rails, react, redis, rest, ruby, silex, symfony2, typescript, webpack,
+    zend-framework;
+  @each $tech in $techs {
+    &.#{$tech} {
+      @include tech-icon-bg($tech);
+    }
+  }
+}

@@ -9,7 +9,7 @@
             <li
               v-for="project in projects"
               :key="project.title">
-                <span class="heading">{{project.title}}: </span>
+                <span class="heading">{{project.title}}</span>: 
                 <span v-html="project.content"></span>
             </li>
         </ul>
@@ -32,10 +32,19 @@ export default Vue.extend({
 
 <style lang="scss">
 @import "@/scss/_variables.scss";
+@import "@/scss/_mixins.scss";
 
 .projects-container {
     .tech {
         color: $grey;
+    }
+    .tech-with-icon {
+        @include tech-with-icon ;
+        display: inline-block;
+        line-height: 24px;
+        background-position: 0 0;
+        background-size: auto 24px;
+        padding-left: 28px;
     }
 }
 </style>

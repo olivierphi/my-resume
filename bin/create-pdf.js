@@ -22,6 +22,7 @@ if (!validLangs.includes(lang)) {
 }
 
 (async () => {
+  console.log("Launching browser...");
   const browser = await puppeteer.launch(
     IS_VERCEL
       ? {
@@ -30,7 +31,11 @@ if (!validLangs.includes(lang)) {
         }
       : {},
   );
+  console.log("Browser launched.");
+  
+  console.log("Creating a page...");
   const page = await browser.newPage();
+  console.log("Page created.");
 
   const cvFullUrl = `${cvUrl}?lang=${lang}`;
   console.log(
@@ -49,7 +54,7 @@ if (!validLangs.includes(lang)) {
   console.log("PDF generated, closing browser.");
 
   await browser.close();
-})();
+})().catch((err) => {console.error(err); process.exit(1);})
 
 function waitFor(duration) {
   return new Promise((resolve, reject) => {
