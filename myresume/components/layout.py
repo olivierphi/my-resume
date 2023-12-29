@@ -1,7 +1,9 @@
 from typing import TYPE_CHECKING
 
 from dominate.tags import (
+    aside,
     body,
+    div,
     footer as base_footer,
     h1,
     h2,
@@ -9,6 +11,7 @@ from dominate.tags import (
     header as base_header,
     html,
     link,
+    main,
     meta,
     title as base_title,
 )
@@ -24,13 +27,30 @@ def page(*children: "dom_tag") -> str:
 
 
 def document(*children: "dom_tag") -> "dom_tag":
+    body_classes = (
+        "md:mx-auto",
+        "md:max-w-2xl",
+        "flex",
+        "items-stretch",
+        "bg-slate-50",
+        "text-slate-900",
+        "font-sans",
+    )
+    if settings.DEBUG:
+        body_classes += ("border", "border-black", "border-solid")
+
     return html(
         head(),
         body(
-            header(),
-            *children,
-            footer(),
-            cls="bg-slate-900",
+            about(
+                div("[about]"),
+            ),
+            main_container(
+                header(),
+                *children,
+                footer(),
+            ),
+            cls=" ".join(body_classes),
         ),
         __pretty=settings.DEBUG,
     )
@@ -38,6 +58,20 @@ def document(*children: "dom_tag") -> "dom_tag":
 
 def static(path: str) -> str:
     return f"/assets/{path}"
+
+
+def about(*children: "dom_tag") -> "dom_tag":
+    return aside(
+        *children,
+        cls="w-1/5 bg-red-900 text-slate-50",
+    )
+
+
+def main_container(*children: "dom_tag") -> "dom_tag":
+    return main(
+        *children,
+        cls="",
+    )
 
 
 def head() -> "dom_tag":
@@ -59,13 +93,13 @@ def header() -> "dom_tag":
     return base_header(
         h1(
             document_data["meta"]["title"],
-            cls="text-slate-50 text-2xl leading-none font-pixel",
+            cls="text-2xl leading-none font-pixel",
         ),
         h2(
             document_data["subtitle"],
-            cls="text-slate-50 text-xl leading-none font-pixel",
+            cls="text-xl leading-none font-pixel",
         ),
-        cls="text-center md:mx-auto md:max-w-2xl",
+        cls="text-center ",
     )
 
 
