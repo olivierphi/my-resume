@@ -1,6 +1,6 @@
 import functools
 import tomllib
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Literal, NotRequired
 
 from . import settings
 
@@ -10,6 +10,16 @@ if TYPE_CHECKING:
 
 
 if TYPE_CHECKING:
+
+    class DocumentData(TypedDict):
+        subtitle: str
+        meta: "DocumentMetaData"
+
+    class DocumentMetaData(TypedDict):
+        lang: Literal["en", "fr"]
+        title: str
+        description: str
+        keywords: list[str]
 
     class BioData(TypedDict):
         name: str
@@ -21,15 +31,30 @@ if TYPE_CHECKING:
         mastodon: str
         github_id: str
 
-    class DocumentMetaData(TypedDict):
-        lang: Literal["en", "fr"]
-        title: str
-        description: str
-        keywords: list[str]
+    class TechnologiesData(TypedDict):
+        main: list["MainTechnologyData"]
+        others: list["OtherTechnologyData"]
 
-    class DocumentData(TypedDict):
-        subtitle: str
-        meta: DocumentMetaData
+    class MainTechnologyData(TypedDict):
+        title: str
+        icon: str
+        url: NotRequired[str]
+
+    class OtherTechnologyData(TypedDict):
+        title: str
+        icon: str
+        url: NotRequired[str]
+        contributor_url: NotRequired[str]
+
+
+@functools.cache
+def i18n() -> dict[str, dict[dict, str | list]]:
+    return _parse_data_file("i18n.toml")  # type: ignore
+
+
+@functools.cache
+def document() -> "DocumentData":
+    return _parse_data_file("document.toml") | {"lang": settings.LANG}  # type: ignore
 
 
 @functools.cache
@@ -38,8 +63,8 @@ def bio() -> "BioData":
 
 
 @functools.cache
-def document() -> "DocumentData":
-    return _parse_data_file("document.toml") | {"lang": settings.LANG}  # type: ignore
+def tech() -> "TechnologiesData":
+    return _parse_data_file("technologies.toml")  # type: ignore
 
 
 def _parse_data_file(file_name: str) -> dict:

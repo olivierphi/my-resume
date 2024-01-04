@@ -1,0 +1,41 @@
+[top_links]
+pdf_download = "Download in PDF format"
+language = "language:"
+
+[open_source_projects]
+title = "Open Source projects "
+
+[education]
+title = "Education"
+src = "1998-2000: DUT S.R.C"
+src_details = "Communication Services and Networks"
+baccalaureate = "1998: Scientific Baccalaureate"
+
+[languages]
+title = "Languages"
+list = [
+    "French (native speaker)",
+    "English (fluent)",
+    "Spanish (school level)",
+]
+
+[hobbies]
+title = "Hobbies"
+content = "Running, bouldering"
+
+[teaching]
+title = "Web development Trainer"
+content = """
+HTML/CSS, JavaScript and Flash trainer for
+<a href="https://www.digital-campus.fr/" class="underline" target="_blank" rel="noopener">Digital Campus</a>
+"""
+
+[captions]
+main_skills = "Main skills"
+other_skills = "And also..."
+tools = "Tools and environments"
+job_experience = "Job experience"
+projects = "Some of the projects I worked on"
+
+[misc]
+contributor = "contributor"

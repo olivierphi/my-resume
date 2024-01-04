@@ -14,10 +14,11 @@ INTERNAL_IPS = ["127.0.0.1"]
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_tailwind_cli",
+    "django_google_fonts",
     "myresume",
 ]
 if DEBUG:
-    INSTALLED_APPS += ["django_browser_reload"]
+    INSTALLED_APPS += ["django_browser_reload", "django_fastdev"]
 
 MIDDLEWARE = []
 if DEBUG:
@@ -61,7 +62,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "myresume" / "staticfiles"]
-STATIC_ROOT = BASE_DIR / "dist"
+STATIC_ROOT = BASE_DIR / "dist" / "static"
 STORAGES = {
     "staticfiles": {
         "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
@@ -74,6 +75,11 @@ STORAGES = {
 TAILWIND_CLI_VERSION = "3.4.0"
 TAILWIND_CLI_SRC_CSS = BASE_DIR / "myresume" / "assets-src" / "css" / "main.css"
 TAILWIND_CLI_DIST_CSS = "css/main.css"
+
+# Google Fonts
+# https://github.com/andymckay/django-google-fonts
+
+GOOGLE_FONTS = ["Ubuntu", "Lobster"]
 
 # Custom settings
 

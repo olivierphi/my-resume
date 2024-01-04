@@ -1,0 +1,11 @@
+{% load myresume_tags %}
+<section>
+    {% about_section_icon "img/icons/header-icons/ruler.svg" %}
+    {% about_section_title i18n_data.education.title %}
+    <p>
+        {{ i18n_data.education.src }}
+        <br />
+        <i>{{ i18n_data.education.src_details }}</i>
+    </p>
+    <p>{{ i18n_data.education.baccalaureate }}</p>
+</section>

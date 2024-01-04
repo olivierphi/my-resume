@@ -1,0 +1,19 @@
+{% load myresume_tags %}
+<section class="my-8">
+    {% main_section_title i18n_data.captions.main_skills icon="img/icons/header-icons/tool-red.png" %}
+    <div class="p-2">
+        <div class="grid grid-cols-2 gap-5 md:grid-cols-3">
+            {% for tech in tech_data.main %}
+                {% main_section_main_tech tech %}
+            {% endfor %}
+        </div>
+        <div class="mt-8">
+            <h5 class="text-lg mb-2">{{ i18n_data.captions.other_skills }}</h5>
+            <div class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
+                {% for tech in tech_data.others %}
+                    {% main_section_other_tech tech %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

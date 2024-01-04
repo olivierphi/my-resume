@@ -1,0 +1,22 @@
+<div>
+    <div class="flex">
+        <img src="{{ icon_url }}"
+             alt=""
+             class="size-4 mt-1 mr-2"
+             width="16"
+             height="16">
+        {% if url %}
+            <a href="{{ url }}" class="underline" target="_blank" rel="noopener">{{ title }}</a>
+        {% else %}
+            {{ title }}
+        {% endif %}
+    </div>
+    {% if contributor_url %}
+        <div class="pl-5">
+            (<a href="{{ contributor_url }}"
+   class="underline"
+   target="_blank"
+   rel="noopener">contributor</a>)
+        </div>
+    {% endif %}
+</div>

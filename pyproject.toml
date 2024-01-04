@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 django = "^5.0.1"
 django-tailwind-cli = "^2.8.0"
+django-google-fonts = "^0.0.3"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -19,6 +20,7 @@ ruff = "^0.1.9"
 ipython = "^8.19.0"
 django-browser-reload = "^1.12.1"
 djlint = "^1.34.1"
+django-fastdev = "^1.8.0"
 
 [tool.mypy]
 # @link https://mypy.readthedocs.io/en/stable/config_file.html#using-a-pyproject-toml
@@ -27,6 +29,7 @@ mypy_path = "myresume/"
 [[tool.mypy.overrides]]
 module = [
     "django.*",
+    "djlint.*",
 ]
 ignore_missing_imports = true
 

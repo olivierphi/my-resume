@@ -1,24 +1,38 @@
+{% load myresume_tags %}
 <section>
-    <p>
-        <span itemProp="name">{{ bio_data.name }}</span>
-    </p>
-    <p class="hidden">
-        <span itemProp="jobTitle">{{ bio_data.job_title }}</span>
-    </p>
-    <p>
-        <a itemProp="email" href="mailto:{{ bio_data.email }}">{{ bio_data.email }}</a>
-    </p>
-    <p class="hidden">
-        <span itemProp="url">{{ bio_data.url }}</span>
-    </p>
-    <p>
-        <span>My DevBlog:</span>
-        <br>
-        <a href="{{ bio_data.devblog }}" target="_blank" class="github-link">{{ bio_data.devblog | cut:"https://" }}</a>
-    </p>
-    <p>
-        <span>Mastodon:</span>
-        <br>
-        <a href="{{ bio_data.mastodon }}" target="_blank" class="github-link">{{ bio_data.mastodon | cut:"https://" }}</a>
-    </p>
+    {% about_section_icon "img/icons/header-icons/user.svg" %}
+    <div>
+        <p>
+            <span itemProp="name">{{ bio_data.name }}</span>
+        </p>
+        <p class="hidden">
+            <span itemProp="jobTitle">{{ bio_data.job_title }}</span>
+        </p>
+        <p>
+            <a itemProp="email" href="mailto:{{ bio_data.email }}" class="underline">{{ bio_data.email }}</a>
+        </p>
+        <p class="hidden">
+            <span itemProp="url">{{ bio_data.url }}</span>
+        </p>
+    </div>
+    <div class="mt-4">
+        <p>
+            <span>My DevBlog:</span>
+            <br>
+            <a href="{{ bio_data.devblog }}"
+               class="underline"
+               target="_blank"
+               rel="noopener">{{ bio_data.devblog | cut:"https://" }}</a>
+        </p>
+    </div>
+    <div class="mt-4">
+        <p>
+            <span>Mastodon:</span>
+            <br>
+            <a href="{{ bio_data.mastodon }}"
+               class="underline"
+               target="_blank"
+               rel="noopener">{{ bio_data.mastodon | cut:"https://" }}</a>
+        </p>
+    </div>
 </section>

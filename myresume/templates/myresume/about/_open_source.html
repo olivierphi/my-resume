@@ -1,0 +1,12 @@
+{% load myresume_tags %}
+<section>
+    {% about_section_icon "img/icons/header-icons/github.svg" %}
+    {% about_section_title i18n_data.open_source_projects.title %}
+    <p>
+        <a itemProp="sameAs"
+           class="underline"
+           href="https://github.com/{{ bio_data.github_id }}"
+           target="_blank"
+           rel="noopener">github.com/{{ bio_data.github_id }}</a>
+    </p>
+</section>

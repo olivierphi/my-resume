@@ -14,7 +14,9 @@ def index(request: "HttpRequest") -> HttpResponse:
         request,
         "myresume/index.html",
         {
+            "i18n_data": db.i18n(),
             "document_data": db.document(),
             "bio_data": db.bio(),
+            "tech_data": db.tech(),
         },
     )

@@ -1,0 +1,118 @@
+[[main]]
+title = "Python"
+icon = "python"
+url = "https://www.python.org/"
+[[main]]
+title = "Django"
+icon = "django"
+url = "https://www.djangoproject.com/start/overview/"
+[[main]]
+title = "Wagtail"
+icon = "wagtail"
+url = "https://wagtail.org/"
+
+[[main]]
+title = "TypeScript"
+icon = "typescript"
+url = "https://www.typescriptlang.org/"
+[[main]]
+title = "PostgreSQL"
+icon = "postgres"
+url = "https://www.postgresql.org/about/"
+[[main]]
+title = "GraphQL"
+icon = "graphql"
+url = "https://graphql.org/"
+
+
+[[others]]
+title = "REST"
+icon = "rest"
+[[others]]
+title = "JavaScript"
+icon = "javascript"
+[[others]]
+title = "React"
+icon = "react"
+url = "https://reactjs.org/"
+[[others]]
+title = "Next.js"
+icon = "nextjs"
+url = "https://nextjs.org/"
+[[others]]
+title = "Redis"
+icon = "redis"
+url = "https://www.redis.io/"
+[[others]]
+title = "Go"
+icon = "go"
+url = "https://go.dev/"
+[[others]]
+title = "MySQL"
+icon = "mysql"
+[[others]]
+title = "HTML / CSS"
+icon = "html5"
+[[others]]
+title = "Node.js"
+icon = "nodejs"
+url = "https://nodejs.org/en/about/"
+[[others]]
+title = "Elasticsearch"
+icon = "elasticsearch"
+url = "https://www.elastic.co/products/elasticsearch"
+[[others]]
+title = "Algolia"
+icon = "algolia"
+url = "https://www.algolia.com/"
+[[others]]
+title = "MQTT"
+icon = "mqtt"
+url = "https://mqtt.org/"
+[[others]]
+title = "Rabbit MQ"
+icon = "rabbitmq"
+url = "https://www.rabbitmq.com/"
+[[others]]
+title = "PHP"
+icon = "php"
+[[others]]
+title = "Symfony"
+icon = "symfony2"
+url = "https://symfony.com"
+[[others]]
+title = "Laravel"
+icon = "laravel"
+url = "https://laravel.com"
+[[others]]
+title = "Ruby"
+icon = "ruby"
+url = "https://www.ruby-lang.org/"
+[[others]]
+title = "Ruby on Rails"
+icon = "rails"
+url = "https://rubyonrails.org/"
+[[others]]
+title = "Silex"
+icon = "silex"
+url = "https://silex.sensiolabs.org/"
+contributor_url = "https://github.com/fabpot/Silex/commit/6445b9e"
+
+[[tools]]
+title = "Git"
+[[tools]]
+title = "Docker"
+[[tools]]
+title = "Docker Compose"
+[[tools]]
+title = "Heroku"
+[[tools]]
+title = "Ansible"
+[[tools]]
+title = "Debian"
+[[tools]]
+title = "Make"
+[[tools]]
+title = "Photoshop"
+[[tools]]
+title = "Flash"
