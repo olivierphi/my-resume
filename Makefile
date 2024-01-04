@@ -11,16 +11,46 @@ help:
 	@grep -P '^[a-zA-Z/_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: install
-install: .venv python_deps ${PYTHON_BINS}/tailwindcss ## Install the Python and frontend dependencies
+install: .venv python_deps ## Install the Python dependencies
 	${PYTHON_BINS}/pre-commit install
 
 .PHONY: dev
-dev: install
-	@rm -rf dist/ || true
-	@mkdir -p dist/
-	@${MAKE} --no-print-directory --jobs=2 dev_watchfiles dev_webserver
+dev: address ?= 127.0.0.1
+dev: port ?= 8000
+dev: debug ?= true
+dev: install # Start Django dev server, as well as Tailwind compilation in the background
+	@DEBUG=${debug} ${PYTHON} manage.py tailwind runserver ${address}:${port}
 
+.PHONY: build
+build: ## Build the static assets (HTML files, CSS files, etc.)
+	@${PYTHON} manage.py build_resume
 
+.PHONY: code-quality/all
+code-quality/all: code-quality/black code-quality/djlint code-quality/ruff code-quality/mypy  ## Run all our code quality tools
+
+.PHONY: code-quality/black
+code-quality/black: black_opts ?=
+code-quality/black: ## Automated 'a la Prettier' code formatting
+# @link https://black.readthedocs.io/en/stable/
+	@${PYTHON_BINS}/black ${black_opts} myresume/
+
+.PHONY: code-quality/djlint
+code-quality/djlint: djlint_opts ?= --lint --reformat
+code-quality/djlint: ## Automated 'a la Prettier' formatting for Django HTML templates
+# @link https://djlint.com/
+	@${PYTHON_BINS}/djlint ${djlint_opts} myresume/
+
+.PHONY: code-quality/ruff
+code-quality/ruff: ruff_opts ?= --fix
+code-quality/ruff: ## Fast linting
+# @link https://mypy.readthedocs.io/en/stable/
+	@PYTHONPATH=${PYTHONPATH} ${PYTHON_BINS}/ruff myresume/ ${ruff_opts}
+
+.PHONY: code-quality/mypy
+code-quality/mypy: mypy_opts ?=
+code-quality/mypy: ## Python's equivalent of TypeScript
+# @link https://mypy.readthedocs.io/en/stable/
+	@PYTHONPATH=${PYTHONPATH} ${PYTHON_BINS}/mypy myresume/ ${mypy_opts}
 
 # Here starts the "misc util targets" stuff
 
@@ -32,17 +62,3 @@ dev: install
 .PHONY: python_deps
 python_deps: ## Installs the Python dependencies
 	@${PYTHON_BINS}/poetry install --no-root
-
-.PHONY: dev_watchfiles
-dev_watchfiles:
-	@RESUME_DEBUG=1 ${PYTHON_BINS}/watchfiles "${PYTHON} -m myresume.tools.build_html_and_css" myresume/
-
-.PHONY: dev_webserver
-dev_webserver: address ?= 127.0.0.1
-dev_webserver: port ?= 8000
-dev_webserver: ## Starts the development webserver
-	@${PYTHON} -m http.server --directory dist --bind ${address} ${port}
-
-${PYTHON_BINS}/tailwindcss: tailwindcss_version ?= v3.4.0
-${PYTHON_BINS}/tailwindcss: ## Installs the Tailwind CLI
-	@TAILWINDCSS_VERSION=${tailwindcss_version} ${PYTHON_BINS}/tailwindcss_install

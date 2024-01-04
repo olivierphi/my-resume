@@ -3,3 +3,4 @@ subtitle = "Passionate Web developer since 1999"
 [meta]
 title =  "Olivier Philippon - Web developer since 1999"
 description = "Olivier Philippon - Web Developer since 1999 - Django and JavaScript developer"
+keywords = ["web development", "resume", "python", "django", "postgresql"]

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load tailwind_cli %}
+<html lang="{{ document_data.lang }}">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ document_data.meta.title }}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="{{ document_data.meta.description }}">
+        <meta name="keywords" content="{{ document_data.meta.keywords|join:", " }}">
+        <link rel="canonical" href="https://www.dunsap.com/">
+        <meta name="generator" content="Django">
+        {% tailwind_css %}
+    </head>
+    <body class="md:mx-auto md:max-w-2xl flex items-stretch bg-slate-50 text-slate-900 font-sans {% if debug %}{{ "border border-black border-solid" }}{% endif %}">
+        {% block body %}
+            {% include "myresume/_about.html" %}
+            {% include "myresume/_main.html" %}
+        {% endblock body %}
+    </body>
+</html>

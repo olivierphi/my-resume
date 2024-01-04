@@ -15,3 +15,8 @@ repos:
       # Linter-only; we're still using Black for code formatting atm.
       - id: ruff
         args: [ --fix ]
+  - repo: https://github.com/djlint/djLint
+    rev: v1.34.1
+    hooks:
+      - id: djlint-reformat-django
+      - id: djlint-django

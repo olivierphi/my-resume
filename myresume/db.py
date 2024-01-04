@@ -1,6 +1,6 @@
 import functools
 import tomllib
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 from . import settings
 
@@ -22,8 +22,10 @@ if TYPE_CHECKING:
         github_id: str
 
     class DocumentMetaData(TypedDict):
+        lang: Literal["en", "fr"]
         title: str
         description: str
+        keywords: list[str]
 
     class DocumentData(TypedDict):
         subtitle: str
@@ -32,12 +34,12 @@ if TYPE_CHECKING:
 
 @functools.cache
 def bio() -> "BioData":
-    return _parse_data_file("bio.toml")
+    return _parse_data_file("bio.toml")  # type: ignore
 
 
 @functools.cache
 def document() -> "DocumentData":
-    return _parse_data_file("document.toml")
+    return _parse_data_file("document.toml") | {"lang": settings.LANG}  # type: ignore
 
 
 def _parse_data_file(file_name: str) -> dict:

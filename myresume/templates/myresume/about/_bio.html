@@ -1,0 +1,24 @@
+<section>
+    <p>
+        <span itemProp="name">{{ bio_data.name }}</span>
+    </p>
+    <p class="hidden">
+        <span itemProp="jobTitle">{{ bio_data.job_title }}</span>
+    </p>
+    <p>
+        <a itemProp="email" href="mailto:{{ bio_data.email }}">{{ bio_data.email }}</a>
+    </p>
+    <p class="hidden">
+        <span itemProp="url">{{ bio_data.url }}</span>
+    </p>
+    <p>
+        <span>My DevBlog:</span>
+        <br>
+        <a href="{{ bio_data.devblog }}" target="_blank" class="github-link">{{ bio_data.devblog | cut:"https://" }}</a>
+    </p>
+    <p>
+        <span>Mastodon:</span>
+        <br>
+        <a href="{{ bio_data.mastodon }}" target="_blank" class="github-link">{{ bio_data.mastodon | cut:"https://" }}</a>
+    </p>
+</section>

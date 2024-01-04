@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./myresume/components/**/*.py"],
+  content: ["./myresume/templates/**/*.html"],
   theme: {
     extend: {},
   },
