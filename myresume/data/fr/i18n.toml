@@ -1,0 +1,42 @@
+[top_links]
+pdf_download = "Télécharger au format PDF"
+language = "language:"
+
+[open_source_projects]
+title = "Projets Open Source"
+
+[education]
+title = "Formation"
+src = "1998-2000: DUT S.R.C"
+src_details = "Services et Réseaux de Communication"
+baccalaureate = "1998: Bac. Série S"
+
+[languages]
+title = "Langues"
+list = [
+    "Français (langue maternelle)",
+    "Anglais (courant)",
+    "Espagnol (niveau scolaire)",
+]
+
+[hobbies]
+title = "Centres d'intérêts"
+content = "Course à pied, escalade (bloc)"
+
+[teaching]
+title = "Formateur en développement Web"
+content = """
+Formateur HTML/CSS, JavaScript et Flash pour l'école
+<a href="https://www.digital-campus.fr/" class="underline" target="_blank" rel="noopener">Digital Campus</a>
+"""
+
+[captions]
+main_skills = "Compétences principales"
+other_skills = "Mais aussi..."
+tools = "Logiciels et environnements"
+job_experience = "Parcours professionnel"
+projects = "Quelques réalisations"
+
+[misc]
+contributor = "contributeur"
+non_exhaustive_list = "(liste non exhaustive)"

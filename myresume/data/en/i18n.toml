@@ -3,7 +3,7 @@ pdf_download = "Download in PDF format"
 language = "language:"
 
 [open_source_projects]
-title = "Open Source projects "
+title = "Open Source projects"
 
 [education]
 title = "Education"
@@ -39,3 +39,4 @@ projects = "Some of the projects I worked on"
 
 [misc]
 contributor = "contributor"
+non_exhaustive_list = "(non-exhaustive list)"

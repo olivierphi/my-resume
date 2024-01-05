@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Ubuntu", "sans-serif"],
-        serif: ["Lobster", "serif"],
+        serif: ["'Press Start 2P'", "serif"],
       },
       maxWidth: {
         256: "64rem",

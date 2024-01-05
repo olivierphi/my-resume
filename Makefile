@@ -22,8 +22,19 @@ dev: install # Start Django dev server, as well as Tailwind compilation in the b
 	@DEBUG=${debug} ${PYTHON} manage.py tailwind runserver ${address}:${port}
 
 .PHONY: build
+build: debug ?= 0
 build: ## Build the static assets (HTML files, CSS files, etc.)
-	@${PYTHON} manage.py build_resume
+	@DEBUG=${debug} ${PYTHON} manage.py build_resume
+
+.PHONY: dist-serve
+dist-serve: address ?= 127.0.0.1
+dist-serve: port ?= 3000
+dist-serve: build # Serve the built static assets from the "dist/" folder
+	@${PYTHON} -m http.server --directory dist/ --bind ${address} ${port}
+
+.PHONY: dist-print-to-pdf
+dist-print-to-pdf: build playwright_install ## Convert the built static assets from the "dist/" folder to a PDF file
+	@${PYTHON} manage.py resume_create_pdfs
 
 .PHONY: code-quality/all
 code-quality/all: code-quality/black code-quality/djlint code-quality/ruff code-quality/mypy  ## Run all our code quality tools
@@ -62,3 +73,8 @@ code-quality/mypy: ## Python's equivalent of TypeScript
 .PHONY: python_deps
 python_deps: ## Installs the Python dependencies
 	@${PYTHON_BINS}/poetry install --no-root
+
+.PHONY: playwright_install
+playwright_install: browsers ?= chromium
+playwright_install: python_deps ## Installs Playwright's browser binaries
+	@${PYTHON_BINS}/playwright install ${browsers}

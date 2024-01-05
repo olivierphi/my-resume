@@ -20,11 +20,14 @@ title = "PostgreSQL"
 icon = "postgres"
 url = "https://www.postgresql.org/about/"
 [[main]]
+title = "HTML / CSS"
+icon = "html5"
+
+
+[[others]]
 title = "GraphQL"
 icon = "graphql"
 url = "https://graphql.org/"
-
-
 [[others]]
 title = "REST"
 icon = "rest"
@@ -40,23 +43,24 @@ title = "Next.js"
 icon = "nextjs"
 url = "https://nextjs.org/"
 [[others]]
-title = "Redis"
-icon = "redis"
-url = "https://www.redis.io/"
+title = "HTMX"
+icon = "htmx"
+url = "https://htmx.org/"
 [[others]]
-title = "Go"
-icon = "go"
-url = "https://go.dev/"
-[[others]]
-title = "MySQL"
-icon = "mysql"
-[[others]]
-title = "HTML / CSS"
-icon = "html5"
+title = "Tailwind CSS"
+icon = "tailwind"
+url = "https://tailwindcss.com/"
 [[others]]
 title = "Node.js"
 icon = "nodejs"
 url = "https://nodejs.org/en/about/"
+[[others]]
+title = "Redis"
+icon = "redis"
+url = "https://www.redis.io/"
+[[others]]
+title = "MySQL"
+icon = "mysql"
 [[others]]
 title = "Elasticsearch"
 icon = "elasticsearch"
@@ -73,6 +77,10 @@ url = "https://mqtt.org/"
 title = "Rabbit MQ"
 icon = "rabbitmq"
 url = "https://www.rabbitmq.com/"
+[[others]]
+title = "Go"
+icon = "go"
+url = "https://go.dev/"
 [[others]]
 title = "PHP"
 icon = "php"
@@ -97,6 +105,7 @@ title = "Silex"
 icon = "silex"
 url = "https://silex.sensiolabs.org/"
 contributor_url = "https://github.com/fabpot/Silex/commit/6445b9e"
+not_on_pdf = true
 
 [[tools]]
 title = "Git"

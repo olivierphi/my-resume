@@ -10,6 +10,7 @@ python = "^3.12"
 django = "^5.0.1"
 django-tailwind-cli = "^2.8.0"
 django-google-fonts = "^0.0.3"
+playwright = "^1.40.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -48,6 +49,7 @@ known-first-party = ["myresume"]
 
 [tool.djlint]
 max_line_length = 88
+profile = "django"
 
 
 [build-system]

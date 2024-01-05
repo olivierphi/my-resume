@@ -1,0 +1,89 @@
+[[projects]]
+title = "Torchbox"
+content = """
+Shipping websites with tight deadlines for
+<a href="https://www.torchbox.com/">Torchbox</a>'s clients, powered by
+<span class="tech tech-with-icon django">Django</span>,
+<span class="tech tech-with-icon wagtail">Wagtail</span> and
+<span class="tech tech-with-icon htmx">HTMX</span>.
+"""
+[[projects]]
+title = "SportEasy"
+content = """
+Shipped features, fixed bugs and modernised the <span class="tech tech-with-icon django">Django</span> codebase
+as a contractor for <a href="https://www.sporteasy.net/">SportEasy</a>.
+"""
+[[projects]]
+title = "PlanHub.ca"
+content = """
+Built a GraphQL API as a contractor for <a href="https://www.planhub.ca/">PlanHub.ca</a>,
+powered by <span class="tech tech-with-icon go">Go</span> and AWS DynamoDB.
+"""
+not_on_pdf = true
+[[projects]]
+title = "Neve"
+content = """
+As a Lead Software Developer, bootstrapping of the
+<a href="https://www.nevelearning.co.uk/">Neve</a>
+e-learning platform, so that hits the mark for its first pilot test.<br/>
+I chose to use the productivity given by <span class="tech tech-with-icon django">Django</span> and
+<span class="tech tech-with-icon nextjs">Next.js</span> to be able to deliver it in due time.
+"""
+not_on_pdf = true
+[[projects]]
+title = "Cloud Solar"
+content = """
+<span class="tech tech-with-icon django">Django</span>,
+<span class="tech tech-with-icon react">React</span> and
+<span class="tech tech-with-icon graphql">GraphQL</span>
+Lead Software Developer for
+<a href="https://connectedenergy.net/cloud-solar">Cloud Solar</a>,
+an IoT platform that allow businesses to manage their solar panels fleet"""
+[[projects]]
+title = "Collector Square"
+content = """
+<span class="tech tech-with-icon symfony2">Symfony</span> and
+<span class="tech tech-with-icon javascript">JavaScript</span> Lead Developer
+for the new version of the <a href="https://www.collectorsquare.com/en">Collector Square</a>
+website and CMS, heavily based on
+<span class="tech tech-with-icon elasticsearch">Elasticsearch</span> and <span class="tech tech-with-icon redis">Redis</span>"""
+[[projects]]
+title = "Balinea"
+content = """
+<span class="tech tech-with-icon symfony2">Symfony</span> and
+<span class="tech tech-with-icon javascript">JavaScript</span> Lead Developer
+for the new version of the <a href="https://www.balinea.com/">Balinea</a> platform
+- which includes the public website, a middle-office, a back-end, a public and a private API..."""
+[[projects]]
+title = "LeMonde.fr"
+content = """
+<span class="tech tech-with-icon php">PHP</span>,
+<span class="tech tech-with-icon nodejs">Node.js</span> and
+<span class="tech tech-with-icon javascript">JavaScript</span>
+developer at <a href="https://www.lemonde.fr/">LeMonde.fr</a>, one of the main French news web site."""
+[[projects]]
+title = "Ruby on Rails Mail App"
+content = """
+Development of a mass mailing Web application for TV France International,
+based on <span class="tech tech-with-icon rails">Ruby on Rails</span>"""
+[[projects]]
+title = "Mappy Mobile website"
+content = """
+Technical lead of the <span class="tech javascript">JavaScript</span> development of the
+mobile site of <a href="https://en.mappy.com/">Mappy</a>,
+based on <span class="tech tech-with-icon javascript">JavaScript</span>.
+Member of the back-end <span class="tech tech-with-icon symfony2">Symfony2</span> team"""
+not_on_pdf = true
+[[projects]]
+title = "Bopler Games, Facebook application"
+content = """
+Technical lead of the <span class="tech php">PHP</span> development of the Facebook app
+<a href="https://www.facebook.com/BoplerGames">Bopler Games</a>,
+based on <span class="tech tech-with-icon php">Zend Framework</span>"""
+[[projects]]
+title = "Rodin Museum"
+content = """
+Technical lead on the
+<a href="https://www.musee-rodin.fr/en">Rodin Museum</a> development,
+based on <span class="tech tech-with-icon php">Zend Framework</span> and <span class="tech tech drupal">Drupal</span>"""
+not_on_pdf = true

@@ -1,0 +1,13 @@
+[[pages]]
+url_path = "/"
+target_static_html = "index.html"
+
+[[pages]]
+url_path = "/en/"
+target_static_html = "en/index.html"
+target_static_pdf = "resume.en.pdf"
+
+[[pages]]
+url_path = "/fr/"
+target_static_html = "fr/index.html"
+target_static_pdf = "resume.fr.pdf"

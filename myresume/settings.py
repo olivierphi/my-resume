@@ -2,6 +2,8 @@ from os import environ as env
 from pathlib import Path
 from typing import Literal
 
+from django.utils.log import DEFAULT_LOGGING
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "this-generates-static-files-so-the-secret-key-doesn't-matter"
@@ -35,6 +37,7 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
+                "myresume.context_processors.resume_lang",
             ],
         },
     },
@@ -75,11 +78,12 @@ STORAGES = {
 TAILWIND_CLI_VERSION = "3.4.0"
 TAILWIND_CLI_SRC_CSS = BASE_DIR / "myresume" / "assets-src" / "css" / "main.css"
 TAILWIND_CLI_DIST_CSS = "css/main.css"
+TAILWIND_CLI_PATH = BASE_DIR / "bin"
 
 # Google Fonts
 # https://github.com/andymckay/django-google-fonts
 
-GOOGLE_FONTS = ["Ubuntu", "Lobster"]
+GOOGLE_FONTS = ["Ubuntu", "Press Start 2P"]
 
 # Custom settings
 
@@ -88,3 +92,12 @@ DIST_DIR = BASE_DIR / "dist"
 
 LANG: Literal["en", "fr"] = env.get("RESUME_LANG", "en")  # type: ignore
 assert LANG in ("en", "fr")
+
+# Logging
+# https://docs.djangoproject.com/en/5.0/ref/logging/
+
+LOGGING = DEFAULT_LOGGING.copy()
+LOGGING["loggers"]["myresume"] = {
+    "handlers": ["console"],
+    "level": "DEBUG" if DEBUG else "INFO",
+}

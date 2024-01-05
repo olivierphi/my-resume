@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ document_data.lang }}">
+<html lang="{{ current_lang }}">
     {% load static tailwind_cli %}
     <head>
         <meta charset="utf-8">
@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="description" content="{{ document_data.meta.description }}">
         <meta name="keywords" content="{{ document_data.meta.keywords|join:", " }}">
-        <link rel="canonical" href="https://www.dunsap.com/">
+        <link rel="canonical" href="{{ bio_data.url }}{{ current_lang }}/">
         <meta name="generator" content="Django">
         <meta name="theme-color" content="#7f1d1d">
         <link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon-32x32.png" %}">
@@ -16,10 +16,11 @@
         <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="{% static "img/favicon-16x16.png" %}">
         {% tailwind_css %}
         <link rel="stylesheet" href="{% static 'fonts/ubuntu.css' %}">
-        <link rel="stylesheet" href="{% static 'fonts/lobster.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/pressstart2p.css' %}">
     </head>
-    <body class="flex items-stretch flex-col-reverse md:mx-auto md:max-w-256 md:flex-row bg-slate-50 text-slate-900 font-sans {% if debug %}{{ "border border-black border-solid" }}{% endif %}">
-        {% include "myresume/_about.html" %}
-        {% include "myresume/_main.html" %}
+    <body class="relative flex items-stretch flex-col-reverse md:mx-auto md:max-w-256 md:flex-row bg-slate-50 print:bg-white text-slate-800 font-sans {% if debug %}{{ "border border-black border-solid" }}{% endif %}">
+        {% include "myresume/pdf_and_language_toolbar.html" %}
+        {% include "myresume/about.html" %}
+        {% include "myresume/main.html" %}
     </body>
 </html>

@@ -3,16 +3,27 @@
     {% about_section_icon "img/icons/header-icons/user.svg" %}
     <div>
         <p>
-            <span itemProp="name">{{ bio_data.name }}</span>
+            <span itemprop="name">{{ bio_data.name }}</span>
         </p>
         <p class="hidden">
-            <span itemProp="jobTitle">{{ bio_data.job_title }}</span>
+            <span itemprop="jobTitle">{{ bio_data.job_title }}</span>
         </p>
         <p>
-            <a itemProp="email" href="mailto:{{ bio_data.email }}" class="underline">{{ bio_data.email }}</a>
+            <a itemprop="email" href="mailto:{{ bio_data.email }}" class="underline">{{ bio_data.email }}</a>
         </p>
         <p class="hidden">
-            <span itemProp="url">{{ bio_data.url }}</span>
+            <span itemprop="url">{{ bio_data.url }}</span>
+        </p>
+    </div>
+    <div class="mt-4">
+        <p>
+            <span>LinkedIn:</span>
+            <br>
+            <a href="{{ bio_data.linked_in }}"
+               class="underline"
+               itemprop="sameAs"
+               target="_blank"
+               rel="noopener">{{ bio_data.linked_in | cut:"https://www.linkedin.com" }}</a>
         </p>
     </div>
     <div class="mt-4">
@@ -21,6 +32,7 @@
             <br>
             <a href="{{ bio_data.devblog }}"
                class="underline"
+               itemprop="sameAs"
                target="_blank"
                rel="noopener">{{ bio_data.devblog | cut:"https://" }}</a>
         </p>
@@ -31,6 +43,7 @@
             <br>
             <a href="{{ bio_data.mastodon }}"
                class="underline"
+               itemprop="sameAs"
                target="_blank"
                rel="noopener">{{ bio_data.mastodon | cut:"https://" }}</a>
         </p>

@@ -1,0 +1,17 @@
+{% extends "myresume/main/_base_section.html" %}
+{% load myresume_tags %}
+{% block title %}
+    {% main_section_title i18n_data.captions.projects icon="img/icons/header-icons/lab-red.png" %}
+{% endblock title %}
+{% block content %}
+    <ul class="pl-8 list-disc print:pl-4">
+        {% for project in projects_data.projects %}
+            <li class="mb-1 text-justify {% if project.not_on_pdf %}print:hidden{% endif %}">
+                <span class="font-bold">{{ project.title }}:</span>
+                <span class="*:decoration-dotted *:underline-offset-2">
+                    {{ project.content|processed_project_content|safe }}
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

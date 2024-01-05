@@ -1,0 +1,75 @@
+[[jobs]]
+period = "Mai 2023 - Aujourd'hui"
+content = """
+    <b>Senior Python developer</b> chez chez l'agence Web
+    <a href="https://www.torchbox.com/">Torchbox</a>. (Django/Wagtail)"""
+[[jobs]]
+period = "Septembre 2022 - Avril 2023"
+content = """
+    <b>Développeur Django senior</b> en freelance chez
+    <a href="https://www.sporteasy.net/">SportEasy</a>."""
+[[jobs]]
+period = "Mars 2022 - Juillet 2022"
+content = """
+    <b>Senior software engineer</b> chez
+    <a href="https://www.textualize.io/">Textualize</a>. (Python/Next.js)"""
+not_on_pdf = true
+[[jobs]]
+period = "Février et Mars 2022"
+content = """
+    <b>Senior product engineer</b> chez
+    <a href="https://www.wayflyer.com/">Wayflyer</a>. (Django/React)"""
+not_on_pdf = true
+[[jobs]]
+period = "Octobre 2021 - Janvier 2022"
+content = """
+    <b>Senior backend developer</b> en freelance chez
+    <a href="https://www.planhub.ca/">PlanHub.ca</a> (Go) et
+    <a href="https://www.inclusive.energy/cloud-solar">Inclusive Energy</a> (Django)."""
+[[jobs]]
+period = "Octobre 2018 - Mai 2021"
+content = """
+    <b>Lead developer</b> chez
+    <a href="https://inclusive.energy/charge-controllers">Inclusive Energy</a>. (Django/React)"""
+[[jobs]]
+period = "Decembre 2017 - Mai 2018"
+content = """
+    <b>lead PHP developer</b> en freelance chez
+    <a href="https://moovone.eu/">MoovOne</a>."""
+not_on_pdf = true
+[[jobs]]
+period = "2016 - Novembre 2017"
+content = """
+    <b>Lead PHP APIs developer</b> chez
+    <a href="https://en.wikipedia.org/wiki/People%27s_Postcode_Lottery">People's Postcode Lottery</a>."""
+[[jobs]]
+period = "2014 - 2016"
+content = """
+    <b>Consultant Symfony / JavaScript</b> chez les clients de
+    <a href="https://knplabs.com/en/">KNP Labs</a>."""
+[[jobs]]
+period = "2008 - 2014"
+content = """
+    <b>Développeur PHP / JavaScript / Flash / Ruby</b>,
+    en freelance, en régie chez divers clients comme
+    <a href="https://www.lemonde.fr/">Le Monde</a>,
+    <a href="https://en.mappy.com/">Mappy</a>,
+    <a href="https://www.uzik.com/">Uzik</a>..."""
+[[jobs]]
+period = "Janvier à Mai 2009"
+content = """
+    <b>Flash Lead Developer</b> chez Tribal Nova (Montréal)."""
+[[jobs]]
+period = "2006 à 2007"
+content = """
+    <b>Développeur Flash / PHP</b> chez l'agence Web "Les Chinois"."""
+not_on_pdf = true
+[[jobs]]
+period = "2005"
+content = """
+    <b>Développeur Flash / PHP</b> chez l'agence Web WCube."""
+not_on_pdf = true
+[[jobs]]
+period = "2000 à 2004"
+content = """
+    <b>Web Developer</b> chez l'agence Web "Lp Digital"."""

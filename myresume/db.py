@@ -1,6 +1,7 @@
 import functools
+import logging
 import tomllib
-from typing import TYPE_CHECKING, Literal, NotRequired
+from typing import TYPE_CHECKING, Any, NotRequired
 
 from . import settings
 
@@ -8,15 +9,64 @@ if TYPE_CHECKING:
     from datetime import date
     from typing import TypedDict
 
+    from .domain import Lang
+
+_logger = logging.getLogger(__name__)
+
+
+@functools.cache
+def pages() -> "list[PageData]":
+    return _parse_data_file("pages.toml")["pages"]  # type: ignore
+
+
+@functools.cache
+def i18n(lang: "Lang") -> dict[str, dict[dict, str | list]]:
+    return _parse_data_file("i18n.toml", lang=lang)  # type: ignore
+
+
+@functools.cache
+def document(lang: "Lang") -> "DocumentData":
+    return _parse_data_file("document.toml", lang=lang)  # type: ignore
+
+
+@functools.cache
+def bio(lang: "Lang") -> "BioData":
+    return _parse_data_file("bio.toml", lang=lang)  # type: ignore
+
+
+@functools.cache
+def tech() -> "TechnologiesData":
+    return _parse_data_file("technologies.toml")  # type: ignore
+
+
+@functools.cache
+def job_experience(lang: "Lang") -> "JobExperiencesData":
+    return _parse_data_file("job_experience.toml", lang=lang)  # type: ignore
+
+
+@functools.cache
+def projects(lang: "Lang") -> "ProjectsData":
+    return _parse_data_file("projects.toml", lang=lang)  # type: ignore
+
+
+def clear_cache() -> None:
+    for cached_function in (pages, i18n, document, bio, tech, job_experience):
+        cached_function.cache_clear()  # type: ignore
+    _logger.info("DB cache cleared")
+
 
 if TYPE_CHECKING:
+
+    class PageData(TypedDict):
+        url_path: str
+        target_static_html: str
+        target_static_pdf: NotRequired[str]
 
     class DocumentData(TypedDict):
         subtitle: str
         meta: "DocumentMetaData"
 
     class DocumentMetaData(TypedDict):
-        lang: Literal["en", "fr"]
         title: str
         description: str
         keywords: list[str]
@@ -25,7 +75,6 @@ if TYPE_CHECKING:
         name: str
         birth: "date"
         job_title: str
-        nationality: str
         email: str
         url: str
         mastodon: str
@@ -45,29 +94,28 @@ if TYPE_CHECKING:
         icon: str
         url: NotRequired[str]
         contributor_url: NotRequired[str]
+        not_on_pdf: NotRequired[bool]
+
+    class JobExperiencesData(TypedDict):
+        jobs: list["JobData"]
+
+    class JobData(TypedDict):
+        period: str
+        content: str
+        not_on_pdf: NotRequired[bool]
+
+    class ProjectsData(TypedDict):
+        projects: list["ProjectData"]
+
+    class ProjectData(TypedDict):
+        title: str
+        content: str
+        not_on_pdf: NotRequired[bool]
 
 
-@functools.cache
-def i18n() -> dict[str, dict[dict, str | list]]:
-    return _parse_data_file("i18n.toml")  # type: ignore
-
-
-@functools.cache
-def document() -> "DocumentData":
-    return _parse_data_file("document.toml") | {"lang": settings.LANG}  # type: ignore
-
-
-@functools.cache
-def bio() -> "BioData":
-    return _parse_data_file("bio.toml")  # type: ignore
-
-
-@functools.cache
-def tech() -> "TechnologiesData":
-    return _parse_data_file("technologies.toml")  # type: ignore
-
-
-def _parse_data_file(file_name: str) -> dict:
-    file_path = settings.DATA_DIR / settings.LANG / file_name
+def _parse_data_file(file_name: str, *, lang: "Lang | None" = None) -> Any:
+    file_path = (
+        settings.DATA_DIR / lang / file_name if lang else settings.DATA_DIR / file_name
+    )
     with file_path.open("rb") as file:
         return tomllib.load(file)
