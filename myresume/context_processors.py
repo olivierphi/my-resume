@@ -13,6 +13,12 @@ def resume_lang(request: "HttpRequest") -> "ResumeLanguageData":
     }
 
 
+def root_path(request: "HttpRequest") -> dict[str, str]:
+    return {
+        "ROOT_PATH": settings.ROOT_PATH,
+    }
+
+
 if TYPE_CHECKING:
     from typing import TypedDict
 

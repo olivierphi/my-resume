@@ -1,6 +1,7 @@
 PYTHON_BINS ?= .venv/bin
 PYTHON ?= ${PYTHON_BINS}/python
-PYTHONPATH ?= ${PWD}/src
+POETRY ?= ${PYTHON_BINS}/poetry
+POETRY_INSTALL_OPTS ?=
 DJANGO_SETTINGS_MODULE ?= project.settings.development
 SUB_MAKE = ${MAKE} --no-print-directory
 
@@ -29,11 +30,11 @@ build: ## Build the static assets (HTML files, CSS files, etc.)
 .PHONY: dist-serve
 dist-serve: address ?= 127.0.0.1
 dist-serve: port ?= 3000
-dist-serve: build # Serve the built static assets from the "dist/" folder
+dist-serve: build # Serve the built static assets from the "dist/" folder via HTTP
 	@${PYTHON} -m http.server --directory dist/ --bind ${address} ${port}
 
-.PHONY: dist-print-to-pdf
-dist-print-to-pdf: build playwright_install ## Convert the built static assets from the "dist/" folder to a PDF file
+.PHONY: build-and-create-pdfs
+build-and-create-pdfs: build playwright_install ##  Build static assets and create PDF files from them
 	@${PYTHON} manage.py resume_create_pdfs
 
 .PHONY: code-quality/all
@@ -72,7 +73,7 @@ code-quality/mypy: ## Python's equivalent of TypeScript
 
 .PHONY: python_deps
 python_deps: ## Installs the Python dependencies
-	@${PYTHON_BINS}/poetry install --no-root
+	@${POETRY} install --no-root ${POETRY_INSTALL_OPTS}
 
 .PHONY: playwright_install
 playwright_install: browsers ?= chromium

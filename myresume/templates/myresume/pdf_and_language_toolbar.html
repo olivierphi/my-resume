@@ -1,7 +1,7 @@
 <div class="absolute top-2 right-0 z-10 print:hidden {% if debug %}{{ "border border-amber-900 border-solid" }}{% endif %}">
     {# djlint:off D018 #}
     <p class="text-right">
-        <a href="/resume.{{ current_lang }}.pdf"
+        <a href="{{ ROOT_PATH }}resume.{{ current_lang }}.pdf"
            class="underline"
            target="_blank"
            rel="noopener">{{ i18n_data.top_links.pdf_download }}</a>
@@ -12,7 +12,7 @@
             {% if lang == current_lang %}
                 {{ lang|upper }}
             {% else %}
-                <a href="/{{ lang }}/" class="underline">{{ lang|upper }}</a>
+                <a href="{{ ROOT_PATH }}{{ lang }}/" class="underline">{{ lang|upper }}</a>
             {% endif %}
             {% if not forloop.last %}/{% endif %}
         {% endfor %}

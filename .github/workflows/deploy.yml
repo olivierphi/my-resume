@@ -1,0 +1,50 @@
+name: Static pages deployment
+
+on:
+  push:
+    branches: ["main", "django-version"] # TMP for testing
+#    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  tests:
+    name: "Build and deploy"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: "actions/checkout@v4"
+
+      - name: "Install Poetry"
+        env:
+          POETRY_VERSION: "1.7.1"
+        run: |
+          pipx install poetry==${POETRY_VERSION}
+          which poetry
+
+      - uses: "actions/setup-python@v5"
+        with:
+          python-version: "3.12"
+          cache: 'poetry'
+
+      - name: "Install dependencies via Poetry"
+        run: poetry install --no-root --only=main,deployment
+
+      - name: "Build static pages, assets and PDFs"
+        run: |
+          make build-and-create-pdfs \
+            PYTHON_BINS="$(poetry env info --path)/bin" \
+            PYTHON="$(poetry env info --executable)" \
+            POETRY="$(which poetry)" \
+            POETRY_INSTALL_OPTS="--only=main,deployment"
+        continue-on-error: false
+
+      - name: "Add CNAME for Github Pages"
+        run: echo "dunsap.com" > dist/CNAME
+
+      - name: "Deploy to Github Pages"
+        run: poetry run ghp-import --no-history --push --force dist/

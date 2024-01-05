@@ -38,6 +38,7 @@ TEMPLATES = [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "myresume.context_processors.resume_lang",
+                "myresume.context_processors.root_path",
             ],
         },
     },
@@ -46,7 +47,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "myresume.wsgi.application"
 
 DATABASES = {}  # type: ignore [var-annotated]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -59,17 +59,25 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = env.get("STATIC_URL", "static/")
 STATICFILES_DIRS = [BASE_DIR / "myresume" / "staticfiles"]
 STATIC_ROOT = BASE_DIR / "dist" / "static"
 STORAGES = {
     "staticfiles": {
         "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
     }
+}
+
+# Logging
+# https://docs.djangoproject.com/en/5.0/ref/logging/
+
+LOGGING = DEFAULT_LOGGING.copy()
+LOGGING["loggers"]["myresume"] = {
+    "handlers": ["console"],
+    "level": "DEBUG" if DEBUG else "INFO",
 }
 
 # Tailwind CSS
@@ -93,11 +101,5 @@ DIST_DIR = BASE_DIR / "dist"
 LANG: Literal["en", "fr"] = env.get("RESUME_LANG", "en")  # type: ignore
 assert LANG in ("en", "fr")
 
-# Logging
-# https://docs.djangoproject.com/en/5.0/ref/logging/
-
-LOGGING = DEFAULT_LOGGING.copy()
-LOGGING["loggers"]["myresume"] = {
-    "handlers": ["console"],
-    "level": "DEBUG" if DEBUG else "INFO",
-}
+# Used for links to HTML & PDF files in the top right links:
+ROOT_PATH = env.get("ROOT_PATH", "/")
