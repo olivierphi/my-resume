@@ -4,9 +4,9 @@
     {% main_section_title i18n_data.captions.job_experience icon="img/icons/header-icons/video-red.svg" print_suffix=i18n_data.misc.non_exhaustive_list %}
 {% endblock title %}
 {% block content %}
-    <ul class="pl-8 list-disc print:text-sm print:pl-4">
+    <ul class="pl-4 pr-1 list-disc sm:pr-0 print:text-sm print:pl-4">
         {% for job in jobs_data.jobs %}
-            <li class="mb-1 {% if job.not_on_pdf %}print:hidden{% endif %}">
+            <li class="mb-1 text-justify {% if job.not_on_pdf %}print:hidden{% endif %}">
                 <span class="font-bold">{{ job.period }}:</span>
                 <span class="*:decoration-dotted *:underline-offset-2">{{ job.content|processed_job_content|safe }}</span>
             </li>
