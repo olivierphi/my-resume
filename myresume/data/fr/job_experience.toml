@@ -1,7 +1,7 @@
 [[jobs]]
 period = "Mai 2023 - Aujourd'hui"
 content = """
-    <b>Senior Python developer</b> chez chez l'agence Web
+    <b>Senior Python developer</b> chez l'agence Web
     <a href="https://www.torchbox.com/">Torchbox</a>. (Django/Wagtail)"""
 [[jobs]]
 period = "Septembre 2022 - Avril 2023"
@@ -72,4 +72,4 @@ not_on_pdf = true
 [[jobs]]
 period = "2000 à 2004"
 content = """
-    <b>Web Developer</b> chez l'agence Web "Lp Digital"."""
+    <b>Développeur Flash / PHP</b> chez l'agence Web "Lp Digital"."""
