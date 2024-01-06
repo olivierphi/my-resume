@@ -37,6 +37,9 @@ tools = "Logiciels et environnements"
 job_experience = "Parcours professionnel"
 projects = "Quelques réalisations"
 
+[footer]
+source_code = "Le code source de cette page web est disponible sur"
+
 [misc]
 contributor = "contributeur"
 non_exhaustive_list = "(liste non exhaustive)"
