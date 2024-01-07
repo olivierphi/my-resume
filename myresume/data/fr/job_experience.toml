@@ -41,12 +41,12 @@ not_on_pdf = true
 period = "2016 - Novembre 2017"
 content = """
     <b>Lead PHP APIs developer</b> chez
-    <a href="https://en.wikipedia.org/wiki/People%27s_Postcode_Lottery">People's Postcode Lottery</a>."""
+    <a href="https://www.postcodelottery.co.uk/">People's Postcode Lottery</a>."""
 [[jobs]]
 period = "2014 - 2016"
 content = """
     <b>Consultant Symfony / JavaScript</b> chez les clients de
-    <a href="https://knplabs.com/en/">KNP Labs</a>."""
+    <a href="https://knplabs.com/">KNP Labs</a>."""
 [[jobs]]
 period = "2008 - 2014"
 content = """

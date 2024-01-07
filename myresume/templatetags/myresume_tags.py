@@ -20,7 +20,7 @@ _PROJECT_CONTENT_TECH_PATTERN = re.compile(
 
 @register.simple_tag
 def about_section_icon(icon: str):
-    return mark_safe(f'<img src="{static(icon)}" alt="">')
+    return mark_safe(f'<img src="{static(icon)}" width="40" height="40" alt="">')
 
 
 @register.simple_tag
@@ -39,7 +39,7 @@ def main_section_title(title: str, *, icon: str, print_suffix: str | None = None
     )
     title_parts = (
         '<h3 class="-ml-2 flex items-center text-4xl my-3 text-red-900 text-bold print:text-xl print:!mt-2 print:!mb-1">',
-        f'<img src="{static(icon)}" alt="" />',
+        f'<img src="{static(icon)}" width="40" height="40" alt="" />',
         f"{title}",
         print_suffix_html,
         "</h3>",
