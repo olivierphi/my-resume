@@ -1,7 +1,7 @@
-{% load myresume_tags %}
+{% load static myresume_tags %}
 <section>
-    {% about_section_icon "img/icons/header-icons/user.svg" %}
-    <div>
+    {% svg_icon "bio" classes="size-8" %}
+    <div class="mt-4">
         <p>
             <span itemprop="name">{{ bio_data.name }}</span>
         </p>

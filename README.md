@@ -2,11 +2,15 @@
 
 What could be more pleasant than totally over-engineering your online resume when you're a Web Developer in 2024? 😄
 
+## History of the various versions
+
 Here is the history of this traditionally over-engineered CV project:
  - [The very first version](https://github.com/olivierphi/my-resume/tree/v1) was using Node.js, CoffeeScript, Vagrant and gulp (2013! ⌛).
  - The second version, in 2016, was written in [goold ol' PHP](https://github.com/olivierphi/my-resume/tree/php-version).
  - The third one, in 2017, was built [with isomorphic React](https://github.com/olivierphi/my-resume/tree/react-version) as I was in the process of getting up to speed with React.
  - After that I wanted to give Vue.js a shot, so in 2018 I wrote [an isomorphic Vue.js version](https://github.com/olivierphi/my-resume/tree/vue-version). I wasn't a huge fan of Vue.js in the end, but I still kept that version running for a few years.
+
+## <img src="./myresume/staticfiles/img/icons/techs/django.png" alt="Django logo" width="20" height="20"> The current version
 
 Well, for this 5th flavour I opted for... a [Django](https://www.djangoproject.com/)-based setup!
 

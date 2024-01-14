@@ -54,7 +54,7 @@ known-first-party = ["myresume"]
 [tool.djlint]
 max_line_length = 88
 profile = "django"
-
+ignore = "H019"
 
 [build-system]
 requires = ["poetry-core"]

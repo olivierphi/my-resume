@@ -1,4 +1,5 @@
-<div class="absolute top-0 right-1 z-10 text-sm sm:top-2 sm:right-0 sm:text-base print:hidden {% if debug %}{{ "border border-amber-900 border-solid" }}{% endif %}">
+{% load myresume_tags %}
+<div class="absolute top-0 right-2 z-10 text-sm sm:top-2 sm:text-base print:hidden {% layout_debug border_color="amber-900" %}">
     {# djlint:off D018 #}
     <p class="text-right">
         <a href="{{ ROOT_PATH }}resume.{{ current_lang }}.pdf"
@@ -6,15 +7,23 @@
            target="_blank"
            rel="noopener">{{ i18n_data.top_links.pdf_download }}</a>
     </p>
-    <p class="text-right">
+    <p class="mt-2 text-right">
         {{ i18n_data.top_links.language }}
         {% for lang in available_langs %}
             {% if lang == current_lang %}
                 {{ lang|upper }}
             {% else %}
-                <a href="{{ ROOT_PATH }}{{ lang }}/" class="underline">{{ lang|upper }}</a>
+                <a href="{{ ROOT_PATH }}{{ lang }}/"
+                   hreflang="{{ lang }}"
+                   class="underline">{{ lang|upper }}</a>
             {% endif %}
             {% if not forloop.last %}/{% endif %}
         {% endfor %}
+    </p>
+    <p class="mt-1 flex items-center justify-end">
+        <button onclick="toggleTheme()">
+            <span class="inline dark:hidden">{% svg_icon "theme-light" classes="size-5" %}</span>
+            <span class="hidden dark:inline">{% svg_icon "theme-dark" classes="size-5" %}</span>
+        </button>
     </p>
 </div>

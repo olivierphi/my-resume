@@ -1,9 +1,10 @@
-<main class="w-full p-1 md:p-6 print:p-2 {% if debug %}{{ "border border-purple-800 border-solid" }}{% endif %}">
-    <div class="mb-8 mt-6 sm:mt-0 print:mb-1">
-        <h1 class="-ml-2 my-2 text-5xl md:text-6xl font-medium print:!text-5xl print:my-0">
+{% load myresume_tags %}
+<main class="w-full p-1 md:p-6 print:p-2 {% layout_debug border_color="purple-800" %}">
+    <div class="mt-14 mb-8 md:!mt-2 print:mb-1">
+        <h1 class="-ml-1 my-2 text-5xl md:text-6xl font-medium md:-ml-2 print:!text-5xl print:my-0">
             {{ bio_data.name }}
         </h1>
-        <h2 class="my-2 text-lg text-red-900 font-serif print:text-sm print:my-1">
+        <h2 class="my-2 text-lg text-red-900 font-serif print:text-sm print:my-1 dark:text-red-600">
             {{ document_data.subtitle }}
         </h2>
     </div>

@@ -1,6 +1,7 @@
 [top_links]
 pdf_download = "Download in PDF format"
 language = "language:"
+theme = "switch to theme:"
 
 [open_source_projects]
 title = "Open Source projects"
@@ -24,9 +25,9 @@ title = "Hobbies"
 content = "Running, bouldering"
 
 [teaching]
-title = "Web development Trainer"
+title = "Web development Teacher"
 content = """
-HTML/CSS, JavaScript and Flash trainer for
+HTML/CSS, JavaScript and Flash teacher for
 <a href="https://www.digital-campus.fr/" class="underline" target="_blank" rel="noopener">Digital Campus</a>
 """
 

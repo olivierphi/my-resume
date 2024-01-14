@@ -3,7 +3,9 @@ module.exports = {
   content: [
     "./myresume/templates/**/*.html",
     "./myresume/templatetags/*.py",
+    "./myresume/assets-src/img/icons/*.svg",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {

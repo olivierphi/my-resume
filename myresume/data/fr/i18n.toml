@@ -1,6 +1,7 @@
 [top_links]
 pdf_download = "Télécharger au format PDF"
-language = "language:"
+language = "langue :"
+theme = "passer au thème :"
 
 [open_source_projects]
 title = "Projets Open Source"

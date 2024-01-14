@@ -1,0 +1,22 @@
+<script>
+  (function () {
+    // We don't need to do anything fancy here, and it's just an online resume after all
+    // so let's just write some inline JavaScript like in the old days! ^_^
+
+    // Pretty much a copy-paste from https://tailwindcss.com/docs/dark-mode#supporting-system-preference-and-manual-selection
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark'
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.theme = 'light'
+    }
+
+    window.toggleTheme = function () {
+      localStorage.theme = (localStorage.theme === 'dark') ? 'light' : 'dark'
+
+      document.documentElement.classList.toggle('dark')
+    }
+  })()
+</script>

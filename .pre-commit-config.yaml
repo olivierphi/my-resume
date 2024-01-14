@@ -5,18 +5,22 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+
   - repo: https://github.com/psf/black
     rev: 23.12.1
     hooks:
       - id: black
+
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.1.9
     hooks:
       # Linter-only; we're still using Black for code formatting atm.
       - id: ruff
         args: [ --fix ]
+
   - repo: https://github.com/djlint/djLint
     rev: v1.34.1
     hooks:
       - id: djlint-reformat-django
       - id: djlint-django
+        args: [ --ignore=H019 ]

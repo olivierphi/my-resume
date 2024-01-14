@@ -2,6 +2,7 @@ import re
 from typing import TYPE_CHECKING
 
 from django import template
+from django.conf import settings
 from django.templatetags.static import static
 from django.utils.safestring import mark_safe
 
@@ -11,16 +12,38 @@ if TYPE_CHECKING:
 register = template.Library()
 
 
+_SVG_ICONS_PATH = settings.BASE_DIR / "myresume" / "assets-src" / "img" / "icons"
+_SVG_ICONS_ROOT_ELEMENT_PATTERN = re.compile(r"""<svg +(?P<attrs>[^>]+)>""")
 _CONTENT_LINK_PATTERN = re.compile(r"""<a +(?P<href>href="https://[^"]+") *>""")
 _JOB_CONTENT_COMPANY_NAME_PATTERN = re.compile(r"<b>")
 _PROJECT_CONTENT_TECH_PATTERN = re.compile(
     r"""<span +class="tech +tech-with-icon +(?P<tech>\w+)" *>"""
 )
 
+_HIGHLIGHT_CLASSES = "font-medium text-red-900 dark:text-red-500"
+
+
+@register.simple_tag
+def svg_icon(icon: str, *, classes: str = "size-6"):
+    icon_content = (_SVG_ICONS_PATH / f"{icon}.svg").read_text()
+    return mark_safe(
+        _SVG_ICONS_ROOT_ELEMENT_PATTERN.sub(
+            rf"""<svg \g<attrs> class="{classes}">""",
+            icon_content,
+        )
+    )
+
 
 @register.simple_tag
 def about_section_icon(icon: str):
     return mark_safe(f'<img src="{static(icon)}" width="40" height="40" alt="">')
+
+
+@register.simple_tag
+def layout_debug(*, border_color: str) -> str:
+    if not settings.DEBUG_LAYOUT:
+        return ""
+    return f"border border-solid border-{border_color}"
 
 
 @register.simple_tag
@@ -30,21 +53,20 @@ def about_section_title(title: str):
     )
 
 
-@register.simple_tag
+@register.inclusion_tag("myresume/main/tags/main_section_title.html")
 def main_section_title(title: str, *, icon: str, print_suffix: str | None = None):
     print_suffix_html = (
         ""
         if print_suffix is None
-        else f""" <span class="hidden text-xl italic print:inline print:text-base">{print_suffix}</span>"""
+        else mark_safe(
+            f""" <span class="hidden text-xl italic print:inline print:text-base">{print_suffix}</span>"""
+        )
     )
-    title_parts = (
-        '<h3 class="-ml-2 flex items-center text-4xl my-3 text-red-900 text-bold print:text-xl print:!mt-2 print:!mb-1">',
-        f'<img src="{static(icon)}" width="40" height="40" alt="" />',
-        f"{title}",
-        print_suffix_html,
-        "</h3>",
-    )
-    return mark_safe("".join(title_parts))
+    return {
+        "title": title,
+        "icon": icon,
+        "print_suffix": print_suffix_html,
+    }
 
 
 @register.inclusion_tag("myresume/main/tags/main_tech.html")
@@ -68,7 +90,7 @@ def processed_job_content(content: str) -> str:
         content,
     )
     content = _JOB_CONTENT_COMPANY_NAME_PATTERN.sub(
-        r"""<b class="font-medium text-red-900">""",
+        rf"""<b class="{_HIGHLIGHT_CLASSES}">""",
         content,
     )
     return content
@@ -89,7 +111,7 @@ def processed_project_content(content: str) -> str:
 
 def _process_project_tech_pattern(match: re.Match) -> str:
     return (
-        """<span class="font-medium text-red-900">"""
+        f"""<span class="{_HIGHLIGHT_CLASSES}">"""
         f"""<img src="{static(f"img/icons/techs/{match['tech']}.png")}" """
         """class="size-4 inline-block" width="16" height="16" alt=""> """
     )

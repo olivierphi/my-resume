@@ -1,0 +1,8 @@
+{% load myresume_tags %}
+<h3 class="flex items-center text-3xl my-3 text-red-900 text-bold md:-ml-2 md:text-4xl print:text-xl print:!mt-2 print:!mb-1 dark:text-red-600">
+    <span class="size-10 aspect-square mr-2 flex justify-center items-center bg-red-900 text-slate-50 rounded-full">
+        {% svg_icon icon classes="size-6" %}
+    </span>
+    {{ title }}
+    {{ print_suffix }}
+</h3>

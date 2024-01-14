@@ -1,3 +1,4 @@
+{% load myresume_tags %}
 <!DOCTYPE html>
 <html lang="{{ current_lang }}">
     {% load static tailwind_cli %}
@@ -17,9 +18,10 @@
         {% tailwind_css %}
         <link rel="stylesheet" href="{% static 'fonts/ubuntu.css' %}">
         <link rel="stylesheet" href="{% static 'fonts/pressstart2p.css' %}">
+        {% include "myresume/pdf_and_language_toolbar.js.html" %}
     </head>
-    <body class="bg-slate-50 print:bg-white text-slate-800 font-sans">
-        <div class="relative flex items-stretch flex-col-reverse md:mx-auto md:max-w-256 md:flex-row {% if debug %}{{ "border border-black border-solid" }}{% endif %}">
+    <body class="bg-slate-50 text-slate-800 font-sans print:bg-white dark:bg-slate-800 dark:text-slate-200">
+        <div class="relative flex items-stretch flex-col-reverse md:mx-auto md:max-w-256 md:flex-row {% layout_debug border_color="black" %}">
             {% include "myresume/pdf_and_language_toolbar.html" %}
             {% include "myresume/about.html" %}
             {% include "myresume/main.html" %}

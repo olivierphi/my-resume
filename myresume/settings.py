@@ -103,3 +103,4 @@ assert LANG in ("en", "fr")
 
 # Used for links to HTML & PDF files in the top right links:
 ROOT_PATH = env.get("ROOT_PATH", "/")
+DEBUG_LAYOUT = bool(env.get("DEBUG_LAYOUT", ""))
