@@ -6,11 +6,26 @@ from django.conf import settings
 from django.templatetags.static import static
 from django.utils.safestring import mark_safe
 
+from .. import theme
+
 if TYPE_CHECKING:
+    from typing import Final
+
     from myresume.db import MainTechnologyData, OtherTechnologyData
 
 register = template.Library()
 
+
+_THEME: "Final[dict[str, str]]" = {
+    "META_THEME_COLOR": theme.META_THEME_COLOR,
+    "BODY": " ".join(theme.BODY),
+    "TITLE": " ".join(theme.TITLE),
+    "SUBTITLE": " ".join(theme.SUBTITLE),
+    "BLOCK_ABOUT": " ".join(theme.BLOCK_ABOUT),
+    "MAIN_SECTION_TITLE": " ".join(theme.MAIN_SECTION_TITLE),
+    "MAIN_SECTION_TITLE_ICON": " ".join(theme.MAIN_SECTION_TITLE_ICON),
+    "HIGHLIGHT": " ".join(theme.HIGHLIGHT),
+}
 
 _SVG_ICONS_PATH = settings.BASE_DIR / "myresume" / "assets-src" / "img" / "icons"
 _SVG_ICONS_ROOT_ELEMENT_PATTERN = re.compile(r"""<svg +(?P<attrs>[^>]+)>""")
@@ -20,7 +35,7 @@ _PROJECT_CONTENT_TECH_PATTERN = re.compile(
     r"""<span +class="tech +tech-with-icon +(?P<tech>\w+)" *>"""
 )
 
-_HIGHLIGHT_CLASSES = "font-medium text-red-900 dark:text-red-500"
+_HIGHLIGHT_CLASSES = f"font-medium {_THEME['HIGHLIGHT']}"
 
 
 @register.simple_tag
@@ -37,6 +52,11 @@ def svg_icon(icon: str, *, classes: str = "size-6"):
 @register.simple_tag
 def about_section_icon(icon: str):
     return mark_safe(f'<img src="{static(icon)}" width="40" height="40" alt="">')
+
+
+@register.simple_tag
+def theme(*, element_id: str) -> str:
+    return _THEME[element_id]
 
 
 @register.simple_tag
@@ -59,7 +79,7 @@ def main_section_title(title: str, *, icon: str, print_suffix: str | None = None
         ""
         if print_suffix is None
         else mark_safe(
-            f""" <span class="hidden text-xl italic print:inline print:text-base">{print_suffix}</span>"""
+            f""" <span class="hidden text-xl italic print:inline print:!text-base print:!pl-6">{print_suffix}</span>"""
         )
     )
     return {

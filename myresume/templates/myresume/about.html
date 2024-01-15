@@ -2,8 +2,8 @@
 {% load static %}
 <aside itemscope
        itemtype="https://schema.org/Person"
-       class="md:w-1/3 bg-red-900 text-slate-50 print:text-sm dark:bg-red-850 dark:text-slate-200 {% layout_debug border_color="cyan-800" %}">
-    <img src="{% static "img/me.jpg" %}" alt="A photo of me" width="112" height="112" class="block size-28 mx-auto my-4 rounded-full border-2 border-slate-50 border-solid">
+       class="md:w-1/3 {% theme element_id="BLOCK_ABOUT" %} print:text-sm  {% layout_debug border_color="cyan-800" %}">
+    <img src="{% static "img/me.jpg" %}" alt="A photo of me" width="112" height="112" class="block size-28 mx-auto my-4 rounded-full border-2 border-slate-50 border-solid print:!mb-0">
     <div class="grid grid-cols-2 md:grid-cols-1 gap-8 p-8 print:gap-5 print:p-5">
         {% include "myresume/about/bio.html" %}
         {% include "myresume/about/open_source.html" %}

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./myresume/theme.py",
     "./myresume/templates/**/*.html",
     "./myresume/templatetags/*.py",
     "./myresume/assets-src/img/icons/*.svg",
@@ -10,7 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Ubuntu", "sans-serif"],
-        serif: ["'Press Start 2P'", "serif"],
+        pixel: ["'Press Start 2P'", "monospace"],
       },
       maxWidth: {
         256: "64rem",

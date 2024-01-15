@@ -10,7 +10,8 @@
         <meta name="keywords" content="{{ document_data.meta.keywords|join:", " }}">
         <link rel="canonical" href="{{ bio_data.url }}{{ current_lang }}/">
         <meta name="generator" content="Django">
-        <meta name="theme-color" content="#7f1d1d">
+        <meta name="theme-color"
+              content="{% theme element_id="META_THEME_COLOR" %}">
         <link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon-32x32.png" %}">
         <link rel="icon" type="image/png" sizes="16x16" href="{% static "img/favicon-16x16.png" %}">
         <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="{% static "img/favicon-32x32.png" %}">
@@ -20,7 +21,7 @@
         <link rel="stylesheet" href="{% static 'fonts/pressstart2p.css' %}">
         {% include "myresume/pdf_and_language_toolbar.js.html" %}
     </head>
-    <body class="bg-slate-50 text-slate-800 font-sans print:bg-white dark:bg-slate-800 dark:text-slate-200">
+    <body class=" font-sans {% theme element_id="BODY" %}">
         <div class="relative flex items-stretch flex-col-reverse md:mx-auto md:max-w-256 md:flex-row {% layout_debug border_color="black" %}">
             {% include "myresume/pdf_and_language_toolbar.html" %}
             {% include "myresume/about.html" %}
