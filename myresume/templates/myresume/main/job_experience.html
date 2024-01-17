@@ -1,15 +1,41 @@
 {% extends "myresume/main/_base_section.html" %}
+
 {% load myresume_tags %}
+
 {% block title %}
-    {% main_section_title i18n_data.captions.job_experience icon="job-experience" print_suffix=i18n_data.misc.non_exhaustive_list %}
+    {% main_section_title i18n_data.captions.job_experience icon="job-experience" %}
 {% endblock title %}
+
 {% block content %}
     <ul class="pl-4 pr-1 list-disc sm:pr-0 print:text-sm print:pl-4">
         {% for job in jobs_data.jobs %}
-            <li class="mb-1 text-justify {% if job.not_on_pdf %}print:hidden{% endif %}">
+            <li class="mb-1 text-justify
+                       {% if job.not_on_pdf %}print:hidden{% endif %}"
+                {% if job.organisation %}
+                    itemscope itemtype="https://schema.org/Organization" itemprop="
+                    {% if job.current %}
+                        worksFor
+                    {% else %}
+                        alumniOf
+                    {% endif %}
+                "
+                {% endif %}>
+                {% if job.organisation %}
+                    <meta itemprop="name" content="{{ job.organisation.name }}" />
+                    {% if job.organisation.url %}
+                        <meta itemprop="url" content="{{ job.organisation.url }}" />
+                    {% endif %}
+                {% endif %}
                 <span class="font-bold">{{ job.period }}:</span>
                 <span class="*:decoration-dotted *:underline-offset-2">{{ job.content|processed_job_content|safe }}</span>
             </li>
         {% endfor %}
     </ul>
+    <div class="hidden my-1 font-semibold italic {% theme element_id="HIGHLIGHT" %} print:!block">
+        ⇒ {{ i18n_data.misc.exhaustive_list_link }}
+        <a href="https://www.linkedin.com{{ bio_data.linked_in }}"
+           class="underline"
+           target="_blank"
+           rel="noopener">LinkedIn</a>
+    </div>
 {% endblock content %}

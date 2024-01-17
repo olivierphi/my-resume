@@ -43,4 +43,4 @@ source_code = "The source code of this web page is available on"
 
 [misc]
 contributor = "contributor"
-non_exhaustive_list = "(non-exhaustive list)"
+exhaustive_list_link = "exhaustive list on "

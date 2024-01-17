@@ -1,4 +1,5 @@
 import re
+from textwrap import dedent
 from typing import TYPE_CHECKING
 
 from django import template
@@ -18,13 +19,13 @@ register = template.Library()
 
 _THEME: "Final[dict[str, str]]" = {
     "META_THEME_COLOR": theme.META_THEME_COLOR,
-    "BODY": " ".join(theme.BODY),
-    "TITLE": " ".join(theme.TITLE),
-    "SUBTITLE": " ".join(theme.SUBTITLE),
-    "BLOCK_ABOUT": " ".join(theme.BLOCK_ABOUT),
-    "MAIN_SECTION_TITLE": " ".join(theme.MAIN_SECTION_TITLE),
-    "MAIN_SECTION_TITLE_ICON": " ".join(theme.MAIN_SECTION_TITLE_ICON),
-    "HIGHLIGHT": " ".join(theme.HIGHLIGHT),
+    "BODY": str(theme.BODY),
+    "TITLE": str(theme.TITLE),
+    "SUBTITLE": str(theme.SUBTITLE),
+    "BLOCK_ABOUT": str(theme.BLOCK_ABOUT),
+    "MAIN_SECTION_TITLE": str(theme.MAIN_SECTION_TITLE),
+    "MAIN_SECTION_TITLE_ICON": str(theme.MAIN_SECTION_TITLE_ICON),
+    "HIGHLIGHT": str(theme.HIGHLIGHT),
 }
 
 _SVG_ICONS_PATH = settings.BASE_DIR / "myresume" / "assets-src" / "img" / "icons"
@@ -74,18 +75,10 @@ def about_section_title(title: str):
 
 
 @register.inclusion_tag("myresume/main/tags/main_section_title.html")
-def main_section_title(title: str, *, icon: str, print_suffix: str | None = None):
-    print_suffix_html = (
-        ""
-        if print_suffix is None
-        else mark_safe(
-            f""" <span class="hidden text-xl italic print:inline print:!text-base print:!pl-6">{print_suffix}</span>"""
-        )
-    )
+def main_section_title(title: str, *, icon: str):
     return {
         "title": title,
         "icon": icon,
-        "print_suffix": print_suffix_html,
     }
 
 
@@ -101,6 +94,23 @@ def main_section_other_tech(tech: "OtherTechnologyData") -> dict:
     return tech | {
         "icon_url": static(f"img/icons/techs/{tech['icon']}.png"),
     }
+
+
+@register.simple_tag
+def tech_with_schema(*, title: str, url: str | None = None) -> str:
+    if url:
+        url_part = f"""<meta itemprop="url" content="{url}" />"""
+    else:
+        url_part = ""
+
+    return mark_safe(
+        dedent(
+            f"""<span itemprop="knowsAbout" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <span itemprop="name">{ title }</span>
+                {url_part}
+            </span>"""
+        )
+    )
 
 
 @register.filter

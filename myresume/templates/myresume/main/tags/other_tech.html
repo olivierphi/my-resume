@@ -1,3 +1,5 @@
+{% load myresume_tags %}
+
 <div {% if not_on_pdf %}class="print:hidden"{% endif %}>
     <div class="flex">
         <img src="{{ icon_url }}"
@@ -6,9 +8,11 @@
              width="16"
              height="16">
         {% if url %}
-            <a href="{{ url }}" class="underline" target="_blank" rel="noopener">{{ title }}</a>
+            <a href="{{ url }}" class="underline" target="_blank" rel="noopener">
+                {% tech_with_schema title=title url=url %}
+            </a>
         {% else %}
-            {{ title }}
+            {% tech_with_schema title=title %}
         {% endif %}
     </div>
     {% if contributor_url %}

@@ -1,29 +1,26 @@
 {% load static myresume_tags %}
+
 <section>
-    {% svg_icon "bio" classes="size-8" %}
+    {% svg_icon "bio" classes="size-8 print:size-6" %}
     <div class="mt-4">
         <p>
             <span itemprop="name">{{ bio_data.name }}</span>
         </p>
-        <p class="hidden">
-            <span itemprop="jobTitle">{{ bio_data.job_title }}</span>
-        </p>
         <p>
             <a itemprop="email" href="mailto:{{ bio_data.email }}" class="underline">{{ bio_data.email }}</a>
         </p>
-        <p class="hidden">
-            <span itemprop="url">{{ bio_data.url }}</span>
-        </p>
+        <meta itemprop="jobTitle" content="{{ bio_data.job_title }}" />
+        <meta itemprop="url" content="{{ bio_data.url }}" />
     </div>
     <div class="mt-4">
         <p>
             <span>LinkedIn:</span>
             <br>
-            <a href="{{ bio_data.linked_in }}"
+            <a href="https://www.linkedin.com{{ bio_data.linked_in }}"
                class="underline"
                itemprop="sameAs"
                target="_blank"
-               rel="noopener">{{ bio_data.linked_in | cut:"https://www.linkedin.com" }}</a>
+               rel="noopener">{{ bio_data.linked_in }}</a>
         </p>
     </div>
     <div class="mt-4">

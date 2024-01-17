@@ -3,22 +3,27 @@ period = "May 2023 - Present"
 content = """
     <b>Senior Python developer</b> for the Web agency
     <a href="https://www.torchbox.com/">Torchbox</a>. (Django/Wagtail)"""
+organisation = { name="Torchbox", url="https://www.torchbox.com/" }
+current = true
 [[jobs]]
 period = "September 2022 - April 2023"
 content = """
     <b>Senior Django developer</b> as a contractor for
     <a href="https://www.sporteasy.net/">SportEasy</a>."""
+organisation = { name="SportEasy", url="https://www.sporteasy.net/en/" }
 [[jobs]]
 period = "March 2022 - July 2022"
 content = """
     <b>Senior software engineer</b> at
     <a href="https://www.textualize.io/">Textualize</a>. (Python/Next.js)"""
+organisation = { name="Textualize", url="https://www.textualize.io/" }
 not_on_pdf = true
 [[jobs]]
 period = "February 2022 - March 2022"
 content = """
     <b>Senior product engineer</b> at
     <a href="https://www.wayflyer.com/">Wayflyer</a>. (Django/React)"""
+organisation = { name="Wayflyer", url="https://www.wayflyer.com/" }
 not_on_pdf = true
 [[jobs]]
 period = "October 2021 - January 2022"
@@ -26,27 +31,31 @@ content = """
     <b>Senior backend developer</b> as a contractor for
     <a href="https://www.planhub.ca/">PlanHub.ca</a> (Go) and
     <a href="https://www.inclusive.energy/cloud-solar">Inclusive Energy</a>. (Django)"""
+organisation = { name="Wayflyer", url="https://www.planhub.ca/" }
 [[jobs]]
 period = "October 2018 - May 2021"
 content = """
     <b>Lead developer</b> at
     <a href="https://inclusive.energy/charge-controllers">Inclusive Energy</a>. (Django/React)"""
+organisation = { name="Inclusive Energy", url="https://inclusive.energy/" }
 [[jobs]]
 period = "December 2017 - May 2018"
 content = """
     Remote <b>lead PHP developer</b> as a contractor for
-    <a href="https://moovone.eu/en/">MoovOne</a>."""
+    <a href="https://www.coachhub.com/en/moovone/">MoovOne</a>."""
 not_on_pdf = true
 [[jobs]]
 period = "2016 - November 2017"
 content = """
     <b>Lead PHP APIs developer</b> at
     <a href="https://www.postcodelottery.co.uk/">People's Postcode Lottery</a>."""
+organisation = { name="People's Postcode Lottery", url="https://www.postcodelottery.co.uk/" }
 [[jobs]]
 period = "2014 - 2016"
 content = """
     <b>Symfony / JavaScript consultant</b> for the Web agency
     <a href="https://knplabs.com/en/">KNP Labs</a>."""
+organisation = { name="KNP Labs", url="https://knplabs.com/en/" }
 [[jobs]]
 period = "2008 - 2014"
 content = """

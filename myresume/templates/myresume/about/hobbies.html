@@ -1,6 +1,7 @@
 {% load myresume_tags %}
+
 <section>
-    {% svg_icon "hobbies" classes="size-8" %}
+    {% svg_icon "hobbies" classes="size-8 print:size-6" %}
     {% about_section_title i18n_data.hobbies.title %}
     <p itemprop="knowsAbout">{{ i18n_data.hobbies.content }}</p>
 </section>

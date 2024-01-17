@@ -99,10 +99,16 @@ if TYPE_CHECKING:
     class JobExperiencesData(TypedDict):
         jobs: list["JobData"]
 
+    class OrganisationData(TypedDict):
+        name: str
+        url: NotRequired[str]
+
     class JobData(TypedDict):
         period: str
         content: str
+        organisation: NotRequired[OrganisationData]
         not_on_pdf: NotRequired[bool]
+        current: NotRequired[bool]
 
     class ProjectsData(TypedDict):
         projects: list["ProjectData"]
