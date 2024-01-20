@@ -2,6 +2,7 @@ from typing import TYPE_CHECKING
 
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.utils.timezone import now
 
 from . import db
 
@@ -18,6 +19,7 @@ def index(request: "HttpRequest", *, lang: "Lang" = "en") -> HttpResponse:
         request,
         "myresume/index.html",
         {
+            "now": now(),
             "i18n_data": db.i18n(lang),
             "document_data": db.document(lang),
             "bio_data": db.bio(lang),

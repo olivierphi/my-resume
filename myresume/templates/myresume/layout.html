@@ -7,11 +7,16 @@
     <head>
         <meta charset="utf-8">
         <title>{{ document_data.meta.title }}</title>
+        {#  @link https://developers.google.com/search/docs/crawling-indexing/special-tags #}
+        {#  @link https://wiki.whatwg.org/wiki/MetaExtensions #}
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="description" content="{{ document_data.meta.description }}">
         <meta name="keywords" content="{{ document_data.meta.keywords|join:", " }}">
         <link rel="canonical" href="{{ bio_data.url }}{{ current_lang }}/">
+        <meta name="author" content="{{ bio_data.name }}" />
+        <meta name="color-scheme" content="dark light" />
         <meta name="generator" content="Django">
+        <meta name="dc.modified" content="{{ now|date:"DATETIME_FORMAT" }}">
         <meta name="theme-color"
               content="{% theme element_id="META_THEME_COLOR" %}">
         <link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon-32x32.png" %}">

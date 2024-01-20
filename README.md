@@ -32,7 +32,6 @@ On top of that I've also used some classic Python and Django packages, such as:
  - [Ruff](https://docs.astral.sh/ruff/) _(still using Black for formatting at the moment, though)_
  - [pre-commit](https://pre-commit.com/)
  - [djLint](https://www.djlint.com/)
- - [django-fastdev](https://github.com/boxed/django-fastdev)
 
 ## Is it really over-engineered?
 

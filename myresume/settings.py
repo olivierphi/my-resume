@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     "myresume",
 ]
 if DEBUG:
-    INSTALLED_APPS += ["django_browser_reload", "django_fastdev"]
+    INSTALLED_APPS += ["django_browser_reload"]
 
 MIDDLEWARE = []
 if DEBUG:

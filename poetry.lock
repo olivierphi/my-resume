@@ -295,19 +295,6 @@ asgiref = ">=3.6"
 Django = ">=3.2"
 
 [[package]]
-name = "django-fastdev"
-version = "1.8.0"
-description = "Django-fastdev is an app that makes it faster and more fun to develop Django apps"
-optional = false
-python-versions = "*"
-files = [
-    {file = "django-fastdev-1.8.0.tar.gz", hash = "sha256:6eb4ba20637034e0e250e874de4b64a455d70f25ea0b87b8f2c49984532497ea"},
-]
-
-[package.dependencies]
-Django = ">=2.0"
-
-[[package]]
 name = "django-google-fonts"
 version = "0.0.3"
 description = "Easy to install and offline Google fonts in Django projects"
@@ -1301,4 +1288,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "08fb2ac5797c35c7ee33425eb468428dc3eca6cd83990c0bfac4dc572ceea730"
+content-hash = "a2fa1aa1cfa731ae06b03a88e6be4412fffade8284a2d8d916674e2a93f8d678"
