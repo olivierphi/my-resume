@@ -83,6 +83,7 @@ content = """
 Direction technique du développement <span class="tech php">PHP</span> de l'app
 Facebook <a href="https://www.facebook.com/BoplerGames">Bopler Games</a>,
 basée sur <span class="tech tech-with-icon php">Zend Framework</span>"""
+not_on_pdf = true
 [[projects]]
 title = "Rodin Museum"
 content = """

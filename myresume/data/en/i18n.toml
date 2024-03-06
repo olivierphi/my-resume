@@ -6,23 +6,16 @@ theme = "switch to theme:"
 [open_source_projects]
 title = "Open Source projects"
 
-[education]
-title = "Education"
-src = "1998-2000: DUT S.R.C"
-src_details = "Communication Services and Networks"
-baccalaureate = "1998: Scientific Baccalaureate"
-
-[languages]
-title = "Languages"
-list = [
-    "French (native speaker)",
-    "English (fluent)",
-    "Spanish (school level)",
-]
-
 [hobbies]
 title = "Hobbies"
 content = "Running, bouldering"
+
+[side_projects]
+title = "Side projects"
+content = """
+<a href="https://zakuchess.com/" class="underline" target="_blank" rel="noopener">ZakuChess ♞</a>,
+my open source Web game.
+"""
 
 [teaching]
 title = "Web development Teacher"
@@ -30,6 +23,19 @@ content = """
 HTML/CSS, JavaScript and Flash teacher for
 <a href="https://www.digital-campus.fr/" class="underline" target="_blank" rel="noopener">Digital Campus</a>
 """
+
+[languages]
+title = "Languages"
+list = [
+    "English (fluent)",
+    "French (native speaker)",
+]
+
+[education]
+title = "Education"
+src = "1998-2000: DUT S.R.C"
+src_details = "Communication Services and Networks"
+baccalaureate = "1998: Scientific Baccalaureate"
 
 [captions]
 main_skills = "Main skills"
