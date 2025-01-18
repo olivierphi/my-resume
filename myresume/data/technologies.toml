@@ -34,72 +34,48 @@ icon = "rest"
 [[others]]
 title = "GraphQL"
 icon = "graphql"
-url = "https://graphql.org/"
 [[others]]
 title = "HTMX"
 icon = "htmx"
-url = "https://htmx.org/"
 [[others]]
-title = "Heroku"
-icon = "heroku"
-url = "https://www.heroku.com/"
-[[others]]
-title = "AWS"
-icon = "aws"
-url = "https://aws.amazon.com/"
-[[others]]
-title = "Docker"
-icon = "docker"
-[[others]]
-title = "JavaScript"
-icon = "javascript"
+title = "Wagtail"
+icon = "wagtail"
 [[others]]
 title = "Next.js"
 icon = "nextjs"
-url = "https://nextjs.org/"
+[[others]]
+title = "Vue.js"
+icon = "vue"
 [[others]]
 title = "Tailwind"
 icon = "tailwind"
-url = "https://tailwindcss.com/"
 [[others]]
 title = "Redis"
 icon = "redis"
-url = "https://www.redis.io/"
 [[others]]
 title = "SQLite"
 icon = "sqlite"
 [[others]]
 title = "Elasticsearch"
 icon = "elasticsearch"
-url = "https://www.elastic.co/products/elasticsearch"
 [[others]]
 title = "MQTT"
 icon = "mqtt"
-url = "https://mqtt.org/"
 [[others]]
 title = "Rabbit MQ"
 icon = "rabbitmq"
-url = "https://www.rabbitmq.com/"
-[[others]]
-title = "Wagtail"
-icon = "wagtail"
-url = "https://wagtail.org/"
 [[others]]
 title = "Go"
 icon = "go"
-url = "https://go.dev/"
 [[others]]
 title = "PHP"
 icon = "php"
-url = "https://www.php.net/"
 [[others]]
 title = "Symfony"
 icon = "symfony2"
-url = "https://symfony.com"
 [[others]]
 title = "Ruby on Rails"
 icon = "rails"
-url = "https://rubyonrails.org/"
 
 [[tools]]
 title = "Git"

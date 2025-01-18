@@ -1,10 +1,16 @@
 [[jobs]]
-period = "Depuis 2023"
+period = "Depuis 2024"
+content = """
+    <b>Senior fullstack developer</b> à
+    <a href="https://www.activitystream.com/">Activity Stream</a>. (Django/Vue.js)"""
+organisation = { name="Activity Stream", url="https://www.activitystream.com/" }
+current = true
+[[jobs]]
+period = "2023 - 2024"
 content = """
     <b>Senior Python developer</b> chez l'agence Web
     <a href="https://www.torchbox.com/">Torchbox</a>. (Django/Wagtail)"""
 organisation = { name="Torchbox", url="https://www.torchbox.com/" }
-current = true
 [[jobs]]
 period = "2022"
 content = """
