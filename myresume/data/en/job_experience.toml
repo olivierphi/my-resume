@@ -1,10 +1,16 @@
 [[jobs]]
-period = "Since 2023"
+period = "Since 2024"
+content = """
+    Django and Vue.js <b>Senior fullstack developer</b> at
+    <a href="https://www.activitystream.com/">Activity Stream</a>."""
+organisation = { name="ctivity Stream", url="https://www.activitystream.com/" }
+current = true
+[[jobs]]
+period = "2023 - 2024"
 content = """
     Django, Wagtail, Node.js and React <b>Senior developer</b> for the Web agency
     <a href="https://www.torchbox.com/">Torchbox</a>."""
 organisation = { name="Torchbox", url="https://www.torchbox.com/" }
-current = true
 [[jobs]]
 period = "2022"
 content = """
