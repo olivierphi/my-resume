@@ -25,6 +25,5 @@ def index(request: "HttpRequest", *, lang: "Lang" = "en") -> HttpResponse:
             "bio_data": db.bio(lang),
             "tech_data": db.tech(),
             "jobs_data": db.job_experience(lang),
-            "projects_data": db.projects(lang),
         },
     )

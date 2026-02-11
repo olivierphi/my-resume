@@ -26,6 +26,7 @@ _THEME: "Final[dict[str, str]]" = {
     "MAIN_SECTION_TITLE": str(theme.MAIN_SECTION_TITLE),
     "MAIN_SECTION_TITLE_ICON": str(theme.MAIN_SECTION_TITLE_ICON),
     "HIGHLIGHT": str(theme.HIGHLIGHT),
+    "TECH_BADGE": str(theme.TECH_BADGE),
 }
 
 _SVG_ICONS_PATH = settings.BASE_DIR / "myresume" / "assets-src" / "img" / "icons"
