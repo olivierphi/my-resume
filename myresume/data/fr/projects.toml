@@ -1,4 +1,14 @@
 [[projects]]
+title = "Activity Stream"
+content = """
+Maintenance et développement de nouvelles fonctionnalités sur les platformes multitenantes gérées par
+<a href="https://www.activitystream.com/">Activity Stream</a>, basées sur
+<span class="tech tech-with-icon python">Python</span>,
+<span class="tech tech-with-icon django">Django</span>,
+<span class="tech tech-with-icon react">React</span> et
+<span class="tech tech-with-icon vue">Vue.js</span>.
+"""
+[[projects]]
 title = "Torchbox"
 content = """
 Lead developer sur différnents projets pour les clients de
@@ -33,6 +43,7 @@ pour le pilote de la plateforme de e-learning
 <a href="https://www.nevelearning.co.uk/">Neve</a>, déployée
 sur <span class="tech tech-with-icon aws">AWS</span>.
 """
+not_on_pdf = true
 [[projects]]
 title = "Cloud Solar"
 content = """

@@ -1,4 +1,14 @@
 [[projects]]
+title = "Activity Stream"
+content = """
+Maintaining and developing new features on the several multitenant platforms managed by
+<a href="https://www.activitystream.com/">Activity Stream</a>, based on
+<span class="tech tech-with-icon python">Python</span>,
+<span class="tech tech-with-icon django">Django</span>,
+<span class="tech tech-with-icon react">React</span> and
+<span class="tech tech-with-icon vue">Vue.js</span>.
+"""
+[[projects]]
 title = "Torchbox"
 content = """
 Leading the development of various projects with tight deadlines for
@@ -34,6 +44,7 @@ Built with <span class="tech tech-with-icon django">Django</span> and
 <span class="tech tech-with-icon nextjs">Next.js</span>,
 and deployed to <span class="tech tech-with-icon aws">AWS</span>.
 """
+not_on_pdf = true
 [[projects]]
 title = "Cloud Solar"
 content = """

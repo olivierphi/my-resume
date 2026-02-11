@@ -2,7 +2,7 @@
 period = "Depuis 2024"
 content = """
     <b>Senior fullstack developer</b> à
-    <a href="https://www.activitystream.com/">Activity Stream</a>. (Django/Vue.js)"""
+    <a href="https://www.activitystream.com/">Activity Stream</a>. (Django/React/Vue.js)"""
 organisation = { name="Activity Stream", url="https://www.activitystream.com/" }
 current = true
 [[jobs]]

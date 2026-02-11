@@ -1,7 +1,7 @@
 [[jobs]]
 period = "Since 2024"
 content = """
-    Django and Vue.js <b>Senior fullstack developer</b> at
+    Django, React and Vue.js <b>Senior fullstack developer</b> at
     <a href="https://www.activitystream.com/">Activity Stream</a>."""
 organisation = { name="ctivity Stream", url="https://www.activitystream.com/" }
 current = true
