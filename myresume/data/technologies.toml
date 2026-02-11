@@ -70,6 +70,9 @@ icon = "php"
 [[others]]
 title = "Symfony"
 icon = "symfony2"
+[[others]]
+title = "Ruby on Rails"
+icon = "rails"
 
 [[tools]]
 title = "Git"

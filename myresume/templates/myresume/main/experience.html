@@ -7,7 +7,7 @@
 {% endblock title %}
 
 {% block content %}
-    <ul class="pl-6 list-disc sm:pr-0 print:text-sm print:pl-4">
+    <ul class="pl-6 list-disc sm:pr-0 print:!text-sm print:!pl-4">
         {% for job in jobs_data.jobs %}
             <li class="mb-3 {% if job.not_on_pdf %}print:hidden{% endif %}"
                 {% if job.organisation %} itemscope itemtype="https://schema.org/Organization" itemprop="{{ job.current|yesno:"worksFor,alumniOf" }}" {% endif %}>
@@ -22,25 +22,26 @@
                     <span class="*:decoration-dotted *:underline-offset-2">{{ job.content|processed_job_content|safe }}</span>
                 </div>
                 {% if job.projects %}
-                    <ul class="list-disc pl-6 mt-1 space-y-0.5">
-                        {% for project in job.projects %}<li>{{ project|safe }}</li>{% endfor %}
+                    <ul class="list-disc pl-6 mt-1 space-y-0.5 print:!mt-0">
+                        {% for project in job.projects %}
+                            <li class="print:text-xs">{{ project|safe }}</li>
+                        {% endfor %}
                     </ul>
                 {% endif %}
                 {% if job.tags %}
-                    <div class="flex flex-wrap gap-1.5 mt-2">
+                    <div class="flex flex-wrap gap-1.5 mt-2 print:!gap-1 print:!mt-1">
                         {% for tag in job.tags %}
-                            <span class="inline-block px-2 py-0.5 text-xs font-medium rounded {% theme element_id="TECH_BADGE" %} print:px-1.5 print:py-0">{{ tag }}</span>
+                            <span class="inline-block px-2 py-0.5 text-xs font-medium rounded {% theme element_id="TECH_BADGE" %} print:!px-1.5 print:!py-0 print:!font-normal">{{ tag }}</span>
                         {% endfor %}
                     </div>
                 {% endif %}
             </li>
         {% endfor %}
     </ul>
-    <div class="mt-4 text-right text-sm italic {% theme element_id="HIGHLIGHT" %} print:!mt-2 print:text-xs">
+    {% comment "Not needed for the moment, as there's enough room now that the "projects" part was removed %}
+    <div class="mt-4 text-right text-sm italic {% theme element_id="HIGHLIGHT" %} print:!mt-2 print:!text-xs">
         {% svg_icon "list" classes="size-6 inline print:!size-4" %}
-        <a href="https://www.linkedin.com{{ bio_data.linked_in }}"
-           class="underline"
-           target="_blank"
-           rel="noopener">{{ i18n_data.misc.exhaustive_list_link }}</a>
+        <a href="https://www.linkedin.com{{ bio_data.linked_in }}" class="underline" target="_blank" rel="noopener">{{ i18n_data.misc.exhaustive_list_link }}</a>
     </div>
+    {% endcomment %}
 {% endblock content %}

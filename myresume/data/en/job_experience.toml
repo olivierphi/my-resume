@@ -7,11 +7,14 @@ organisation = { name="Activity Stream", url="https://www.activitystream.com/" }
 current = true
 projects = [
     """
-    Maintaining and developing new features on the several multitenant
-    platforms managed by Activity Stream
+    Maintaining and developing new features across multiple multitenant
+    platforms
     """
 ]
-tags = ["Python", "Django", "Postgres", "ClickHouse", "TypeScript", "React", "Vue.js"]
+tags = [
+    "Python", "Django", "Postgres", "ClickHouse", "TypeScript", "React",
+    "Vue.js"
+]
 
 [[jobs]]
 period = "2023 - 2024"
@@ -20,9 +23,12 @@ content = """
     <a href="https://www.torchbox.com/">Torchbox</a>."""
 organisation = { name="Torchbox", url="https://www.torchbox.com/" }
 projects = [
-    "Led development of various projects with tight deadlines for Torchbox's clients"
+    "Led development on multiple client projects with tight deadlines"
 ]
-tags = ["Python", "Django", "Wagtail", "HTMX", "Postgres", "Node.js", "TypeScript", "React"]
+tags = [
+    "Python", "Django", "Wagtail", "HTMX", "Postgres", "Node.js",
+    "TypeScript", "React"
+]
 
 [[jobs]]
 period = "2022"
@@ -32,8 +38,8 @@ content = """
 organisation = { name="SportEasy", url="https://www.sporteasy.net/en/" }
 projects = [
     """
-    Shipped features, fixed bugs and modernised the codebase for the
-    3 millions users of the SportEasy platform
+    Shipped features, fixed bugs and modernised the codebase for its 3 million
+    users
     """
 ]
 tags = ["Django", "React", "Postgres"]
@@ -46,17 +52,16 @@ content = """
 organisation = { name="Inclusive Energy", url="https://inclusive.energy/" }
 projects = [
     """
-    Lead Software Developer for Cloud Solar,
-    an IoT platform that allow businesses to manage their solar panels fleet
-    """,
+    Led the development of Cloud Solar, an IoT platform that allows businesses
+    to manage their solar panel fleets
+    """
 ]
 tags = ["Django", "React", "GraphQL", "Postgres", "TimescaleDB"]
 
 [[jobs]]
 period = "2017"
 content = """
-    <b>Lead PHP APIs developer</b> for
-    <a href="https://www.postcodelottery.co.uk/">People's Postcode Lottery</a>."""
+    <b>Lead PHP APIs developer</b> for <a href="https://www.postcodelottery.co.uk/">People's Postcode Lottery</a>."""
 organisation = { name="People's Postcode Lottery", url="https://www.postcodelottery.co.uk/" }
 tags = ["PHP", "Symfony"]
 
@@ -68,13 +73,12 @@ content = """
 organisation = { name="KNP Labs", url="https://knplabs.com/en/" }
 projects = [
     """
-    Lead Developer for the Collector Square website and CMS,
-    heavily based on Elasticsearch and Redis
+    Built the Collector Square website and CMS, heavily based on
+    Elasticsearch and Redis
     """,
     """
-    Lead Developer for the Balinea platform refactoring,
-    which included the public website, a middle-office, a back-end,
-    and public/private APIs
+    Led the Balinea platform refactoring, including the public website,
+    middle-office, back-end, and public/private APIs
     """
 ]
 tags = ["PHP", "Symfony", "JavaScript", "Elasticsearch", "Redis"]
@@ -88,11 +92,14 @@ content = """
     <a href="https://en.mappy.com/">Mappy</a>,
     <a href="https://www.uzik.com/">Uzik</a>..."""
 projects = [
-    "Developer at LeMonde.fr, one of the main French news websites",
-    "Developed a Ruby on Rails mass mailing Web application for TV France International",
-    "Technical lead of the JavaScript development of the Mappy mobile site"
+    "Worked on LeMonde.fr, one of France's main news websites",
+    "Built a Ruby on Rails mass mailing web application for TV France International",
+    "Led JavaScript development for the Mappy mobile site"
 ]
-tags = ["PHP", "Symfony", "JavaScript", "Node.js", "Backbone.js", "Ruby", "Ruby on Rails"]
+tags = [
+    "PHP", "Symfony", "JavaScript", "Node.js", "Backbone.js", "Ruby",
+    "Ruby on Rails"
+]
 
 [[jobs]]
 period = "2009"
@@ -103,13 +110,13 @@ content = """
 period = "2006 - 2007"
 content = """
     <b>Flash / PHP Developer</b> for the Web agency "Les Chinois"."""
-not_on_pdf = true
+#not_on_pdf = true
 
 [[jobs]]
 period = "2005"
 content = """
     <b>Flash / PHP Developer</b> for the Web agency WCube."""
-not_on_pdf = true
+#not_on_pdf = true
 
 [[jobs]]
 period = "2000 - 2004"

@@ -37,7 +37,7 @@ _PROJECT_CONTENT_TECH_PATTERN = re.compile(
     r"""<span +class="tech +tech-with-icon +(?P<tech>\w+)" *>"""
 )
 
-_HIGHLIGHT_CLASSES = f"font-medium {_THEME['HIGHLIGHT']}"
+_HIGHLIGHT_CLASSES = f"{_THEME['HIGHLIGHT']}"
 
 
 @register.simple_tag
