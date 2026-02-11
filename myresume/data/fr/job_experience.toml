@@ -8,7 +8,8 @@ current = true
 projects = [
     """
     Maintenance et développement de nouvelles fonctionnalités sur les platformes
-    multitenantes gérées par Activity Stream
+    multitenantes gérées par Activity Stream, où chaque client a ses propres bases
+    Postgres et ClickHouse à fort volume
     """
 ]
 tags =  ["Python", "Django", "Postgres", "ClickHouse", "TypeScript", "React", "Vue.js"]
@@ -36,7 +37,7 @@ projects = [
     modernisation de la codebase pour les 3 millions d'utilisateurs de la plateforme SportEasy
     """
 ]
-tags = ["Django", "React", "Postgres"]
+tags = ["Python", "Django", "TypeScript", "React", "Postgres"]
 
 [[jobs]]
 period = "2018 - 2021"
@@ -50,7 +51,7 @@ projects = [
     de gérer leur flotte de panneaux solaires
     """
 ]
-tags = ["Django", "React", "GraphQL", "Postgres", "TimescaleDB"]
+tags = ["Python", "Django", "React", "GraphQL", "Postgres", "TimescaleDB"]
 
 [[jobs]]
 period = "2017"
@@ -58,7 +59,7 @@ content = """
     <b>Lead PHP APIs developer</b> chez
     <a href="https://www.postcodelottery.co.uk/">People's Postcode Lottery</a>."""
 organisation = { name="People's Postcode Lottery", url="https://www.postcodelottery.co.uk/" }
-tags =["PHP", "Symfony"]
+tags =["PHP", "Symfony", "RabbitMQ", "SOAP"]
 
 [[jobs]]
 period = "2014 - 2016"

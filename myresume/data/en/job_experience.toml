@@ -8,7 +8,8 @@ current = true
 projects = [
     """
     Maintaining and developing new features across multiple multitenant
-    platforms
+    platforms, where each client has their own high volume Postgres and ClickHouse
+    databases
     """
 ]
 tags = [
@@ -23,7 +24,7 @@ content = """
     <a href="https://www.torchbox.com/">Torchbox</a>."""
 organisation = { name="Torchbox", url="https://www.torchbox.com/" }
 projects = [
-    "Led development on multiple client projects with tight deadlines"
+    "Led fullstack development on multiple client projects with tight deadlines"
 ]
 tags = [
     "Python", "Django", "Wagtail", "HTMX", "Postgres", "Node.js",
@@ -38,11 +39,11 @@ content = """
 organisation = { name="SportEasy", url="https://www.sporteasy.net/en/" }
 projects = [
     """
-    Shipped features, fixed bugs and modernised the codebase for its 3 million
+    Shipped features, fixed bugs and modernised the codebase for 3 million
     users
     """
 ]
-tags = ["Django", "React", "Postgres"]
+tags = ["Python", "Django", "TypeScript", "React", "Postgres"]
 
 [[jobs]]
 period = "2018 - 2021"
@@ -52,18 +53,18 @@ content = """
 organisation = { name="Inclusive Energy", url="https://inclusive.energy/" }
 projects = [
     """
-    Led the development of Cloud Solar, an IoT platform that allows businesses
+    Led development of Cloud Solar, an IoT platform that allows businesses
     to manage their solar panel fleets
     """
 ]
-tags = ["Django", "React", "GraphQL", "Postgres", "TimescaleDB"]
+tags = ["Python", "Django", "TypeScript", "React", "GraphQL", "Postgres", "TimescaleDB"]
 
 [[jobs]]
 period = "2017"
 content = """
     <b>Lead PHP APIs developer</b> for <a href="https://www.postcodelottery.co.uk/">People's Postcode Lottery</a>."""
 organisation = { name="People's Postcode Lottery", url="https://www.postcodelottery.co.uk/" }
-tags = ["PHP", "Symfony"]
+tags = ["PHP", "Symfony", "RabbitMQ", "SOAP"]
 
 [[jobs]]
 period = "2014 - 2016"
@@ -93,7 +94,7 @@ content = """
     <a href="https://www.uzik.com/">Uzik</a>..."""
 projects = [
     "Worked on LeMonde.fr, one of France's main news websites",
-    "Built a Ruby on Rails mass mailing web application for TV France International",
+    "Built a mass mailing Ruby on Rails web application for TV France International",
     "Led JavaScript development for the Mappy mobile site"
 ]
 tags = [
