@@ -57,5 +57,5 @@ class Command(BaseCommand):
                 colourised_images_counter += 1
 
         self.stdout.write(
-            f"Colourised {colourised_images_counter} images in {time.monotonic()-start_time:.1f}s."
+            f"Colourised {colourised_images_counter} images in {time.monotonic() - start_time:.1f}s."
         )

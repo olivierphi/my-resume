@@ -115,7 +115,7 @@ def tech_with_schema(*, title: str, url: str | None = None) -> str:
     return mark_safe(
         dedent(
             f"""<span itemprop="knowsAbout" itemscope itemtype="https://schema.org/SoftwareApplication">
-                <span itemprop="name">{ title }</span>
+                <span itemprop="name">{title}</span>
                 {url_part}
             </span>"""
         )
