@@ -56,7 +56,7 @@ class Command(BaseCommand):
                     start = time.monotonic()
                     html = djlint_reformat.formatter(djlint_config, html)
                     self.stdout.write(
-                        f"Reformatting done - took {round(time.monotonic() - start,1)}s."
+                        f"Reformatting done - took {round(time.monotonic() - start, 1)}s."
                     )
                 self.stdout.write(
                     f"Writing file '{self.style.SUCCESS(page['target_static_html'])}'..."

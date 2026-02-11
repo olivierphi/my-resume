@@ -16,13 +16,13 @@ title = "TypeScript"
 icon = "typescript"
 url = "https://www.typescriptlang.org/"
 [[main]]
-title = "Node.js"
-icon = "nodejs"
-url = "https://nodejs.org/"
-[[main]]
 title = "React"
 icon = "react"
 url = "https://react.dev/"
+[[main]]
+title = "Node.js"
+icon = "nodejs"
+url = "https://nodejs.org/"
 
 
 [[others]]
@@ -52,9 +52,6 @@ icon = "tailwind"
 [[others]]
 title = "Redis"
 icon = "redis"
-[[others]]
-title = "SQLite"
-icon = "sqlite"
 [[others]]
 title = "Elasticsearch"
 icon = "elasticsearch"

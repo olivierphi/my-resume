@@ -44,13 +44,8 @@ def job_experience(lang: "Lang") -> "JobExperiencesData":
     return _parse_data_file("job_experience.toml", lang=lang)  # type: ignore
 
 
-@functools.cache
-def projects(lang: "Lang") -> "ProjectsData":
-    return _parse_data_file("projects.toml", lang=lang)  # type: ignore
-
-
 def clear_cache() -> None:
-    for cached_function in (pages, i18n, document, bio, tech, projects, job_experience):
+    for cached_function in (pages, i18n, document, bio, tech, job_experience):
         cached_function.cache_clear()  # type: ignore
     _logger.info("DB cache cleared")
 

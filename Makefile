@@ -1,7 +1,7 @@
 PYTHON_BINS ?= .venv/bin
 PYTHON ?= ${PYTHON_BINS}/python
-POETRY ?= ${PYTHON_BINS}/poetry
-POETRY_INSTALL_OPTS ?=
+UV ?= uv
+UV_INSTALL_OPTS ?=
 DJANGO_SETTINGS_MODULE ?= project.settings.development
 SUB_MAKE = ${MAKE} --no-print-directory
 
@@ -42,25 +42,25 @@ build-and-create-pdfs: create-colourised-tech-icons build playwright_install ## 
 	@${PYTHON} manage.py resume_create_pdfs
 
 .PHONY: code-quality/all
-code-quality/all: code-quality/black code-quality/djlint code-quality/ruff code-quality/mypy  ## Run all our code quality tools
+code-quality/all: code-quality/ruff-fmt code-quality/ruff-lint code-quality/djlint code-quality/mypy  ## Run all our code quality tools
 
-.PHONY: code-quality/black
-code-quality/black: black_opts ?=
-code-quality/black: ## Automated 'a la Prettier' code formatting
-# @link https://black.readthedocs.io/en/stable/
-	@${PYTHON_BINS}/black ${black_opts} myresume/
+.PHONY: code-quality/ruff-fmt
+code-quality/ruff-fmt: ruff_fmt_opts ?=
+code-quality/ruff-fmt: ## Automated code formatting
+# @link https://docs.astral.sh/ruff/
+	@${PYTHON_BINS}/ruff format ${ruff_fmt_opts} myresume/
+
+.PHONY: code-quality/ruff-lint
+code-quality/ruff-lint: ruff_opts ?= --fix
+code-quality/ruff-lint: ## Fast linting
+# @link https://docs.astral.sh/ruff/
+	@PYTHONPATH=${PYTHONPATH} ${PYTHON_BINS}/ruff check myresume/ ${ruff_opts}
 
 .PHONY: code-quality/djlint
 code-quality/djlint: djlint_opts ?= --lint --reformat
 code-quality/djlint: ## Automated 'a la Prettier' formatting for Django HTML templates
 # @link https://djlint.com/
 	@${PYTHON_BINS}/djlint ${djlint_opts} myresume/
-
-.PHONY: code-quality/ruff
-code-quality/ruff: ruff_opts ?= --fix
-code-quality/ruff: ## Fast linting
-# @link https://mypy.readthedocs.io/en/stable/
-	@PYTHONPATH=${PYTHONPATH} ${PYTHON_BINS}/ruff myresume/ ${ruff_opts}
 
 .PHONY: code-quality/mypy
 code-quality/mypy: mypy_opts ?=
@@ -72,12 +72,11 @@ code-quality/mypy: ## Python's equivalent of TypeScript
 
 .venv: poetry_version ?= 1.8.3
 .venv: ## Initialises the Python virtual environment in a ".venv" folder
-	@python -m venv .venv
-	@${PYTHON_BINS}/pip install -U pip poetry==${poetry_version}
+	@{UV} venv
 
 .PHONY: python_deps
 python_deps: ## Installs the Python dependencies
-	@${POETRY} install --no-root ${POETRY_INSTALL_OPTS}
+	@${UV} sync --all-extras --all-groups --no-install-project ${UV_INSTALL_OPTS}
 
 .PHONY: playwright_install
 playwright_install: browsers ?= chromium

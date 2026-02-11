@@ -41,7 +41,7 @@ baccalaureate = "1998: Bac. Série S"
 main_skills = "Compétences principales"
 other_skills = "Mais aussi..."
 tools = "Logiciels et environnements"
-job_experience = "Parcours professionnel"
+job_experience = "Expérience"
 projects = "Quelques réalisations"
 
 [footer]

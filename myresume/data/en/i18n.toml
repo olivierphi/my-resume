@@ -41,7 +41,7 @@ baccalaureate = "1998: Scientific Baccalaureate"
 main_skills = "Main skills"
 other_skills = "And also..."
 tools = "Tools and environments"
-job_experience = "Job experience"
+job_experience = "Experience"
 projects = "Some of the projects I worked on"
 
 [footer]

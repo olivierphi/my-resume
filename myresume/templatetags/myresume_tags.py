@@ -26,6 +26,7 @@ _THEME: "Final[dict[str, str]]" = {
     "MAIN_SECTION_TITLE": str(theme.MAIN_SECTION_TITLE),
     "MAIN_SECTION_TITLE_ICON": str(theme.MAIN_SECTION_TITLE_ICON),
     "HIGHLIGHT": str(theme.HIGHLIGHT),
+    "TECH_BADGE": str(theme.TECH_BADGE),
 }
 
 _SVG_ICONS_PATH = settings.BASE_DIR / "myresume" / "assets-src" / "img" / "icons"
@@ -36,7 +37,7 @@ _PROJECT_CONTENT_TECH_PATTERN = re.compile(
     r"""<span +class="tech +tech-with-icon +(?P<tech>\w+)" *>"""
 )
 
-_HIGHLIGHT_CLASSES = f"font-medium {_THEME['HIGHLIGHT']}"
+_HIGHLIGHT_CLASSES = f"{_THEME['HIGHLIGHT']}"
 
 
 @register.simple_tag
@@ -115,7 +116,7 @@ def tech_with_schema(*, title: str, url: str | None = None) -> str:
     return mark_safe(
         dedent(
             f"""<span itemprop="knowsAbout" itemscope itemtype="https://schema.org/SoftwareApplication">
-                <span itemprop="name">{ title }</span>
+                <span itemprop="name">{title}</span>
                 {url_part}
             </span>"""
         )

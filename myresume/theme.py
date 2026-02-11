@@ -45,3 +45,9 @@ HIGHLIGHT = ColorClasses(
     "text-fuchsia-800",
     dark="dark:text-fuchsia-500",
 )
+
+TECH_BADGE = ColorClasses(
+    "bg-fuchsia-100 text-fuchsia-900",
+    dark="dark:bg-fuchsia-900 dark:text-fuchsia-100",
+    print="print:bg-slate-100 print:text-slate-800",
+)
