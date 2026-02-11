@@ -31,11 +31,7 @@ jobs:
 
       - name: "Build static pages, assets and PDFs"
         run: |
-          make build-and-create-pdfs \
-            PYTHON_BINS="$(poetry env info --path)/bin" \
-            PYTHON="$(poetry env info --executable)" \
-            POETRY="$(which poetry)" \
-            POETRY_INSTALL_OPTS="--only=main,deployment"
+          make build-and-create-pdfs
         continue-on-error: false
 
       - name: "Add CNAME for Github Pages"

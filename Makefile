@@ -70,7 +70,6 @@ code-quality/mypy: ## Python's equivalent of TypeScript
 
 # Here starts the "misc util targets" stuff
 
-.venv: poetry_version ?= 1.8.3
 .venv: ## Initialises the Python virtual environment in a ".venv" folder
 	@{UV} venv
 
