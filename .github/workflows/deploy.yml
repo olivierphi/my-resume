@@ -38,4 +38,4 @@ jobs:
         run: echo "dunsap.com" > dist/CNAME
 
       - name: "Deploy to Github Pages"
-        run: poetry run ghp-import --no-history --push --force dist/
+        run: uv run -- ghp-import --no-history --push --force dist/
