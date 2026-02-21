@@ -7,15 +7,15 @@ organisation = { name="Activity Stream", url="https://www.activitystream.com/" }
 current = true
 projects = [
     """
-    Greenfield: Developing the new Django and React based multitenant platform,
-    where each client has their own high volume Postgres and ClickHouse databases.
+    Greenfield: Built and scaled the new Django and React based multitenant platform,
+    where each client has their own high-volume Postgres and ClickHouse databases.
     """,
     """
-    Brownfield: Maintaining the business' legacy systems, based on Django and Vue.js .
+    Brownfield: Enhanced the business' legacy systems, based on Django and Vue.js.
     """,
     """
-    Modernised the various Python codebases by introducing type hinting, and sharing
-    the associated best practices with the team.
+    Established type safety standards by introducing comprehensive type hinting across
+    Python codebases and mentoring the team on best practices.
     """
 ]
 tags = [
@@ -31,12 +31,12 @@ content = """
 organisation = { name="Torchbox", url="https://www.torchbox.com/" }
 projects = [
     """
-    Greenfield: Led the fullstack development of the new FRC website, based on the Wagtail CMS.
-    The deadlines were tight, but we shipped in time.
+    Greenfield: Led the fullstack development of the new FRC website, based on the Wagtail CMS,
+    delivering on schedule despite aggressive timeline.
     """,
     """
-    Brownfield: Took over the maintenance of a large "Node.js + Elasticsearch" project.
-    Fixed many bugs, progressively converted it to TypeScript, and added new features.
+    Brownfield: Took over maintenance of a large Node.js + Elasticsearch project, progressively
+    converted it to TypeScript to improve code maintainability, and delivered new features.
     """
 ]
 tags = [
@@ -48,19 +48,16 @@ tags = [
 period = "2022"
 content = """
     <b>Senior developer</b> for
-    <a href="https://www.sporteasy.net/en/">SportEasy</a>, as a contractor."""
+    <a href="https://www.sporteasy.net/en/">SportEasy</a>."""
 organisation = { name="SportEasy", url="https://www.sporteasy.net/en/" }
 projects = [
     """
-    Brownfield: Built new features and fixed bugs for this Django backend with 3 million users,
-    dealing with about 600 requests/second at peak time.
+    Brownfield: Built fullstack features for this Django and React backend serving 3 million users
+    and handling approximately 600 requests/second at peak time.
     """,
     """
-    Brownfield: Shipped the React side of the backend features I was building.
-    """,
-    """
-    Modernised the various Python codebases by introducing type hinting, and sharing
-    the associated best practices with the team.
+    Championed type safety by introducing type hints to the Python codebase and establishing
+    team coding standards.
     """
 ]
 tags = ["Python", "Django", "Django REST Framework", "MySQL", "TypeScript", "React", "Postgres"]
@@ -74,19 +71,16 @@ content = """
 organisation = { name="Inclusive Energy", url="https://inclusive.energy/" }
 projects = [
     """
-    Greenfield: I built a fully functional platform - based on Django, React and GraphQL -
-    that was shipped in time for the pilot project, within a deadline of only 3 months.
+    Greenfield: Built a fully functional platform based on Django, React and GraphQL,
+    delivering it for the pilot project within a 3-month deadline.
     """,
     """
-    Greenfield: After the success of the pilot, led the development, with a team
-    of 4 other software developers, of Cloud Solar: an IoT platform that allows businesses
-    to manage their solar panel fleet on the field.
+    Greenfield: After the success of the pilot, led a team of 4 developers to build Cloud Solar:
+    an IoT platform that allows businesses to manage their solar panel fleet in the field.
     """,
     """
-    Greenfield: As the platform's reach was growing, we started to hit some performance
-    limits of what can be managed by Postgres when it comes to real time analytical data.
-    I knew we would end up hitting such a limit, and we were prepared for it: the transition
-    to TimescaleDB to store the clients' historical data worked as expected.
+    Greenfield: Proactively migrated historical data storage from Postgres to TimescaleDB
+    to support growing real-time analytical workloads as the platform scaled.
     """
 ]
 tags = ["Python", "Django", "TypeScript", "React", "GraphQL", "Postgres", "TimescaleDB"]
@@ -98,15 +92,13 @@ content = """
 organisation = { name="People's Postcode Lottery", url="https://www.postcodelottery.co.uk/" }
 projects = [
     """
-    Brownfield: With a team of 4 other PHP software developers, maintained the existing
-    user-facing APIs and website.
+    Brownfield: Led a team of 4 PHP developers to maintain the existing user-facing APIs and website.
     """,
     """
-    Greenfield: Led the development of a new website based on a new data layer architecture,
-    with the same team.
+    Greenfield: Led the development of a new website based on a modernized data layer architecture.
     """
 ]
-tags = ["PHP", "Symfony", "RabbitMQ", "SOAP"]
+tags = ["PHP", "Symfony", "RabbitMQ", "Postgres", "SOAP"]
 
 [[jobs]]
 period = "2014 - 2016"
@@ -116,13 +108,12 @@ content = """
 organisation = { name="KNP Labs", url="https://knplabs.com/en/" }
 projects = [
     """
-    Greenfield: Led the development of the Collector Square website and CMS, with a team
-    of 3 other software developers. The code itself was based on the Symfony framework,
-    and the data part heavily based on Elasticsearch and Redis as projection layers.
+    Greenfield: Led a team of 3 developers to build the Collector Square website and CMS,
+    based on Symfony with Elasticsearch and Redis as data projection layers.
     """,
     """
-    Greenfield: Led the Balinea platform refactoring, with a team of 5 other software developers.
-    The scope included the public website, the middle-office, back-end, and public/private APIs.
+    Greenfield: Led a team of 5 developers to refactor the Balinea platform, including
+    the public website, middle-office, back-end, and public/private APIs.
     """
 ]
 tags = ["PHP", "Symfony", "JavaScript", "Elasticsearch", "Redis"]
@@ -145,24 +136,24 @@ tags = [
     "Ruby on Rails"
 ]
 
-[[jobs]]
+[[early_career]]
 period = "2009"
 content = """
     <b>Flash Lead Developer</b> at Tribal Nova (Montréal, Canada)."""
 
-[[jobs]]
+[[early_career]]
 period = "2006 - 2007"
 content = """
     <b>Flash / PHP Developer</b> for the Web agency "Les Chinois"."""
 #not_on_pdf = true
 
-[[jobs]]
+[[early_career]]
 period = "2005"
 content = """
     <b>Flash / PHP Developer</b> for the Web agency WCube."""
 #not_on_pdf = true
 
-[[jobs]]
+[[early_career]]
 period = "2000 - 2004"
 content = """
     <b>Web Developer</b> for the Web agency "Lp Digital"."""

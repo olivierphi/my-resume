@@ -42,12 +42,15 @@ url = "https://www.algolia.com/"
 [[data]]
 title = "Redis"
 icon = "redis"
+url = "https://redis.io/"
 [[data]]
 title = "Rabbit MQ"
 icon = "rabbitmq"
+url = "https://www.rabbitmq.com/"
 [[data]]
 title = "MQTT"
 icon = "mqtt"
+url = "https://mqtt.org/"
 
 # Web & APIs
 [[web]]

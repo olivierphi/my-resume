@@ -3,6 +3,11 @@ pdf_download = "Télécharger au format PDF"
 language = "langue :"
 theme = "passer au thème :"
 
+[citizenship]
+citizenship = "Citoyenneté"
+country.uk = "Royaume-Uni"
+country.fr = "France"
+
 [open_source_projects]
 title = "Open Source"
 
@@ -45,7 +50,7 @@ tech.web = "Web & API"
 tech.previous = "Précédentes expériences"
 tools = "Logiciels et environnements"
 job_experience = "Expérience"
-projects = "Quelques réalisations"
+early_career = "Débuts de carrière"
 
 [footer]
 source_code = "Le code source de cette page web est disponible sur"

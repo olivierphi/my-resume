@@ -106,6 +106,7 @@ if TYPE_CHECKING:
 
     class JobExperiencesData(TypedDict):
         jobs: list["JobData"]
+        early_career: list["JobData"]
 
     class OrganisationData(TypedDict):
         name: str
