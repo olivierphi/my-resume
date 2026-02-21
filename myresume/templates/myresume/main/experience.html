@@ -9,7 +9,7 @@
 {% block content %}
     <ul class="pl-6 list-disc sm:pr-0 print:!text-sm print:!pl-4">
         {% for job in jobs_data.jobs %}
-            <li class="mb-3 {% if job.not_on_pdf %}print:hidden{% endif %}"
+            <li class="mb-4 {% if job.not_on_pdf %}print:hidden{% endif %}{% if job.page_break_after %}break-after-page{% endif %}"
                 {% if job.organisation %} itemscope itemtype="https://schema.org/Organization" itemprop="{{ job.current|yesno:"worksFor,alumniOf" }}" {% endif %}>
                 {% if job.organisation %}
                     <meta itemprop="name" content="{{ job.organisation.name }}" />
@@ -22,9 +22,9 @@
                     <span class="*:decoration-dotted *:underline-offset-2">{{ job.content|processed_job_content|safe }}</span>
                 </div>
                 {% if job.projects %}
-                    <ul class="list-disc pl-6 mt-1 space-y-0.5 print:!mt-0">
+                    <ul class="list-[circle] pl-6 mt-1 space-y-0.5 print:!mt-0">
                         {% for project in job.projects %}
-                            <li class="print:text-xs">{{ project|safe }}</li>
+                            <li class="mb-2 print:text-xs">{{ project|safe }}</li>
                         {% endfor %}
                     </ul>
                 {% endif %}

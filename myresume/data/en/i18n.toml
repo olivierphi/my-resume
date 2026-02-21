@@ -38,9 +38,11 @@ src_details = "Communication Services and Networks"
 baccalaureate = "1998: Scientific Baccalaureate"
 
 [captions]
-main_skills = "Main skills"
-other_skills = "And also..."
-tools = "Tools and environments"
+main_skills = "Skills"
+tech.core = "Core expertise"
+tech.data = "Data & scalable systems"
+tech.web = "Web & API"
+tech.previous = "Previous experience"
 job_experience = "Experience"
 projects = "Some of the projects I worked on"
 

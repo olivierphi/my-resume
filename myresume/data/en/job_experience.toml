@@ -7,14 +7,20 @@ organisation = { name="Activity Stream", url="https://www.activitystream.com/" }
 current = true
 projects = [
     """
-    Maintaining and developing new features across multiple multitenant
-    platforms, where each client has their own high volume Postgres and ClickHouse
-    databases
+    Greenfield: Developing the new Django and React based multitenant platform,
+    where each client has their own high volume Postgres and ClickHouse databases.
+    """,
+    """
+    Brownfield: Maintaining the business' legacy systems, based on Django and Vue.js .
+    """,
+    """
+    Modernised the various Python codebases by introducing type hinting, and sharing
+    the associated best practices with the team.
     """
 ]
 tags = [
-    "Python", "Django", "Postgres", "ClickHouse", "TypeScript", "React",
-    "Vue.js"
+    "Python", "Django", "Django REST Framework", "Postgres", "ClickHouse",
+    "TypeScript", "React", "Vue.js"
 ]
 
 [[jobs]]
@@ -24,11 +30,18 @@ content = """
     <a href="https://www.torchbox.com/">Torchbox</a>."""
 organisation = { name="Torchbox", url="https://www.torchbox.com/" }
 projects = [
-    "Led fullstack development on multiple client projects with tight deadlines"
+    """
+    Greenfield: Led the fullstack development of the new FRC website, based on the Wagtail CMS.
+    The deadlines were tight, but we shipped in time.
+    """,
+    """
+    Brownfield: Took over the maintenance of a large "Node.js + Elasticsearch" project.
+    Fixed many bugs, progressively converted it to TypeScript, and added new features.
+    """
 ]
 tags = [
     "Python", "Django", "Wagtail", "HTMX", "Postgres", "Node.js",
-    "TypeScript", "React"
+    "Elasticsearch", "TypeScript", "React"
 ]
 
 [[jobs]]
@@ -39,11 +52,19 @@ content = """
 organisation = { name="SportEasy", url="https://www.sporteasy.net/en/" }
 projects = [
     """
-    Shipped features, fixed bugs and modernised the codebase for 3 million
-    users
+    Brownfield: Built new features and fixed bugs for this Django backend with 3 million users,
+    dealing with about 600 requests/second at peak time.
+    """,
+    """
+    Brownfield: Shipped the React side of the backend features I was building.
+    """,
+    """
+    Modernised the various Python codebases by introducing type hinting, and sharing
+    the associated best practices with the team.
     """
 ]
-tags = ["Python", "Django", "TypeScript", "React", "Postgres"]
+tags = ["Python", "Django", "Django REST Framework", "MySQL", "TypeScript", "React", "Postgres"]
+page_break_after = true
 
 [[jobs]]
 period = "2018 - 2021"
@@ -53,8 +74,19 @@ content = """
 organisation = { name="Inclusive Energy", url="https://inclusive.energy/" }
 projects = [
     """
-    Led development of Cloud Solar, an IoT platform that allows businesses
-    to manage their solar panel fleets
+    Greenfield: I built a fully functional platform - based on Django, React and GraphQL -
+    that was shipped in time for the pilot project, within a deadline of only 3 months.
+    """,
+    """
+    Greenfield: After the success of the pilot, led the development, with a team
+    of 4 other software developers, of Cloud Solar: an IoT platform that allows businesses
+    to manage their solar panel fleet on the field.
+    """,
+    """
+    Greenfield: As the platform's reach was growing, we started to hit some performance
+    limits of what can be managed by Postgres when it comes to real time analytical data.
+    I knew we would end up hitting such a limit, and we were prepared for it: the transition
+    to TimescaleDB to store the clients' historical data worked as expected.
     """
 ]
 tags = ["Python", "Django", "TypeScript", "React", "GraphQL", "Postgres", "TimescaleDB"]
@@ -64,6 +96,16 @@ period = "2017"
 content = """
     <b>Lead PHP APIs developer</b> for <a href="https://www.postcodelottery.co.uk/">People's Postcode Lottery</a>."""
 organisation = { name="People's Postcode Lottery", url="https://www.postcodelottery.co.uk/" }
+projects = [
+    """
+    Brownfield: With a team of 4 other PHP software developers, maintained the existing
+    user-facing APIs and website.
+    """,
+    """
+    Greenfield: Led the development of a new website based on a new data layer architecture,
+    with the same team.
+    """
+]
 tags = ["PHP", "Symfony", "RabbitMQ", "SOAP"]
 
 [[jobs]]
@@ -74,12 +116,13 @@ content = """
 organisation = { name="KNP Labs", url="https://knplabs.com/en/" }
 projects = [
     """
-    Built the Collector Square website and CMS, heavily based on
-    Elasticsearch and Redis
+    Greenfield: Led the development of the Collector Square website and CMS, with a team
+    of 3 other software developers. The code itself was based on the Symfony framework,
+    and the data part heavily based on Elasticsearch and Redis as projection layers.
     """,
     """
-    Led the Balinea platform refactoring, including the public website,
-    middle-office, back-end, and public/private APIs
+    Greenfield: Led the Balinea platform refactoring, with a team of 5 other software developers.
+    The scope included the public website, the middle-office, back-end, and public/private APIs.
     """
 ]
 tags = ["PHP", "Symfony", "JavaScript", "Elasticsearch", "Redis"]

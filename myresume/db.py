@@ -36,7 +36,15 @@ def bio(lang: "Lang") -> "BioData":
 
 @functools.cache
 def tech() -> "TechnologiesData":
-    return _parse_data_file("technologies.toml")  # type: ignore
+    raw_data = _parse_data_file("technologies.toml")  # type: ignore
+    return {
+        "core": raw_data["core"],
+        "sections": {
+            "data": raw_data["data"],
+            "web": raw_data["web"],
+            "previous": raw_data["previous"],
+        },
+    }
 
 
 @functools.cache
@@ -76,8 +84,13 @@ if TYPE_CHECKING:
         github_id: str
 
     class TechnologiesData(TypedDict):
-        main: list["MainTechnologyData"]
-        others: list["OtherTechnologyData"]
+        core: list["MainTechnologyData"]
+        sections: "TechnologiesSectionData"
+
+    class TechnologiesSectionData(TypedDict):
+        data: list["OtherTechnologyData"]
+        web: list["OtherTechnologyData"]
+        previous: list["OtherTechnologyData"]
 
     class MainTechnologyData(TypedDict):
         title: str
@@ -101,9 +114,10 @@ if TYPE_CHECKING:
     class JobData(TypedDict):
         period: str
         content: str
+        current: NotRequired[bool]
         organisation: NotRequired[OrganisationData]
         not_on_pdf: NotRequired[bool]
-        current: NotRequired[bool]
+        page_break_after: NotRequired[bool]
 
     class ProjectsData(TypedDict):
         projects: list["ProjectData"]

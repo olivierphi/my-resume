@@ -10,7 +10,7 @@ from django.utils.safestring import mark_safe
 from .. import theme
 
 if TYPE_CHECKING:
-    from typing import Final
+    from typing import Final, Literal
 
     from myresume.db import MainTechnologyData, OtherTechnologyData
 
@@ -92,8 +92,13 @@ def main_section_title(title: str, *, icon: str):
     }
 
 
-@register.inclusion_tag("myresume/main/tags/main_tech.html")
-def main_section_main_tech(tech: "MainTechnologyData") -> dict:
+@register.simple_tag(takes_context=True)
+def tech_section_title(context: dict, section_id: str) -> str:
+    return context["i18n_data"]["captions"]["tech"][section_id]
+
+
+@register.inclusion_tag("myresume/main/tags/core_tech.html")
+def main_section_core_tech(tech: "MainTechnologyData") -> dict:
     return tech | {
         "icon_url": static(f"img/icons/techs/{tech['icon']}.colorised.png"),
     }
@@ -107,7 +112,9 @@ def main_section_other_tech(tech: "OtherTechnologyData") -> dict:
 
 
 @register.simple_tag
-def tech_with_schema(*, title: str, url: str | None = None) -> str:
+def tech_with_schema(
+    *, level: "Literal['core', 'sub-section']", title: str, url: str | None = None
+) -> str:
     if url:
         url_part = f"""<meta itemprop="url" content="{url}" />"""
     else:
@@ -116,7 +123,7 @@ def tech_with_schema(*, title: str, url: str | None = None) -> str:
     return mark_safe(
         dedent(
             f"""<span itemprop="knowsAbout" itemscope itemtype="https://schema.org/SoftwareApplication">
-                <span itemprop="name">{title}</span>
+                <span {'class="font-bold"' if level == "core" else ""} itemprop="name">{title}</span>
                 {url_part}
             </span>"""
         )
