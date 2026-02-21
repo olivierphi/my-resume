@@ -4,15 +4,25 @@ content = """
     <b>Senior fullstack developer</b> à
     <a href="https://www.activitystream.com/">Activity Stream</a>."""
 organisation = { name="Activity Stream", url="https://www.activitystream.com/" }
+location = "Écosse"
 current = true
 projects = [
     """
-    Maintenance et développement de nouvelles fonctionnalités sur les platformes
-    multitenantes gérées par Activity Stream, où chaque client a ses propres bases
-    Postgres et ClickHouse à fort volume
+    Greenfield : Construction et mise à l'échelle de la nouvelle plateforme multitenant basée sur
+    Django et React, où chaque client dispose de ses propres bases de données Postgres et ClickHouse à fort volume.
+    """,
+    """
+    Brownfield : Amélioration des systèmes legacy de l'entreprise, basés sur Django et Vue.js.
+    """,
+    """
+    Établissement de standards de sécurité du typage en introduisant un typage complet dans les
+    codebases Python et en accompagnant l'équipe sur les bonnes pratiques.
     """
 ]
-tags =  ["Python", "Django", "Postgres", "ClickHouse", "TypeScript", "React", "Vue.js"]
+tags = [
+    "Python", "Django", "Django REST Framework", "Postgres", "ClickHouse",
+    "TypeScript", "React", "Vue.js"
+]
 
 [[jobs]]
 period = "2023 - 2024"
@@ -20,10 +30,21 @@ content = """
     <b>Senior Python developer</b> chez l'agence Web
     <a href="https://www.torchbox.com/">Torchbox</a>."""
 organisation = { name="Torchbox", url="https://www.torchbox.com/" }
+location = "Remote"
 projects = [
-    "Lead developer sur différnents projets pour les clients de l'agence Web Torchbox"
+    """
+    Greenfield : Direction du développement fullstack du nouveau site web FRC, basé sur le CMS Wagtail,
+    livré dans les délais malgré un calendrier agressif.
+    """,
+    """
+    Brownfield : Reprise de la maintenance d'un large projet Node.js + Elasticsearch, conversion
+    progressive vers TypeScript pour améliorer la maintenabilité du code, et livraison de nouvelles fonctionnalités.
+    """
 ]
-tags = ["Python", "Django", "Wagtail", "HTMX", "Postgres", "Node.js", "TypeScript", "React"]
+tags = [
+    "Python", "Django", "Wagtail", "HTMX", "Postgres", "Node.js",
+    "Elasticsearch", "TypeScript", "React"
+]
 
 [[jobs]]
 period = "2022"
@@ -31,13 +52,18 @@ content = """
     <b>Senior developer</b> en free-lance pour
     <a href="https://www.sporteasy.net/">SportEasy</a>."""
 organisation = { name="SportEasy", url="https://www.sporteasy.net/" }
+location = "Remote"
 projects = [
     """
-    Livraison de nouvelles fonctionnalités, correction de bugs et
-    modernisation de la codebase pour les 3 millions d'utilisateurs de la plateforme SportEasy
+    Brownfield : Développement de fonctionnalités fullstack pour ce backend Django et React servant
+    3 millions d'utilisateurs et gérant environ 600 requêtes/seconde en heure de pointe.
+    """,
+    """
+    Promotion de la sécurité du typage en introduisant le type hinting dans la codebase Python
+    et en établissant des standards de développement pour l'équipe.
     """
 ]
-tags = ["Python", "Django", "TypeScript", "React", "Postgres"]
+tags = ["Python", "Django", "Django REST Framework", "MySQL", "TypeScript", "React"]
 
 [[jobs]]
 period = "2018 - 2021"
@@ -45,13 +71,23 @@ content = """
     <b>Lead developer</b> chez
     <a href="https://inclusive.energy/">Inclusive Energy</a>."""
 organisation = { name="Inclusive Energy", url="https://inclusive.energy/" }
+location = "Écosse"
 projects = [
     """
-    Lead Software Developer pour Cloud Solar, platforme IoT permettant aux entreprises
-    de gérer leur flotte de panneaux solaires
+    Greenfield : Construction d'une plateforme complète basée sur Django, React et GraphQL,
+    livrée pour le projet pilote dans un délai de 3 mois.
+    """,
+    """
+    Greenfield : Après le succès du pilote, direction d'une équipe de 4 développeurs pour construire
+    Cloud Solar : une plateforme IoT permettant aux entreprises de gérer leur flotte de panneaux solaires sur le terrain.
+    """,
+    """
+    Greenfield : Migration proactive du stockage des données historiques de Postgres vers TimescaleDB
+    pour supporter la croissance des charges de travail analytiques en temps réel à mesure que la plateforme montait en charge.
     """
 ]
-tags = ["Python", "Django", "React", "GraphQL", "Postgres", "TimescaleDB"]
+tags = ["Python", "Django", "TypeScript", "React", "GraphQL", "Postgres", "TimescaleDB"]
+page_break_before = true
 
 [[jobs]]
 period = "2017"
@@ -59,7 +95,16 @@ content = """
     <b>Lead PHP APIs developer</b> chez
     <a href="https://www.postcodelottery.co.uk/">People's Postcode Lottery</a>."""
 organisation = { name="People's Postcode Lottery", url="https://www.postcodelottery.co.uk/" }
-tags =["PHP", "Symfony", "RabbitMQ", "SOAP"]
+location = "Écosse"
+projects = [
+    """
+    Brownfield : Direction d'une équipe de 4 développeurs PHP pour maintenir les API et le site web existants orientés utilisateurs.
+    """,
+    """
+    Greenfield : Direction du développement d'un nouveau site web basé sur une architecture de couche de données modernisée.
+    """
+]
+tags = ["PHP", "Symfony", "RabbitMQ", "Postgres", "SOAP"]
 
 [[jobs]]
 period = "2014 - 2016"
@@ -67,14 +112,15 @@ content = """
     <b>Consultant Symfony / JavaScript</b> chez les clients de
     <a href="https://knplabs.com/">KNP Labs</a>."""
 organisation = { name="KNP Labs", url="https://knplabs.com/" }
+location = "France"
 projects = [
     """
-    Lead Développeur pour la nouvelle version du site et du CMS de Collector Square,
-    basés sur Elasticsearch et Redis
+    Greenfield : Direction d'une équipe de 3 développeurs pour construire le site web et le CMS de Collector Square,
+    basés sur Symfony avec Elasticsearch et Redis comme couches de projection de données.
     """,
     """
-    Lead Développeur pour la refonte de la plateforme Balinea - incluant le site public,
-    un middle-office, un back-end, deux API (une publique et une privée)
+    Greenfield : Direction d'une équipe de 5 développeurs pour refondre la plateforme Balinea,
+    incluant le site web public, le middle-office, le back-end, et les API publiques/privées.
     """
 ]
 tags = ["PHP", "Symfony", "JavaScript", "Elasticsearch", "Redis"]
@@ -87,31 +133,36 @@ content = """
     <a href="https://www.lemonde.fr/">Le Monde</a>,
     <a href="https://en.mappy.com/">Mappy</a>,
     <a href="https://www.uzik.com/">Uzik</a>..."""
+location = "France"
 projects = [
-    "Développeur chez LeMonde.fr",
-    "Développement d'une application Web de mass mailing pour TV France International",
-    "Lead Developer JavaScript pour le site mobile de Mappy"
+    "Brownfield : Développeur chez LeMonde.fr",
+    "Greenfield : Développement d'une application Web de mass mailing pour TV France International",
+    "Greenfield : Lead Developer JavaScript pour le site mobile de Mappy"
 ]
 tags = ["PHP", "Symfony", "JavaScript", "Node.js", "Backbone.js", "Ruby", "Ruby on Rails"]
 
-[[jobs]]
+[[early_career]]
 period = "Janvier à Mai 2009"
 content = """
-    <b>Flash Lead Developer</b> chez Tribal Nova (Montréal, Canada)."""
+    <b>Flash Lead Developer</b> chez Tribal Nova, à Montréal."""
+location = "Québec"
 
-[[jobs]]
+[[early_career]]
 period = "2006 - 2007"
 content = """
     <b>Développeur Flash / PHP</b> chez l'agence Web "Les Chinois"."""
-not_on_pdf = true
+location = "France"
+#not_on_pdf = true
 
-[[jobs]]
+[[early_career]]
 period = "2005"
 content = """
-    <b>Développeur Flash / PHP</b> chez l'agence Web WCube."""
-not_on_pdf = true
+    <b>Développeur Flash / PHP</b> chez l'agence Web "WCube"."""
+location = "France"
+#not_on_pdf = true
 
-[[jobs]]
+[[early_career]]
 period = "2000 - 2004"
 content = """
     <b>Développeur Flash / PHP</b> chez l'agence Web "Lp Digital"."""
+location = "France"

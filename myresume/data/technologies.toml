@@ -44,7 +44,7 @@ title = "Redis"
 icon = "redis"
 url = "https://redis.io/"
 [[data]]
-title = "Rabbit MQ"
+title = "RabbitMQ"
 icon = "rabbitmq"
 url = "https://www.rabbitmq.com/"
 [[data]]

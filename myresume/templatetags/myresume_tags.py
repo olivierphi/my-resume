@@ -85,10 +85,11 @@ def about_section_title(title: str):
 
 
 @register.inclusion_tag("myresume/main/tags/main_section_title.html")
-def main_section_title(title: str, *, icon: str):
+def main_section_title(title: str, *, icon: str, subtitle: str | None = None):
     return {
         "title": title,
         "icon": icon,
+        "subtitle": subtitle,
     }
 
 

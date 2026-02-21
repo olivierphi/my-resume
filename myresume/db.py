@@ -116,6 +116,7 @@ if TYPE_CHECKING:
         period: str
         content: str
         current: NotRequired[bool]
+        location: NotRequired[str]
         organisation: NotRequired[OrganisationData]
         not_on_pdf: NotRequired[bool]
         page_break_after: NotRequired[bool]
