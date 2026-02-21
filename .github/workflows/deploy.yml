@@ -2,9 +2,9 @@ name: Static pages deployment
 
 on:
   push:
-    branches: ["main", "django-version"]
+    branches: ["django-version"]
   pull_request:
-    branches: ["main", "django-version"]
+    branches: ["django-version"]
 
 permissions:
   contents: write

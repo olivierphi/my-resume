@@ -18,8 +18,8 @@ content = "Running, bouldering"
 [side_projects]
 title = "Side projects"
 content = """
-<a href="https://zakuchess.com/" class="underline" target="_blank" rel="noopener">ZakuChess</a>,
-my open source Web game ♞.
+<a href="https://github.com/olivierphi/zakuchess#readme" class="underline" target="_blank" rel="noopener">ZakuChess</a>,
+my open source chess Web game ♞.
 """
 
 [teaching]
@@ -45,7 +45,7 @@ baccalaureate = "1998: Scientific Baccalaureate"
 [captions]
 main_skills = "Skills"
 tech.core = "Core expertise"
-tech.data = "Data & scalable systems"
+tech.data = "Data & systems scalability"
 tech.web = "Web & API"
 tech.previous = "Previous experience"
 job_experience = "Experience"

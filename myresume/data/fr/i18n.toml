@@ -18,8 +18,8 @@ content = "Course à pied, bloc"
 [side_projects]
 title = "Projets personnels"
 content = """
-<a href="https://zakuchess.com/" class="underline" target="_blank" rel="noopener">ZakuChess</a>,
-mon jeu Web open source ♞.
+<a href="https://github.com/olivierphi/zakuchess#readme" class="underline" target="_blank" rel="noopener">ZakuChess</a>,
+mon jeu Web d'échecs open source ♞.
 """
 
 [teaching]
