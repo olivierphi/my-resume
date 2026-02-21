@@ -3,12 +3,12 @@
 {% load myresume_tags %}
 
 {% block title %}
-    {% main_section_title i18n_data.captions.job_experience icon="job-experience" %}
+    {% main_section_title i18n_data.captions.early_career icon="early-career" subtitle=": 2000-2009" %}
 {% endblock title %}
 
 {% block content %}
     <ul class="pl-6 list-disc sm:pr-0 print:!text-sm print:!pl-4">
-        {% for job in jobs_data.jobs %}
+        {% for job in jobs_data.early_career %}
             {% include "myresume/main/_job.html" with job=job %}
 
         {% endfor %}

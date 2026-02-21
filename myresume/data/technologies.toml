@@ -1,94 +1,90 @@
-[[main]]
+# Core expertise
+[[core]]
 title = "Python"
 icon = "python"
 url = "https://www.python.org/"
-[[main]]
+[[core]]
 title = "Django"
 icon = "django"
 url = "https://www.djangoproject.com/start/overview/"
-[[main]]
-title = "PostgreSQL"
-icon = "postgres"
-url = "https://www.postgresql.org/about/"
 
-[[main]]
+[[core]]
 title = "TypeScript"
 icon = "typescript"
 url = "https://www.typescriptlang.org/"
-[[main]]
+[[core]]
 title = "React"
 icon = "react"
 url = "https://react.dev/"
-[[main]]
-title = "Node.js"
-icon = "nodejs"
-url = "https://nodejs.org/"
 
 
-[[others]]
-title = "HTML / CSS"
-icon = "html5"
-[[others]]
-title = "REST"
-icon = "rest"
-[[others]]
-title = "GraphQL"
-icon = "graphql"
-[[others]]
-title = "HTMX"
-icon = "htmx"
-[[others]]
-title = "Wagtail"
-icon = "wagtail"
-[[others]]
-title = "Next.js"
-icon = "nextjs"
-[[others]]
-title = "Vue.js"
-icon = "vue"
-[[others]]
-title = "Tailwind"
-icon = "tailwind"
-[[others]]
-title = "Redis"
-icon = "redis"
-[[others]]
+# Data & scalable systems
+[[data]]
+title = "PostgreSQL"
+icon = "postgres"
+url = "https://www.postgresql.org/about/"
+[[data]]
 title = "Elasticsearch"
 icon = "elasticsearch"
-[[others]]
+url = "https://www.elastic.co/elasticsearch"
+[[data]]
+title = "TimescaleDB"
+icon = "timescaledb"
+url = "https://www.tigerdata.com/timescaledb"
+[[data]]
+title = "ClickHouse"
+icon = "clickhouse"
+url = "https://clickhouse.com/"
+[[data]]
+title = "Algolia"
+icon = "algolia"
+url = "https://www.algolia.com/"
+[[data]]
+title = "Redis"
+icon = "redis"
+url = "https://redis.io/"
+[[data]]
+title = "RabbitMQ"
+icon = "rabbitmq"
+url = "https://www.rabbitmq.com/"
+[[data]]
 title = "MQTT"
 icon = "mqtt"
-[[others]]
-title = "Rabbit MQ"
-icon = "rabbitmq"
-[[others]]
+url = "https://mqtt.org/"
+
+# Web & APIs
+[[web]]
+title = "REST"
+icon = "rest"
+[[web]]
+title = "GraphQL"
+icon = "graphql"
+[[web]]
+title = "HTMX"
+icon = "htmx"
+
+# Previous experience
+[[previous]]
+title = "Wagtail"
+icon = "wagtail"
+[[previous]]
+title = "Node.js"
+icon = "nodejs"
+[[previous]]
+title = "Next.js"
+icon = "nextjs"
+[[previous]]
+title = "Vue.js"
+icon = "vue"
+[[previous]]
 title = "Go"
 icon = "go"
-[[others]]
+[[previous]]
 title = "PHP"
 icon = "php"
-[[others]]
+[[previous]]
 title = "Symfony"
 icon = "symfony2"
-[[others]]
+[[previous]]
 title = "Ruby on Rails"
 icon = "rails"
-
-[[tools]]
-title = "Git"
-[[tools]]
-title = "Docker"
-[[tools]]
-title = "Docker Compose"
-[[tools]]
-title = "Heroku"
-[[tools]]
-title = "Ansible"
-[[tools]]
-title = "Debian"
-[[tools]]
-title = "Make"
-[[tools]]
-title = "Photoshop"
-[[tools]]
-title = "Flash"

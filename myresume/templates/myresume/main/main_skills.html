@@ -8,20 +8,31 @@
 
 {% block content %}
     <div class="ml-1 pl-2 print:!-ml-2 print:!-mr-2">
-        <div class="grid grid-cols-2 gap-5 md:grid-cols-3 print:gap-2">
-            {% for tech in tech_data.main %}
-                {% main_section_main_tech tech %}
-            {% endfor %}
-        </div>
-        <div class="mt-8 print:mt-4">
-            <h4 class="text-lg mb-2 print:text-base print:mb-1">
-                {{ i18n_data.captions.other_skills }}
+        <div class="mb-8">
+            {# Core expertise #}
+            <h4 class="text-lg font-bold mb-2 print:text-base print:mb-1">
+                {% tech_section_title "core" %}
             </h4>
-            <div class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 print:!grid-cols-4 print:!gap-1">
-                {% for tech in tech_data.others %}
-                    {% main_section_other_tech tech %}
+            <div class="grid grid-cols-2 gap-5 md:grid-cols-4 print:gap-2">
+                {% for tech in tech_data.core %}
+                    {% main_section_core_tech tech %}
                 {% endfor %}
             </div>
+        </div>
+        <div class="mb-2">
+            {# Other fields of expertise #}
+            {% for section_id, section_items in tech_data.sections.items %}
+                <div class="mt-4 print:mt-4">
+                    <h4 class="text-lg font-bold mb-2 print:text-base print:mb-1">
+                        {% tech_section_title section_id %}
+                    </h4>
+                    <div class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 print:!grid-cols-4 print:!gap-1">
+                        {% for tech in section_items %}
+                            {% main_section_other_tech tech %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock content %}

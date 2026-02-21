@@ -47,4 +47,12 @@
                rel="noopener">{{ bio_data.mastodon | cut:"https://" }}</a>
         </p>
     </div>
+    <div class="mt-3">
+        <p>
+            {{ i18n_data.citizenship.citizenship }}:
+            <span itemscope itemprop="nationality">{{ i18n_data.citizenship.country.uk }}</span>
+            &
+            <span itemscope itemprop="nationality">{{ i18n_data.citizenship.country.fr }}</span>.
+        </p>
+    </div>
 {% endblock content %}

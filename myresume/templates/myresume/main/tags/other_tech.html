@@ -9,10 +9,10 @@
              height="16">
         {% if url %}
             <a href="{{ url }}" class="underline" target="_blank" rel="noopener">
-                {% tech_with_schema title=title url=url %}
+                {% tech_with_schema level="sub-section" title=title url=url %}
             </a>
         {% else %}
-            {% tech_with_schema title=title %}
+            {% tech_with_schema level="sub-section" title=title %}
         {% endif %}
     </div>
     {% if contributor_url %}

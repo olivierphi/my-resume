@@ -3,6 +3,11 @@ pdf_download = "Télécharger au format PDF"
 language = "langue :"
 theme = "passer au thème :"
 
+[citizenship]
+citizenship = "Citoyenneté"
+country.uk = "Royaume-Uni"
+country.fr = "France"
+
 [open_source_projects]
 title = "Open Source"
 
@@ -38,11 +43,14 @@ src_details = "Services et Réseaux de Communication"
 baccalaureate = "1998: Bac. Série S"
 
 [captions]
-main_skills = "Compétences principales"
-other_skills = "Mais aussi..."
+main_skills = "Compétences"
+tech.core = "Cœur d'expertise"
+tech.data = "Données & scalabilité"
+tech.web = "Web & API"
+tech.previous = "Précédentes expériences"
 tools = "Logiciels et environnements"
 job_experience = "Expérience"
-projects = "Quelques réalisations"
+early_career = "Débuts de carrière"
 
 [footer]
 source_code = "Le code source de cette page web est disponible sur"

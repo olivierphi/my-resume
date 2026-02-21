@@ -129,7 +129,7 @@ class Command(BaseCommand):
         page.pdf(
             path=pdf_path,
             format="A4",
-            page_ranges="1",
+            page_ranges="1-2",
             print_background=True,
         )
         self.stdout.write("Page printed to PDF")

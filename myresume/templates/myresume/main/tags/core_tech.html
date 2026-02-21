@@ -1,6 +1,6 @@
 {% load myresume_tags %}
 
-<span class="flex">
+<span class="flex flex-wrap">
     <img src="{{ icon_url }}"
          alt=""
          class="size-6 mr-2"
@@ -8,9 +8,9 @@
          height="24">
     {% if url %}
         <a href="{{ url }}" class="underline" target="_blank" rel="noopener">
-            {% tech_with_schema title=title url=url %}
+            {% tech_with_schema level="core" title=title url=url %}
         </a>
     {% else %}
-        {% tech_with_schema title=title %}
+        {% tech_with_schema level="core" title=title %}
     {% endif %}
 </span>
