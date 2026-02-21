@@ -2,10 +2,9 @@ name: Static pages deployment
 
 on:
   push:
-    branches: ["main", "django-version"] # TMP for testing
-#    branches: ["main"]
+    branches: ["main", "django-version"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "django-version"]
 
 permissions:
   contents: write
