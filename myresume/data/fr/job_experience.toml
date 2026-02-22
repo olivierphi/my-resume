@@ -15,12 +15,12 @@ projects = [
     Brownfield : Amélioration des systèmes legacy de l'entreprise, basés sur Django et Vue.js.
     """,
     """
-    Établissement de standards de sécurité du typage en introduisant un typage complet dans les
-    codebases Python et en accompagnant l'équipe sur les bonnes pratiques.
+    Établissement de standards de sécurité du typage en introduisant des types hints dans les
+    codebases Python, et en accompagnant l'équipe sur les bonnes pratiques associées.
     """
 ]
 tags = [
-    "Python", "Django", "Django REST Framework", "Postgres", "ClickHouse",
+    "Python", "Django", "Django REST Framework", "Celery", "Postgres", "ClickHouse",
     "TypeScript", "React", "Vue.js"
 ]
 
@@ -56,14 +56,14 @@ location = "Remote"
 projects = [
     """
     Brownfield : Développement de fonctionnalités fullstack pour ce backend Django et React servant
-    3 millions d'utilisateurs et gérant environ 600 requêtes/seconde en heure de pointe.
+    3 millions d'utilisateurs et gérant jusqu'à 600 requêtes/seconde.
     """,
     """
     Promotion de la sécurité du typage en introduisant le type hinting dans la codebase Python
-    et en établissant des standards de développement pour l'équipe.
+    et en établissant les standards de développement associés pour l'équipe.
     """
 ]
-tags = ["Python", "Django", "Django REST Framework", "MySQL", "TypeScript", "React"]
+tags = ["Python", "Django", "Django REST Framework", "Celery", "MySQL", "TypeScript", "React"]
 
 [[jobs]]
 period = "2018 - 2021"
@@ -86,7 +86,11 @@ projects = [
     pour supporter la croissance des charges de travail analytiques en temps réel à mesure que la plateforme montait en charge.
     """
 ]
-tags = ["Python", "Django", "TypeScript", "React", "GraphQL", "Postgres", "TimescaleDB"]
+tags = [
+    "Python", "Django", "Celery",
+    "Postgres", "TimescaleDB", "MQTT",
+    "TypeScript", "React", "GraphQL"
+]
 page_break_before = true
 
 [[jobs]]
@@ -98,10 +102,10 @@ organisation = { name="People's Postcode Lottery", url="https://www.postcodelott
 location = "Écosse"
 projects = [
     """
-    Brownfield : Direction d'une équipe de 4 développeurs PHP pour maintenir les API et le site web existants orientés utilisateurs.
+    Brownfield : Direction d'une équipe de 4 développeurs PHP pour maintenir les API et le site web existants.
     """,
     """
-    Greenfield : Direction du développement d'un nouveau site web basé sur une architecture de couche de données modernisée.
+    Greenfield : Direction du développement d'un nouveau site web basé sur une architecture de données modernisée.
     """
 ]
 tags = ["PHP", "Symfony", "RabbitMQ", "Postgres", "SOAP"]
@@ -116,7 +120,7 @@ location = "France"
 projects = [
     """
     Greenfield : Direction d'une équipe de 3 développeurs pour construire le site web et le CMS de Collector Square,
-    basés sur Symfony avec Elasticsearch et Redis comme couches de projection de données.
+    basés sur Elasticsearch et Redis comme couches de projection de données.
     """,
     """
     Greenfield : Direction d'une équipe de 5 développeurs pour refondre la plateforme Balinea,

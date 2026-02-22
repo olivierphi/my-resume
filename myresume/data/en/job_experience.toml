@@ -8,19 +8,20 @@ location = "Scotland"
 current = true
 projects = [
     """
-    Greenfield: Built and scaled the new Django and React based multitenant platform,
-    where each client has their own high-volume Postgres and ClickHouse databases.
+    Greenfield: With the rest of the team, built and scaled the new Django and React based
+    multitenant platform - where each client has their own high-volume Postgres and ClickHouse databases.
     """,
     """
-    Brownfield: Enhanced the business' legacy systems, based on Django and Vue.js.
+    Brownfield: New features and bugfixes on the business' legacy systems, based on Django and Vue.js.
+    Added integrations to new 3rd-party platforms.
     """,
     """
-    Established type safety standards by introducing comprehensive type hinting across
-    Python codebases and mentoring the team on best practices.
+    Established type safety by introducing type hinting across the
+    Python codebases, and mentoring the team on related best practices.
     """
 ]
 tags = [
-    "Python", "Django", "Django REST Framework", "Postgres", "ClickHouse",
+    "Python", "Django", "Django REST Framework", "Celery", "Postgres", "ClickHouse",
     "TypeScript", "React", "Vue.js"
 ]
 
@@ -33,16 +34,15 @@ organisation = { name="Torchbox", url="https://www.torchbox.com/" }
 location = "Remote"
 projects = [
     """
-    Greenfield: Led fullstack architecture for a greenfield Wagtail/Django platform,
-    defining content models and system structure to ensure long-term maintainability
-    under tight deadlines.
+    Greenfield: Led fullstack architecture for a Wagtail/Django platform under tight deadlines,
+    defining content models and consistent code style to ensure long-term maintainability.
     """,
     """
     Brownfield: Took ownership of a large legacy Node.js + Elasticsearch system and
-    led its progressive migration to TypeScript to improve type safety and refactor confidence..
+    led its progressive migration to TypeScript to make bugfixing and addition of new features easier.
     """,
     """
-    Established pragmatic design and review standards favoring simplicity over unnecessary abstraction.
+    Established pragmatic architecture across the team, favoring simplicity over unnecessary abstraction.
     """
 ]
 tags = [
@@ -60,14 +60,14 @@ location = "Remote"
 projects = [
     """
     Brownfield: Built fullstack features for this Django and React backend serving 3 million users
-    and handling approximately 600 requests/second at peak time.
+    and handling up to 600 requests/second at peak time.
     """,
     """
-    Championed type safety by introducing type hints to the Python codebase and establishing
-    team coding standards.
+    Championed type safety by introducing type hints to a 10 years old Python codebase,
+    and sharing associated best practices with the team.
     """
 ]
-tags = ["Python", "Django", "Django REST Framework", "MySQL", "TypeScript", "React"]
+tags = ["Python", "Django", "Django REST Framework", "Celery", "MySQL", "TypeScript", "React"]
 
 [[jobs]]
 period = "2018 - 2021"
@@ -94,7 +94,11 @@ projects = [
     architecture to minimize long-term maintenance cost.
     """,
 ]
-tags = ["Python", "Django", "TypeScript", "React", "GraphQL", "Postgres", "TimescaleDB"]
+tags = [
+    "Python", "Django", "Celery",
+    "Postgres", "TimescaleDB", "MQTT",
+    "TypeScript", "React", "GraphQL"
+]
 page_break_before = true
 
 [[jobs]]
@@ -123,7 +127,7 @@ location = "France"
 projects = [
     """
     Greenfield: Led a team of 3 developers to build the Collector Square website and CMS,
-    based on Symfony with Elasticsearch and Redis as data projection layers.
+    relying on Elasticsearch and Redis as data projection layers.
     """,
     """
     Greenfield: Led a team of 5 developers to refactor the Balinea platform, including

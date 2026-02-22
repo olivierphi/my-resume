@@ -1,6 +1,6 @@
 {% load myresume_tags %}
 
-<li class="mb-4 print:mb-8 {% if job.not_on_pdf %}print:hidden{% endif %}{% if job.page_break_before %}break-before-page print:!mt-8{% endif %}"
+<li class="mb-4 {% layout_debug border_color="cyan-900" %} {% if job.not_on_pdf %}print:hidden{% endif %}{% if job.page_break_before %}break-before-page print:!mt-8{% endif %}"
     {% if job.organisation %} itemscope itemtype="https://schema.org/Organization" itemprop="{{ job.current|yesno:"worksFor,alumniOf" }}" {% endif %}>
     {% if job.organisation %}
         <meta itemprop="name" content="{{ job.organisation.name }}" />

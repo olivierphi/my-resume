@@ -40,6 +40,10 @@ title = "Algolia"
 icon = "algolia"
 url = "https://www.algolia.com/"
 [[data]]
+title = "Celery"
+icon = "celery"
+url = "https://docs.celeryq.dev/en/stable/getting-started/introduction.html"
+[[data]]
 title = "Redis"
 icon = "redis"
 url = "https://redis.io/"
@@ -51,6 +55,7 @@ url = "https://www.rabbitmq.com/"
 title = "MQTT"
 icon = "mqtt"
 url = "https://mqtt.org/"
+not_on_pdf = true
 
 # Web & APIs
 [[web]]

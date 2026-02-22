@@ -50,9 +50,14 @@
     <div class="mt-3">
         <p>
             {{ i18n_data.citizenship.citizenship }}:
-            <span itemscope itemprop="nationality">{{ i18n_data.citizenship.country.uk }}</span>
-            &
-            <span itemscope itemprop="nationality">{{ i18n_data.citizenship.country.fr }}</span>.
+            <ul class="list-disc list-inside">
+                <li itemscope itemprop="nationality">
+                    <span class="-ml-1">{{ i18n_data.citizenship.country.fr }}</span>
+                </li>
+                <li itemscope itemprop="nationality">
+                    <span class="-ml-1">{{ i18n_data.citizenship.country.uk }}</span>
+                </li>
+            </ul>
         </p>
     </div>
 {% endblock content %}
