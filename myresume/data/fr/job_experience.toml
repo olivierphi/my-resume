@@ -49,8 +49,8 @@ tags = [
 [[jobs]]
 period = "2022"
 content = """
-    <b>Senior developer</b> en free-lance pour
-    <a href="https://www.sporteasy.net/">SportEasy</a>."""
+    <b>Senior developer</b> pour
+    <a href="https://www.sporteasy.net/">SportEasy</a> (en freelance)."""
 organisation = { name="SportEasy", url="https://www.sporteasy.net/" }
 location = "Remote"
 projects = [

@@ -34,8 +34,8 @@ organisation = { name="Torchbox", url="https://www.torchbox.com/" }
 location = "Remote"
 projects = [
     """
-    Greenfield: Led fullstack architecture for a Wagtail/Django platform under tight deadlines,
-    defining content models and consistent code style to ensure long-term maintainability.
+    Greenfield: Led fullstack architecture for a Wagtail/Django platform under tight deadlines.
+    Also managed the migration from the previous CMS, as well as the bespoke search logic.
     """,
     """
     Brownfield: Took ownership of a large legacy Node.js + Elasticsearch system and
@@ -54,7 +54,7 @@ tags = [
 period = "2022"
 content = """
     <b>Senior developer</b> for
-    <a href="https://www.sporteasy.net/en/">SportEasy</a>."""
+    <a href="https://www.sporteasy.net/en/">SportEasy</a> (as a contractor)."""
 organisation = { name="SportEasy", url="https://www.sporteasy.net/en/" }
 location = "Remote"
 projects = [
@@ -83,7 +83,7 @@ projects = [
     """,
     """
     Greenfield: Designed API structure and data models to support real-time ingestion
-    and historical analytics workloads.
+    via MQTT and historical analytics workloads.
     """,
     """
     Greenfield: Proactively migrated historical data storage from Postgres to TimescaleDB
