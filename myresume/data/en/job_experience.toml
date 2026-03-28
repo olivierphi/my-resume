@@ -35,15 +35,12 @@ location = "Remote"
 projects = [
     """
     Greenfield: Led fullstack architecture for a Wagtail/Django platform under tight deadlines.
-    Also managed the migration from the previous CMS, as well as the bespoke search logic.
+    Also managed the migration from the previous CMS and bespoke search logic.
     """,
     """
     Brownfield: Took ownership of a large legacy Node.js + Elasticsearch system and
     led its progressive migration to TypeScript to make bugfixing and addition of new features easier.
     """,
-    """
-    Established pragmatic architecture across the team, favoring simplicity over unnecessary abstraction.
-    """
 ]
 tags = [
     "Python", "Django", "Wagtail", "HTMX", "Postgres", "Node.js",
@@ -59,7 +56,7 @@ organisation = { name="SportEasy", url="https://www.sporteasy.net/en/" }
 location = "Remote"
 projects = [
     """
-    Brownfield: Built fullstack features for this Django and React backend serving 3 million users
+    Brownfield: Built fullstack features for this Django and React platform serving 3 million users
     and handling up to 600 requests/second at peak time.
     """,
     """
@@ -78,8 +75,8 @@ organisation = { name="Inclusive Energy", url="https://inclusive.energy/" }
 location = "Scotland"
 projects = [
     """
-    Greenfield: Architected and delivered the initial Django + React + GraphQL platform
-    for an IoT solar fleet management system, scaling from pilot to production.
+    Greenfield: Led a 4 engineers team to deliver a IoT solar fleet management system,
+    scaling from pilot to production. I led both the Django and React sides of the development.
     """,
     """
     Greenfield: Designed API structure and data models to support real-time ingestion
@@ -88,10 +85,6 @@ projects = [
     """
     Greenfield: Proactively migrated historical data storage from Postgres to TimescaleDB
     to support growing real-time analytical workloads as the platform scaled.
-    """,
-    """
-    Led a team of 4 engineers, enforcing coding standards and a simplicity-first
-    architecture to minimize long-term maintenance cost.
     """,
 ]
 tags = [
@@ -113,26 +106,26 @@ projects = [
     """,
     """
     Greenfield: Led the development of a new website based on a modernized data layer architecture.
-    """
+    """,
 ]
 tags = ["PHP", "Symfony", "RabbitMQ", "Postgres", "SOAP"]
 
 [[jobs]]
 period = "2014 - 2016"
 content = """
-    <b>Symfony / JavaScript consultant</b> for the Web agency
+    <b>Forward deployed engineer</b> at
     <a href="https://knplabs.com/en/">KNP Labs</a>."""
 organisation = { name="KNP Labs", url="https://knplabs.com/en/" }
 location = "France"
 projects = [
     """
-    Greenfield: Led a team of 3 developers to build the Collector Square website and CMS,
-    relying on Elasticsearch and Redis as data projection layers.
+    Greenfield: Led a team of 5 developers to refactor the
+    Balinea platform's backend services.
     """,
     """
-    Greenfield: Led a team of 5 developers to refactor the Balinea platform, including
-    the public website, middle-office, back-end, and public/private APIs.
-    """
+    Greenfield: Led a team of 3 developers to rebuild the Collector Square website and CMS,
+    relying on Elasticsearch and Redis as data projection layers.
+    """,
 ]
 tags = ["PHP", "Symfony", "JavaScript", "Elasticsearch", "Redis"]
 

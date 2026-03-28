@@ -9,7 +9,7 @@
 {% block content %}
     <ul class="pl-6 list-disc sm:pr-0 print:!text-sm print:!pl-4">
         {% for job in jobs_data.early_career %}
-            {% include "myresume/main/_job.html" with job=job %}
+            {% include "myresume/main/_role.html" with job=job %}
 
         {% endfor %}
     </ul>
